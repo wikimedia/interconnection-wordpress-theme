@@ -189,3 +189,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
     wpcom_vip_load_gutenberg( true );
 }
+
+/**
+ * Filter X-hacker output.
+ */
+add_filter( 'wp_headers', function( $headers ) {
+    if ( isset( $headers['X-hacker'] ) ) {
+        unset( $headers['X-hacker'] );
+    }
+    return $headers;
+}, 999 );
