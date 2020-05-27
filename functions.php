@@ -183,3 +183,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Enable Gutenberg
+ */
+if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
+    wpcom_vip_load_gutenberg( true );
+}
