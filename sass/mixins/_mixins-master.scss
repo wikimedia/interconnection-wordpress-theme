@@ -1,3 +1,33 @@
+// Module Sizing
+@mixin module-width($desktop-bp, $desktop-width) {
+	width: 100%;
+
+	@media (min-width: $desktop-bp) {
+			width: $desktop-width;
+	}
+}
+
+// Spacing
+@mixin padding($topBottomMobile, $leftRightMobile, $topBottomDesktop, $leftRightDesktop) {
+
+	padding: rem($topBottomMobile) rem($leftRightMobile);
+
+	@media (min-width: $medium-bp) {
+		padding: rem($topBottomDesktop) rem($leftRightDesktop);
+	}
+}
+
+// Flexbox
+@mixin flexbox($mobile-direction, $desktop-wrap, $desktop-bp, $desktop-direction) {
+	display: flex;
+	flex-direction: $mobile-direction;
+
+	@media (min-width: $desktop-bp) {
+		flex-direction: $desktop-direction;
+		flex-wrap: $desktop-wrap;
+	}
+}
+
 // Center block
 @mixin center-block {
 	display: block;

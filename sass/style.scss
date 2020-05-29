@@ -42,7 +42,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
+@import "functions";
 @import "mixins/mixins-master";
+@import "layout/grid";
 
 /*--------------------------------------------------------------
 # Normalize

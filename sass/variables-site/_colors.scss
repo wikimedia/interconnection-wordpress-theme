@@ -1,20 +1,37 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+// Wikimedia Base colors
+$base0: #000;
+$base10: #202122;
+$base20: #54595d;
+$base30: #72777d;
+$base50: #a2a9b1;
+$base70: #c8ccd1;
+$base80: #eaecf0;
+$base90: #f8f9fa;
+$base100: #fff;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
+// Wikimedia accent colors
+$accent90: #eaf3ff;
+$accent50: #36c;
+$accent30: #2a4b8d;
+
+$color__background-body: $base100;
+$color__background-screen: $base100;
+$color__background-hr: $base70;
+$color__background-button: $accent50;
+$color__text-color-button: $base100;
+$color__background-pre: $base80;
+$color__background-ins: $base90;
+
+$color__text-screen: $base10;
+$color__text-input: $base20;
+$color__text-input-focus: $base20;
+$color__link: $accent50; 
 $color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$color__link-hover: $accent50;
+$color__text-main: $base10;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button: transparent;
+$color__border-button-hover: transparent;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;

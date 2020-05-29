@@ -1,6 +1,19 @@
-.main-navigation {
-	display: block;
+.site-header {
+	z-index: 2000;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	background: $color__background-body;
+	transition: top .25s ease;
+	border-bottom: 1px $base80 solid;
+}
+
+.site-branding {
+	display: inline-block;
+}
+
+.main-navigation {
+	display: inline-block;
 
 	ul {
 		display: none;
@@ -67,6 +80,10 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
+}
+
+.site-main {
+	margin-top: 100px;	
 }
 
 /* Small menu. */
