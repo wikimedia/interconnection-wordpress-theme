@@ -10,7 +10,7 @@
 article.post {
 	.entry-content {
 		font-family: $font__serif;
-		font-size: $font__size-medium;
+		font-size: rem(18);
 		
 		figure {
 			&.size-medium {

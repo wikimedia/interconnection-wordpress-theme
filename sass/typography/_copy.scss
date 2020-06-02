@@ -10,7 +10,9 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin-left: -1rem;
+	padding-left: 1rem;
+	border-left: 2px solid $accent50;
 }
 
 address {

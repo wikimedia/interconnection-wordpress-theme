@@ -2,17 +2,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	border: 0px solid;
 	border-color: $color__border-button;
-	border-radius: 3px;
+	border-radius: 2px;
 	background: $color__background-button;
 	color: $color__text-color-button;
-	font-size: 0.75rem;
+	font-size: 1rem;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.4em 0.8em 0.4em;
+	transition: $transition;
 
 	&:hover {
 		border-color: $color__border-button-hover;
+		background: $color__background-button-hover;
 		cursor: pointer;
 	}
 
@@ -20,4 +22,9 @@ input[type="submit"] {
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+}
+
+.top-nav button,
+.top-nav input[type="button"] {
+	@include shade("light");
 }
