@@ -17,6 +17,13 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	line-height: 1;
+}
+
+.custom-logo {
+	max-height: rem($size__navigation - 20);
+	width: auto;
+	margin: 1rem 1rem 1rem 0;
 }
 
 /*--------------------------------------------------------------

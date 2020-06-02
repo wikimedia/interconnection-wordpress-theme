@@ -1,5 +1,8 @@
 $size__site-main: 100%;
-$size__site-sidebar: 25%;
+$size__site-sidebar: 100%;
+
+$size__navigation: 65; // px for use with rem()
+$site-main-shift: 100; // px for use with rem()
 
 $large-bp: 1200px;
 $medium-bp: 768px;
