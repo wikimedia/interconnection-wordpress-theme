@@ -1,0 +1,46 @@
+.wrapper {
+	max-width: rem(1200); // accounts for padding below
+	@include padding(0, 30, 0, 60);
+	margin: 0 auto;
+}
+
+.wrapper-medium {
+	max-width: rem(800);
+	margin: 0 auto;
+}
+
+.wrapper-small {
+	max-width: rem(680);
+	margin: 0 auto;
+}
+
+// Flex containers
+.flex {
+	&.flex-all {
+		@include flexbox(wrap, wrap, $small-bp, row);
+	}
+	// Becomes a flex container at medium-bp
+	&.flex-medium {
+		@include flexbox(column, nowrap, $medium-bp, row);
+	}
+
+	&.flex-large {
+		@include flexbox(column, nowrap, $large-bp, row);
+	}
+
+	&.flex-wrap {
+		flex-wrap: wrap;
+	}
+
+	&.flex-wrap-reverse {
+		flex-wrap: wrap-reverse;
+	}
+
+	&.flex-space-between {
+		justify-content: space-between;
+	}
+
+	&.flex-align-center {
+		align-items: center;
+	}
+}

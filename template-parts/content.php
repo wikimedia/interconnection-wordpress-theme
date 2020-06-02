@@ -10,7 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<div class="wrapper">
+	<header class="entry-header wrapper-small">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -31,7 +32,7 @@
 
 	<?php interconnection_post_thumbnail(); ?>
 
-	<div class="entry-content">
+ 	<div class="entry-content wrapper-small">
 		<?php
 		the_content(
 			sprintf(
@@ -56,8 +57,20 @@
 		);
 		?>
 	</div><!-- .entry-content -->
+	</div>
 
-	<footer class="entry-footer">
-		<?php interconnection_entry_footer(); ?>
+ 	<footer class="entry-footer">
+ 		<div class="wrapper flex flex-medium flex-space-between">
+	 		<div class="comments-wrapper">
+				<?php if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif; ?>
+			</div>
+			<div class="entry-footer-meta">
+				<!-- ATTENTION: need to translate -->
+				<h3>Meta</h3>
+				<?php interconnection_entry_footer(); ?>
+			</div>
+		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
