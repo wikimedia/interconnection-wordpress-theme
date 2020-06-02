@@ -17,6 +17,28 @@
 	}
 }
 
+@mixin margin-bottom($size) {
+	@if $size == 2 {
+		margin-bottom: rem(80);
+
+		@media (min-width: $medium-bp) {
+			margin-bottom: rem(100);
+		}
+	} @else if $size == 1 {
+		margin-bottom: rem(40);
+
+		@media (min-width: $medium-bp) {
+			margin-bottom: rem(60);
+		}
+	} @else {
+		margin-bottom: rem(20);
+
+		@media (min-width: $medium-bp) {
+			margin-bottom: rem(30);
+		}
+	}
+}
+
 // Flexbox
 @mixin flexbox($mobile-direction, $desktop-wrap, $desktop-bp, $desktop-direction) {
 	display: flex;
@@ -35,7 +57,13 @@
 	margin-right: auto;
 }
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+// Shading
+@mixin shade($shade) {
+	@if $shade == "dark" {
+		background: $base10;
+		color: $base100;
+	} @else {
+		background: $base80;
+		color: $base10;
+	}
 }

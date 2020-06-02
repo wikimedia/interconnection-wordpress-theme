@@ -2,19 +2,93 @@
 	display: block;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+// for single
+article.post {
+	.entry-content {
+		font-family: $font__serif;
+		font-size: $font__size-medium;
+		
+		figure {
+			&.size-medium {
+				// force alignment right
+				@include module-width($medium-bp, 32%)
+				float: right;
+				margin: 0.5rem 0 1rem 1rem;
+			}
+
+			&.size-large figcaption {
+				@include module-width($medium-bp, 75%)
+			}
+		}
+		figcaption {
+			font-size: rem(14);
+		}
+	}
+
+	.entry-footer{
+		@include shade("light");
+		@include padding(30, 0, 60, 0);
+		@include margin-bottom(1);
+
+		.comments-wrapper {
+			@include module-width($medium-bp, 60%);
+		}	
+
+		.entry-footer-meta {
+			@include module-width($medium-bp, 32%);
+			span {
+				display: block;
+				@include margin-bottom(0);
+			}
+		}
+	}
+}
+
+// for grid
+article.grid-post {
+	@include margin-bottom(1);
+	// 2 per row when bigger than small break point
+	@include module-width($small-bp, 48%);
+	// 3 per row when bigger than small break point
+	@include module-width($medium-bp, 32%);
+
+	.entry-header:hover .entry-title a {
+		text-decoration: underline;
+	}
+
+	.home-thumbnail {
+		width: 100%;
+		background: $base70;
+		background-image: linear-gradient(120deg, $accent50 -400%, $accent90 100%);
+		// when there is no featured image
+		&:before {
+			content: "";
+			display: block;
+			padding-top: 100%/3*2; 	// ratio of 3:2
+			margin-bottom: rem(6);
+		}
+	}
+}
+
+.posts-grid {
+	@include flexbox(wrap, wrap, $small-bp, row);
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	&:after {
+		content: "";
+		display: block;
+		// based on item width above
+		margin-left: 32%;
+	}
+}
+
+.nav-links {
+	@include margin-bottom(1);
 }
 
 .page-links {
