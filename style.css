@@ -36,6 +36,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Credits
 # Infinite scroll
 # Media
 	## Captions
@@ -1008,6 +1009,40 @@ article.grid-post {
 .comments-area p {
   margin-top: 0.5rem;
   margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+## Credits
+--------------------------------------------------------------*/
+.photo-credit-container {
+  width: 100%;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  margin-right: 10%/3;
+  font-size: 0.875rem;
+  color: #72777d;
+  align-content: start;
+  overflow-wrap: break-word; }
+  @media (min-width: 500px) {
+    .photo-credit-container {
+      width: 45%; } }
+  @media (min-width: 768px) {
+    .photo-credit-container {
+      width: 30%; } }
+  @media (min-width: 768px) {
+    .photo-credit-container {
+      margin-bottom: 1.875rem; } }
+  .photo-credit-container .img-container {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    border-radius: 2px;
+    margin-right: 1rem; }
+  .photo-credit-container .text-container {
+    width: 60%;
+    display: inline-block; }
+    .photo-credit-container .text-container p {
+      margin: 0; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
