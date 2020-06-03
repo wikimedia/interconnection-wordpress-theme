@@ -1,8 +1,9 @@
+.photo-credits .wrapper {
+	@include column-3;
+}
+
 .photo-credit-container {
-	@include module-width($small-bp, 45%);
-	@include module-width($medium-bp, 30%);
 	@include margin-bottom(0);
-	margin-right: 10%/3;
 	font-size: rem(14);
 	color: $base30;
 	align-content: start;

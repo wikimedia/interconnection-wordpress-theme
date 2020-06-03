@@ -15,7 +15,7 @@ if ( empty( $images ) ) {
 
 <div class="photo-credits">
 	
-	<div class="wrapper flex flex-all flex-wrap">
+	<div class="wrapper">
 		<?php
 		foreach ( $images as $image_id ) {
 			// data to pass on to template part
