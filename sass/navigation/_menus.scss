@@ -6,6 +6,16 @@
 	background: $color__background-body;
 	transition: top .25s ease;
 	border-bottom: 1px $base80 solid;
+
+	.top-nav {
+		height: rem($size__navigation);
+	}
+}
+
+.admin-bar .site-header {
+	@media screen and (min-width: $small-bp) {
+		top: 32px;
+	}
 }
 
 .site-branding {
@@ -35,7 +45,7 @@
 	order: 1;
 
 	@media screen and (min-width: $small-bp) {
-			order: 4;
+		order: 4;
 	}
 
 	ul {
@@ -51,9 +61,12 @@
 		}
 
 		li {
-			margin-right: 1rem;
-			&:last-child {
-				margin-right: 0;
+			@media screen and (min-width: $small-bp) {
+				margin-right: 1rem;
+				
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 		}
 
@@ -79,7 +92,7 @@
 			}
 
 			a {
-				width: 100%;
+				padding: 0;
 			}
 
 			:hover > a,
@@ -88,6 +101,8 @@
 
 			a:hover,
 			a.focus {
+				background: none;
+				text-decoration: underline;
 			}
 		}
 
@@ -99,9 +114,16 @@
 
 	li {
 		position: relative;
+		a {
+			color: $base10;
+			border-radius: 2px;
+			@include padding(3, 4, 6, 8);
+			transition: $transition;
+		}
 
 		&:hover > a,
 		&.focus > a {
+			@include shade("light");
 		}
 	}
 
