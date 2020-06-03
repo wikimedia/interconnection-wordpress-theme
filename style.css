@@ -489,7 +489,7 @@ hr {
 
 ul,
 ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 0; }
 
 ul {
   list-style: disc; }
@@ -513,7 +513,8 @@ img {
   max-width: 100%; }
 
 figure {
-  margin: 1em 0; }
+  margin: 0;
+  width: 100% !important; }
 
 table {
   margin: 0 0 1.5em;
@@ -620,6 +621,10 @@ a {
   a:hover, a:active {
     outline: 0; }
 
+.posts-grid a,
+.posts-grid a:visited {
+  color: #202122; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -631,6 +636,12 @@ a {
   background: #fff;
   transition: top .25s ease;
   border-bottom: 1px #eaecf0 solid; }
+  .site-header .top-nav {
+    height: 4.0625rem; }
+
+@media screen and (min-width: 500px) {
+  .admin-bar .site-header {
+    top: 32px; } }
 
 .site-branding {
   display: inline-block;
@@ -662,10 +673,11 @@ a {
     @media screen and (min-width: 500px) {
       .main-navigation ul {
         position: relative; } }
-    .main-navigation ul li {
-      margin-right: 1rem; }
-      .main-navigation ul li:last-child {
-        margin-right: 0; }
+    @media screen and (min-width: 500px) {
+      .main-navigation ul li {
+        margin-right: 1rem; }
+        .main-navigation ul li:last-child {
+          margin-right: 0; } }
     .main-navigation ul ul {
       float: left;
       position: absolute;
@@ -681,12 +693,28 @@ a {
         display: block;
         left: auto; }
       .main-navigation ul ul a {
-        width: 100%; }
+        padding: 0; }
+      .main-navigation ul ul a:hover,
+      .main-navigation ul ul a.focus {
+        background: none;
+        text-decoration: underline; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
     position: relative; }
+    .main-navigation li a {
+      color: #202122;
+      border-radius: 2px;
+      padding: 0.1875rem 0.25rem;
+      transition: 0.3s all; }
+      @media (min-width: 768px) {
+        .main-navigation li a {
+          padding: 0.375rem 0.5rem; } }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      background: #eaecf0;
+      color: #202122; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -839,21 +867,30 @@ a {
 .updated:not(.published) {
   display: none; }
 
+article.post .post-thumbnail {
+  margin: 1rem auto; }
+  article.post .post-thumbnail img {
+    width: 100%; }
+
 article.post .entry-content {
   font-family: Charter, serif;
   font-size: 1.125rem; }
-  article.post .entry-content figure.size-medium {
-    width: 100%;
-    float: right;
-    margin: 0.5rem 0 1rem 1rem; }
-    @media (min-width: 768px) {
-      article.post .entry-content figure.size-medium {
-        width: 32%; } }
-  article.post .entry-content figure.size-large figcaption {
+  article.post .entry-content img {
     width: 100%; }
-    @media (min-width: 768px) {
-      article.post .entry-content figure.size-large figcaption {
-        width: 75%; } }
+  article.post .entry-content figure {
+    margin: 0; }
+    article.post .entry-content figure.size-medium {
+      width: 100%;
+      float: right;
+      margin: 0.5rem 0 1rem 1rem; }
+      @media (min-width: 768px) {
+        article.post .entry-content figure.size-medium {
+          width: 32%; } }
+    article.post .entry-content figure.size-large figcaption {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.post .entry-content figure.size-large figcaption {
+          width: 75%; } }
   article.post .entry-content figcaption {
     font-size: 0.875rem; }
 
@@ -943,6 +980,35 @@ article.grid-post {
 .bypostauthor {
   display: block; }
 
+.comments-area .comments-title {
+  font-size: 1.25rem; }
+
+.comments-area ul, .comments-area ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.comments-area article {
+  margin-bottom: 2rem; }
+  .comments-area article .says {
+    display: none; }
+  .comments-area article .comment-metadata {
+    display: inline-block;
+    font-size: 0.875rem; }
+    .comments-area article .comment-metadata a {
+      color: #54595d; }
+  .comments-area article .comment-author {
+    display: inline-block; }
+    .comments-area article .comment-author .avatar {
+      display: none; }
+  .comments-area article .comment-content,
+  .comments-area article .reply {
+    margin-left: 0.5rem; }
+
+.comments-area p {
+  margin-top: 0.5rem;
+  margin-bottom: 0; }
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -980,7 +1046,7 @@ object {
 .custom-logo {
   max-height: 2.8125rem;
   width: auto;
-  margin: 1rem 1rem 1rem 0; }
+  margin-right: 1rem; }
 
 /*--------------------------------------------------------------
 ## Captions
