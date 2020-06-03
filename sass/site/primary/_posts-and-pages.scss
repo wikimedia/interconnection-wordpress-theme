@@ -8,11 +8,25 @@
 
 // for single
 article.post {
+
+	.post-thumbnail {
+		margin: 1rem auto;
+
+		img {
+			width: 100%;
+		}
+	}
+
 	.entry-content {
 		font-family: $font__serif;
 		font-size: rem(18);
+
+		img {
+			width: 100%;
+		}
 		
 		figure {
+			margin: 0;
 			&.size-medium {
 				// force alignment right
 				@include module-width($medium-bp, 32%)
