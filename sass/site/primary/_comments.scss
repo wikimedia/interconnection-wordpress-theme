@@ -5,3 +5,50 @@
 .bypostauthor {
 	display: block;
 }
+
+.comments-area {
+	.comments-title {
+		font-size: rem(20); // like h3
+	}
+
+	ul, ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	article {
+		margin-bottom: 2rem;
+
+		.says {
+			display: none;
+		}
+
+		.comment-metadata {
+			display: inline-block;
+			font-size: rem(14);
+
+			a {
+				color: $base20;
+			}
+		}
+
+		.comment-author {
+			display: inline-block;
+
+			.avatar {
+				display: none;
+			}
+		}
+
+		.comment-content,
+		.reply {
+			margin-left: 0.5rem;
+		}
+	}
+
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+}
