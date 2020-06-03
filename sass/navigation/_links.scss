@@ -22,3 +22,8 @@ a {
 		outline: 0;
 	}
 }
+
+.posts-grid a,
+.posts-grid a:visited {
+	color: $base10;
+}
