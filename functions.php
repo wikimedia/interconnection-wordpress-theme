@@ -212,6 +212,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Class (e.g. Credits) autoloader.
+ */
+require get_template_directory() . '/inc/classes/class-autoload.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
