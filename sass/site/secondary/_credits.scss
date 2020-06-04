@@ -1,0 +1,29 @@
+.photo-credits .wrapper {
+	@include column-3;
+}
+
+.photo-credit-container {
+	@include margin-bottom(0);
+	font-size: rem(14);
+	color: $base30;
+	align-content: start;
+	overflow-wrap: break-word;
+
+	.img-container {
+		display: inline-block;
+		width: rem(80);
+		height: rem(80);
+		background-size: cover;
+		border-radius: 2px;
+		margin-right: 1rem;
+	}
+
+	.text-container {
+		width: 60%;
+		display: inline-block;
+		
+		p {
+			margin: 0;
+		}
+	}
+}

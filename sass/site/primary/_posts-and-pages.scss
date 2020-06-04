@@ -8,11 +8,25 @@
 
 // for single
 article.post {
+
+	.post-thumbnail {
+		margin: 1rem auto;
+
+		img {
+			width: 100%;
+		}
+	}
+
 	.entry-content {
 		font-family: $font__serif;
 		font-size: rem(18);
+
+		img {
+			width: 100%;
+		}
 		
 		figure {
+			margin: 0;
 			&.size-medium {
 				// force alignment right
 				@include module-width($medium-bp, 32%)
@@ -50,14 +64,29 @@ article.post {
 
 // for grid
 article.grid-post {
+	border-radius: 0 0 2px 2px;
+	padding-bottom: 1rem;
 	@include margin-bottom(1);
-	// 2 per row when bigger than small break point
-	@include module-width($small-bp, 48%);
-	// 3 per row when bigger than small break point
-	@include module-width($medium-bp, 32%);
+	transition: $transition;
+
+	&:hover {
+		box-shadow: 2px 2px 1px $base80, -2px 2px 1px $base80;
+	}
 
 	.entry-header:hover .entry-title a {
 		text-decoration: underline;
+	}
+
+	.entry-title {
+		padding: 0.5rem 1rem 0;
+	}
+
+	.entry-meta {
+		padding: 0 1rem;
+	}
+
+	.entry-meta, .entry-meta a {
+		color: $base30;
 	}
 
 	.home-thumbnail {
@@ -75,16 +104,7 @@ article.grid-post {
 }
 
 .posts-grid {
-	@include flexbox(wrap, wrap, $small-bp, row);
-	justify-content: space-between;
-	flex-wrap: wrap;
-
-	&:after {
-		content: "";
-		display: block;
-		// based on item width above
-		margin-left: 32%;
-	}
+	@include column-3;
 }
 
 .nav-links {

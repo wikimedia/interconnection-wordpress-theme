@@ -36,6 +36,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Credits
 # Infinite scroll
 # Media
 	## Captions
@@ -489,7 +490,7 @@ hr {
 
 ul,
 ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 0; }
 
 ul {
   list-style: disc; }
@@ -513,7 +514,8 @@ img {
   max-width: 100%; }
 
 figure {
-  margin: 1em 0; }
+  margin: 0;
+  width: 100% !important; }
 
 table {
   margin: 0 0 1.5em;
@@ -620,6 +622,10 @@ a {
   a:hover, a:active {
     outline: 0; }
 
+.posts-grid a,
+.posts-grid a:visited {
+  color: #202122; }
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -631,6 +637,12 @@ a {
   background: #fff;
   transition: top .25s ease;
   border-bottom: 1px #eaecf0 solid; }
+  .site-header .top-nav {
+    height: 4.0625rem; }
+
+@media screen and (min-width: 500px) {
+  .admin-bar .site-header {
+    top: 32px; } }
 
 .site-branding {
   display: inline-block;
@@ -641,6 +653,9 @@ a {
       color: #202122; }
       .site-branding .site-title a:hover {
         text-decoration: none; }
+  @media screen and (max-width: 500px) {
+    .site-branding {
+      display: none; } }
 
 .custom-logo-link {
   order: 2; }
@@ -652,41 +667,57 @@ a {
   @media screen and (min-width: 500px) {
     .main-navigation {
       order: 4; } }
-  .main-navigation ul {
+  .main-navigation .menu {
     display: none;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.96);
     list-style: none;
     margin: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    background-color: rgba(255, 255, 255, 0.96); }
     @media screen and (min-width: 500px) {
-      .main-navigation ul {
+      .main-navigation .menu {
+        display: block;
         position: relative; } }
-    .main-navigation ul li {
-      margin-right: 1rem; }
-      .main-navigation ul li:last-child {
-        margin-right: 0; }
-    .main-navigation ul ul {
+    @media screen and (min-width: 500px) {
+      .main-navigation .menu > li {
+        margin-right: 1rem; }
+        .main-navigation .menu > li:last-child {
+          margin-right: 0; } }
+    .main-navigation .menu .sub-menu {
       float: left;
       position: absolute;
       top: 100%;
       left: -999em;
       z-index: 99999;
-      padding: 0.5rem; }
-      .main-navigation ul ul ul {
-        left: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        display: block;
-        left: auto; }
-      .main-navigation ul ul a {
-        width: 100%; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      left: auto; }
+      padding: 0.5rem 1rem;
+      margin: 0;
+      list-style: none;
+      white-space: nowrap;
+      background-color: rgba(255, 255, 255, 0.96);
+      border: 1px solid #a2a9b1;
+      border-radius: 2px; }
+      .main-navigation .menu .sub-menu a {
+        padding: 0; }
+      .main-navigation .menu .sub-menu a:hover,
+      .main-navigation .menu .sub-menu a.focus {
+        background: none;
+        text-decoration: underline; }
+    .main-navigation .menu li:hover > ul,
+    .main-navigation .menu li.focus > ul {
+      left: -1rem; }
   .main-navigation li {
     position: relative; }
+    .main-navigation li a {
+      color: #202122;
+      border-radius: 2px;
+      padding: 0.1875rem 0.25rem;
+      transition: 0.3s all; }
+      @media (min-width: 768px) {
+        .main-navigation li a {
+          padding: 0.375rem 0.5rem; } }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      text-decoration: underline; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -697,36 +728,39 @@ a {
   .main-navigation .current-menu-ancestor > a {
     color: #202122; }
 
-.main-navigation.toggled ul {
+.main-navigation.toggled .menu {
   position: absolute;
   left: 0;
   top: 4.0625rem;
   width: 100%;
   padding: 1rem 1.875rem;
   border-top: 1px #eaecf0 solid;
-  border-bottom: 1px #eaecf0 solid; }
-
-.main-navigation.toggled ul > li ul {
-  position: relative;
-  top: 0;
-  padding: 0;
-  border: 0;
-  overflow: scroll; }
-  .main-navigation.toggled ul > li ul > li {
-    margin-left: 1.25rem; }
+  border-bottom: 1px #eaecf0 solid;
+  font-weight: bold; }
+  .main-navigation.toggled .menu .sub-menu {
+    float: none;
+    left: auto;
+    position: relative;
+    padding: 0;
+    margin-left: 1rem;
+    overflow: scroll;
+    background-color: transparent;
+    border: none; }
+    .main-navigation.toggled .menu .sub-menu li {
+      padding: 0.25rem; }
 
 .site-main {
   margin-top: 6.25rem; }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled .menu {
   display: block; }
 
 @media screen and (min-width: 500px) {
   .menu-toggle {
     display: none; }
-  .main-navigation ul {
+  .main-navigation .menu {
     display: flex; } }
 
 .site-main .comment-navigation, .site-main
@@ -839,21 +873,30 @@ a {
 .updated:not(.published) {
   display: none; }
 
+article.post .post-thumbnail {
+  margin: 1rem auto; }
+  article.post .post-thumbnail img {
+    width: 100%; }
+
 article.post .entry-content {
   font-family: Charter, serif;
   font-size: 1.125rem; }
-  article.post .entry-content figure.size-medium {
-    width: 100%;
-    float: right;
-    margin: 0.5rem 0 1rem 1rem; }
-    @media (min-width: 768px) {
-      article.post .entry-content figure.size-medium {
-        width: 32%; } }
-  article.post .entry-content figure.size-large figcaption {
+  article.post .entry-content img {
     width: 100%; }
-    @media (min-width: 768px) {
-      article.post .entry-content figure.size-large figcaption {
-        width: 75%; } }
+  article.post .entry-content figure {
+    margin: 0; }
+    article.post .entry-content figure.size-medium {
+      width: 100%;
+      float: right;
+      margin: 0.5rem 0 1rem 1rem; }
+      @media (min-width: 768px) {
+        article.post .entry-content figure.size-medium {
+          width: 32%; } }
+    article.post .entry-content figure.size-large figcaption {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.post .entry-content figure.size-large figcaption {
+          width: 75%; } }
   article.post .entry-content figcaption {
     font-size: 0.875rem; }
 
@@ -886,20 +929,23 @@ article.post .entry-footer {
           margin-bottom: 1.875rem; } }
 
 article.grid-post {
+  border-radius: 0 0 2px 2px;
+  padding-bottom: 1rem;
   margin-bottom: 2.5rem;
-  width: 100%;
-  width: 100%; }
+  transition: 0.3s all; }
   @media (min-width: 768px) {
     article.grid-post {
       margin-bottom: 3.75rem; } }
-  @media (min-width: 500px) {
-    article.grid-post {
-      width: 48%; } }
-  @media (min-width: 768px) {
-    article.grid-post {
-      width: 32%; } }
+  article.grid-post:hover {
+    box-shadow: 2px 2px 1px #eaecf0, -2px 2px 1px #eaecf0; }
   article.grid-post .entry-header:hover .entry-title a {
     text-decoration: underline; }
+  article.grid-post .entry-title {
+    padding: 0.5rem 1rem 0; }
+  article.grid-post .entry-meta {
+    padding: 0 1rem; }
+  article.grid-post .entry-meta, article.grid-post .entry-meta a {
+    color: #72777d; }
   article.grid-post .home-thumbnail {
     width: 100%;
     background: #c8ccd1;
@@ -914,11 +960,27 @@ article.grid-post {
   display: flex;
   flex-direction: wrap;
   justify-content: space-between;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem; }
   @media (min-width: 500px) {
     .posts-grid {
       flex-direction: row;
       flex-wrap: wrap; } }
+  @media (min-width: 768px) {
+    .posts-grid {
+      margin-bottom: 3.75rem; } }
+  .posts-grid > article,
+  .posts-grid > div {
+    width: 100%;
+    width: 100%; }
+    @media (min-width: 500px) {
+      .posts-grid > article,
+      .posts-grid > div {
+        width: 48%; } }
+    @media (min-width: 768px) {
+      .posts-grid > article,
+      .posts-grid > div {
+        width: 32%; } }
   .posts-grid:after {
     content: "";
     display: block;
@@ -942,6 +1004,90 @@ article.grid-post {
 
 .bypostauthor {
   display: block; }
+
+.comments-area .comments-title {
+  font-size: 1.25rem; }
+
+.comments-area ul, .comments-area ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.comments-area article {
+  margin-bottom: 2rem; }
+  .comments-area article .says {
+    display: none; }
+  .comments-area article .comment-metadata {
+    display: inline-block;
+    font-size: 0.875rem; }
+    .comments-area article .comment-metadata a {
+      color: #54595d; }
+  .comments-area article .comment-author {
+    display: inline-block; }
+    .comments-area article .comment-author .avatar {
+      display: none; }
+  .comments-area article .comment-content,
+  .comments-area article .reply {
+    margin-left: 0.5rem; }
+
+.comments-area p {
+  margin-top: 0.5rem;
+  margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+## Credits
+--------------------------------------------------------------*/
+.photo-credits .wrapper {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem; }
+  @media (min-width: 500px) {
+    .photo-credits .wrapper {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  @media (min-width: 768px) {
+    .photo-credits .wrapper {
+      margin-bottom: 3.75rem; } }
+  .photo-credits .wrapper > article,
+  .photo-credits .wrapper > div {
+    width: 100%;
+    width: 100%; }
+    @media (min-width: 500px) {
+      .photo-credits .wrapper > article,
+      .photo-credits .wrapper > div {
+        width: 48%; } }
+    @media (min-width: 768px) {
+      .photo-credits .wrapper > article,
+      .photo-credits .wrapper > div {
+        width: 32%; } }
+  .photo-credits .wrapper:after {
+    content: "";
+    display: block;
+    margin-left: 32%; }
+
+.photo-credit-container {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  color: #72777d;
+  align-content: start;
+  overflow-wrap: break-word; }
+  @media (min-width: 768px) {
+    .photo-credit-container {
+      margin-bottom: 1.875rem; } }
+  .photo-credit-container .img-container {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    border-radius: 2px;
+    margin-right: 1rem; }
+  .photo-credit-container .text-container {
+    width: 60%;
+    display: inline-block; }
+    .photo-credit-container .text-container p {
+      margin: 0; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -980,7 +1126,7 @@ object {
 .custom-logo {
   max-height: 2.8125rem;
   width: auto;
-  margin: 1rem 1rem 1rem 0; }
+  margin-right: 1rem; }
 
 /*--------------------------------------------------------------
 ## Captions

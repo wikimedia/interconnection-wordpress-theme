@@ -9,6 +9,14 @@
  * @package Interconnection
  */
 
+use Interconnection\Credits;
+
+// Automatically add credits to all content
+$images = Credits::get_instance()->get_ids();
+// data to pass on to template part
+set_query_var( 'images', $images );
+get_template_part( 'template-parts/images/credits' );
+
 ?>
 
 	<footer id="colophon" class="site-footer">

@@ -9,6 +9,8 @@
  * @package Interconnection
  */
 
+use Interconnection\Credits;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -45,3 +47,7 @@
 			</nav><!-- #site-navigation -->
 		</div><!-- top-nav -->
 	</header><!-- #masthead -->
+
+<?php
+// Automatically add credits to all content
+Credits::get_instance( get_the_ID() );
