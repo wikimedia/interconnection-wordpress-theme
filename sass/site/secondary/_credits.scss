@@ -5,14 +5,13 @@
 .photo-credit-container {
 	@include margin-bottom(0);
 	font-size: rem(14);
-	color: $base30;
 	align-content: start;
 	overflow-wrap: break-word;
 
 	.img-container {
 		display: inline-block;
-		width: rem(80);
-		height: rem(80);
+		width: rem(64);
+		height: rem(64);
 		background-size: cover;
 		border-radius: 2px;
 		margin-right: 1rem;
@@ -21,6 +20,15 @@
 	.text-container {
 		width: 60%;
 		display: inline-block;
+		color: $base30;
+
+		a {
+			color: $base30;
+
+			&:hover {
+				color: $color__link;
+			}
+		}
 		
 		p {
 			margin: 0;

@@ -90,7 +90,7 @@
 			border-radius: 2px;
 
 			a {
-				padding: 0;
+				@include padding(4, 4, 4, 0);
 			}
 
 			a:hover,
@@ -102,7 +102,7 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: -1rem;
+			left: - rem(8); // based on .menu li padding-left
 		}
 	}
 
@@ -110,15 +110,13 @@
 		position: relative;
 		a {
 			color: $base10;
-			border-radius: 2px;
-			@include padding(3, 4, 6, 8);
+			@include padding(4, 4, 8, 8);
 			transition: $transition;
 		}
 
 		&:hover > a,
 		&.focus > a {
 			text-decoration: underline;
-			// @include shade("light");
 		}
 	}
 

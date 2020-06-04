@@ -62,7 +62,6 @@
 	@include flexbox(wrap, wrap, $small-bp, row);
 	justify-content: space-between;
 	flex-wrap: wrap;
-	@include margin-bottom(1);
 
 	> article,
 	> div {

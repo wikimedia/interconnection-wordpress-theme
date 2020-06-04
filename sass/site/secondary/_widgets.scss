@@ -1,3 +1,7 @@
+.widget-area {
+	@include margin-bottom(1);
+}
+
 .widget {
 	margin: 0 0 1.5em;
 
