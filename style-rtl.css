@@ -36,6 +36,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Content
 	## Posts and pages
 	## Comments
+	## Credits
 # Infinite scroll
 # Media
 	## Captions
@@ -652,6 +653,9 @@ a {
       color: #202122; }
       .site-branding .site-title a:hover {
         text-decoration: none; }
+  @media screen and (max-width: 500px) {
+    .site-branding {
+      display: none; } }
 
 .custom-logo-link {
   order: 2; }
@@ -663,44 +667,44 @@ a {
   @media screen and (min-width: 500px) {
     .main-navigation {
       order: 4; } }
-  .main-navigation ul {
+  .main-navigation .menu {
     display: none;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.96);
     list-style: none;
     margin: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    background-color: rgba(255, 255, 255, 0.96); }
     @media screen and (min-width: 500px) {
-      .main-navigation ul {
+      .main-navigation .menu {
+        display: block;
         position: relative; } }
     @media screen and (min-width: 500px) {
-      .main-navigation ul li {
+      .main-navigation .menu > li {
         margin-left: 1rem; }
-        .main-navigation ul li:last-child {
+        .main-navigation .menu > li:last-child {
           margin-left: 0; } }
-    .main-navigation ul ul {
+    .main-navigation .menu .sub-menu {
       float: right;
       position: absolute;
       top: 100%;
       right: -999em;
       z-index: 99999;
-      padding: 0.5rem; }
-      .main-navigation ul ul ul {
-        right: -999em;
-        top: 0; }
-      .main-navigation ul ul li:hover > ul,
-      .main-navigation ul ul li.focus > ul {
-        display: block;
-        right: auto; }
-      .main-navigation ul ul a {
+      padding: 0.5rem 1rem;
+      margin: 0;
+      list-style: none;
+      white-space: nowrap;
+      background-color: rgba(255, 255, 255, 0.96);
+      border: 1px solid #a2a9b1;
+      border-radius: 2px; }
+      .main-navigation .menu .sub-menu a {
         padding: 0; }
-      .main-navigation ul ul a:hover,
-      .main-navigation ul ul a.focus {
+      .main-navigation .menu .sub-menu a:hover,
+      .main-navigation .menu .sub-menu a.focus {
         background: none;
         text-decoration: underline; }
-    .main-navigation ul li:hover > ul,
-    .main-navigation ul li.focus > ul {
-      right: auto; }
+    .main-navigation .menu li:hover > ul,
+    .main-navigation .menu li.focus > ul {
+      right: -1rem; }
   .main-navigation li {
     position: relative; }
     .main-navigation li a {
@@ -713,8 +717,7 @@ a {
           padding: 0.375rem 0.5rem; } }
     .main-navigation li:hover > a,
     .main-navigation li.focus > a {
-      background: #eaecf0;
-      color: #202122; }
+      text-decoration: underline; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -725,36 +728,39 @@ a {
   .main-navigation .current-menu-ancestor > a {
     color: #202122; }
 
-.main-navigation.toggled ul {
+.main-navigation.toggled .menu {
   position: absolute;
   right: 0;
   top: 4.0625rem;
   width: 100%;
   padding: 1rem 1.875rem;
   border-top: 1px #eaecf0 solid;
-  border-bottom: 1px #eaecf0 solid; }
-
-.main-navigation.toggled ul > li ul {
-  position: relative;
-  top: 0;
-  padding: 0;
-  border: 0;
-  overflow: scroll; }
-  .main-navigation.toggled ul > li ul > li {
-    margin-right: 1.25rem; }
+  border-bottom: 1px #eaecf0 solid;
+  font-weight: bold; }
+  .main-navigation.toggled .menu .sub-menu {
+    float: none;
+    right: auto;
+    position: relative;
+    padding: 0;
+    margin-right: 1rem;
+    overflow: scroll;
+    background-color: transparent;
+    border: none; }
+    .main-navigation.toggled .menu .sub-menu li {
+      padding: 0.25rem; }
 
 .site-main {
   margin-top: 6.25rem; }
 
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation.toggled .menu {
   display: block; }
 
 @media screen and (min-width: 500px) {
   .menu-toggle {
     display: none; }
-  .main-navigation ul {
+  .main-navigation .menu {
     display: flex; } }
 
 .site-main .comment-navigation, .site-main
@@ -923,20 +929,23 @@ article.post .entry-footer {
           margin-bottom: 1.875rem; } }
 
 article.grid-post {
+  border-radius: 0 0 2px 2px;
+  padding-bottom: 1rem;
   margin-bottom: 2.5rem;
-  width: 100%;
-  width: 100%; }
+  transition: 0.3s all; }
   @media (min-width: 768px) {
     article.grid-post {
       margin-bottom: 3.75rem; } }
-  @media (min-width: 500px) {
-    article.grid-post {
-      width: 48%; } }
-  @media (min-width: 768px) {
-    article.grid-post {
-      width: 32%; } }
+  article.grid-post:hover {
+    box-shadow: -2px 2px 1px #eaecf0, 2px 2px 1px #eaecf0; }
   article.grid-post .entry-header:hover .entry-title a {
     text-decoration: underline; }
+  article.grid-post .entry-title {
+    padding: 0.5rem 1rem 0; }
+  article.grid-post .entry-meta {
+    padding: 0 1rem; }
+  article.grid-post .entry-meta, article.grid-post .entry-meta a {
+    color: #72777d; }
   article.grid-post .home-thumbnail {
     width: 100%;
     background: #c8ccd1;
@@ -951,11 +960,27 @@ article.grid-post {
   display: flex;
   flex-direction: wrap;
   justify-content: space-between;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem; }
   @media (min-width: 500px) {
     .posts-grid {
       flex-direction: row;
       flex-wrap: wrap; } }
+  @media (min-width: 768px) {
+    .posts-grid {
+      margin-bottom: 3.75rem; } }
+  .posts-grid > article,
+  .posts-grid > div {
+    width: 100%;
+    width: 100%; }
+    @media (min-width: 500px) {
+      .posts-grid > article,
+      .posts-grid > div {
+        width: 48%; } }
+    @media (min-width: 768px) {
+      .posts-grid > article,
+      .posts-grid > div {
+        width: 32%; } }
   .posts-grid:after {
     content: "";
     display: block;
@@ -1008,6 +1033,61 @@ article.grid-post {
 .comments-area p {
   margin-top: 0.5rem;
   margin-bottom: 0; }
+
+/*--------------------------------------------------------------
+## Credits
+--------------------------------------------------------------*/
+.photo-credits .wrapper {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem; }
+  @media (min-width: 500px) {
+    .photo-credits .wrapper {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  @media (min-width: 768px) {
+    .photo-credits .wrapper {
+      margin-bottom: 3.75rem; } }
+  .photo-credits .wrapper > article,
+  .photo-credits .wrapper > div {
+    width: 100%;
+    width: 100%; }
+    @media (min-width: 500px) {
+      .photo-credits .wrapper > article,
+      .photo-credits .wrapper > div {
+        width: 48%; } }
+    @media (min-width: 768px) {
+      .photo-credits .wrapper > article,
+      .photo-credits .wrapper > div {
+        width: 32%; } }
+  .photo-credits .wrapper:after {
+    content: "";
+    display: block;
+    margin-right: 32%; }
+
+.photo-credit-container {
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  color: #72777d;
+  align-content: start;
+  overflow-wrap: break-word; }
+  @media (min-width: 768px) {
+    .photo-credit-container {
+      margin-bottom: 1.875rem; } }
+  .photo-credit-container .img-container {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-size: cover;
+    border-radius: 2px;
+    margin-left: 1rem; }
+  .photo-credit-container .text-container {
+    width: 60%;
+    display: inline-block; }
+    .photo-credit-container .text-container p {
+      margin: 0; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

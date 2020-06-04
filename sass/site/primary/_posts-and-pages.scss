@@ -77,7 +77,10 @@ article.grid-post {
 		text-decoration: underline;
 	}
 
-	.entry-title,
+	.entry-title {
+		padding: 0.5rem 1rem 0;
+	}
+
 	.entry-meta {
 		padding: 0 1rem;
 	}
