@@ -160,7 +160,8 @@ class Credits {
 
 			// It might be a thumbnail size ( suffix '-dddxddd' )
 			if ( empty( $image_id ) ) {
-				$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $url );
+				$url_substr = strtok($url, '?'); // remove anything after ? in url
+				$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $url_substr );
 				$image_id = wpcom_vip_attachment_url_to_postid( $attachment_url );
 			}
 
