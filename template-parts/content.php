@@ -73,4 +73,8 @@
 			</div>
 		</div>
 	</footer><!-- .entry-footer -->
+
+	<div class="jetpack-related-posts">
+		<?php echo do_shortcode('[jetpack-related-posts]') ?>	
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

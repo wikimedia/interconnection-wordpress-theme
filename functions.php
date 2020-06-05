@@ -71,18 +71,6 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'interconnection_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -98,6 +86,7 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
+				'header-text' => array( 'site-title'), // option to hide site title
 			)
 		);
 	}
@@ -197,11 +186,6 @@ function include_sticky_in_count( $query ) {
 add_action( 'pre_get_posts', 'include_sticky_in_count');
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -232,6 +216,20 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Remove related posts from bottom of post entry content
+ * jetpack.com/support/related-posts/customize-related-posts/
+ */
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+ 
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_action( 'wp', 'jetpackme_remove_rp', 20 );
 
 /**
  * Enable Gutenberg
