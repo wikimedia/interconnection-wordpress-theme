@@ -218,6 +218,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Remove related posts from bottom of post entry content
+ * jetpack.com/support/related-posts/customize-related-posts/
+ */
+function jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+ 
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_action( 'wp', 'jetpackme_remove_rp', 20 );
+
+/**
  * Enable Gutenberg
  */
 if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
