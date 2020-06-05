@@ -71,18 +71,6 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'interconnection_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -98,6 +86,7 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
+				'header-text' => array( 'site-title'), // option to hide site title
 			)
 		);
 	}
@@ -195,11 +184,6 @@ function include_sticky_in_count( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'include_sticky_in_count');
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
