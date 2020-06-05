@@ -217,6 +217,11 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/classes/class-autoload.php';
 
 /**
+ * Custom Fields functions.
+ */
+require get_template_directory() . '/inc/fields.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
