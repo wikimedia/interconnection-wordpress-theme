@@ -10,30 +10,30 @@ h6 {
 
 h1 {
 	font-size: 32px;
-	font-size: rem(32);
+	font-size: $font__size-h1;
 }
 
 h2 {
 	font-size: 24px;
-	font-size: rem(24);
+	font-size: $font__size-h2;
 }
 
 h3 {
 	font-size: 20px;
-	font-size: rem(20);
+	font-size: $font__size-h3;
 }
 
 h4 {
 	font-size: 18px;
-	font-size: rem(18);
+	font-size: $font__size-h4;
 }
 
 h5 {
 	font-size: 16px;
-	font-size: rem(16);
+	font-size: $font__size;
 }
 
 h6 {
 	font-size: 16px;
-	font-size: rem(16);
+	font-size: $font__size;
 }

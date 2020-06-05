@@ -4,16 +4,16 @@
 
 .photo-credit-container {
 	@include margin-bottom(0);
-	font-size: rem(14);
 	align-content: start;
 	overflow-wrap: break-word;
 
 	.img-container {
 		display: inline-block;
-		width: rem(64);
-		height: rem(64);
+		width: 4rem;
+		height: 4rem;
 		background-size: cover;
 		border-radius: 2px;
+		border: 1px solid $base80;
 		margin-right: 1rem;
 	}
 
@@ -21,14 +21,7 @@
 		width: 60%;
 		display: inline-block;
 		color: $base30;
-
-		a {
-			color: $base30;
-
-			&:hover {
-				color: $color__link;
-			}
-		}
+		font-size: $font__size-small;
 		
 		p {
 			margin: 0;

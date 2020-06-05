@@ -466,6 +466,9 @@ ins {
 big {
   font-size: 125%; }
 
+figcaption {
+  font-size: 0.875rem; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -625,6 +628,12 @@ a {
 .posts-grid a,
 .posts-grid a:visited {
   color: #202122; }
+
+.photo-credit-container a {
+  color: inherit;
+  text-decoration: underline; }
+  .photo-credit-container a:hover {
+    color: #36c; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -905,8 +914,6 @@ article.post .entry-content {
       @media (min-width: 768px) {
         article.post .entry-content figure.size-large figcaption {
           width: 75%; } }
-  article.post .entry-content figcaption {
-    font-size: 0.875rem; }
 
 article.post .entry-footer {
   background: #eaecf0;
@@ -1069,7 +1076,6 @@ article.grid-post {
 
 .photo-credit-container {
   margin-bottom: 1.25rem;
-  font-size: 0.875rem;
   align-content: start;
   overflow-wrap: break-word; }
   @media (min-width: 768px) {
@@ -1081,15 +1087,13 @@ article.grid-post {
     height: 4rem;
     background-size: cover;
     border-radius: 2px;
+    border: 1px solid #eaecf0;
     margin-right: 1rem; }
   .photo-credit-container .text-container {
     width: 60%;
     display: inline-block;
-    color: #72777d; }
-    .photo-credit-container .text-container a {
-      color: #72777d; }
-      .photo-credit-container .text-container a:hover {
-        color: #36c; }
+    color: #72777d;
+    font-size: 0.875rem; }
     .photo-credit-container .text-container p {
       margin: 0; }
 
