@@ -8,7 +8,7 @@
 
 .comments-area {
 	.comments-title {
-		font-size: rem(20); // like h3
+		font-size: $font__size-h3;
 	}
 
 	ul, ol {
@@ -26,7 +26,7 @@
 
 		.comment-metadata {
 			display: inline-block;
-			font-size: rem(14);
+			font-size: $font__size-small;
 
 			a {
 				color: $base20;

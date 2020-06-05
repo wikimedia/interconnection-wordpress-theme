@@ -19,7 +19,7 @@ article.post {
 
 	.entry-content {
 		font-family: $font__serif;
-		font-size: rem(18);
+		font-size: $font__size-h4;
 
 		img {
 			width: 100%;
@@ -37,9 +37,6 @@ article.post {
 			&.size-large figcaption {
 				@include module-width($medium-bp, 75%)
 			}
-		}
-		figcaption {
-			font-size: rem(14);
 		}
 	}
 

@@ -6,3 +6,11 @@ $font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
+$font__size: 1rem; // 16pt
+$font__size-small: 0.875rem; // 14pt
+$font__size-h1: 2rem; // 32pt
+$font__size-h2: 1.5rem; // 24pt
+$font__size-h3: 1.25rem; // 20pt
+$font__size-h4: 1.125rem; // 18pt
+$font__size-h5: $font__size; // 16pt
+$font__size-h6: $font__size; // 16pt

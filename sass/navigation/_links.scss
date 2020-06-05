@@ -27,3 +27,14 @@ a {
 .posts-grid a:visited {
 	color: $base10;
 }
+
+.photo-credit-container {
+	a {
+		color: inherit;
+		text-decoration: underline;
+
+		&:hover {
+			color: $color__link;
+		}
+	}
+}
