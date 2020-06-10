@@ -7,13 +7,13 @@
  * @package Interconnection
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'cta-1' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area">
 	<div class="wrapper">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php dynamic_sidebar( 'cta-1' ); ?>
 	</div>
 </aside><!-- #secondary -->
