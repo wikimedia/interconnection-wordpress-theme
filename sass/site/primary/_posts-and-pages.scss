@@ -9,33 +9,28 @@
 // for single
 article.post {
 
-	.post-thumbnail {
-		margin: 1rem auto;
-
-		img {
-			width: 100%;
-		}
+	header {
+		@include margin-bottom(0);
 	}
 
 	.entry-content {
 		font-family: $font__serif;
 		font-size: $font__size-h4;
+		@include margin-bottom(1);
 
-		img {
-			width: 100%;
-		}
-		
-		figure {
-			margin: 0;
-			&.size-medium {
-				// force alignment right
-				@include module-width($medium-bp, 32%)
-				float: right;
-				margin: 0.5rem 0 1rem 1rem;
+		figure.size-large:not(.is-resized) {
+			margin: 0 auto;
+			text-align: center;
+
+			figcaption {
+				@include module-width($medium-bp, 75%);
+				margin: 0 auto;
 			}
 
-			&.size-large figcaption {
-				@include module-width($medium-bp, 75%)
+			@media (min-width: $medium-bp) {
+				width: 110%;
+				position: relative;
+				left: -5%;
 			}
 		}
 	}
@@ -66,20 +61,16 @@ article.grid-post {
 	@include margin-bottom(1);
 	transition: $transition;
 
-	&:hover {
-		box-shadow: 2px 2px 1px $base80, -2px 2px 1px $base80;
-	}
-
 	.entry-header:hover .entry-title a {
 		text-decoration: underline;
 	}
 
 	.entry-title {
-		padding: 0.5rem 1rem 0;
+		padding: 0.5rem 0.5rem 0;
 	}
 
 	.entry-meta {
-		padding: 0 1rem;
+		padding: 0 0.5rem;
 	}
 
 	.entry-meta, .entry-meta a {
@@ -90,6 +81,8 @@ article.grid-post {
 		width: 100%;
 		background: $base70;
 		background-image: linear-gradient(120deg, $accent50 -400%, $accent90 100%);
+		border: 1px solid $base80;
+
 		// when there is no featured image
 		&:before {
 			content: "";
@@ -111,4 +104,13 @@ article.grid-post {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+article.page {
+	@include margin-bottom(1);
+
+	.entry-content {
+		@include module-width($medium-bp, 75%);
+		@include module-width($large-bp, 65%);
+	}
 }
