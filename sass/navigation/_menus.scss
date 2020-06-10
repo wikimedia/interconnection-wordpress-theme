@@ -104,6 +104,10 @@
 		li.focus > ul {
 			left: - rem(8); // based on .menu li padding-left
 		}
+
+		.active > a {
+			text-decoration: underline;
+		}
 	}
 
 	li {

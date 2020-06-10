@@ -65,9 +65,13 @@
  	<footer class="entry-footer">
  		<div class="wrapper flex flex-medium flex-space-between">
 	 		<div class="comments-wrapper">
-				<?php if ( comments_open() || get_comments_number() ) :
+				<?php if ( comments_open() || get_comments_number() ) {
 					comments_template();
-				endif; ?>
+				} else { ?>
+					<!-- ATTENTION: need to translate -->
+					<h3>No comments</h3>
+					<p>The comments section of this post is closed now.</p>
+				<?php }; ?>
 			</div>
 			<div class="entry-footer-meta">
 				<!-- ATTENTION: need to translate -->
@@ -77,7 +81,4 @@
 		</div>
 	</footer><!-- .entry-footer -->
 
-	<div class="jetpack-related-posts">
-		<?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) { echo do_shortcode( '[jetpack-related-posts]' ); } ?>
-	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -722,6 +722,8 @@ a {
     .main-navigation .menu li:hover > ul,
     .main-navigation .menu li.focus > ul {
       right: -0.5rem; }
+    .main-navigation .menu .active > a {
+      text-decoration: underline; }
   .main-navigation li {
     position: relative; }
     .main-navigation li a {
