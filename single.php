@@ -19,13 +19,19 @@ get_header();
 			?>
 
 			<div class="wrapper">
-				<?php the_post_navigation(
-					array(
-						'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">← %title</span>',
-						'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">%title →</span>',
-					)
-				); 
-				?>
+
+				<?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) { ?>
+					<div class="jetpack-related-posts">
+						<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
+					</div>
+				<?php } else {
+					the_post_navigation(
+						array(
+							'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">← %title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">%title →</span>',
+						)
+					);
+				}; ?>
 			</div>
 
 			<?php endwhile; // End of the loop. 
