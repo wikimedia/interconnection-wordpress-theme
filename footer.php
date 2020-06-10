@@ -20,12 +20,7 @@ get_template_part( 'template-parts/images/credits' );
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info wrapper">
-			<p>
-				<span class="site-title"><?php bloginfo( 'name' ); ?></span>
-				<?php $interconnection_description = get_bloginfo( 'description', 'display' ); ?> –
-				<span class="site-description"><?php echo $interconnection_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
-			</p>
+		<div class="footer-content wrapper">
 			<?php dynamic_sidebar( 'footer-1' ); ?> <!-- widget area -->
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

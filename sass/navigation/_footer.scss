@@ -2,3 +2,28 @@
 	@include shade("dark");
 	@include padding(20, 0, 40, 0);
 }
+
+.footer-content {
+	@include column-2;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+// Log in and Log out links intended in the footer
+.logout-link {
+	display: none;
+}
+
+.logged-in {
+	.login-link {	
+		display: none;
+	}
+
+	.logout-link {
+		display: block;
+	}
+}

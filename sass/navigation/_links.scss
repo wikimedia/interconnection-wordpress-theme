@@ -38,3 +38,13 @@ a {
 		}
 	}
 }
+
+.site-footer {
+	a {
+		color: $base100;
+	}
+
+	p > a {
+		text-decoration: underline;
+	}
+}
