@@ -16,13 +16,17 @@ if ( empty( $images ) ) {
 <div class="photo-credits">
 	
 	<div class="wrapper">
-		<?php
-		foreach ( $images as $image_id ) {
-			// data to pass on to template part
-			set_query_var( 'image_id', $image_id );
-			get_template_part( 'template-parts/images/credit' );
-		}
-		?>
+		<!-- ATTENTION: need to translate -->
+		<h2>Photo credits</h2>
+		<div class="photo-credits-wrapper">
+			<?php
+			foreach ( $images as $image_id ) {
+				// data to pass on to template part
+				set_query_var( 'image_id', $image_id );
+				get_template_part( 'template-parts/images/credit' );
+			}
+			?>
+		</div>
 	</div>
 
 </div>
