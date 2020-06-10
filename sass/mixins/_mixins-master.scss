@@ -79,6 +79,19 @@
 	}
 }
 
+// 2-column-grid
+@mixin column-2 {
+	@include flexbox(wrap, wrap, $small-bp, row);
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	> article,
+	> div {
+		// 2 per row when bigger than small break point
+		@include module-width($small-bp, 46%);
+	}
+}
+
 // Shading
 @mixin shade($shade) {
 	@if $shade == "dark" {

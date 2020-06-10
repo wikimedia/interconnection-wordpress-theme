@@ -517,8 +517,7 @@ img {
   max-width: 100%; }
 
 figure {
-  margin: 0;
-  width: 100% !important; }
+  margin: 0; }
 
 table {
   margin: 0 0 1.5em;
@@ -634,6 +633,12 @@ a {
   text-decoration: underline; }
   .photo-credit-container a:hover {
     color: #36c; }
+
+.site-footer a {
+  color: #fff; }
+
+.site-footer p > a {
+  text-decoration: underline; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -760,8 +765,23 @@ a {
     .main-navigation.toggled .menu .sub-menu li {
       padding: 0.25rem; }
 
-.site-main {
-  margin-top: 6.25rem; }
+.site-start {
+  margin-top: 6.25rem;
+  margin-bottom: 1.25rem;
+  position: relative; }
+  @media (min-width: 768px) {
+    .site-start {
+      margin-bottom: 1.875rem; } }
+  .site-start .site-description {
+    margin-bottom: 4rem; }
+    .site-start .site-description:before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 3px;
+      background-color: #202122;
+      position: absolute;
+      bottom: -1.25rem; }
 
 /* Small menu. */
 .menu-toggle,
@@ -805,6 +825,36 @@ a {
   @media (min-width: 768px) {
     .site-footer {
       padding: 2.5rem 0rem; } }
+
+.footer-content {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  @media (min-width: 500px) {
+    .footer-content {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+  .footer-content > article,
+  .footer-content > div {
+    width: 100%; }
+    @media (min-width: 500px) {
+      .footer-content > article,
+      .footer-content > div {
+        width: 46%; } }
+  .footer-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+
+.logout-link {
+  display: none; }
+
+.logged-in .login-link {
+  display: none; }
+
+.logged-in .logout-link {
+  display: block; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -890,30 +940,33 @@ a {
 .updated:not(.published) {
   display: none; }
 
-article.post .post-thumbnail {
-  margin: 1rem auto; }
-  article.post .post-thumbnail img {
-    width: 100%; }
+article.post header {
+  margin-bottom: 1.25rem; }
+  @media (min-width: 768px) {
+    article.post header {
+      margin-bottom: 1.875rem; } }
 
 article.post .entry-content {
   font-family: Charter, serif;
-  font-size: 1.125rem; }
-  article.post .entry-content img {
-    width: 100%; }
-  article.post .entry-content figure {
-    margin: 0; }
-    article.post .entry-content figure.size-medium {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem; }
+  @media (min-width: 768px) {
+    article.post .entry-content {
+      margin-bottom: 3.75rem; } }
+  article.post .entry-content figure.size-large:not(.is-resized) {
+    margin: 0 auto;
+    text-align: center; }
+    article.post .entry-content figure.size-large:not(.is-resized) figcaption {
       width: 100%;
-      float: left;
-      margin: 0.5rem 1rem 1rem 0; }
+      margin: 0 auto; }
       @media (min-width: 768px) {
-        article.post .entry-content figure.size-medium {
-          width: 32%; } }
-    article.post .entry-content figure.size-large figcaption {
-      width: 100%; }
-      @media (min-width: 768px) {
-        article.post .entry-content figure.size-large figcaption {
+        article.post .entry-content figure.size-large:not(.is-resized) figcaption {
           width: 75%; } }
+    @media (min-width: 768px) {
+      article.post .entry-content figure.size-large:not(.is-resized) {
+        width: 110%;
+        position: relative;
+        right: -5%; } }
 
 article.post .entry-footer {
   background: #eaecf0;
@@ -951,20 +1004,19 @@ article.grid-post {
   @media (min-width: 768px) {
     article.grid-post {
       margin-bottom: 3.75rem; } }
-  article.grid-post:hover {
-    box-shadow: -2px 2px 1px #eaecf0, 2px 2px 1px #eaecf0; }
   article.grid-post .entry-header:hover .entry-title a {
     text-decoration: underline; }
   article.grid-post .entry-title {
-    padding: 0.5rem 1rem 0; }
+    padding: 0.5rem 0.5rem 0; }
   article.grid-post .entry-meta {
-    padding: 0 1rem; }
+    padding: 0 0.5rem; }
   article.grid-post .entry-meta, article.grid-post .entry-meta a {
     color: #72777d; }
   article.grid-post .home-thumbnail {
     width: 100%;
     background: #c8ccd1;
-    background-image: linear-gradient(-120deg, #36c -400%, #eaf3ff 100%); }
+    background-image: linear-gradient(-120deg, #36c -400%, #eaf3ff 100%);
+    border: 1px solid #eaecf0; }
     article.grid-post .home-thumbnail:before {
       content: "";
       display: block;
@@ -1007,6 +1059,21 @@ article.grid-post {
   clear: both;
   margin: 0 0 1.5em; }
 
+article.page {
+  margin-bottom: 2.5rem; }
+  @media (min-width: 768px) {
+    article.page {
+      margin-bottom: 3.75rem; } }
+  article.page .entry-content {
+    width: 100%;
+    width: 100%; }
+    @media (min-width: 768px) {
+      article.page .entry-content {
+        width: 75%; } }
+    @media (min-width: 1200px) {
+      article.page .entry-content {
+        width: 65%; } }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1048,28 +1115,34 @@ article.grid-post {
 /*--------------------------------------------------------------
 ## Credits
 --------------------------------------------------------------*/
-.photo-credits .wrapper {
+.photo-credits {
+  margin-bottom: 2.5rem; }
+  @media (min-width: 768px) {
+    .photo-credits {
+      margin-bottom: 3.75rem; } }
+
+.photo-credits-wrapper {
   display: flex;
   flex-direction: wrap;
   justify-content: space-between;
   flex-wrap: wrap; }
   @media (min-width: 500px) {
-    .photo-credits .wrapper {
+    .photo-credits-wrapper {
       flex-direction: row;
       flex-wrap: wrap; } }
-  .photo-credits .wrapper > article,
-  .photo-credits .wrapper > div {
+  .photo-credits-wrapper > article,
+  .photo-credits-wrapper > div {
     width: 100%;
     width: 100%; }
     @media (min-width: 500px) {
-      .photo-credits .wrapper > article,
-      .photo-credits .wrapper > div {
+      .photo-credits-wrapper > article,
+      .photo-credits-wrapper > div {
         width: 48%; } }
     @media (min-width: 768px) {
-      .photo-credits .wrapper > article,
-      .photo-credits .wrapper > div {
+      .photo-credits-wrapper > article,
+      .photo-credits-wrapper > div {
         width: 32%; } }
-  .photo-credits .wrapper:after {
+  .photo-credits-wrapper:after {
     content: "";
     display: block;
     margin-right: 32%; }

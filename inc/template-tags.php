@@ -41,7 +41,12 @@ if ( ! function_exists( 'interconnection_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		if ( function_exists( 'coauthors_posts_links' ) ) {
+			$authors = coauthors_posts_links( null, null, 'by ', null, false );
+			echo '<span class="byline"> ' . $authors . '</span>';
+		} else {
+			echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
 
 	}
 endif;
@@ -128,21 +133,10 @@ if ( ! function_exists( 'interconnection_post_thumbnail' ) ) :
 		<?php else : ?>
 
 			<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php 
-				if ( has_post_thumbnail() && get_the_post_thumbnail() ) {
-					the_post_thumbnail(
-						array(600, 400),
-						array(
-							'class' => 'home-thumbnail',
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
-				} else { ?>
-				<div class="home-thumbnail"></div>
+				<?php if ( has_post_thumbnail() && get_the_post_thumbnail() ) { ?>
+					<div class="home-thumbnail" style="background: url(<?php echo get_the_post_thumbnail_url(null, array(600, 400)) ?>); background-size: cover;"></div>
+				<?php } else { ?>
+					<div class="home-thumbnail"></div>
 			</a>
 			<?php };
 			

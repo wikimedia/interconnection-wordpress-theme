@@ -104,7 +104,7 @@ function interconnection_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'interconnection_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'interconnection_content_width', 1024 );
 }
 add_action( 'after_setup_theme', 'interconnection_content_width', 0 );
 
@@ -114,13 +114,14 @@ add_action( 'after_setup_theme', 'interconnection_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function interconnection_widgets_init() {
+	// call to action widget
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'interconnection' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Call to action', 'interconnection' ),
+			'id'            => 'cta-1',
 			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -131,10 +132,34 @@ function interconnection_widgets_init() {
 			'name'          => esc_html__( 'Footer', 'interconnection' ),
 			'id'            => 'footer-1',
 			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="footer-widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="footer-widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	// special notice for single posts
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Special Notice', 'interconnection' ),
+			'id'            => 'notice-1',
+			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer-widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	// optional widget area for navigation
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Top navigation', 'interconnection' ),
+			'id'            => 'topnav-1',
+			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<span>',
+			'after_title'   => '</span>',
 		)
 	);
 }

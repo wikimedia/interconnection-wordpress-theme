@@ -1,4 +1,8 @@
-.photo-credits .wrapper {
+.photo-credits {
+	@include margin-bottom(1);
+}
+
+.photo-credits-wrapper {
 	@include column-3;
 }
 

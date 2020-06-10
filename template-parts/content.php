@@ -30,8 +30,6 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php interconnection_post_thumbnail(); ?>
-
  	<div class="entry-content wrapper-small">
 		<?php
 		the_content(
@@ -55,7 +53,12 @@
 				'after'  => '</div>',
 			)
 		);
+
+		if ( is_active_sidebar( 'notice-1' ) ) { 
+			dynamic_sidebar( 'notice-1' );
+		}
 		?>
+
 	</div><!-- .entry-content -->
 	</div>
 
@@ -75,6 +78,6 @@
 	</footer><!-- .entry-footer -->
 
 	<div class="jetpack-related-posts">
-		<?php echo do_shortcode('[jetpack-related-posts]') ?>	
+		<?php if ( class_exists( 'Jetpack_RelatedPosts' ) ) { echo do_shortcode( '[jetpack-related-posts]' ); } ?>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

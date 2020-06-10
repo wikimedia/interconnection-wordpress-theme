@@ -48,6 +48,12 @@ use Interconnection\Credits;
 		</div><!-- top-nav -->
 	</header><!-- #masthead -->
 
+	<div class="site-start wrapper">
+		<?php if ( is_front_page() ) { ?>
+			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
+		<?php }; ?>
+	</div>
+
 <?php
 // Automatically add credits to all content
 Credits::get_instance( get_the_ID() );
