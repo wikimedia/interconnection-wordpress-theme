@@ -166,6 +166,17 @@ function interconnection_widgets_init() {
 add_action( 'widgets_init', 'interconnection_widgets_init' );
 
 /**
+ * Special class to highlight active menu item
+ */
+function special_nav_class ($classes, $item) {
+    if (in_array('current-menu-parent', $classes) || in_array('current-menu-item', $classes) ) {
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+/**
  * Enqueue scripts and styles.
  */
 function interconnection_scripts() {
