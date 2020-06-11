@@ -87,8 +87,22 @@
 
 	> article,
 	> div {
-		// 2 per row when bigger than small break point
 		@include module-width($small-bp, 46%);
+	}
+}
+
+// 2/3 column, 1/3 column
+@mixin column-2-to-1 {
+	@include flexbox(column-reverse, wrap, $medium-bp, row);
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	div:first-child {
+		@include module-width($medium-bp, 65%);
+	}
+
+	div:last-child {
+		@include module-width($medium-bp, 30%);
 	}
 }
 
@@ -100,5 +114,19 @@
 	} @else {
 		background: $base80;
 		color: $base10;
+	}
+}
+
+@mixin accent-line {
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		width: 4rem;
+		height: 2px;
+		background-color: $base10;
+		position: absolute;
+		bottom: -1.25rem;
 	}
 }
