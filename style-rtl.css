@@ -775,12 +775,13 @@ a {
     .site-start {
       margin-bottom: 1.875rem; } }
   .site-start .site-description {
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+    position: relative; }
     .site-start .site-description:before {
       content: "";
       display: block;
       width: 4rem;
-      height: 3px;
+      height: 2px;
       background-color: #202122;
       position: absolute;
       bottom: -1.25rem; }
@@ -1067,14 +1068,48 @@ article.page {
     article.page {
       margin-bottom: 3.75rem; } }
   article.page .entry-content {
-    width: 100%;
-    width: 100%; }
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap; }
     @media (min-width: 768px) {
       article.page .entry-content {
-        width: 75%; } }
-    @media (min-width: 1200px) {
-      article.page .entry-content {
-        width: 65%; } }
+        flex-direction: row;
+        flex-wrap: wrap; } }
+    article.page .entry-content div:first-child {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.page .entry-content div:first-child {
+          width: 65%; } }
+    article.page .entry-content div:last-child {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.page .entry-content div:last-child {
+          width: 30%; } }
+  article.page .toc ul {
+    list-style: none;
+    padding-right: 0;
+    position: relative; }
+    article.page .toc ul:before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 2px;
+      background-color: #202122;
+      position: absolute;
+      bottom: -1.25rem; }
+
+article.page h2[id]:before,
+article.page h2[id]:before,
+article.page h3[id]:before,
+article.page h4[id]:before,
+article.page h5[id]:before,
+article.page h6[id]:before {
+  content: " ";
+  display: block;
+  margin-top: -7.1875rem;
+  height: 7.1875rem;
+  visibility: hidden; }
 
 /*--------------------------------------------------------------
 ## Comments

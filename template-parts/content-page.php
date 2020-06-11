@@ -17,10 +17,28 @@
 	<?php interconnection_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
-		the_content();
+		<div class="main-entry-content">
+			<?php the_content(); ?>
+		</div>
 
-		wp_link_pages(
+		<?php
+		$patternHeading = '/<h2 id="(.*?)">(.*?)<\/h2>/';
+		preg_match_all($patternHeading, get_the_content(), $matches);
+		$ids = $matches[1];
+		$headings = $matches[2];
+		?>
+
+		<div class="toc">
+			<!-- ATTENTION: needs translation -->
+			<h5>Table of contents</h5>
+			<ul>
+			<?php foreach ($ids as $key => $value) {
+				echo '<li><a href="#' . $ids[$key] . '">' . $headings[$key] . '</a></li>';
+			} ?>
+			</ul>
+		</div>
+
+		<?php wp_link_pages(
 			array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'interconnection' ),
 				'after'  => '</div>',

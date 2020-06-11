@@ -173,16 +173,7 @@
 
 	.site-description {
 		margin-bottom: 4rem;
-
-		&:before {
-			content: "";
-			display: block;
-			width: 4rem;
-			height: 3px;
-			background-color: $base10;
-			position: absolute;
-			bottom: -1.25rem;
-		}
+		@include accent-line();
 	}
 }
 

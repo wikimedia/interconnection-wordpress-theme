@@ -110,7 +110,28 @@ article.page {
 	@include margin-bottom(1);
 
 	.entry-content {
-		@include module-width($medium-bp, 75%);
-		@include module-width($large-bp, 65%);
+		@include column-2-to-1();
 	}
+
+	.toc ul {
+		list-style: none;
+		padding-left: 0;
+
+		@include accent-line();
+	}
+}
+
+// offset anchor links because of fixed top navigation
+// applied to all headings with an id
+article.page h2[id]:before,
+article.page h2[id]:before,
+article.page h3[id]:before,
+article.page h4[id]:before,
+article.page h5[id]:before,
+article.page h6[id]:before {
+	content: " ";
+	display: block;
+	margin-top: rem(-$size__navigation - 50);
+	height: rem($size__navigation + 50);
+	visibility: hidden;
 }
