@@ -16,8 +16,8 @@ input[type="color"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+	border-radius: 2px;
+	padding: 1px 5px 2px;
 	resize: vertical;
 
 	&:focus {
@@ -31,4 +31,9 @@ select {
 
 textarea {
 	width: 100%;
+}
+
+.site-footer input[type="search"] {
+	background-color: $base10;
+	color: $base100;
 }

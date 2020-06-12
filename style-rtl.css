@@ -578,8 +578,8 @@ input[type="color"],
 textarea {
   color: #54595d;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 3px;
+  border-radius: 2px;
+  padding: 1px 5px 2px;
   resize: vertical; }
   input[type="text"]:focus,
   input[type="email"]:focus,
@@ -604,6 +604,10 @@ select {
 
 textarea {
   width: 100%; }
+
+.site-footer input[type="search"] {
+  background-color: #202122;
+  color: #fff; }
 
 /*--------------------------------------------------------------
 # Navigation
