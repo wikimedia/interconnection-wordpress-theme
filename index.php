@@ -17,13 +17,16 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="wrapper">
-			<?php if ( have_posts() ) : ?>
+			<?php 
+			$ignoreSticky = (is_home() ? 1 : 0);
+			$the_query = new WP_Query( array( 'ignore_sticky_posts' => $ignoreSticky ) );
+			if ( $the_query->have_posts() ) : ?>
 
 				<div class="posts-grid">
 					<?php
 					/* Start the Loop */
-					while ( have_posts() ) :
-						the_post();
+					while ( $the_query->have_posts() ) :
+						$the_query->the_post();
 						get_template_part( 'template-parts/content', 'grid' );
 
 					endwhile; 

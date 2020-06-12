@@ -193,34 +193,6 @@ function interconnection_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'interconnection_scripts' );
 
-
-/**
- * Include Sticky Posts in Page Post Count
- */
-function include_sticky_in_count( $query ) {
-	if ( $query->is_home && $query->is_main_query() )
-	{
-		$posts_per_page = get_option( 'posts_per_page' );
-		$sticky_posts 	= get_option( 'sticky_posts' );
-
-		// if we have any sticky posts and we are at the first page
-		if ( is_array($sticky_posts) && !$query->is_paged() )
-		{
-			$sticky_count = count($sticky_posts);
-
-			if ( $sticky_count < $posts_per_page )
-			{
-			    $query->set('posts_per_page', $posts_per_page - $sticky_count);
-			}
-			else
-			{
-			    $query->set('posts_per_page', 1);
-			}
-		}
-	}
-}
-add_action( 'pre_get_posts', 'include_sticky_in_count');
-
 /**
  * Custom template tags for this theme.
  */
