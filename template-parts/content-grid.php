@@ -16,14 +16,12 @@
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
-	<div class="grid-post-text">
 		<div class="entry-meta">
 			<?php
 			interconnection_posted_on();
 			interconnection_posted_by();
 			?>
 		</div><!-- .entry-meta -->
-	</div>
 	<?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -134,13 +134,34 @@ if ( ! function_exists( 'interconnection_post_thumbnail' ) ) :
 
 			<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php if ( has_post_thumbnail() && get_the_post_thumbnail() ) { ?>
-					<div class="home-thumbnail" style="background: url(<?php echo get_the_post_thumbnail_url(null, array(600, 400)) ?>); background-size: cover;"></div>
+					<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo get_the_post_thumbnail_url(null, array(600, 400)) ?>);"></div>
 				<?php } else { ?>
 					<div class="home-thumbnail"></div>
 			</a>
 			<?php };
 			
 		endif; // End is_singular().
+	}
+endif;
+
+if ( ! function_exists( 'interconnection_featured_post_thumbnail' ) ) :
+	/**
+	 * Displays featured post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element
+	 */
+	function interconnection_featured_post_thumbnail() {
+		if ( post_password_required() || is_attachment() ) {
+			return;
+		} ?>
+
+		<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php if ( has_post_thumbnail() && get_the_post_thumbnail() ) { ?>
+				<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo get_the_post_thumbnail_url(null, 'full-size') ?>);"></div>
+			<?php } else { ?>
+				<div class="home-thumbnail"></div>
+		</a>
+		<?php };
 	}
 endif;
 

@@ -18,18 +18,33 @@ get_header();
 	<main id="primary" class="site-main">
 		<div class="wrapper">
 			<?php 
-			$ignoreSticky = (is_home() ? 1 : 0);
-			$the_query = new WP_Query( array( 'ignore_sticky_posts' => $ignoreSticky ) );
-			if ( $the_query->have_posts() ) : ?>
+
+			$sticky = get_option('sticky_posts');
+			if ( is_home() && !empty($sticky) ) :
+				// use the last added sticky post - last in array
+				$the_query = new WP_Query( 'p=' . $sticky[count($sticky)-1] );
+
+				while ( $the_query->have_posts() ) :
+					$the_query->the_post();
+					get_template_part( 'template-parts/modules/featured', 'post' );
+				
+				endwhile;
+
+				/* Restore original Post Data */
+				wp_reset_postdata();
+			endif;
+			
+			query_posts( array('ignore_sticky_posts' => is_home() ? 1 : 0 ) );
+			if ( have_posts() ) : ?>
 
 				<div class="posts-grid">
 					<?php
-					/* Start the Loop */
-					while ( $the_query->have_posts() ) :
-						$the_query->the_post();
+					/* Start the normal Loop */
+					while ( have_posts() ) :
+						the_post();
 						get_template_part( 'template-parts/content', 'grid' );
 
-					endwhile; 
+					endwhile;
 					?>
 				</div>
 
