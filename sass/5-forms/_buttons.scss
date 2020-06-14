@@ -4,7 +4,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.home .nav-links a {
+.home .nav-links a,
+.archive .nav-links a {
 	border: 0px solid;
 	border-radius: 2px;
 	font-size: 1rem;
@@ -31,7 +32,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.home .nav-links a {
+.home .nav-links a,
+.archive .nav-links a {
 	background: $base10;
 	color: $base100;
 

@@ -58,7 +58,7 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: rgba(255, 255, 255, 0.96);
+		background-color: rgba(255, 255, 255, 0.98);
 
 		@media screen and (min-width: $small-bp) {
 			display: block;
@@ -147,7 +147,7 @@
 		padding: 1rem rem(30);
 		border-top: 1px $base80 solid;
 		border-bottom: 1px $base80 solid;
-		font-weight: bold;
+		font-weight: 700;
 	
 		.sub-menu {
 			float: none;
