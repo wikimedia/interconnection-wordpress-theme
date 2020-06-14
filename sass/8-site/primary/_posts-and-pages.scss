@@ -81,6 +81,12 @@ article.grid-post {
 		margin: 0;
 	}
 
+	.post-excerpt {
+		@media (min-width: $large-bp) {
+			margin-top: 2rem;
+		}
+	}
+
 	.entry-meta, .entry-meta a {
 		color: $base30;
 	}

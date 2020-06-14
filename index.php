@@ -34,7 +34,13 @@ get_header();
 				wp_reset_postdata();
 			endif;
 			
-			query_posts( array('ignore_sticky_posts' => is_home() ? 1 : 0 ) );
+			query_posts( array_merge( 
+				array(
+					'ignore_sticky_posts' => is_home() ? 1 : 0 ),
+					// merge with global query
+					$wp_query->query
+				)
+			);
 			if ( have_posts() ) : ?>
 
 				<div class="posts-grid">

@@ -68,7 +68,9 @@
 		// 2 per row when bigger than small break point
 		@include module-width($small-bp, 48%);
 		// 3 per row when bigger than small break point
-		@include module-width($medium-bp, 32%);
+		@media (min-width: $medium-bp) {
+				width: 32%;
+		}
 	}
 
 	// last row elements aligned left
