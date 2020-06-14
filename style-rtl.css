@@ -22,80 +22,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
+# 1 Normalize
+# 2 Typography
+# 3 Elements
+# 4 Grid
+# 5 Forms
+# 6 Navigation
 	## Links
 	## Menus
 	## Footer
-# Accessibility
-# Alignments
-# Widgets
-# Content
+# 7 Accessibility
+# 7 Alignments
+# 7 Infinite scroll
+# 8 Widgets
+# 8 Site content
 	## Posts and pages
 	## Comments
 	## Credits
-# Infinite scroll
-# Media
+# 9 Media
 	## Captions
 	## Galleries
---------------------------------------------------------------*/
-.wrapper {
-  max-width: 75rem;
-  padding: 0rem 1.875rem;
-  margin: 0 auto; }
-  @media (min-width: 768px) {
-    .wrapper {
-      padding: 0rem 3.75rem; } }
-
-.wrapper-medium {
-  max-width: 50rem;
-  margin: 0 auto; }
-
-.wrapper-small {
-  max-width: 42.5rem;
-  margin: 0 auto; }
-
-.flex.flex-all {
-  display: flex;
-  flex-direction: wrap; }
-  @media (min-width: 500px) {
-    .flex.flex-all {
-      flex-direction: row;
-      flex-wrap: wrap; } }
-
-.flex.flex-medium {
-  display: flex;
-  flex-direction: column; }
-  @media (min-width: 768px) {
-    .flex.flex-medium {
-      flex-direction: row;
-      flex-wrap: nowrap; } }
-
-.flex.flex-large {
-  display: flex;
-  flex-direction: column; }
-  @media (min-width: 1200px) {
-    .flex.flex-large {
-      flex-direction: row;
-      flex-wrap: nowrap; } }
-
-.flex.flex-wrap {
-  flex-wrap: wrap; }
-
-.flex.flex-wrap-reverse {
-  flex-wrap: wrap-reverse; }
-
-.flex.flex-space-between {
-  justify-content: space-between; }
-
-.flex.flex-align-center {
-  align-items: center; }
-
-/*--------------------------------------------------------------
-# Normalize
 --------------------------------------------------------------*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -372,9 +318,6 @@ template {
 [hidden] {
   display: none; }
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
 body,
 button,
 input,
@@ -420,6 +363,7 @@ h6 {
   font-size: 1rem; }
 
 p {
+  margin-top: 0;
   margin-bottom: 1.5em; }
 
 dfn,
@@ -469,9 +413,6 @@ big {
 figcaption {
   font-size: 0.875rem; }
 
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -523,42 +464,155 @@ table {
   margin: 0 0 1.5em;
   width: 100%; }
 
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
+.wrapper {
+  max-width: 75rem;
+  padding: 0rem 1.875rem;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .wrapper {
+      padding: 0rem 3.75rem; } }
+
+.wrapper-medium {
+  max-width: 50rem;
+  margin: 0 auto; }
+
+.wrapper-small {
+  max-width: 42.5rem;
+  margin: 0 auto; }
+
+.flex.flex-all {
+  display: flex;
+  flex-direction: wrap; }
+  @media (min-width: 500px) {
+    .flex.flex-all {
+      flex-direction: row;
+      flex-wrap: wrap; } }
+
+.flex.flex-medium {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 768px) {
+    .flex.flex-medium {
+      flex-direction: row;
+      flex-wrap: nowrap; } }
+
+.flex.flex-large {
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 1200px) {
+    .flex.flex-large {
+      flex-direction: row;
+      flex-wrap: nowrap; } }
+
+.flex.flex-wrap {
+  flex-wrap: wrap; }
+
+.flex.flex-wrap-reverse {
+  flex-wrap: wrap-reverse; }
+
+.flex.flex-space-between {
+  justify-content: space-between; }
+
+.flex.flex-align-center {
+  align-items: center; }
+
 button,
+.btn,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.home .nav-links a {
   border: 0px solid;
-  border-color: transparent;
   border-radius: 2px;
-  background: #36c;
-  color: #fff;
   font-size: 1rem;
   line-height: 1;
   padding: 0.4em 0.8em 0.4em;
   transition: 0.3s all; }
   button:hover,
+  .btn:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
-  input[type="submit"]:hover {
+  input[type="submit"]:hover,
+  .home .nav-links a:hover {
     border-color: transparent;
-    background: #2a4b8d;
+    text-decoration: none;
     cursor: pointer; }
   button:active, button:focus,
+  .btn:active,
+  .btn:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
   input[type="reset"]:focus,
   input[type="submit"]:active,
-  input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb; }
+  input[type="submit"]:focus,
+  .home .nav-links a:active,
+  .home .nav-links a:focus {
+    border-color: #aaa #bbb #bbb;
+    text-decoration: none; }
 
+button,
+.btn-dark,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.home .nav-links a {
+  background: #202122;
+  color: #fff; }
+  button:hover,
+  .btn-dark:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  .home .nav-links a:hover {
+    background: #54595d;
+    color: #fff; }
+  button:active, button:focus,
+  .btn-dark:active,
+  .btn-dark:focus,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:focus,
+  .home .nav-links a:active,
+  .home .nav-links a:focus {
+    color: #fff; }
+
+.btn-light,
+.site-footer button,
+.site-footer input[type="submit"],
 .top-nav button,
 .top-nav input[type="button"] {
   background: #eaecf0;
   color: #202122; }
+  .btn-light:hover,
+  .site-footer button:hover,
+  .site-footer input[type="submit"]:hover,
+  .top-nav button:hover,
+  .top-nav input[type="button"]:hover {
+    background: #c8ccd1;
+    color: #000; }
+  .btn-light:active, .btn-light:focus,
+  .site-footer button:active,
+  .site-footer button:focus,
+  .site-footer input[type="submit"]:active,
+  .site-footer input[type="submit"]:focus,
+  .top-nav button:active,
+  .top-nav button:focus,
+  .top-nav input[type="button"]:active,
+  .top-nav input[type="button"]:focus {
+    color: #54595d; }
+
+.btn-accent {
+  background: #36c;
+  color: #fff; }
+  .btn-accent:hover {
+    background: #2a4b8d;
+    color: #fff; }
+  .btn-accent:active, .btn-accent:focus {
+    color: #fff; }
 
 input[type="text"],
 input[type="email"],
@@ -610,9 +664,6 @@ textarea {
   color: #fff; }
 
 /*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
@@ -628,8 +679,8 @@ a {
   a:hover, a:active {
     outline: 0; }
 
-.posts-grid a,
-.posts-grid a:visited {
+.grid-post .entry-title a,
+.grid-post .entry-title a:visited {
   color: #202122; }
 
 .photo-credit-container a {
@@ -835,7 +886,7 @@ a {
 
 .footer-content {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap; }
   @media (min-width: 500px) {
@@ -863,9 +914,6 @@ a {
 .logged-in .logout-link {
   display: block; }
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -901,9 +949,6 @@ a {
 #primary[tabindex="-1"]:focus {
   outline: 0; }
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
 .alignleft {
   float: right;
   margin-left: 1.5em;
@@ -921,9 +966,15 @@ a {
   margin-left: auto;
   margin-bottom: 1.5em; }
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  display: none; }
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
 .widget-area {
   margin-bottom: 2.5rem; }
   @media (min-width: 768px) {
@@ -935,9 +986,6 @@ a {
   .widget select {
     max-width: 100%; }
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -953,6 +1001,12 @@ article.post header {
     article.post header {
       margin-bottom: 1.875rem; } }
 
+article.post .post-thumbnail img {
+  margin-bottom: 2.5rem; }
+  @media (min-width: 768px) {
+    article.post .post-thumbnail img {
+      margin-bottom: 3.75rem; } }
+
 article.post .entry-content {
   font-family: Charter, serif;
   font-size: 1.125rem;
@@ -960,12 +1014,15 @@ article.post .entry-content {
   @media (min-width: 768px) {
     article.post .entry-content {
       margin-bottom: 3.75rem; } }
-  article.post .entry-content figure.size-large:not(.is-resized) {
-    margin: 0 auto;
+  article.post .entry-content figure {
     text-align: center; }
+  article.post .entry-content figure.size-large:not(.is-resized) {
+    margin-right: auto;
+    margin-left: auto; }
     article.post .entry-content figure.size-large:not(.is-resized) figcaption {
       width: 100%;
-      margin: 0 auto; }
+      margin-right: auto;
+      margin-left: auto; }
       @media (min-width: 768px) {
         article.post .entry-content figure.size-large:not(.is-resized) figcaption {
           width: 75%; } }
@@ -1013,26 +1070,56 @@ article.grid-post {
       margin-bottom: 3.75rem; } }
   article.grid-post .entry-header:hover .entry-title a {
     text-decoration: underline; }
-  article.grid-post .entry-title {
-    padding: 0.5rem 0.5rem 0; }
-  article.grid-post .entry-meta {
-    padding: 0 0.5rem; }
+  article.grid-post .entry-title,
+  article.grid-post .entry-meta,
+  article.grid-post .post-excerpt {
+    padding: 0.5rem 0.5rem 0;
+    margin: 0; }
   article.grid-post .entry-meta, article.grid-post .entry-meta a {
     color: #72777d; }
   article.grid-post .home-thumbnail {
     width: 100%;
     background: #c8ccd1;
     background-image: linear-gradient(-120deg, #36c -400%, #eaf3ff 100%);
+    background-position: center center;
+    background-size: cover;
     border: 1px solid #eaecf0; }
     article.grid-post .home-thumbnail:before {
       content: "";
       display: block;
       padding-top: 66.66667%;
       margin-bottom: 0.375rem; }
+  article.grid-post.featured-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    @media (min-width: 768px) {
+      article.grid-post.featured-post {
+        flex-direction: row;
+        flex-wrap: wrap; } }
+    article.grid-post.featured-post > div:first-child {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.grid-post.featured-post > div:first-child {
+          width: 66%; } }
+    article.grid-post.featured-post > div:last-child {
+      width: 100%; }
+      @media (min-width: 768px) {
+        article.grid-post.featured-post > div:last-child {
+          width: 32%; } }
+    article.grid-post.featured-post .home-thumbnail:before {
+      padding-top: 56.25%; }
+      @media (min-width: 768px) {
+        article.grid-post.featured-post .home-thumbnail:before {
+          padding-top: 66.66667%; } }
+      @media (min-width: 1200px) {
+        article.grid-post.featured-post .home-thumbnail:before {
+          padding-top: 56.25%; } }
 
 .posts-grid {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap; }
   @media (min-width: 500px) {
@@ -1080,16 +1167,21 @@ article.page {
       article.page .entry-content {
         flex-direction: row;
         flex-wrap: wrap; } }
-    article.page .entry-content div:first-child {
+    article.page .entry-content > div:first-child {
       width: 100%; }
       @media (min-width: 768px) {
-        article.page .entry-content div:first-child {
-          width: 65%; } }
-    article.page .entry-content div:last-child {
+        article.page .entry-content > div:first-child {
+          width: 66%; } }
+    article.page .entry-content > div:last-child {
       width: 100%; }
       @media (min-width: 768px) {
-        article.page .entry-content div:last-child {
-          width: 30%; } }
+        article.page .entry-content > div:last-child {
+          width: 32%; } }
+    article.page .entry-content .main-entry-content {
+      padding-left: 0; }
+      @media (min-width: 768px) {
+        article.page .entry-content .main-entry-content {
+          padding-left: 2rem; } }
   article.page .toc ul {
     list-style: none;
     padding-right: 0;
@@ -1164,7 +1256,7 @@ article.page h6[id]:before {
 
 .photo-credits-wrapper {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap; }
   @media (min-width: 500px) {
@@ -1211,21 +1303,6 @@ article.page h6[id]:before {
     .photo-credit-container .text-container p {
       margin: 0; }
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  display: none; }
-
-/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
-.infinity-end.neverending .site-footer {
-  display: block; }
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {

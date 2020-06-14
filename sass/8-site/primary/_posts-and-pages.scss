@@ -13,18 +13,27 @@ article.post {
 		@include margin-bottom(0);
 	}
 
+	.post-thumbnail img{
+		@include margin-bottom(1);
+	}
+
 	.entry-content {
 		font-family: $font__serif;
 		font-size: $font__size-h4;
 		@include margin-bottom(1);
 
-		figure.size-large:not(.is-resized) {
-			margin: 0 auto;
+		figure {
 			text-align: center;
+		}
+
+		figure.size-large:not(.is-resized) {
+			margin-left: auto;
+			margin-right: auto;
 
 			figcaption {
 				@include module-width($medium-bp, 75%);
-				margin: 0 auto;
+				margin-left: auto;
+				margin-right: auto;
 			}
 
 			@media (min-width: $medium-bp) {
@@ -65,12 +74,11 @@ article.grid-post {
 		text-decoration: underline;
 	}
 
-	.entry-title {
+	.entry-title,
+	.entry-meta,
+	.post-excerpt {
 		padding: 0.5rem 0.5rem 0;
-	}
-
-	.entry-meta {
-		padding: 0 0.5rem;
+		margin: 0;
 	}
 
 	.entry-meta, .entry-meta a {
@@ -81,6 +89,8 @@ article.grid-post {
 		width: 100%;
 		background: $base70;
 		background-image: linear-gradient(120deg, $accent50 -400%, $accent90 100%);
+		background-position: center center;
+		background-size: cover;
 		border: 1px solid $base80;
 
 		// when there is no featured image
@@ -89,6 +99,20 @@ article.grid-post {
 			display: block;
 			padding-top: 100%/3*2; 	// ratio of 3:2
 			margin-bottom: rem(6);
+		}
+	}
+
+	&.featured-post {
+		@include column-2-to-1(column);
+
+		.home-thumbnail:before {
+			padding-top: 100%/16*9;
+			@media (min-width: $medium-bp) {
+				padding-top: 100%/3*2;
+			}
+			@media (min-width: $large-bp) {
+				padding-top: 100%/16*9;
+			}
 		}
 	}
 }
@@ -110,7 +134,14 @@ article.page {
 	@include margin-bottom(1);
 
 	.entry-content {
-		@include column-2-to-1();
+		@include column-2-to-1(column-reverse);
+
+		.main-entry-content {
+			padding-right: 0;
+			@media (min-width: $medium-bp) {
+				padding-right: rem(32);
+			}
+		}
 	}
 
 	.toc ul {

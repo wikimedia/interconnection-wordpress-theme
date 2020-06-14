@@ -59,7 +59,7 @@
 
 // 3-column-grid
 @mixin column-3 {
-	@include flexbox(wrap, wrap, $small-bp, row);
+	@include flexbox(row, wrap, $small-bp, row);
 	justify-content: space-between;
 	flex-wrap: wrap;
 
@@ -81,7 +81,7 @@
 
 // 2-column-grid
 @mixin column-2 {
-	@include flexbox(wrap, wrap, $small-bp, row);
+	@include flexbox(row, wrap, $small-bp, row);
 	justify-content: space-between;
 	flex-wrap: wrap;
 
@@ -92,17 +92,17 @@
 }
 
 // 2/3 column, 1/3 column
-@mixin column-2-to-1 {
-	@include flexbox(column-reverse, wrap, $medium-bp, row);
+@mixin column-2-to-1($mobile-flex-direction) {
+	@include flexbox($mobile-flex-direction, wrap, $medium-bp, row);
 	justify-content: space-between;
 	flex-wrap: wrap;
 
-	div:first-child {
-		@include module-width($medium-bp, 65%);
+	> div:first-child {
+		@include module-width($medium-bp, 66%);
 	}
 
-	div:last-child {
-		@include module-width($medium-bp, 30%);
+	> div:last-child {
+		@include module-width($medium-bp, 32%);
 	}
 }
 
