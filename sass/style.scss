@@ -23,82 +23,40 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
+# 1 Normalize
+# 2 Typography
+# 3 Elements
+# 4 Grid
+# 5 Forms
+# 6 Navigation
 	## Links
 	## Menus
 	## Footer
-# Accessibility
-# Alignments
-# Widgets
-# Content
+# 7 Accessibility
+# 7 Alignments
+# 7 Infinite scroll
+# 8 Widgets
+# 8 Site content
 	## Posts and pages
 	## Comments
 	## Credits
-# Infinite scroll
-# Media
+# 9 Media
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
 @import "functions";
-@import "mixins/mixins-master";
-@import "layout/grid";
+@import "0-variables-site/variables-site";
+@import "0-mixins/mixins-master";
 
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
 @import "normalize";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+@import "2-typography/typography";
+@import "3-elements/elements";
+@import "4-layout/grid";
+@import "5-forms/forms";
+@import "6-navigation/navigation";
+@import "7-modules/accessibility";
+@import "7-modules/alignments";
+@import "7-modules/infinite-scroll";
+@import "8-site/secondary/widgets";
+@import "8-site/site";
+@import "9-media/media";

@@ -30,6 +30,8 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php interconnection_post_thumbnail(); ?>
+
  	<div class="entry-content wrapper-small">
 		<?php
 		the_content(
