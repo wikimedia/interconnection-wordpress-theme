@@ -177,6 +177,35 @@ function special_nav_class ($classes, $item) {
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
 /**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( 'Read More', 'textdomain' )
+        );
+    }
+ 
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+/**
  * Enqueue scripts and styles.
  */
 function interconnection_scripts() {
