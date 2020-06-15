@@ -72,7 +72,7 @@
 				} else { ?>
 					<!-- ATTENTION: need to translate -->
 					<h3>No comments</h3>
-					<p>The comments section of this post is closed now.</p>
+					<p>Comments are closed automatically after 21 days.</p>
 				<?php }; ?>
 			</div>
 			<div class="entry-footer-meta">
