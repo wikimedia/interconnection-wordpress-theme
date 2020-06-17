@@ -20,9 +20,9 @@ get_header();
 			<?php 
 
 			$sticky = get_option('sticky_posts');
-			if ( is_home() && !empty($sticky) ) :
+			if ( is_home() && !empty($sticky) && ! is_paged() ) :
 				// use the last added sticky post - last in array
-				$the_query = new WP_Query( 'p=' . $sticky[count($sticky)-1] );
+				$the_query = new WP_Query( array ('p' => $sticky[count($sticky)-1] ) );
 
 				while ( $the_query->have_posts() ) :
 					$the_query->the_post();
