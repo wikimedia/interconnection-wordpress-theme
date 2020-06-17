@@ -653,12 +653,19 @@ input[type="submit"],
 }
 
 button:hover,
+ button:visited,
 .btn:hover,
+.btn:visited,
 input[type="button"]:hover,
+input[type="button"]:visited,
 input[type="reset"]:hover,
+input[type="reset"]:visited,
 input[type="submit"]:hover,
+input[type="submit"]:visited,
 .home .nav-links a:hover,
-.archive .nav-links a:hover {
+.home .nav-links a:visited,
+.archive .nav-links a:hover,
+.archive .nav-links a:visited {
 	border-color: transparent;
 	text-decoration: none;
 	cursor: pointer;
@@ -694,12 +701,19 @@ input[type="submit"],
 }
 
 button:hover,
+ button:visited,
 .btn-dark:hover,
+.btn-dark:visited,
 input[type="button"]:hover,
+input[type="button"]:visited,
 input[type="reset"]:hover,
+input[type="reset"]:visited,
 input[type="submit"]:hover,
+input[type="submit"]:visited,
 .home .nav-links a:hover,
-.archive .nav-links a:hover {
+.home .nav-links a:visited,
+.archive .nav-links a:hover,
+.archive .nav-links a:visited {
 	background: #54595d;
 	color: #fff;
 }
@@ -731,10 +745,15 @@ input[type="submit"]:focus,
 }
 
 .btn-light:hover,
+ .btn-light:visited,
 .site-footer button:hover,
+.site-footer button:visited,
 .site-footer input[type="submit"]:hover,
+.site-footer input[type="submit"]:visited,
 .main-navigation button:hover,
-.main-navigation input[type="button"]:hover {
+.main-navigation button:visited,
+.main-navigation input[type="button"]:hover,
+.main-navigation input[type="button"]:visited {
 	background: #c8ccd1;
 	color: #000;
 }
@@ -757,7 +776,8 @@ input[type="submit"]:focus,
 	color: #fff;
 }
 
-.btn-accent:hover {
+.btn-accent:hover,
+ .btn-accent:visited {
 	background: #2a4b8d;
 	color: #fff;
 }

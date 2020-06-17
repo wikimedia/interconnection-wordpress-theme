@@ -27,7 +27,20 @@
 				?>
 			</div><!-- .entry-meta -->
 			<div class="post-excerpt">
-				<?php the_excerpt(); ?>
+				<p>
+					<?php 
+					$limit = 20;
+					$excerpt = explode(' ', get_the_excerpt(), $limit);
+						if (count($excerpt)>=$limit) {
+							array_pop($excerpt);
+							$excerpt = implode(" ", $excerpt) . '...';
+						} else {
+							$excerpt = implode(" ", $excerpt);
+						}	
+					$excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
+					echo $excerpt;
+					?>	
+				</p>
 				<!-- ATTENTION: Needs translation -->
 				<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark" class="btn btn-dark">Read more</a>
 			</div>
