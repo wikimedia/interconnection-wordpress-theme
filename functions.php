@@ -120,7 +120,7 @@ function interconnection_widgets_init() {
 			'name'          => esc_html__( 'Footer', 'interconnection' ),
 			'id'            => 'footer-1',
 			'description'   => esc_html__( 'Add widgets here. They are the footer content.', 'interconnection' ),
-			'before_widget' => '<div id="footer-widget" class="widget %2$s">',
+			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="footer-widget-title">',
 			'after_title'   => '</h3>',
@@ -183,7 +183,7 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+    return 25;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -195,12 +195,8 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  */
 function wpdocs_excerpt_more( $more ) {
     if ( ! is_single() ) {
-        $more = sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
-            get_permalink( get_the_ID() ),
-            __( 'Read More', 'textdomain' )
-        );
+        $more = sprintf( '...' );
     }
- 
     return $more;
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

@@ -2,7 +2,7 @@
 	@include shade("accent");
 
 	.wrapper {
-		@include column-2();
+		@include column-2;
 	}
 
 	.widget img {

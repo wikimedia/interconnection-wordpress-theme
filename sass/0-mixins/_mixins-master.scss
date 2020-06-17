@@ -83,13 +83,13 @@
 
 // 2-column-grid
 @mixin column-2 {
-	@include flexbox(row, wrap, $small-bp, row);
+	@include flexbox(column, wrap, $medium-bp, row);
 	justify-content: space-between;
 	flex-wrap: wrap;
 
 	> article,
 	> div {
-		@include module-width($small-bp, 48%);
+		@include module-width($medium-bp, 48%);
 	}
 }
 
@@ -100,11 +100,19 @@
 	flex-wrap: wrap;
 
 	> div:first-child {
-		@include module-width($medium-bp, 66%);
+		width: 100%;
+		@media (min-width: $medium-bp) {
+			width: initial;
+			flex-grow: 1;
+		}
 	}
 
 	> div:last-child {
 		@include module-width($medium-bp, 32%);
+		min-width: 22rem;
+		@media (min-width: $medium-bp) {
+			margin-left: 1rem;
+		}
 	}
 }
 

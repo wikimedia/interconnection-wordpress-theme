@@ -266,7 +266,7 @@ _:-ms-lang(x), .wpd-social-login [wpd-tooltip]::before{top: -24px;}
 #wpdcom .wpdiscuz-spoiler-wrap .wpdiscuz-spoiler-content{display: none; font-style: italic; padding: 0.25rem; }
 
 /* Comment Threads */
-#wpdcom #wpd-threads{margin-top: 1.25rem;}
+#wpdcom #wpd-threads{margin-top: 0;}
 #wpdcom .wpd-thread-head{width: 100%; font-size: 1.25rem; margin-bottom: 1em; border-bottom: 0px solid #a2a9b1; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-end;}
 #wpdcom .wpd-thread-head .wpd-thread-info{ color:#202122; padding: 0 1rem 0 0; font-weight: bold; margin-bottom: 0; border-bottom: 0px solid #202122; font-size: 1.25rem; text-transform: none; text-align: left;}
 #wpdcom .wpd-thread-head .wpd-thread-info .wpdtc{font-size: 1.25rem;}
