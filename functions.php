@@ -132,10 +132,10 @@ function interconnection_widgets_init() {
 			'name'          => esc_html__( 'Call to action', 'interconnection' ),
 			'id'            => 'cta-1',
 			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
-			'before_widget' => '<div id="cta-home" class="widget %2$s">',
+			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
 		)
 	);
 	// special notice for single posts

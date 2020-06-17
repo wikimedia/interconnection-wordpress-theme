@@ -542,14 +542,14 @@ table {
 
 .wrapper {
 	max-width: 75rem;
-	padding: 0 1.875rem;
+	padding: 0 2rem;
 	margin: 0 auto;
 }
 
 @media (min-width: 768px) {
 
 	.wrapper {
-		padding: 0 3.75rem;
+		padding: 0 4rem;
 	}
 }
 
@@ -561,6 +561,25 @@ table {
 .wrapper-small {
 	max-width: 42.5rem;
 	margin: 0 auto;
+}
+
+.section {
+	margin-bottom: 2.5rem;
+	padding: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+
+	.section {
+		margin-bottom: 3.75rem;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.section {
+		padding: 2rem 0;
+	}
 }
 
 .flex.flex-all {
@@ -629,7 +648,7 @@ input[type="submit"],
 	border-radius: 2px;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 0.4em 0.8em 0.4em;
+	padding: 0.4em 0.8em;
 	transition: 0.3s all;
 }
 
@@ -746,6 +765,10 @@ input[type="submit"]:focus,
 .btn-accent:active,
  .btn-accent:focus {
 	color: #fff;
+}
+
+.btn-big {
+	font-size: 1.25rem;
 }
 
 input[type="text"],
@@ -1171,7 +1194,7 @@ a:hover,
 
 	.footer-content > article,
 	.footer-content > div {
-		width: 46%;
+		width: 48%;
 	}
 }
 
@@ -1261,17 +1284,6 @@ a:hover,
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
 	display: block;
-}
-
-.widget-area {
-	margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-
-	.widget-area {
-		margin-bottom: 3.75rem;
-	}
 }
 
 .widget {
@@ -1726,19 +1738,48 @@ article.page h6[id]::before {
 }
 
 /*--------------------------------------------------------------
-## Credits
+## CTA
 --------------------------------------------------------------*/
-.photo-credits {
-	margin-bottom: 2.5rem;
+#cta {
+	background: #eaf3ff;
+	color: #202122;
 }
 
-@media (min-width: 768px) {
+#cta .wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 
-	.photo-credits {
-		margin-bottom: 3.75rem;
+@media (min-width: 500px) {
+
+	#cta .wrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
 
+#cta .wrapper > article,
+#cta .wrapper > div {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+
+	#cta .wrapper > article,
+	#cta .wrapper > div {
+		width: 48%;
+	}
+}
+
+#cta .widget img {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Credits
+--------------------------------------------------------------*/
 .photo-credits-wrapper {
 	display: flex;
 	flex-direction: row;

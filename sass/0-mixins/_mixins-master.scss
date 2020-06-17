@@ -89,7 +89,7 @@
 
 	> article,
 	> div {
-		@include module-width($small-bp, 46%);
+		@include module-width($small-bp, 48%);
 	}
 }
 
@@ -113,6 +113,9 @@
 	@if $shade == "dark" {
 		background: $base10;
 		color: $base100;
+	} @else if $shade == "accent" {
+		background: $accent90;
+		color: $base10;
 	} @else {
 		background: $base80;
 		color: $base10;

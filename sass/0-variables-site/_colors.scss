@@ -13,6 +13,7 @@ $base100: #fff;
 $accent90: #eaf3ff;
 $accent50: #36c;
 $accent30: #2a4b8d;
+$accent-gradient: linear-gradient(120deg, $accent50 -400%, $accent90 100%);
 
 $color__background-body: $base100;
 $color__background-screen: $base100;

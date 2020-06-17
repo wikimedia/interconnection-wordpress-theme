@@ -1,0 +1,11 @@
+#cta {
+	@include shade("accent");
+
+	.wrapper {
+		@include column-2();
+	}
+
+	.widget img {
+		width: 100%;
+	}
+}

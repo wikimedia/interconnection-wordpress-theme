@@ -94,7 +94,7 @@ article.grid-post {
 	.home-thumbnail {
 		width: 100%;
 		background: $base70;
-		background-image: linear-gradient(120deg, $accent50 -400%, $accent90 100%);
+		background-image: $accent-gradient;
 		background-position: center center;
 		background-size: cover;
 		border: 1px solid $base80;

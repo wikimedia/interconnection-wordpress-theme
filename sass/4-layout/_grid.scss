@@ -1,6 +1,6 @@
 .wrapper {
 	max-width: rem(1200); // accounts for padding below
-	@include padding(0, 30, 0, 60);
+	@include padding(0, 32, 0, 64);
 	margin: 0 auto;
 }
 
@@ -12,6 +12,11 @@
 .wrapper-small {
 	max-width: rem(680);
 	margin: 0 auto;
+}
+
+.section {
+	@include margin-bottom(1);
+	@include padding(24, 0, 32, 0);
 }
 
 // Flex containers
