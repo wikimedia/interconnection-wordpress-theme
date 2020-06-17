@@ -10,7 +10,7 @@ input[type="submit"],
 	border-radius: 2px;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 0.4em 0.8em 0.4em;
+	padding: 0.4em 0.8em;
 	transition: $transition;
 
 	&:hover {
@@ -52,8 +52,8 @@ input[type="submit"],
 .btn-light,
 .site-footer button,
 .site-footer input[type="submit"],
-.top-nav button,
-.top-nav input[type="button"] {
+.main-navigation button,
+.main-navigation input[type="button"] {
 	background: $base80;
 	color: $base10;
 
@@ -82,4 +82,8 @@ input[type="submit"],
 	&:focus {
 		color: $base100;
 	}
+}
+
+.btn-big {
+	font-size: $font__size-h3;
 }

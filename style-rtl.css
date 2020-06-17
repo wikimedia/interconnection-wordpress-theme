@@ -542,14 +542,14 @@ table {
 
 .wrapper {
 	max-width: 75rem;
-	padding: 0 1.875rem;
+	padding: 0 2rem;
 	margin: 0 auto;
 }
 
 @media (min-width: 768px) {
 
 	.wrapper {
-		padding: 0 3.75rem;
+		padding: 0 4rem;
 	}
 }
 
@@ -561,6 +561,25 @@ table {
 .wrapper-small {
 	max-width: 42.5rem;
 	margin: 0 auto;
+}
+
+.section {
+	margin-bottom: 2.5rem;
+	padding: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+
+	.section {
+		margin-bottom: 3.75rem;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.section {
+		padding: 2rem 0;
+	}
 }
 
 .flex.flex-all {
@@ -629,7 +648,7 @@ input[type="submit"],
 	border-radius: 2px;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 0.4em 0.8em 0.4em;
+	padding: 0.4em 0.8em;
 	transition: 0.3s all;
 }
 
@@ -646,7 +665,7 @@ input[type="submit"]:hover,
 }
 
 button:active,
-button:focus,
+ button:focus,
 .btn:active,
 .btn:focus,
 input[type="button"]:active,
@@ -686,7 +705,7 @@ input[type="submit"]:hover,
 }
 
 button:active,
-button:focus,
+ button:focus,
 .btn-dark:active,
 .btn-dark:focus,
 input[type="button"]:active,
@@ -705,8 +724,8 @@ input[type="submit"]:focus,
 .btn-light,
 .site-footer button,
 .site-footer input[type="submit"],
-.top-nav button,
-.top-nav input[type="button"] {
+.main-navigation button,
+.main-navigation input[type="button"] {
 	background: #eaecf0;
 	color: #202122;
 }
@@ -714,22 +733,22 @@ input[type="submit"]:focus,
 .btn-light:hover,
 .site-footer button:hover,
 .site-footer input[type="submit"]:hover,
-.top-nav button:hover,
-.top-nav input[type="button"]:hover {
+.main-navigation button:hover,
+.main-navigation input[type="button"]:hover {
 	background: #c8ccd1;
 	color: #000;
 }
 
 .btn-light:active,
-.btn-light:focus,
+ .btn-light:focus,
 .site-footer button:active,
 .site-footer button:focus,
 .site-footer input[type="submit"]:active,
 .site-footer input[type="submit"]:focus,
-.top-nav button:active,
-.top-nav button:focus,
-.top-nav input[type="button"]:active,
-.top-nav input[type="button"]:focus {
+.main-navigation button:active,
+.main-navigation button:focus,
+.main-navigation input[type="button"]:active,
+.main-navigation input[type="button"]:focus {
 	color: #54595d;
 }
 
@@ -744,8 +763,12 @@ input[type="submit"]:focus,
 }
 
 .btn-accent:active,
-.btn-accent:focus {
+ .btn-accent:focus {
 	color: #fff;
+}
+
+.btn-big {
+	font-size: 1.25rem;
 }
 
 input[type="text"],
@@ -812,12 +835,12 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: #63c;
 }
 
 a:hover,
-a:focus,
-a:active {
+ a:focus,
+ a:active {
 	color: #36c;
 	text-decoration: underline;
 }
@@ -827,7 +850,7 @@ a:focus {
 }
 
 a:hover,
-a:active {
+ a:active {
 	outline: 0;
 }
 
@@ -1048,6 +1071,17 @@ a:active {
 	padding: 0.25rem;
 }
 
+.secondary-navigation {
+	flex-grow: 100;
+	order: 100;
+	text-align: left;
+}
+
+.secondary-navigation > div {
+	display: inline-block;
+	margin-right: 0.5rem;
+}
+
 .site-start {
 	margin-top: 6.25rem;
 	margin-bottom: 1.25rem;
@@ -1094,9 +1128,9 @@ a:active {
 }
 
 .site-main .comment-navigation,
-.site-main
+ .site-main
 .posts-navigation,
-.site-main
+ .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -1160,7 +1194,7 @@ a:active {
 
 	.footer-content > article,
 	.footer-content > div {
-		width: 46%;
+		width: 48%;
 	}
 }
 
@@ -1252,19 +1286,8 @@ a:active {
 	display: block;
 }
 
-.widget-area {
-	margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-
-	.widget-area {
-		margin-bottom: 3.75rem;
-	}
-}
-
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .widget select {
@@ -1294,6 +1317,7 @@ article.post header {
 }
 
 article.post .post-thumbnail img {
+	width: 100%;
 	margin-bottom: 2.5rem;
 }
 
@@ -1321,12 +1345,19 @@ article.post .entry-content figure {
 	text-align: center;
 }
 
-article.post .entry-content figure.size-large:not(.is-resized) {
+article.post .entry-content figure.size-large:not(.is-resized),
+article.post .entry-content figure.size-full:not(.is-resized) {
 	margin-right: auto;
 	margin-left: auto;
 }
 
-article.post .entry-content figure.size-large:not(.is-resized) figcaption {
+article.post .entry-content figure.size-large:not(.is-resized) img,
+article.post .entry-content figure.size-full:not(.is-resized) img {
+	width: 100%;
+}
+
+article.post .entry-content figure.size-large:not(.is-resized) figcaption,
+article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
@@ -1334,17 +1365,9 @@ article.post .entry-content figure.size-large:not(.is-resized) figcaption {
 
 @media (min-width: 768px) {
 
-	article.post .entry-content figure.size-large:not(.is-resized) figcaption {
+	article.post .entry-content figure.size-large:not(.is-resized) figcaption,
+	article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 		width: 75%;
-	}
-}
-
-@media (min-width: 768px) {
-
-	article.post .entry-content figure.size-large:not(.is-resized) {
-		width: 110%;
-		position: relative;
-		right: -5%;
 	}
 }
 
@@ -1436,7 +1459,7 @@ article.grid-post .post-excerpt {
 }
 
 article.grid-post .entry-meta,
-article.grid-post .entry-meta a {
+ article.grid-post .entry-meta a {
 	color: #72777d;
 }
 
@@ -1673,7 +1696,7 @@ article.page h6[id]::before {
 }
 
 .comments-area ul,
-.comments-area ol {
+ .comments-area ol {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1715,19 +1738,48 @@ article.page h6[id]::before {
 }
 
 /*--------------------------------------------------------------
-## Credits
+## CTA
 --------------------------------------------------------------*/
-.photo-credits {
-	margin-bottom: 2.5rem;
+#cta {
+	background: #eaf3ff;
+	color: #202122;
 }
 
-@media (min-width: 768px) {
+#cta .wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 
-	.photo-credits {
-		margin-bottom: 3.75rem;
+@media (min-width: 500px) {
+
+	#cta .wrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
 
+#cta .wrapper > article,
+#cta .wrapper > div {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+
+	#cta .wrapper > article,
+	#cta .wrapper > div {
+		width: 48%;
+	}
+}
+
+#cta .widget img {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Credits
+--------------------------------------------------------------*/
 .photo-credits-wrapper {
 	display: flex;
 	flex-direction: row;

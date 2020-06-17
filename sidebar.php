@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'cta-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area">
+<aside id="cta" class="section">
 	<div class="wrapper">
 		<?php dynamic_sidebar( 'cta-1' ); ?>
 	</div>

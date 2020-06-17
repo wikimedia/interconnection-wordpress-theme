@@ -13,7 +13,7 @@ if ( empty( $images ) ) {
 
 ?>
 
-<div class="photo-credits">
+<div class="photo-credits section">
 	
 	<div class="wrapper">
 		<!-- ATTENTION: need to translate -->
