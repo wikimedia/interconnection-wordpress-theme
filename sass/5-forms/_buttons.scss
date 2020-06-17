@@ -13,8 +13,7 @@ input[type="submit"],
 	padding: 0.4em 0.8em;
 	transition: $transition;
 
-	&:hover,
-	&:visited {
+	&:hover {
 		border-color: $color__border-button-hover;
 		text-decoration: none;
 		cursor: pointer;
@@ -38,8 +37,11 @@ input[type="submit"],
 	background: $base10;
 	color: $base100;
 
-	&:hover,
 	&:visited {
+		color: $base100;
+	}
+
+	&:hover {
 		background: $base20;
 		color: $base100;
 	}
@@ -59,8 +61,11 @@ input[type="submit"],
 	background: $base80;
 	color: $base10;
 
-	&:hover,
 	&:visited {
+		color: $base10;
+	}
+
+	&:hover {
 		background: $base70;
 		color: $base0;
 	}
@@ -76,8 +81,11 @@ input[type="submit"],
 	background: $accent50;
 	color: $base100;
 
-	&:hover,
 	&:visited {
+		color: $base100;
+	}
+
+	&:hover {
 		background: $accent30;
 		color: $base100;
 	}
