@@ -14,6 +14,7 @@ article.post {
 	}
 
 	.post-thumbnail img{
+		width: 100%;
 		@include margin-bottom(1);
 	}
 
@@ -26,20 +27,19 @@ article.post {
 			text-align: center;
 		}
 
-		figure.size-large:not(.is-resized) {
+		figure.size-large:not(.is-resized),
+		figure.size-full:not(.is-resized) {
 			margin-left: auto;
 			margin-right: auto;
+
+			img {
+				width: 100%;
+			}
 
 			figcaption {
 				@include module-width($medium-bp, 75%);
 				margin-left: auto;
 				margin-right: auto;
-			}
-
-			@media (min-width: $medium-bp) {
-				width: 110%;
-				position: relative;
-				left: -5%;
 			}
 		}
 	}

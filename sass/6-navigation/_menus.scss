@@ -166,6 +166,17 @@
 	}
 }
 
+.secondary-navigation {
+	flex-grow: 100;
+	order: 100;
+	text-align: right;
+	
+	> div {
+		display: inline-block;
+		margin-left: 0.5rem;
+	}
+}
+
 .site-start {
 	margin-top: rem($site-main-shift);
 	@include margin-bottom(0);

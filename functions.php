@@ -114,37 +114,37 @@ add_action( 'after_setup_theme', 'interconnection_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function interconnection_widgets_init() {
-	// call to action widget
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Call to action', 'interconnection' ),
-			'id'            => 'cta-1',
-			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
 	// widget area for footer used in footer.php
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer', 'interconnection' ),
 			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'description'   => esc_html__( 'Add widgets here. They are the footer content.', 'interconnection' ),
+			'before_widget' => '<div id="footer-widget" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="footer-widget-title">',
 			'after_title'   => '</h3>',
 		)
 	);
+	// call to action widget
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Call to action', 'interconnection' ),
+			'id'            => 'cta-1',
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
+			'before_widget' => '<div id="cta-home" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 	// special notice for single posts
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Special Notice', 'interconnection' ),
+			'name'          => esc_html__( 'Special notice', 'interconnection' ),
 			'id'            => 'notice-1',
-			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'description'   => esc_html__( 'Add widgets here. They appear at the end of the entry of a posts.', 'interconnection' ),
+			'before_widget' => '<div id="special-notice" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="footer-widget-title">',
 			'after_title'   => '</h4>',
@@ -153,10 +153,10 @@ function interconnection_widgets_init() {
 	// optional widget area for navigation
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Top navigation', 'interconnection' ),
+			'name'          => esc_html__( 'Secondary navigation', 'interconnection' ),
 			'id'            => 'topnav-1',
-			'description'   => esc_html__( 'Add widgets here.', 'interconnection' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'description'   => esc_html__( 'Add widgets here. They appear in the header.', 'interconnection' ),
+			'before_widget' => '<div class="%2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<span>',
 			'after_title'   => '</span>',

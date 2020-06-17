@@ -705,8 +705,8 @@ input[type="submit"]:focus,
 .btn-light,
 .site-footer button,
 .site-footer input[type="submit"],
-.top-nav button,
-.top-nav input[type="button"] {
+.main-navigation button,
+.main-navigation input[type="button"] {
 	background: #eaecf0;
 	color: #202122;
 }
@@ -714,8 +714,8 @@ input[type="submit"]:focus,
 .btn-light:hover,
 .site-footer button:hover,
 .site-footer input[type="submit"]:hover,
-.top-nav button:hover,
-.top-nav input[type="button"]:hover {
+.main-navigation button:hover,
+.main-navigation input[type="button"]:hover {
 	background: #c8ccd1;
 	color: #000;
 }
@@ -726,10 +726,10 @@ input[type="submit"]:focus,
 .site-footer button:focus,
 .site-footer input[type="submit"]:active,
 .site-footer input[type="submit"]:focus,
-.top-nav button:active,
-.top-nav button:focus,
-.top-nav input[type="button"]:active,
-.top-nav input[type="button"]:focus {
+.main-navigation button:active,
+.main-navigation button:focus,
+.main-navigation input[type="button"]:active,
+.main-navigation input[type="button"]:focus {
 	color: #54595d;
 }
 
@@ -812,7 +812,7 @@ a {
 }
 
 a:visited {
-	color: #800080;
+	color: #63c;
 }
 
 a:hover,
@@ -1048,6 +1048,17 @@ a:hover,
 	padding: 0.25rem;
 }
 
+.secondary-navigation {
+	flex-grow: 100;
+	order: 100;
+	text-align: right;
+}
+
+.secondary-navigation > div {
+	display: inline-block;
+	margin-left: 0.5rem;
+}
+
 .site-start {
 	margin-top: 6.25rem;
 	margin-bottom: 1.25rem;
@@ -1264,7 +1275,7 @@ a:hover,
 }
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .widget select {
@@ -1294,6 +1305,7 @@ article.post header {
 }
 
 article.post .post-thumbnail img {
+	width: 100%;
 	margin-bottom: 2.5rem;
 }
 
@@ -1321,12 +1333,19 @@ article.post .entry-content figure {
 	text-align: center;
 }
 
-article.post .entry-content figure.size-large:not(.is-resized) {
+article.post .entry-content figure.size-large:not(.is-resized),
+article.post .entry-content figure.size-full:not(.is-resized) {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-article.post .entry-content figure.size-large:not(.is-resized) figcaption {
+article.post .entry-content figure.size-large:not(.is-resized) img,
+article.post .entry-content figure.size-full:not(.is-resized) img {
+	width: 100%;
+}
+
+article.post .entry-content figure.size-large:not(.is-resized) figcaption,
+article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -1334,17 +1353,9 @@ article.post .entry-content figure.size-large:not(.is-resized) figcaption {
 
 @media (min-width: 768px) {
 
-	article.post .entry-content figure.size-large:not(.is-resized) figcaption {
+	article.post .entry-content figure.size-large:not(.is-resized) figcaption,
+	article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 		width: 75%;
-	}
-}
-
-@media (min-width: 768px) {
-
-	article.post .entry-content figure.size-large:not(.is-resized) {
-		width: 110%;
-		position: relative;
-		left: -5%;
 	}
 }
 

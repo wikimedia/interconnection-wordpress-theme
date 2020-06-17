@@ -45,6 +45,9 @@ use Interconnection\Credits;
 				);
 				?>
 			</nav><!-- #site-navigation -->
+			<nav id="site-navigation-2" class="secondary-navigation">
+				<?php if ( is_active_sidebar( 'topnav-1' ) ) dynamic_sidebar( 'topnav-1' ); ?>
+			</nav><!-- #site-navigation-2 -->
 		</div><!-- top-nav -->
 	</header><!-- #masthead -->
 
