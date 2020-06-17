@@ -41,12 +41,14 @@ get_header();
 			?>
 
 			<div class="wrapper">
+				<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
 
 				<?php if ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) { ?>
 					<div class="jetpack-related-posts">
 						<?php 
-							echo get_the_ID();
 							$related = Jetpack_RelatedPosts::init_raw()->get_for_post_id( get_the_ID(), array( 'size' => 3 ) );
+							echo get_the_ID();
+							var_dump($related);
 
 							if ( $related ) {
 								foreach ( $related as $result ) {
