@@ -1172,12 +1172,12 @@ a:hover,
 
 .footer-content {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
 	.footer-content {
 		flex-direction: row;
@@ -1190,7 +1190,7 @@ a:hover,
 	width: 100%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
 	.footer-content > article,
 	.footer-content > div {
@@ -1287,7 +1287,14 @@ a:hover,
 }
 
 .widget {
-	margin: 0;
+	margin: 0 0 1rem 0;
+}
+
+@media (min-width: 768px) {
+
+	.widget {
+		margin: 0;
+	}
 }
 
 .widget select {
@@ -1501,18 +1508,27 @@ article.grid-post.featured-post > div:first-child {
 @media (min-width: 768px) {
 
 	article.grid-post.featured-post > div:first-child {
-		width: 66%;
+		width: initial;
+		flex-grow: 1;
 	}
 }
 
 article.grid-post.featured-post > div:last-child {
 	width: 100%;
+	min-width: 22rem;
 }
 
 @media (min-width: 768px) {
 
 	article.grid-post.featured-post > div:last-child {
 		width: 32%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	article.grid-post.featured-post > div:last-child {
+		margin-right: 1rem;
 	}
 }
 
@@ -1625,18 +1641,27 @@ article.page .entry-content > div:first-child {
 @media (min-width: 768px) {
 
 	article.page .entry-content > div:first-child {
-		width: 66%;
+		width: initial;
+		flex-grow: 1;
 	}
 }
 
 article.page .entry-content > div:last-child {
 	width: 100%;
+	min-width: 22rem;
 }
 
 @media (min-width: 768px) {
 
 	article.page .entry-content > div:last-child {
 		width: 32%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	article.page .entry-content > div:last-child {
+		margin-right: 1rem;
 	}
 }
 
@@ -1747,12 +1772,12 @@ article.page h6[id]::before {
 
 #cta .wrapper {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
 	#cta .wrapper {
 		flex-direction: row;
@@ -1765,7 +1790,7 @@ article.page h6[id]::before {
 	width: 100%;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 768px) {
 
 	#cta .wrapper > article,
 	#cta .wrapper > div {

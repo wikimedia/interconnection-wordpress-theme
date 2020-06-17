@@ -28,6 +28,8 @@
 			</div><!-- .entry-meta -->
 			<div class="post-excerpt">
 				<?php the_excerpt(); ?>
+				<!-- ATTENTION: Needs translation -->
+				<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark" class="btn btn-dark">Read more</a>
 			</div>
 		<?php endif; ?>
 	</div>
