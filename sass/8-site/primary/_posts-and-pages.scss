@@ -172,3 +172,51 @@ article.page h6[id]:before {
 	height: rem($size__navigation + 50);
 	visibility: hidden;
 }
+
+@keyframes flyin {
+	0% {transform: scale(0.5) rotate(-75deg);}
+	10% {transform: scale(1) rotate(15deg);}
+	12% {transform: scale(1) rotate(0deg);}
+	100% {transform: scale(1) rotate(0deg);}
+}
+
+@keyframes open {
+	0% {transform: scale(1, 0.25);}
+	10% {transform: scale(1, 1.25);}
+	12% {transform: scale(1, 1);}
+	100% {transform: scale(1, 1);}
+}
+
+// 404 page
+.error404 .site-main {
+	text-align: center;
+	@include padding(32, 0, 64, 0);
+	@include margin-bottom(2);
+
+	.not-found-face {
+		display: inline-block;
+		padding: 0.75rem 1rem;
+		border-radius: 0.2rem;
+		line-height: 1.25;
+		border: 2px solid;
+		@include margin-bottom(0);
+		font-weight: 700;
+
+		.eye {
+			display: inline-block;
+			padding: 0 0.125rem;
+			animation: flyin 3s ease-in;
+			animation-delay: 0.5s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+		}
+
+		.mouth {
+			display: inline-block;
+			animation: open 3s ease-in;
+			animation-delay: 0.5s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+		}
+	}
+}

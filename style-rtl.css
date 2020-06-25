@@ -894,7 +894,7 @@ a:hover,
 	color: #fff;
 }
 
-.site-footer p > a {
+.site-footer p a {
 	text-decoration: underline;
 }
 
@@ -928,7 +928,7 @@ a:hover,
 }
 
 .site-branding .site-title {
-	margin: 0.5rem 0 0.5rem 1rem;
+	margin: 0.5rem 0 0.5rem 1.25rem;
 }
 
 .site-branding .site-title a {
@@ -1321,6 +1321,10 @@ a:hover,
 
 .widget select {
 	max-width: 100%;
+}
+
+.site-footer .widget {
+	margin-bottom: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -1727,6 +1731,98 @@ article.page h6[id]::before {
 	visibility: hidden;
 }
 
+@keyframes flyin {
+
+	0% {
+		transform: scale(0.5) rotate(75deg);
+	}
+
+	10% {
+		transform: scale(1) rotate(-15deg);
+	}
+
+	12% {
+		transform: scale(1) rotate(0deg);
+	}
+
+	100% {
+		transform: scale(1) rotate(0deg);
+	}
+}
+
+@keyframes open {
+
+	0% {
+		transform: scale(1, 0.25);
+	}
+
+	10% {
+		transform: scale(1, 1.25);
+	}
+
+	12% {
+		transform: scale(1, 1);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+.error404 .site-main {
+	text-align: center;
+	padding: 2rem 0;
+	margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+
+	.error404 .site-main {
+		padding: 4rem 0;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.error404 .site-main {
+		margin-bottom: 6.25rem;
+	}
+}
+
+.error404 .site-main .not-found-face {
+	display: inline-block;
+	padding: 0.75rem 1rem;
+	border-radius: 0.2rem;
+	line-height: 1.25;
+	border: 2px solid;
+	margin-bottom: 1.25rem;
+	font-weight: 700;
+}
+
+@media (min-width: 768px) {
+
+	.error404 .site-main .not-found-face {
+		margin-bottom: 1.875rem;
+	}
+}
+
+.error404 .site-main .not-found-face .eye {
+	display: inline-block;
+	padding: 0 0.125rem;
+	animation: flyin 3s ease-in;
+	animation-delay: 0.5s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+.error404 .site-main .not-found-face .mouth {
+	display: inline-block;
+	animation: open 3s ease-in;
+	animation-delay: 0.5s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1822,6 +1918,14 @@ article.page h6[id]::before {
 
 #cta .widget img {
 	width: 100%;
+}
+
+#cta .wp-caption {
+	margin: 0;
+}
+
+#cta .wp-caption figcaption {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -1926,9 +2030,9 @@ object {
 }
 
 .custom-logo {
-	max-height: 2.8125rem;
+	max-height: 2.5rem;
 	width: auto;
-	margin-left: 1rem;
+	margin-left: 1.5rem;
 }
 
 /*--------------------------------------------------------------
