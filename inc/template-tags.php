@@ -43,7 +43,7 @@ if ( ! function_exists( 'interconnection_posted_by' ) ) :
 
 		if ( function_exists( 'coauthors_posts_links' ) ) {
 			$authors = coauthors_posts_links( null, null, 'by ', null, false );
-			echo '<span class="byline"> ' . $authors . '</span>';
+			echo '<span class="byline"> ' . $authors . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -134,7 +134,7 @@ if ( ! function_exists( 'interconnection_post_thumbnail' ) ) :
 
 			<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php if ( has_post_thumbnail() && get_the_post_thumbnail() ) { ?>
-					<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo get_the_post_thumbnail_url(null, array(600, 400)) ?>);"></div>
+					<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo esc_url( get_the_post_thumbnail_url(null, array(600, 400) ) ) ?>);"></div>
 				<?php } else { ?>
 					<div class="home-thumbnail"></div>
 			</a>
@@ -157,7 +157,7 @@ if ( ! function_exists( 'interconnection_featured_post_thumbnail' ) ) :
 
 		<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php if ( has_post_thumbnail() && get_the_post_thumbnail() ) { ?>
-				<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo get_the_post_thumbnail_url(null, 'full-size') ?>);"></div>
+				<div class="home-thumbnail" style="background-color: #ffffff; background-image: url(<?php echo esc_url( get_the_post_thumbnail_url(null, 'full-size') ) ?>);"></div>
 			<?php } else { ?>
 				<div class="home-thumbnail"></div>
 		</a>
