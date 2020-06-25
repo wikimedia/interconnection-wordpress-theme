@@ -1991,6 +1991,7 @@ article.page h6[id]::before {
 	width: 4rem;
 	height: 4rem;
 	background-size: cover;
+	background-position: center;
 	border-radius: 2px;
 	border: 1px solid #eaecf0;
 	margin-right: 1rem;
