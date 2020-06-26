@@ -42,7 +42,7 @@
 					?>	
 				</p>
 				<!-- ATTENTION: Needs translation -->
-				<a href="<?php esc_url( get_permalink() ); ?>" rel="bookmark" class="btn btn-accent">Read more</a>
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" class="btn btn-accent">Read more</a>
 			</div>
 		<?php endif; ?>
 	</div>
