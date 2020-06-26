@@ -20,17 +20,17 @@ Version: 1.0
 */
 
 /*
-Main colors
-#fff
-#f8f9fa
-#eaecf0
-#c8ccd1
-#a2a9b1
-#72777d
-#54595d
-#202122
-#000
-#2a4b8d
+ * Main colors
+ * #fff
+ * #f8f9fa
+ * #eaecf0
+ * #c8ccd1
+ * #a2a9b1
+ * #72777d
+ * #54595d
+ * #202122
+ * #000
+ * #2a4b8d
 */
 
 /* ATTENTION: still need to fix all px unit - convert to rem/em*/
@@ -45,8 +45,6 @@ Main colors
 #wpdcom .wpd-reply.wpd_comment_level-2{margin-left: 3rem}
 #wpdcom.wpd-layout-2 .wpd-reply{margin-left: 1.5rem; padding-left: 1rem; border-left: 2px solid #a2a9b1;}
 #wpdcom.wpd-layout-2 .wpd-reply.wpd_comment_level-2{margin-left: 1.5rem;}
-/*#wpdcom.wpd-layout-3 .wpd-reply{margin-left:45px}*/
-/*#wpdcom.wpd-layout-3 .wpd-reply.wpd_comment_level-2{margin-left:62px}*/
 #wpdcom .wpdlb{clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%); height: 1px; width: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute;}
 
 /* Tooltip */
@@ -105,17 +103,17 @@ _:-ms-lang(x), .wpd-social-login [wpd-tooltip]::before{top: -24px;}
 #wpdcom .wpd-social-login i{opacity:0.8; font-size: 0.75rem; cursor: pointer; color: #fff; text-align: center; line-height: 1.5; width: 22px; height: 22px; border-radius: 50%; display: inline-block; margin: 0 2px;}
 #wpdcom .wpd-social-login i:hover{opacity: 1;}
 #wpdcom .wpd-social-login i.wpd-disqus{ font-style: normal; font-weight: bold; font-family: roboto, arial, sans-serif; font-size: 0.75rem; line-height: 1.5}
-/*#wpdcom .wpd-social-login .wpdsn-fb i{background-color: #4267B2;}
-#wpdcom .wpd-social-login .wpdsn-tw i{background-color:#1DA1F2;}
-#wpdcom .wpd-social-login .wpdsn-gg i{background-color:#D54C3F;}
-#wpdcom .wpd-social-login .wpdsn-ds i{background-color:#2196F3;}
-#wpdcom .wpd-social-login .wpdsn-wp i{background-color:#54595d;}
-#wpdcom .wpd-social-login .wpdsn-vk i{background-color:#4C75A3;}
-#wpdcom .wpd-social-login .wpdsn-ok i{background-color:#EF7800;}
-#wpdcom .wpd-social-login .wpdsn-insta i{background-color:#F97149;}
-#wpdcom .wpd-social-login .wpdsn-linked i{background-color:#007BB6;}
-#wpdcom .wpd-social-login .wpdsn-yandex i{background-color:#FF0000;}
-#wpdcom .wpd-social-login .wpdsn-mailru i{background-color:#168DE2;}*/
+#wpdcom .wpd-social-login .wpdsn-fb i,
+#wpdcom .wpd-social-login .wpdsn-tw i,
+#wpdcom .wpd-social-login .wpdsn-gg i,
+#wpdcom .wpd-social-login .wpdsn-ds i,
+#wpdcom .wpd-social-login .wpdsn-wp i,
+#wpdcom .wpd-social-login .wpdsn-vk i,
+#wpdcom .wpd-social-login .wpdsn-ok i,
+#wpdcom .wpd-social-login .wpdsn-insta i,
+#wpdcom .wpd-social-login .wpdsn-linked i,
+#wpdcom .wpd-social-login .wpdsn-yandex i,
+#wpdcom .wpd-social-login .wpdsn-mailru i{background-color:#202122;} 
 #wpdcom .wpd-auth .wpd-sep{border-right: 1px #d33 solid; margin:0 1rem; display: inline;}
 #wpdcom .wpd-auth .wpd-login{font-size: 1rem; line-height: 1.5;}
 #wpdcom .wpd-auth .wpd-login i{margin-right: 2px;}
