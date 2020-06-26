@@ -38,7 +38,7 @@
 							$excerpt = implode(" ", $excerpt);
 						}	
 					$excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
-					echo $excerpt;
+					echo esc_html( $excerpt );
 					?>	
 				</p>
 				<!-- ATTENTION: Needs translation -->

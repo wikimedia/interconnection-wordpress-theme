@@ -53,7 +53,7 @@ use Interconnection\Credits;
 
 	<div class="site-start wrapper">
 		<?php if ( is_front_page() ) { ?>
-			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
+			<p class="site-description"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
 		<?php }; ?>
 	</div>
 
