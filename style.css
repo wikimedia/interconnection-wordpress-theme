@@ -2063,6 +2063,9 @@ article.page h6[id]::before {
 	margin: 0;
 }
 
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -2083,12 +2086,12 @@ object {
 .custom-logo-link {
 	display: inline-block;
 	line-height: 1;
+	margin-right: 1.5rem;
 }
 
 .custom-logo {
 	max-height: 2.5rem;
 	width: auto;
-	margin-right: 1.5rem;
 }
 
 /*--------------------------------------------------------------
