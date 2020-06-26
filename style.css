@@ -430,7 +430,7 @@ i {
 blockquote {
 	margin-left: -1rem;
 	padding-left: 1rem;
-	border-left: 2px solid #36c;
+	border-left: 0.125rem solid #36c;
 }
 
 address {
@@ -495,7 +495,7 @@ body {
 hr {
 	background-color: #c8ccd1;
 	border: 0;
-	height: 1px;
+	height: 0.0625rem;
 	margin-bottom: 1.5em;
 }
 
@@ -538,6 +538,13 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+	border-spacing: 0;
+	border: 0.05rem solid #c8ccd1;
+}
+
+th,
+ td {
+	border: 0.05rem solid #c8ccd1;
 }
 
 .wrapper {
@@ -644,11 +651,11 @@ input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a {
-	border: 0 solid;
-	border-radius: 2px;
+	border: 0.08rem solid transparent;
+	border-radius: 0.125rem;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 0.4em 0.8em;
+	padding: 0.3em 0.8em 0.4em;
 	transition: 0.3s all;
 }
 
@@ -738,6 +745,7 @@ input[type="submit"]:focus,
 .main-navigation input[type="button"] {
 	background: #eaecf0;
 	color: #202122;
+	border-color: #202122;
 }
 
 .btn-light:visited,
@@ -755,6 +763,7 @@ input[type="submit"]:focus,
 .main-navigation input[type="button"]:hover {
 	background: #c8ccd1;
 	color: #000;
+	border-color: #000;
 }
 
 .btn-light:active,
@@ -768,6 +777,7 @@ input[type="submit"]:focus,
 .main-navigation input[type="button"]:active,
 .main-navigation input[type="button"]:focus {
 	color: #54595d;
+	border-color: #000;
 }
 
 .btn-accent {
@@ -810,9 +820,10 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #54595d;
-	border: 1px solid #ccc;
-	border-radius: 2px;
-	padding: 1px 5px 2px;
+	border: 0.08rem solid #ccc;
+	border-radius: 0.125rem;
+	padding: 0.2rem 0.25rem 0.3rem;
+	line-height: 1;
 	resize: vertical;
 }
 
@@ -836,7 +847,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #ccc;
+	border: 0.08rem solid #ccc;
 }
 
 textarea {
@@ -908,7 +919,7 @@ a:hover,
 	top: 0;
 	background: #fff;
 	transition: top 0.25s ease;
-	border-bottom: 1px #eaecf0 solid;
+	border-bottom: 0.0625rem #eaecf0 solid;
 }
 
 .site-header .top-nav {
@@ -1002,8 +1013,8 @@ a:hover,
 	list-style: none;
 	white-space: nowrap;
 	background-color: rgba(255, 255, 255, 0.96);
-	border: 1px solid #a2a9b1;
-	border-radius: 2px;
+	border: 0.0625rem solid #a2a9b1;
+	border-radius: 0.125rem;
 }
 
 .main-navigation .menu .sub-menu a {
@@ -1073,8 +1084,8 @@ a:hover,
 	top: 4.0625rem;
 	width: 100%;
 	padding: 1rem 1.875rem;
-	border-top: 1px #eaecf0 solid;
-	border-bottom: 1px #eaecf0 solid;
+	border-top: 0.0625rem #eaecf0 solid;
+	border-bottom: 0.0625rem #eaecf0 solid;
 	font-weight: 700;
 }
 
@@ -1385,13 +1396,13 @@ article.post header {
 
 article.post .post-thumbnail img {
 	width: 100%;
-	margin-bottom: 2.5rem;
+	margin-bottom: 1.25rem;
 }
 
 @media (min-width: 768px) {
 
 	article.post .post-thumbnail img {
-		margin-bottom: 3.75rem;
+		margin-bottom: 1.875rem;
 	}
 }
 
@@ -1436,6 +1447,15 @@ article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 	article.post .entry-content figure.size-full:not(.is-resized) figcaption {
 		width: 75%;
 	}
+}
+
+article.post .entry-content > ul,
+article.post .entry-content > ol {
+	padding-left: 1rem;
+}
+
+article.post .entry-content li {
+	margin-bottom: 1rem;
 }
 
 article.post .entry-footer {
@@ -1494,7 +1514,6 @@ article.post .entry-footer .entry-footer-meta span {
 }
 
 article.grid-post {
-	border-radius: 0 0 2px 2px;
 	padding-bottom: 1rem;
 	margin-bottom: 2.5rem;
 	transition: 0.3s all;
@@ -1536,7 +1555,7 @@ article.grid-post .home-thumbnail {
 	background-image: linear-gradient(120deg, #36c -400%, #eaf3ff 100%);
 	background-position: center center;
 	background-size: cover;
-	border: 1px solid #eaecf0;
+	border: 0.0625rem solid #eaecf0;
 }
 
 article.grid-post .home-thumbnail::before {
@@ -1849,7 +1868,7 @@ article.page h6[id]::before {
 	padding: 0.75rem 1rem;
 	border-radius: 0.2rem;
 	line-height: 1.25;
-	border: 2px solid;
+	border: 0.125rem solid;
 	margin-bottom: 1.25rem;
 	font-weight: 700;
 }
@@ -2047,8 +2066,8 @@ article.page h6[id]::before {
 	height: 4rem;
 	background-size: cover;
 	background-position: center;
-	border-radius: 2px;
-	border: 1px solid #eaecf0;
+	border-radius: 0.125rem;
+	border: 0.0625rem solid #eaecf0;
 	margin-right: 1rem;
 }
 

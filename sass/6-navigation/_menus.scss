@@ -5,7 +5,7 @@
 	top: 0;
 	background: $color__background-body;
 	transition: top .25s ease;
-	border-bottom: 1px $base80 solid;
+	border-bottom: 0.0625rem $base80 solid;
 
 	.top-nav {
 		height: rem($size__navigation);
@@ -86,8 +86,8 @@
 			list-style: none;
 			white-space: nowrap;
 			background-color: rgba(255, 255, 255, 0.96);
-			border: 1px solid $base50;
-			border-radius: 2px;
+			border: 0.0625rem solid $base50;
+			border-radius: 0.125rem;
 
 			a {
 				@include padding(4, 4, 4, 0);
@@ -145,8 +145,8 @@
 		top: rem($size__navigation);
 		width: 100%;
 		padding: 1rem rem(30);
-		border-top: 1px $base80 solid;
-		border-bottom: 1px $base80 solid;
+		border-top: 0.0625rem $base80 solid;
+		border-bottom: 0.0625rem $base80 solid;
 		font-weight: 700;
 	
 		.sub-menu {

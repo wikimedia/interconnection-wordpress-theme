@@ -15,7 +15,7 @@ article.post {
 
 	.post-thumbnail img{
 		width: 100%;
-		@include margin-bottom(1);
+		@include margin-bottom(0);
 	}
 
 	.entry-content {
@@ -42,6 +42,15 @@ article.post {
 				margin-right: auto;
 			}
 		}
+
+		> ul, 
+		> ol {
+			padding-left: 1rem;
+		}
+
+		li {
+			margin-bottom: 1rem;
+		}
 	}
 
 	.entry-footer{
@@ -65,7 +74,6 @@ article.post {
 
 // for grid
 article.grid-post {
-	border-radius: 0 0 2px 2px;
 	padding-bottom: 1rem;
 	@include margin-bottom(1);
 	transition: $transition;
@@ -97,7 +105,7 @@ article.grid-post {
 		background-image: $accent-gradient;
 		background-position: center center;
 		background-size: cover;
-		border: 1px solid $base80;
+		border: 0.0625rem solid $base80;
 
 		// when there is no featured image
 		&:before {
@@ -217,7 +225,7 @@ article.page h6[id]:before {
 		padding: 0.75rem 1rem;
 		border-radius: 0.2rem;
 		line-height: 1.25;
-		border: 2px solid;
+		border: 0.125rem solid;
 		@include margin-bottom(0);
 		font-weight: 700;
 
