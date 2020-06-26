@@ -17,7 +17,7 @@ if ( empty( $attachment ) || ! $img_url ) {
 	return;
 }
 
-$title       = $attachment->post_title;
+$credit_title = $attachment->post_title;
 $description = $attachment->post_content;
 $credit_info = get_post_meta( $image_id, 'credit_info', true );
 $author      = ! empty( $credit_info['author'] ) ? $credit_info['author'] : '';
@@ -60,7 +60,7 @@ $license_url = ! empty( $credit_info['license_url'] ) ? $credit_info['license_ur
 			<?php if ( ! empty( $url ) ) : ?>
 				<a href="<?php echo esc_url( $url ); ?>" target="_blank">
 			<?php endif; ?>
-					<?php echo esc_html( $title ); ?>
+					<?php echo esc_html( $credit_title ); ?>
 			<?php if ( ! empty( $url ) ) : ?>
 				</a>
 			<?php endif; ?>

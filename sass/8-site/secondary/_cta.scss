@@ -8,4 +8,12 @@
 	.widget img {
 		width: 100%;
 	}
+
+	.wp-caption {
+		margin: 0;
+		
+		figcaption {
+			display: none;
+		}
+	}
 }
