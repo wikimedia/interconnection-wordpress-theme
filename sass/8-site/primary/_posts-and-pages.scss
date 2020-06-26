@@ -109,7 +109,13 @@ article.grid-post {
 	}
 
 	&.featured-post {
-		@include column-2-to-1(column);
+		@include column-2-to-1(column, initial);
+
+		.entry-title {
+			@media (min-width: $medium-bp) {
+				padding-top: 0;
+			}
+		}
 
 		.home-thumbnail:before {
 			padding-top: 100%/16*9;
@@ -120,6 +126,14 @@ article.grid-post {
 				padding-top: 100%/16*9;
 			}
 		}
+
+		.featured-post-text {
+			min-width: 22rem;
+			@media (min-width: $medium-bp) {
+				margin-left: 1rem;
+			}
+		}
+
 	}
 }
 
@@ -140,7 +154,7 @@ article.page {
 	@include margin-bottom(1);
 
 	.entry-content {
-		@include column-2-to-1(column-reverse);
+		@include column-2-to-1(column-reverse, 65%);
 
 		.main-entry-content {
 			padding-right: 0;
@@ -150,11 +164,16 @@ article.page {
 		}
 	}
 
-	.toc ul {
-		list-style: none;
-		padding-left: 0;
+	.toc {
+		@include margin-bottom(0);
+		@include padding(0, 0, 0, 16);
 
-		@include accent-line();
+		ul {
+			list-style: none;
+			padding-left: 0;
+
+			@include accent-line();
+		}
 	}
 }
 

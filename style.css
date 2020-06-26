@@ -1541,7 +1541,6 @@ article.grid-post.featured-post > div:first-child {
 
 article.grid-post.featured-post > div:last-child {
 	width: 100%;
-	min-width: 22rem;
 }
 
 @media (min-width: 768px) {
@@ -1553,8 +1552,8 @@ article.grid-post.featured-post > div:last-child {
 
 @media (min-width: 768px) {
 
-	article.grid-post.featured-post > div:last-child {
-		margin-left: 1rem;
+	article.grid-post.featured-post .entry-title {
+		padding-top: 0;
 	}
 }
 
@@ -1573,6 +1572,17 @@ article.grid-post.featured-post .home-thumbnail::before {
 
 	article.grid-post.featured-post .home-thumbnail::before {
 		padding-top: 56.25%;
+	}
+}
+
+article.grid-post.featured-post .featured-post-text {
+	min-width: 22rem;
+}
+
+@media (min-width: 768px) {
+
+	article.grid-post.featured-post .featured-post-text {
+		margin-left: 1rem;
 	}
 }
 
@@ -1667,27 +1677,19 @@ article.page .entry-content > div:first-child {
 @media (min-width: 768px) {
 
 	article.page .entry-content > div:first-child {
-		width: initial;
+		width: 65%;
 		flex-grow: 1;
 	}
 }
 
 article.page .entry-content > div:last-child {
 	width: 100%;
-	min-width: 22rem;
 }
 
 @media (min-width: 768px) {
 
 	article.page .entry-content > div:last-child {
 		width: 32%;
-	}
-}
-
-@media (min-width: 768px) {
-
-	article.page .entry-content > div:last-child {
-		margin-left: 1rem;
 	}
 }
 
@@ -1699,6 +1701,25 @@ article.page .entry-content .main-entry-content {
 
 	article.page .entry-content .main-entry-content {
 		padding-right: 2rem;
+	}
+}
+
+article.page .toc {
+	margin-bottom: 1.25rem;
+	padding: 0 0;
+}
+
+@media (min-width: 768px) {
+
+	article.page .toc {
+		margin-bottom: 1.875rem;
+	}
+}
+
+@media (min-width: 768px) {
+
+	article.page .toc {
+		padding: 0 1rem;
 	}
 }
 
