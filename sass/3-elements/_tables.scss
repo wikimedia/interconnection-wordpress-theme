@@ -1,4 +1,10 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+	border-spacing: 0;
+	border: 0.05rem solid $base70;
+}
+
+th, td {
+	border: 0.05rem solid $base70;
 }

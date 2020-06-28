@@ -6,11 +6,11 @@ input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a {
-	border: 0px solid;
-	border-radius: 2px;
+	border: 0.08rem solid transparent;
+	border-radius: 0.125rem;
 	font-size: 1rem;
 	line-height: 1;
-	padding: 0.4em 0.8em;
+	padding: 0.3em 0.8em 0.4em;
 	transition: $transition;
 
 	&:hover {
@@ -60,6 +60,7 @@ input[type="submit"],
 .main-navigation input[type="button"] {
 	background: $base80;
 	color: $base10;
+	border-color: $base10;
 
 	&:visited {
 		color: $base10;
@@ -68,11 +69,13 @@ input[type="submit"],
 	&:hover {
 		background: $base70;
 		color: $base0;
+		border-color: $base0;
 	}
 
 	&:active,
 	&:focus {
 		color: $base20;
+		border-color: $base0;
 	}
 }
 
