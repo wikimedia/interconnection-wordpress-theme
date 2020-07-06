@@ -33,7 +33,7 @@
 			<h5>Table of contents</h5>
 			<ul>
 			<?php foreach ($ids as $key => $value) {
-				echo '<li><a href="#' . esc_html( $ids[$key]) . '">' . esc_html( $headings[$key] ) . '</a></li>';
+				echo '<li><a href="' . esc_url( '#' . $ids[$key] ) . '">' . esc_html( $headings[$key] ) . '</a></li>';
 			} ?>
 			</ul>
 		</div>
