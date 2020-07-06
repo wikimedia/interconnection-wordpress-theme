@@ -195,7 +195,7 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  */
 function wpdocs_excerpt_more( $more ) {
     if ( ! is_single() ) {
-        $more = sprintf( '...' );
+        $more = '...';
     }
     return $more;
 }

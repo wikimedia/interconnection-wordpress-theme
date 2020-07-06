@@ -38,7 +38,7 @@
 							$excerpt = implode(" ", $excerpt);
 						}	
 					$excerpt = preg_replace('`[[^]]*]`', '', $excerpt);
-					echo esc_html( $excerpt );
+					echo wp_strip_all_tags( $excerpt );
 					?>	
 				</p>
 				<!-- ATTENTION: Needs translation -->
