@@ -1,21 +1,21 @@
 /*
 Theme Name: Default
-Theme URI: 
+Theme URI:
 Author: gVectors team
-Author URI: 
-Description: 
+Author URI:
+Description:
 Version: 1.0
- * wpDiscuz 7 Minimal CSS Style 
+ * wpDiscuz 7 Minimal CSS Style
  * MODIFIED
  * Need to enable Comment Form and Comment List Style: Minimal - important!
- * Layout 2 
+ * Layout 2
  * Primary Color #202122
  * Unread comments background transparent
  * Primary buttons text #ffffff
  * Primary buttons background #3366CC
  * Comment Bubble Colors #202122
  * Inline Feedback Icon Colors #202122
- * 
+ *
  * Comment Text Size: 16px - this is important!
 */
 
@@ -113,7 +113,7 @@ _:-ms-lang(x), .wpd-social-login [wpd-tooltip]::before{top: -24px;}
 #wpdcom .wpd-social-login .wpdsn-insta i,
 #wpdcom .wpd-social-login .wpdsn-linked i,
 #wpdcom .wpd-social-login .wpdsn-yandex i,
-#wpdcom .wpd-social-login .wpdsn-mailru i{background-color:#202122;} 
+#wpdcom .wpd-social-login .wpdsn-mailru i{background-color:#202122;}
 #wpdcom .wpd-auth .wpd-sep{border-right: 1px #d33 solid; margin:0 1rem; display: inline;}
 #wpdcom .wpd-auth .wpd-login{font-size: 1rem; line-height: 1.5;}
 #wpdcom .wpd-auth .wpd-login i{margin-right: 2px;}
@@ -180,7 +180,7 @@ _:-ms-lang(x), .wpd-social-login [wpd-tooltip]::before{top: -24px;}
 #wpdcom .ql-toolbar button.ql-sourcecode:hover,
 #wpdcom .ql-toolbar .wmu-upload-wrap .wmu-add i:hover{color: #3366cc;}
 #wpdcom .ql-toolbar.ql-snow {border: 1px solid #a2a9b1; border-top: none;}
-#wpdcom .ql-snow .ql-toolbar button, 
+#wpdcom .ql-snow .ql-toolbar button,
 #wpdcom .ql-snow.ql-toolbar button {height: 1.25rem; width: 1.5rem;}
 #wpdcom .wpd-editor-char-counter{font-size: 0.75rem;padding: 3px 5px 2px;position: absolute;right: 0;}
 #wpdcom .wpd-editor-char-counter.error{color: #d33;}
