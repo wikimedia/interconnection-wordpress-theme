@@ -34,7 +34,7 @@ use Interconnection\Credits;
 				<h4 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h4>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
+			<nav id="site-navigation" class="main-navigation" title="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'interconnection' ); ?></button>
 				<?php
 				wp_nav_menu(
@@ -45,7 +45,7 @@ use Interconnection\Credits;
 				);
 				?>
 			</nav><!-- #site-navigation -->
-			<nav id="site-navigation-2" class="secondary-navigation">
+			<nav id="site-navigation-2" class="secondary-navigation" title="secondary-navigation">
 				<?php if ( is_active_sidebar( 'topnav-1' ) ) dynamic_sidebar( 'topnav-1' ); ?>
 			</nav><!-- #site-navigation-2 -->
 		</div><!-- top-nav -->
