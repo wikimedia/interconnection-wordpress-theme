@@ -326,8 +326,8 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-footer .wpd-vote-down svg{ fill: #72777d; cursor: pointer;}
 #wpdcom .wpd-comment-footer .wpd-vote-up:hover svg,
 #wpdcom .wpd-comment-footer .wpd-vote-down:hover svg{ fill: #54595d; }
-#wpdcom .wpd-comment-footer .wpd-vote-result{padding:0 8px; font-size: 0.875rem; text-align: center; color: #72777d;}
-#wpdcom .wpd-comment-footer .wpd-reply-button{cursor:pointer; font-size: 0.875rem; color: #72777d;}
+#wpdcom .wpd-comment-footer .wpd-vote-result{padding:0 8px; font-size: 0.875rem; text-align: center; color: #54595d;}
+#wpdcom .wpd-comment-footer .wpd-reply-button{cursor:pointer; font-size: 0.875rem; color: #54595d;}
 #wpdcom .wpd-comment-footer .wpd-reply-button i{margin-right: 6px;}
 #wpdcom .wpd-comment-footer .wpd-reply-button svg{ vertical-align: middle; transform: rotate(180deg); width: 1.25rem; height: 1.25rem; fill: #72777d; margin-right: 2px;}
 @-moz-document url-prefix() { #wpdcom .wpd-comment-footer .wpd-reply-button svg{vertical-align: bottom;} }
