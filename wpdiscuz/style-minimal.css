@@ -344,7 +344,7 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-right:hover .wpd-comment-footer .wpd-tools,
 #wpdcom .wpd-comment-right:hover .wpd-comment-footer .wpd-toggle,
 #wpdcom .wpd-comment-right:hover .wpd-comment-header .wpd-comment-share,
-#wpdcom .wpd-comment-right:hover .wpd-comment-header .wpd-comment-link{visibility: visible;}
+#wpdcom .wpd-comment-right:hover .wpd-comment-header .wpd-comment-link{visibility: visible; opacity: 1;}
 #wpdcom .wpd-comment.wpd-reply .wpd-comment-left{width: 50px;} _:-ms-lang(x), #wpdcom .wpd-comment.wpd-reply .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment.wpd-reply .wpd-avatar img,
 #wpdcom .wpd-comment.wpd-reply .wpd-avatar img.avatar{width:48px; height:48px; max-width: 48px; }
