@@ -312,7 +312,7 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-header .wpd-comment-share .wpd-tooltip-content{text-align: center;}
 #wpdcom .wpd-comment-header .wpd-comment-share .wpd-tooltip-content i{ font-size: 0.75rem; padding:0 6px; cursor: pointer;}
 #wpdcom .wpd-comment-header .wpd-comment-share .wpd-tooltip-content i:hover{ color: #fc3;}
-#wpdcom .wpd-comment-header .wpd-comment-link{padding:0; cursor: pointer; font-size: 0.75rem; color: #a2a9b1; align-self: flex-start; padding-top: 9px;}
+#wpdcom .wpd-comment-header .wpd-comment-link{padding:0; cursor: pointer; font-size: 0.75rem; color: #54595d; align-self: flex-start; padding-top: 9px;}
 #wpdcom .wpd-comment-header .wpd-comment-link span{margin-left: 12px}
 #wpdcom .wpd-comment-text{color: #202122; padding:0 0 0.5rem 0; word-break: break-all;}
 #wpdcom .wpd-comment-text * {}
@@ -336,8 +336,8 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-footer .wpd-vote-down:hover{fill: #54595d;}
 #wpdcom .wpd-comment-footer .wpd-reply-button:hover{color: #54595d;}
 #wpdcom .wpd-comment-footer .wpd-reply-button:hover svg{fill: #54595d;}
-#wpdcom .wpd-comment-footer .wpd-tools i{color: #a2a9b1; font-size: 0.875rem; cursor: pointer;}
-#wpdcom .wpd-comment-footer .wpd-toggle i{color: #a2a9b1; font-size: 1rem; cursor: pointer;}
+#wpdcom .wpd-comment-footer .wpd-tools i{color: #54595d; font-size: 0.875rem; cursor: pointer;}
+#wpdcom .wpd-comment-footer .wpd-toggle i{color: #54595d; font-size: 1rem; cursor: pointer;}
 #wpdcom .wpd-comment-footer .wpd-sep{border-right: 1px #a2a9b1 solid; margin:0 0.5rem; width: 1px; height: 1rem;}
 #wpdcom .wpd-comment-right:hover .wpd-comment-footer .wpd-tool-wrap,
 #wpdcom .wpd-comment-right:hover .wpd-comment-footer .wpd-sep,
