@@ -715,7 +715,7 @@ html[dir=rtl] .wpdiscuz-search-box .wpdiscuz-search-setting-img{margin-right:aut
 
 /* wpdiscuz-user-comment-mentioning style.css */
 /* not best practice: overwriting css rules with higher specificity e.g. #comments or #wpdcom */
-#wpdcom .wpducm-mention-list-container .wpducm-mention-list-item{margin-left: 0;list-style: none;cursor: pointer;background-color: #c8ccd1; border-bottom: 0 solid #bbb; border-top: 1px solid #fff;padding: 0.25rem 0; position:relative;}
+#wpdcom .wpducm-mention-list-container .wpducm-mention-list-item{margin-left: 0;list-style: none;cursor: pointer;background-color: #c8ccd1; border-bottom: 0 solid #bbb; border-top: 1px solid #fff;padding: 0.25rem 0.5rem; min-height: 2rem; position:relative;}
 #wpdcom .wpducm-mention-list-container .wpducm-mention-list-item:hover,
 #wpdcom .wpducm-mention-list > li.selected{background-color:#a2a9b1; }
 .wpducm-mention-list-container{width:270px;max-width: 270px; z-index: 15000;}
@@ -756,7 +756,7 @@ html[dir=rtl] .wpdiscuz-search-box .wpdiscuz-search-setting-img{margin-right:aut
 
 /* wpdiscuz-user-comment-mentioning style-rtl.css */
 /* not best practice: overwriting css rules with higher specificity e.g. #comments or #wpdcom */
-.wpducm-mention-list-container .wpducm-mention-list-item{margin-right: 0;list-style: none;cursor: pointer;background-color: #c8ccd1; border-bottom: 0 solid #bbb; border-top: 1px solid #fff;padding: 6px 9px; position:relative;}
+.wpducm-mention-list-container .wpducm-mention-list-item{margin-right: 0;list-style: none;cursor: pointer;background-color: #c8ccd1; border-bottom: 0 solid #bbb; border-top: 1px solid #fff;padding: 0.25rem 0.5rem; min-height: 2rem; position:relative;}
 .wpducm-mention-list-container .wpducm-mention-list-item:hover,
 .wpducm-mention-list > li.selected{background-color:#a2a9b1; }
 .wpducm-mention-list-container{width:270px;max-width: 270px; z-index: 15000;}
