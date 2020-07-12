@@ -20,10 +20,10 @@ get_header();
 			<?php 
 
 			$sticky = get_option('sticky_posts');
-			$exclude_from_grid = array();
+			$exclude_from_grid = [ $sticky[count($sticky)-1] ];
 			if ( is_home() && !empty($sticky) && ! is_paged() ) :
 				// use the last added sticky post - last in array
-				$the_query = new WP_Query( array ('p' => $sticky[count($sticky)-1] ) );
+				$the_query = new WP_Query( array ('post__in' => $exclude_from_grid ) );
 				$exclude_from_grid = [ $sticky[count($sticky)-1] ];
 
 				while ( $the_query->have_posts() ) :
@@ -38,7 +38,6 @@ get_header();
 			
 			query_posts( array_merge( 
 				array(
-					'ignore_sticky_posts' => true,
 					'post__not_in' => $exclude_from_grid ),
 					// merge with global query
 					$wp_query->query
