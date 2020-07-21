@@ -812,6 +812,11 @@ input[type="submit"]:focus,
 	font-size: 1.25rem;
 }
 
+.entry-content a.wp-block-button__link,
+.entry-content a.btn-accent {
+	text-decoration: none;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],

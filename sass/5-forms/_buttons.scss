@@ -104,3 +104,9 @@ input[type="submit"],
 .btn-big {
 	font-size: $font__size-h3;
 }
+
+// links with button style should not have link underline
+.entry-content a.wp-block-button__link,
+.entry-content a.btn-accent {
+	text-decoration: none;
+}
