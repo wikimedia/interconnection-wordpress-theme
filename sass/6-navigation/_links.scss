@@ -32,15 +32,11 @@ a {
 	a {
 		color: inherit;
 		text-decoration: underline;
-
-		&:hover {
-			color: $color__link;
-		}
 	}
 }
 
 .site-footer {
-	a {
+	a, a:hover {
 		color: $base100;
 	}
 
