@@ -21,6 +21,7 @@ article.post {
 	.entry-content {
 		font-family: $font__serif;
 		font-size: $font__size-h4;
+		overflow-wrap: break-word;
 		@include margin-bottom(1);
 
 		figure {
@@ -136,7 +137,12 @@ article.grid-post {
 		}
 
 		.featured-post-text {
-			min-width: 22rem;
+			min-width: 0;
+
+			@media (min-width: $small-bp) {
+				min-width: 22rem;
+			}
+
 			@media (min-width: $medium-bp) {
 				margin-left: 1rem;
 			}
@@ -246,4 +252,8 @@ article.page h6[id]:before {
 			animation-iteration-count: infinite;
 		}
 	}
+}
+
+.site-main .no-results {
+	@include margin-bottom(1);
 }
