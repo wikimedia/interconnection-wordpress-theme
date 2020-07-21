@@ -317,6 +317,7 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-text{color: #202122; padding:0 0 0.5rem 0; word-break: break-all;}
 #wpdcom .wpd-comment-text * {}
 #wpdcom .wpd-comment-text p{}
+#wpdcom .wpd-comment-last-edited {margin: 0.5rem 0; font-size: 0.875rem; color: #54595d;}
 #wpdcom .wpd-comment-footer{display: flex; flex-direction: row; flex-wrap: nowrap; justify-content:space-between; align-items: center; padding-top:0;}
 #wpdcom .wpd-comment-footer .wpd-vote{display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: center; padding-right: 1.25rem;}
 #wpdcom .wpd-comment-footer .wpd-vote-up,
