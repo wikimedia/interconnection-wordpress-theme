@@ -5,7 +5,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
-.archive .nav-links a {
+.archive .nav-links a,
+.wp-block-button__link {
 	border: 0.08rem solid transparent;
 	border-radius: 0.125rem;
 	font-size: 1rem;
@@ -33,7 +34,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
-.archive .nav-links a {
+.archive .nav-links a,
+.wp-block-button__link {
 	background: $base10;
 	color: $base100;
 
