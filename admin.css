@@ -1,0 +1,19 @@
+/* General styling for WordPress dashboard */
+
+/* Remove publishpress branding */
+.wrap .logo-header {
+display:none!important;
+}
+
+.pressshack-admin-wrapper > footer{
+display:none;
+}
+
+/* remove upgrade ad from publishpress */
+#allex_subscription_ad{
+display:none;
+}
+
+.pp-version-notice-bold-purple{
+display:none;
+}
