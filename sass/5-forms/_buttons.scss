@@ -5,7 +5,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
-.archive .nav-links a {
+.archive .nav-links a,
+.wp-block-button__link {
 	border: 0.08rem solid transparent;
 	border-radius: 0.125rem;
 	font-size: 1rem;
@@ -19,10 +20,15 @@ input[type="submit"],
 		cursor: pointer;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		border-color: $color__border-button-focus;
 		text-decoration: none;
+	}
+
+	&:focus {
+		border-color: $base100;
+		outline: none; 
+		box-shadow: 0 0 0 0.16rem $accent50;
 	}
 }
 
@@ -33,7 +39,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
-.archive .nav-links a {
+.archive .nav-links a,
+.wp-block-button__link {
 	background: $base10;
 	color: $base100;
 
@@ -46,8 +53,7 @@ input[type="submit"],
 		color: $base100;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base100;
 	}
 }
@@ -72,8 +78,7 @@ input[type="submit"],
 		border-color: $base0;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base20;
 		border-color: $base0;
 	}
@@ -93,12 +98,17 @@ input[type="submit"],
 		color: $base100;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base100;
 	}
 }
 
 .btn-big {
 	font-size: $font__size-h3;
+}
+
+// links with button style should not have link underline
+.entry-content a.wp-block-button__link,
+.entry-content a.btn-accent {
+	text-decoration: none;
 }

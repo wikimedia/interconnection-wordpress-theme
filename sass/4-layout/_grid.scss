@@ -49,3 +49,25 @@
 		align-items: center;
 	}
 }
+
+// flex "templates"
+.flex-3 {
+	@include column-3;
+}
+
+.flex-2 {
+	@include column-2;
+}
+
+// margin "templates"
+.margin-bottom-0 {
+	@include margin-bottom(0);
+}
+
+.margin-bottom-1 {
+	@include margin-bottom(1);
+}
+
+.margin-bottom-2 {
+	@include margin-bottom(2);
+}
