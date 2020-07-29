@@ -644,6 +644,109 @@ th,
 	align-items: center;
 }
 
+.flex-3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 500px) {
+
+	.flex-3 {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+.flex-3 > article,
+.flex-3 > div {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+
+	.flex-3 > article,
+	.flex-3 > div {
+		width: 48%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.flex-3 > article,
+	.flex-3 > div {
+		width: 32%;
+	}
+}
+
+.flex-3::after {
+	content: "";
+	display: block;
+	margin-right: 32%;
+}
+
+.flex-2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+
+	.flex-2 {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+.flex-2 > article,
+.flex-2 > div {
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+
+	.flex-2 > article,
+	.flex-2 > div {
+		width: 48%;
+	}
+}
+
+.margin-bottom-0 {
+	margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+
+	.margin-bottom-0 {
+		margin-bottom: 1.875rem;
+	}
+}
+
+.margin-bottom-1 {
+	margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+
+	.margin-bottom-1 {
+		margin-bottom: 3.75rem;
+	}
+}
+
+.margin-bottom-2 {
+	margin-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+
+	.margin-bottom-2 {
+		margin-bottom: 6.25rem;
+	}
+}
+
 button,
 .btn,
 input[type="button"],
@@ -674,23 +777,28 @@ input[type="submit"]:hover,
 }
 
 button:active,
- button:focus,
 .btn:active,
-.btn:focus,
 input[type="button"]:active,
-input[type="button"]:focus,
 input[type="reset"]:active,
-input[type="reset"]:focus,
 input[type="submit"]:active,
-input[type="submit"]:focus,
 .home .nav-links a:active,
-.home .nav-links a:focus,
 .archive .nav-links a:active,
-.archive .nav-links a:focus,
-.wp-block-button__link:active,
-.wp-block-button__link:focus {
+.wp-block-button__link:active {
 	border-color: #aaa #bbb #bbb;
 	text-decoration: none;
+}
+
+button:focus,
+.btn:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+.home .nav-links a:focus,
+.archive .nav-links a:focus,
+.wp-block-button__link:focus {
+	border-color: #fff;
+	outline: none;
+	box-shadow: 0 0 0 0.16rem #36c;
 }
 
 button,
@@ -729,21 +837,13 @@ input[type="submit"]:hover,
 }
 
 button:active,
- button:focus,
 .btn-dark:active,
-.btn-dark:focus,
 input[type="button"]:active,
-input[type="button"]:focus,
 input[type="reset"]:active,
-input[type="reset"]:focus,
 input[type="submit"]:active,
-input[type="submit"]:focus,
 .home .nav-links a:active,
-.home .nav-links a:focus,
 .archive .nav-links a:active,
-.archive .nav-links a:focus,
-.wp-block-button__link:active,
-.wp-block-button__link:focus {
+.wp-block-button__link:active {
 	color: #fff;
 }
 
@@ -776,15 +876,10 @@ input[type="submit"]:focus,
 }
 
 .btn-light:active,
- .btn-light:focus,
 .site-footer button:active,
-.site-footer button:focus,
 .site-footer input[type="submit"]:active,
-.site-footer input[type="submit"]:focus,
 .main-navigation button:active,
-.main-navigation button:focus,
-.main-navigation input[type="button"]:active,
-.main-navigation input[type="button"]:focus {
+.main-navigation input[type="button"]:active {
 	color: #54595d;
 	border-color: #000;
 }
@@ -803,8 +898,7 @@ input[type="submit"]:focus,
 	color: #fff;
 }
 
-.btn-accent:active,
- .btn-accent:focus {
+.btn-accent:active {
 	color: #fff;
 }
 
@@ -886,7 +980,6 @@ a:visited {
 }
 
 a:hover,
- a:focus,
  a:active {
 	color: #36c;
 	text-decoration: underline;
@@ -1925,6 +2018,17 @@ article.page h6[id]::before {
 	}
 }
 
+.page-header {
+	margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+
+	.page-header {
+		margin-bottom: 1.875rem;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1986,6 +2090,18 @@ article.page h6[id]::before {
 /*--------------------------------------------------------------
 ## CTA
 --------------------------------------------------------------*/
+.cta-container .widget img {
+	width: 100%;
+}
+
+.cta-container .wp-caption {
+	margin: 0;
+}
+
+.cta-container .wp-caption figcaption {
+	display: none;
+}
+
 #cta {
 	background: #eaf3ff;
 	color: #202122;
@@ -2017,18 +2133,6 @@ article.page h6[id]::before {
 	#cta .wrapper > div {
 		width: 48%;
 	}
-}
-
-#cta .widget img {
-	width: 100%;
-}
-
-#cta .wp-caption {
-	margin: 0;
-}
-
-#cta .wp-caption figcaption {
-	display: none;
 }
 
 /*--------------------------------------------------------------
