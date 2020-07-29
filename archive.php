@@ -18,6 +18,9 @@ get_header();
 					<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
+					if ( is_active_sidebar( 'archive-1' ) ) { 
+						dynamic_sidebar( 'archive-1' );
+					}
 					?>
 				</header><!-- .page-header -->
 

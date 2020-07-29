@@ -20,10 +20,15 @@ input[type="submit"],
 		cursor: pointer;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		border-color: $color__border-button-focus;
 		text-decoration: none;
+	}
+
+	&:focus {
+		border-color: $base100;
+		outline: none; 
+		box-shadow: 0 0 0 0.16rem $accent50;
 	}
 }
 
@@ -48,8 +53,7 @@ input[type="submit"],
 		color: $base100;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base100;
 	}
 }
@@ -74,8 +78,7 @@ input[type="submit"],
 		border-color: $base0;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base20;
 		border-color: $base0;
 	}
@@ -95,8 +98,7 @@ input[type="submit"],
 		color: $base100;
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		color: $base100;
 	}
 }

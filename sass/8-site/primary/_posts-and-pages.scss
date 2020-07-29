@@ -257,3 +257,7 @@ article.page h6[id]:before {
 .site-main .no-results {
 	@include margin-bottom(1);
 }
+
+.page-header {
+	@include margin-bottom(0);	
+}

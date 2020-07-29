@@ -129,9 +129,21 @@ function interconnection_widgets_init() {
 	// call to action widget
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Call to action', 'interconnection' ),
+			'name'          => esc_html__( 'Call to action (2 column)', 'interconnection' ),
 			'id'            => 'cta-1',
-			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 1 image and 1 custom hmtl/text widget.', 'interconnection' ),
+			'before_widget' => '<div class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	// another call to action widget
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Call to action (3 column)', 'interconnection' ),
+			'id'            => 'cta-2',
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 3 custom html widgets.', 'interconnection' ),
 			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -160,6 +172,18 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<span>',
 			'after_title'   => '</span>',
+		)
+	);
+	// optional widget for adding context on archive pages
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Archive pages', 'interconnection' ),
+			'id'            => 'archive-1',
+			'description'   => esc_html__( 'Add widgets here. They appear on archive pages.', 'interconnection' ),
+			'before_widget' => '<div id="archive-notice" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
