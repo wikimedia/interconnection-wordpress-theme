@@ -90,6 +90,19 @@ function interconnection_customize_style( $wp_customize ) {
 		'description' => esc_html__( 'Add underline to links in entry content', 'theme' ),
     ) );
 
+    // Link color
+    $wp_customize->add_setting( 'visited_link_color', array(
+    	'type' => 'theme_mod',
+		'default'   => '#6633cc',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'visited_link_color', array(
+		'section' => 'colors',
+		'label'   => esc_html__( 'Visited link color', 'theme' ),
+		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
+    ) ) );
+
     // Accent button background color
     $wp_customize->add_setting( 'accent_color', array(
 		'type' => 'theme_mod',
@@ -128,6 +141,19 @@ function interconnection_customize_style( $wp_customize ) {
 		'label'   => esc_html__( 'Accent color light', 'theme' ),
 		'description' => esc_html__( 'E.g. Call to action background', 'theme' ),
     ) ) );
+
+    // CTA 2 background
+    $wp_customize->add_setting( 'neutral_highlight_color', array(
+		'type' => 'theme_mod',
+		'default'   => '#eaecf0',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'neutral_highlight_color', array(
+		'section' => 'colors',
+		'label'   => esc_html__( 'Neutral highlight color', 'theme' ),
+		'description' => esc_html__( 'E.g. second call to action background', 'theme' ),
+    ) ) );
 }
 add_action( 'customize_register', 'interconnection_customize_style' );
 
@@ -136,13 +162,18 @@ function interconnection_customize_style_css() {
 
 	$link_color = get_theme_mod( 'link_color', '' );
 	$accent_color = get_theme_mod( 'accent_color', '' );
+	$visited_link_color = get_theme_mod( 'visited_link_color', '' );
 	$accent_dark_color = get_theme_mod( 'accent_dark_color', '' );
 	$accent_light_color = get_theme_mod( 'accent_light_color', '' );
 	$link_underline = get_theme_mod( 'link_underline', '') ? 'underline' : 'none';
+	$neutral_highlight_color = get_theme_mod( 'neutral_highlight_color', '' );
 	?>
 
 	a, a:hover { 
 		color: <?php echo $link_color; ?>; border-bottom-color: <?php echo $link_color; ?>; 
+	}
+	a:visited { 
+		color: <?php echo $visited_link_color; ?>;
 	}
 	.btn-accent { 
 		background: <?php echo $accent_color; ?>; 
@@ -155,6 +186,9 @@ function interconnection_customize_style_css() {
 	}
 	.entry-content a { 
 		text-decoration: <?php echo $link_underline; ?>; 
+	}
+	#cta2 .widget {
+		background-color: <?php echo $neutral_highlight_color; ?>; 
 	}
 	
 	<?php

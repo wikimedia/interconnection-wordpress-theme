@@ -7,20 +7,24 @@
  * @package Interconnection
  */
 
-if ( ! is_active_sidebar( 'cta-1' ) ) {
+if ( ! is_active_sidebar( 'cta-1' ) && ! is_active_sidebar( 'cta-2' ) ) {
 	return;
 }
 ?>
 
-<aside id="cta-section" class="section">
-	<div id="cta" class="cta-container section">	
-		<div class="wrapper">
-			<?php dynamic_sidebar( 'cta-1' ); ?>
+<aside id="cta-container" >
+	<?php if ( is_active_sidebar( 'cta-1' ) ) { ?>
+		<div id="cta" class="cta-section section">	
+			<div class="wrapper">
+				<?php dynamic_sidebar( 'cta-1' ); ?>
+			</div>
 		</div>
-	</div>
-	<div id="cta2" class="cta-container section">	
+	<?php }
+	if ( is_active_sidebar( 'cta-2' ) ) { ?>
+	<div id="cta2" class="cta-section section">	
 		<div class="wrapper">
 			<?php dynamic_sidebar( 'cta-2' ); ?>
 		</div>
 	</div>
+	<?php } ?>
 </aside><!-- #secondary -->
