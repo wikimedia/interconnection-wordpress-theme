@@ -1112,6 +1112,7 @@ a:hover,
 	background-color: rgba(255, 255, 255, 0.96);
 	border: 0.0625rem solid #a2a9b1;
 	border-radius: 0.125rem;
+	max-width: 100vw;
 }
 
 .main-navigation .menu .sub-menu a {
@@ -1134,6 +1135,7 @@ a:hover,
 .main-navigation .menu li:hover > ul,
 .main-navigation .menu li.focus > ul {
 	left: -0.5rem;
+	right: auto;
 }
 
 .main-navigation .menu .active > a {
@@ -1288,10 +1290,8 @@ a:hover,
 }
 
 .comment-navigation .nav-previous,
-.comment-navigation .nav-next,
-.posts-navigation .nav-previous,
-.posts-navigation .nav-next {
-	flex: 1 0 49%;
+.posts-navigation .nav-previous {
+	margin-right: 1rem;
 }
 
 .post-navigation .nav-links {
@@ -2007,14 +2007,14 @@ article.page h6[id]::before {
 	animation-iteration-count: infinite;
 }
 
-.site-main .no-results {
-	margin-bottom: 2.5rem;
+.site-main {
+	margin-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
 
-	.site-main .no-results {
-		margin-bottom: 3.75rem;
+	.site-main {
+		margin-bottom: 6.25rem;
 	}
 }
 
@@ -2090,16 +2090,31 @@ article.page h6[id]::before {
 /*--------------------------------------------------------------
 ## CTA
 --------------------------------------------------------------*/
-.cta-container .widget img {
+.cta-section .widget_media_image img {
 	width: 100%;
 }
 
-.cta-container .wp-caption {
+.cta-section .wp-caption {
 	margin: 0;
 }
 
-.cta-container .wp-caption figcaption {
+.cta-section .wp-caption figcaption {
 	display: none;
+}
+
+.cta-section ul {
+	list-style: none;
+	padding: 0;
+}
+
+.cta-section ul li {
+	margin-bottom: 0.5rem;
+}
+
+.cta-section h1 a:visited,
+.cta-section h2 a:visited,
+.cta-section h3 a:visited {
+	color: #202122;
 }
 
 #cta {
@@ -2133,6 +2148,55 @@ article.page h6[id]::before {
 	#cta .wrapper > div {
 		width: 48%;
 	}
+}
+
+#cta2 .wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 500px) {
+
+	#cta2 .wrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+#cta2 .wrapper > article,
+#cta2 .wrapper > div {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+
+	#cta2 .wrapper > article,
+	#cta2 .wrapper > div {
+		width: 48%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	#cta2 .wrapper > article,
+	#cta2 .wrapper > div {
+		width: 32%;
+	}
+}
+
+#cta2 .wrapper::after {
+	content: "";
+	display: block;
+	margin-left: 32%;
+}
+
+#cta2 .widget {
+	background: #eaecf0;
+	color: #202122;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.125rem;
 }
 
 /*--------------------------------------------------------------
