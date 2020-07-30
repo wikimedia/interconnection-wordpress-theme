@@ -234,9 +234,8 @@
 		flex-direction: row;
 	}
 
-	.nav-previous,
-	.nav-next {
-		flex: 1 0 49%;
+	.nav-previous {
+		margin-right: 1rem;
 	}
 }
 
