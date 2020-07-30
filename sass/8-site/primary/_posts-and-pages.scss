@@ -254,8 +254,8 @@ article.page h6[id]:before {
 	}
 }
 
-.site-main .no-results {
-	@include margin-bottom(1);
+.site-main {
+	@include margin-bottom(2);
 }
 
 .page-header {
