@@ -8,8 +8,31 @@
 	border-bottom: 0.0625rem $base80 solid;
 
 	.top-nav {
-		height: rem($size__navigation);
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+
+		@media screen and (min-width: $small-bp) {
+			padding-top: 0.375rem;
+			padding-bottom: 0.375rem;
+		}		
 	}
+
+	select {
+		max-width: rem(110);
+	}
+}
+
+.headroom {
+	will-change: transform;
+	transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+	transform: translateY(0%);
+}
+
+.headroom--unpinned {
+	transform: translateY(-100%);
 }
 
 .admin-bar .site-header {
@@ -34,9 +57,9 @@
 		}
 	}
 
-	// @media screen and (max-width: $small-bp) {
-	// 	display: none;
-	// }
+	@media screen and (max-width: $small-bp) {
+		display: none;
+	}
 }
 
 .custom-logo-link {
@@ -144,7 +167,7 @@
 	.menu {
 		position: absolute;
 		left: 0;
-		top: rem($size__navigation);
+		top: 3rem;
 		width: 100%;
 		padding: 1rem rem(30);
 		border-top: 0.0625rem $base80 solid;
@@ -179,18 +202,29 @@
 	text-align: right;
 	
 	> div {
-		display: inline-block;
 		margin-left: 0.5rem;
+		display: none;
+		@media screen and (min-width: $medium-bp) {
+			display: inline-block;
+		}
+	}
+
+	> div:first-child {
+		display: inline-block;
 	}
 }
 
 .site-start {
-	margin-top: rem($site-main-shift);
+	margin-top: 4rem;
 	@include margin-bottom(0);
 	position: relative;
 
+	@media screen and (min-width: $small-bp) {
+		margin-top: 6rem;
+	}
+
 	.site-description {
-		margin-bottom: 4rem;
+		@include margin-bottom(1);
 		@include accent-line();
 	}
 }

@@ -34,6 +34,21 @@ textarea {
 
 select {
 	border: 0.08rem solid $color__border-input;
+	padding-top: 0.2rem;
+	padding-right: 1.25rem;
+	padding-bottom: 0.3rem;
+	padding-left: 0.2rem;
+	border-radius: 0.125rem;
+	line-height: 1.2;
+	background-image: url("assets/svg/down.svg");
+	background-color: $base100;
+	background-repeat: no-repeat;
+	background-position: right 0.25rem top 50%;
+	background-size: 0.75rem;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	transition: 0.2s all;
 }
 
 textarea {
