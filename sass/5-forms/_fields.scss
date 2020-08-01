@@ -23,11 +23,32 @@ textarea {
 
 	&:focus {
 		color: $color__text-input-focus;
+		background-color: $base100;
+	}
+
+	&::placeholder {
+		color: $color__text-input-placeholder;
+		opacity: 1;
 	}
 }
 
 select {
 	border: 0.08rem solid $color__border-input;
+	padding-top: 0.2rem;
+	padding-right: 1.25rem;
+	padding-bottom: 0.3rem;
+	padding-left: 0.2rem;
+	border-radius: 0.125rem;
+	line-height: 1.2;
+	background-image: url("assets/svg/down.svg");
+	background-color: $base100;
+	background-repeat: no-repeat;
+	background-position: right 0.25rem top 50%;
+	background-size: 0.75rem;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	transition: 0.2s all;
 }
 
 textarea {
@@ -35,6 +56,44 @@ textarea {
 }
 
 .site-footer input[type="search"] {
-	background-color: $base10;
-	color: $base100;
+	background-color: $base70;
+
+	&::placeholder {
+		color: $base10;
+	}
+}
+
+form[role="search"] {
+	position: relative;
+}
+
+input[type="search"] {
+	background-image: url("assets/svg/search.svg");
+	background-color: $base100;
+	background-repeat: no-repeat;
+	background-position: right 0.25rem top 50%;
+	background-size: 1rem;
+	padding-right: 1.5rem;
+}
+
+header input[type="search"],
+footer input[type="search"] {
+	max-width: rem(150);
+}
+
+form[role="search"] input[type="submit"] {
+	position: absolute;
+	width: 1.5rem;
+	height: 100%;
+	right: 0;
+	top: 0;
+	padding: 0;
+	text-indent: -999em;
+	background: 0 0;
+	color: inherit;
+	border-width: 0;
+	z-index: 2;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	overflow: hidden;
 }

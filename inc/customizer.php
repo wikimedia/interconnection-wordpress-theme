@@ -64,95 +64,101 @@ add_action( 'customize_preview_init', 'interconnection_customize_preview_js' );
  * Theme style customization
  */
 function interconnection_customize_style( $wp_customize ) {
+	$wp_customize->add_section( 'interconnection_section' , array(
+		'title' => __( 'Interconnection customizations', 'mytheme' ),
+		'description' => esc_html__( 'This theme uses colors defined at design.wikimedia.org/style-guide/visual-style_colors by default.', 'theme' ),
+		'priority' => 30,
+	) );
+
     // Link color
     $wp_customize->add_setting( 'link_color', array(
     	'type' => 'theme_mod',
-		'default'   => '#3366cc',
+		'default' => '#3366cc',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Link color', 'theme' ),
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Link color', 'theme' ),
 		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
     ) ) );
 
-    // Link underline (entry content)
+    // Link underline
     $wp_customize->add_setting( 'link_underline', array(
     	'type' => 'theme_mod',
-		'default'   => false,
+		'default' => false,
 		'transport' => 'refresh',
     ) );
     $wp_customize->add_control( 'link_underline', array(
-    	'type'    => 'checkbox',
-		'section' => 'colors',
-		'label'   => esc_html__( 'Link underline', 'theme' ),
-		'description' => esc_html__( 'Add underline to links in entry content', 'theme' ),
+    	'type' => 'checkbox',
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Link underline', 'theme' ),
+		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
     ) );
 
     // Link color
     $wp_customize->add_setting( 'visited_link_color', array(
     	'type' => 'theme_mod',
-		'default'   => '#6633cc',
+		'default' => '#6633cc',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'visited_link_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Visited link color', 'theme' ),
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Visited link color', 'theme' ),
 		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
     ) ) );
 
     // Accent button background color
     $wp_customize->add_setting( 'accent_color', array(
 		'type' => 'theme_mod',
-		'default'   => '#3366cc',
+		'default' => '#3366cc',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Accent color', 'theme' ),
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Accent color', 'theme' ),
 		'description' => esc_html__( 'E.g. accent button color', 'theme' ),
     ) ) );
 
     // Accent button hover color
     $wp_customize->add_setting( 'accent_dark_color', array(
 		'type' => 'theme_mod',
-		'default'   => '#2a4b8d',
+		'default' => '#2a4b8d',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_dark_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Accent color dark', 'theme' ),
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Accent color dark', 'theme' ),
 		'description' => esc_html__( 'E.g. accent button hover color', 'theme' ),
     ) ) );
 
     // CTA background
     $wp_customize->add_setting( 'accent_light_color', array(
 		'type' => 'theme_mod',
-		'default'   => '#eaf3ff',
+		'default' => '#eaf3ff',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_light_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Accent color light', 'theme' ),
-		'description' => esc_html__( 'E.g. Call to action background', 'theme' ),
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Accent color light', 'theme' ),
+		'description' => esc_html__( 'E.g. Call to action (2 column) background', 'theme' ),
     ) ) );
 
     // CTA 2 background
-    $wp_customize->add_setting( 'neutral_highlight_color', array(
+    $wp_customize->add_setting( 'neutral_background_color', array(
 		'type' => 'theme_mod',
-		'default'   => '#eaecf0',
+		'default' => '#eaecf0',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
     ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'neutral_highlight_color', array(
-		'section' => 'colors',
-		'label'   => esc_html__( 'Neutral highlight color', 'theme' ),
-		'description' => esc_html__( 'E.g. second call to action background', 'theme' ),
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'neutral_background_color', array(
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Neutral highlight color', 'theme' ),
+		'description' => esc_html__( 'E.g. Call to action (3 column) background', 'theme' ),
     ) ) );
 }
 add_action( 'customize_register', 'interconnection_customize_style' );
@@ -166,7 +172,7 @@ function interconnection_customize_style_css() {
 	$accent_dark_color = get_theme_mod( 'accent_dark_color', '' );
 	$accent_light_color = get_theme_mod( 'accent_light_color', '' );
 	$link_underline = get_theme_mod( 'link_underline', '') ? 'underline' : 'none';
-	$neutral_highlight_color = get_theme_mod( 'neutral_highlight_color', '' );
+	$neutral_background_color = get_theme_mod( 'neutral_background_color', '' );
 	?>
 
 	a, a:hover { 
@@ -188,7 +194,7 @@ function interconnection_customize_style_css() {
 		text-decoration: <?php echo $link_underline; ?>; 
 	}
 	#cta2 .widget {
-		background-color: <?php echo $neutral_highlight_color; ?>; 
+		background-color: <?php echo $neutral_background_color; ?>; 
 	}
 	
 	<?php
@@ -197,10 +203,38 @@ function interconnection_customize_style_css() {
 	return $css;
 }
 
-// Modify our styles registration like so:
+// Modify our styles registration
 function theme_enqueue_styles() {
-  wp_enqueue_style( 'theme-styles', get_stylesheet_uri() );
-  $custom_css = interconnection_customize_style_css();
-  wp_add_inline_style( 'theme-styles', $custom_css );
+	// handle defined in functions.php
+	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri() );
+	$custom_css = interconnection_customize_style_css();
+	wp_add_inline_style( 'interconnection-style', $custom_css );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+/**
+ * Theme function customization
+ */
+function interconnection_customize_options( $wp_customize ) {
+    // Enable headroom.min.js
+    $wp_customize->add_setting( 'headroom', array(
+    	'type' => 'theme_mod',
+		'default' => true,
+		'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( 'headroom', array(
+    	'type' => 'checkbox',
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Headroom.js', 'theme' ),
+		'description' => esc_html__( 'Hide header when scrolling down', 'theme' ),
+    ) );
+}
+add_action( 'customize_register', 'interconnection_customize_options' );
+
+function theme_enqueue_scripts () {
+	if ( !get_theme_mod( 'headroom', '' ) ) {
+		wp_deregister_script( 'interconnection-headroom-js' );
+		wp_deregister_script( 'header' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );

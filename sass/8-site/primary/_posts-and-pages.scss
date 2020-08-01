@@ -201,8 +201,8 @@ article.page h5[id]:before,
 article.page h6[id]:before {
 	content: " ";
 	display: block;
-	margin-top: rem(-$size__navigation - 50);
-	height: rem($size__navigation + 50);
+	margin-top: -4rem;
+	height: 4rem;
 	visibility: hidden;
 }
 
