@@ -83,7 +83,7 @@ function interconnection_customize_style( $wp_customize ) {
 		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
     ) ) );
 
-    // Link underline (entry content)
+    // Link underline
     $wp_customize->add_setting( 'link_underline', array(
     	'type' => 'theme_mod',
 		'default' => false,
@@ -203,7 +203,7 @@ function interconnection_customize_style_css() {
 	return $css;
 }
 
-// Modify our styles registration like so:
+// Modify our styles registration
 function theme_enqueue_styles() {
 	// handle defined in functions.php
 	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri() );
@@ -211,3 +211,30 @@ function theme_enqueue_styles() {
 	wp_add_inline_style( 'interconnection-style', $custom_css );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+/**
+ * Theme function customization
+ */
+function interconnection_customize_options( $wp_customize ) {
+    // Enable headroom.min.js
+    $wp_customize->add_setting( 'headroom', array(
+    	'type' => 'theme_mod',
+		'default' => true,
+		'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( 'headroom', array(
+    	'type' => 'checkbox',
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Headroom.js', 'theme' ),
+		'description' => esc_html__( 'Hide header when scrolling down', 'theme' ),
+    ) );
+}
+add_action( 'customize_register', 'interconnection_customize_options' );
+
+function theme_enqueue_scripts () {
+	if ( !get_theme_mod( 'headroom', '' ) ) {
+		wp_deregister_script( 'interconnection-headroom-js' );
+		wp_deregister_script( 'header' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
