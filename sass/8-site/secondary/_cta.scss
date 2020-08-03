@@ -1,6 +1,7 @@
 .cta-section {
 	.widget_media_image img {
 		width: 100%;
+		border-radius: 0.125rem;
 	}
 
 	.wp-caption {
@@ -23,23 +24,15 @@
 	h1 a:visited,
 	h2 a:visited,
 	h3 a:visited {
-		color: $base10;
+		color: inherit;
 	}
 }
 
 #cta {
 	@include shade("accent");
-	
-	.wrapper {
-		@include column-2;
-	}
 }
 
 #cta2 {
-	.wrapper {
-		@include column-3;
-	}
-
 	.widget {
 		@include shade("light");
 		padding: 0.75rem 1.5rem;
