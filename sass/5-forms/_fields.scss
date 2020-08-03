@@ -49,6 +49,15 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	transition: 0.2s all;
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	&:hover {
+		border-color: $base30;
+		cursor: pointer;
+	}
 }
 
 textarea {

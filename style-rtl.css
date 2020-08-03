@@ -543,7 +543,7 @@ table {
 }
 
 th,
-td {
+ td {
 	border: 0.05rem solid #c8ccd1;
 }
 
@@ -994,6 +994,15 @@ select {
 	transition: 0.2s all;
 }
 
+select::-ms-expand {
+	display: none;
+}
+
+select:hover {
+	border-color: #72777d;
+	cursor: pointer;
+}
+
 textarea {
 	width: 100%;
 }
@@ -1054,7 +1063,7 @@ a:visited {
 }
 
 a:hover,
-a:active {
+ a:active {
 	color: #36c;
 	text-decoration: underline;
 }
@@ -1064,7 +1073,7 @@ a:focus {
 }
 
 a:hover,
-a:active {
+ a:active {
 	outline: 0;
 }
 
@@ -1079,7 +1088,8 @@ a:active {
 }
 
 .site-footer a,
-.site-footer a:hover {
+ .site-footer a:hover,
+ .site-footer a:visited {
 	color: #fff;
 }
 
@@ -1397,9 +1407,9 @@ a:active {
 }
 
 .site-main .comment-navigation,
-.site-main
+ .site-main
 .posts-navigation,
-.site-main
+ .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -1780,7 +1790,7 @@ article.grid-post .post-excerpt {
 }
 
 article.grid-post .entry-meta,
-article.grid-post .entry-meta a {
+ article.grid-post .entry-meta a {
 	color: #72777d;
 }
 
@@ -2177,7 +2187,7 @@ article.page h6[id]::before {
 }
 
 .comments-area ul,
-.comments-area ol {
+ .comments-area ol {
 	margin: 0;
 	padding: 0;
 	list-style: none;

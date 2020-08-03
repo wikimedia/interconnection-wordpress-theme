@@ -994,6 +994,15 @@ select {
 	transition: 0.2s all;
 }
 
+select::-ms-expand {
+	display: none;
+}
+
+select:hover {
+	border-color: #72777d;
+	cursor: pointer;
+}
+
 textarea {
 	width: 100%;
 }
@@ -1079,7 +1088,8 @@ a:hover,
 }
 
 .site-footer a,
- .site-footer a:hover {
+ .site-footer a:hover,
+ .site-footer a:visited {
 	color: #fff;
 }
 
