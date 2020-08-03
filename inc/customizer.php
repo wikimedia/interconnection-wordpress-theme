@@ -217,12 +217,12 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  */
 function interconnection_customize_options( $wp_customize ) {
     // Enable headroom.min.js
-    $wp_customize->add_setting( 'headroom', array(
+    $wp_customize->add_setting( 'enable_headroom', array(
     	'type' => 'theme_mod',
-		'default' => true,
+		'default' => false,
 		'transport' => 'refresh',
     ) );
-    $wp_customize->add_control( 'headroom', array(
+    $wp_customize->add_control( 'enable_headroom', array(
     	'type' => 'checkbox',
 		'section' => 'interconnection_section',
 		'label' => esc_html__( 'Headroom.js', 'theme' ),
@@ -232,9 +232,9 @@ function interconnection_customize_options( $wp_customize ) {
 add_action( 'customize_register', 'interconnection_customize_options' );
 
 function theme_enqueue_scripts () {
-	if ( !get_theme_mod( 'headroom', '' ) ) {
+	if ( !get_theme_mod( 'enable_headroom', '' ) ) {
 		wp_deregister_script( 'interconnection-headroom-js' );
-		wp_deregister_script( 'header' );
+		wp_deregister_script( 'interconnection-header' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
