@@ -994,6 +994,15 @@ select {
 	transition: 0.2s all;
 }
 
+select::-ms-expand {
+	display: none;
+}
+
+select:hover {
+	border-color: #72777d;
+	cursor: pointer;
+}
+
 textarea {
 	width: 100%;
 }
@@ -1070,16 +1079,18 @@ a:hover,
 
 .grid-post .entry-title a,
 .grid-post .entry-title a:visited {
-	color: #202122;
+	color: inherit;
 }
 
-.photo-credit-container a {
+.photo-credit-container a,
+ .photo-credit-container a:visited {
 	color: inherit;
 	text-decoration: underline;
 }
 
 .site-footer a,
- .site-footer a:hover {
+ .site-footer a:hover,
+ .site-footer a:visited {
 	color: #fff;
 }
 
@@ -2224,6 +2235,7 @@ article.page h6[id]::before {
 --------------------------------------------------------------*/
 .cta-section .widget_media_image img {
 	width: 100%;
+	border-radius: 0.125rem;
 }
 
 .cta-section .wp-caption {
@@ -2246,82 +2258,12 @@ article.page h6[id]::before {
 .cta-section h1 a:visited,
 .cta-section h2 a:visited,
 .cta-section h3 a:visited {
-	color: #202122;
+	color: inherit;
 }
 
 #cta {
 	background: #eaf3ff;
 	color: #202122;
-}
-
-#cta .wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-
-	#cta .wrapper {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-}
-
-#cta .wrapper > article,
-#cta .wrapper > div {
-	width: 100%;
-}
-
-@media (min-width: 768px) {
-
-	#cta .wrapper > article,
-	#cta .wrapper > div {
-		width: 48%;
-	}
-}
-
-#cta2 .wrapper {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-@media (min-width: 500px) {
-
-	#cta2 .wrapper {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-}
-
-#cta2 .wrapper > article,
-#cta2 .wrapper > div {
-	width: 100%;
-}
-
-@media (min-width: 500px) {
-
-	#cta2 .wrapper > article,
-	#cta2 .wrapper > div {
-		width: 48%;
-	}
-}
-
-@media (min-width: 768px) {
-
-	#cta2 .wrapper > article,
-	#cta2 .wrapper > div {
-		width: 32%;
-	}
-}
-
-#cta2 .wrapper::after {
-	content: "";
-	display: block;
-	margin-left: 32%;
 }
 
 #cta2 .widget {

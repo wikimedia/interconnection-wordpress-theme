@@ -24,18 +24,18 @@ a {
 
 .grid-post .entry-title a,
 .grid-post .entry-title a:visited {
-	color: $base10;
+	color: inherit;
 }
 
 .photo-credit-container {
-	a {
+	a, a:visited {
 		color: inherit;
 		text-decoration: underline;
 	}
 }
 
 .site-footer {
-	a, a:hover {
+	a, a:hover, a:visited {
 		color: $base100;
 	}
 
