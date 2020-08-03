@@ -33,7 +33,8 @@ Version: 1.0
  * #2a4b8d
 */
 
-/* ATTENTION: still need to fix all px unit - convert to rem/em*/
+/* Right to left css is created with npm rtlcss */
+/* ATTENTION: still need to fix all px unit - convert to rem/em */
 
 #wpdcom *{box-sizing:border-box; line-height: initial;}
 #wpdcom p { margin: 0; line-height: 1.5;}
@@ -185,6 +186,7 @@ _:-ms-lang(x), .wpd-social-login [wpd-tooltip]::before{top: -24px;}
 #wpdcom .ql-snow.ql-toolbar button {height: 1.25rem; width: 1.5rem;}
 #wpdcom .wpd-editor-char-counter{font-size: 0.75rem;padding: 3px 5px 2px;position: absolute;left: 0;}
 #wpdcom .wpd-editor-char-counter.error{color: #d33;}
+#wpdcom .wc_save_wrap > * {margin: 1rem 0 1rem 0.5rem;}
 /* override rule in wpdiscuz-combo.min.css*/
 #wpdcom .ql-snow a {color: #3366cc;}
 
@@ -756,5 +758,3 @@ html[dir=rtl] .wpdiscuz-search-box .wpdiscuz-search-setting-img{margin-left:auto
 @media screen and (max-width:425px){
     .wpducm-mention-list-container{right:calc((100% - 250px)/2)!important;z-index: 15000;}
 }
-
-/* ATTENTION: wpdiscuz-user-comment-mentioning style-rtl.css needs to be addressed */
