@@ -319,6 +319,7 @@ _:-ms-lang(x), #wpdcom .wpd-comment .wpd-comment-left{width: auto;}
 #wpdcom .wpd-comment-text * {}
 #wpdcom .wpd-comment-text p{}
 #wpdcom .wpd-comment-last-edited {margin: 0.5rem 0; font-size: 0.875rem; color: #54595d;}
+#wpdcom .wpd-comment-last-edited i { margin-right: 0.25rem;}
 #wpdcom .wpd-comment-footer{display: flex; flex-direction: row; flex-wrap: nowrap; justify-content:space-between; align-items: center; padding-top:0;}
 #wpdcom .wpd-comment-footer .wpd-vote{display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: center; padding-right: 1.25rem;}
 #wpdcom .wpd-comment-footer .wpd-vote-up,
@@ -614,14 +615,14 @@ _:-ms-lang(x), #wpdcom .wpd-comment.wpd-reply .wpd-comment-footer .wpd-vote-down
 #wpdiscuz-search-form{margin:2px auto 0 auto;position:relative;text-align:right; padding: 15px 1px 12px 1px;}
 #wpdcom #wpdiscuz-search-form input[type="text"].wpdiscuz-comm-search{width:100%;height:inherit;padding:0.5rem 2rem !important;text-align:left;border:none !important;outline:none !important;background:transparent !important;font-size:0.875rem !important;box-shadow:none !important;vertical-align:top;margin-bottom:0}
 #wpdcom #wpdiscuz-search-form .wpdiscuz-search-box{max-width:100%;width:100%;padding:0 !important;display:inline-block;border-radius:0px;position:relative}
-#comments #wpdiscuz-search-form .wpdiscuz-search-setting{width:120px;padding:7px 10px;display:none;position:absolute;right:9px;top:44px;border:1px solid #c8ccd1;text-align:center}
+#comments #wpdiscuz-search-form .wpdiscuz-search-setting{width:120px;padding:7px 10px;display:none;position:absolute;right:9px !important; left: auto; top:44px;border:1px solid #c8ccd1;text-align:center}
 #wpdcom .wpdiscuz-search-setting p{margin:0;padding:0;cursor:pointer;border:none !important;font-size:15px;line-height:15px;text-transform:none;text-align:center}
 #wpdcom .wpdiscuz-search-setting input{background:transparent!important;border:none !important;font-family:inherit;font-style:inherit;font-weight:normal;margin:0;outline:0 none;padding:5px 10px; vertical-align:baseline;font-size:13px;line-height:16px;text-transform:none;cursor:pointer}
 #wpdiscuz-search-pagination{margin:10px auto}
 #wpdiscuz-search-pagination .wpdiscuz-search-pagination-item{padding:5px 10px 5px 10px;margin:5px;border-radius:2px;cursor:pointer}
 #wpdiscuz-search-pagination .pagination-current-page{border:1px solid #aaa}
-#wpdcom #wpdiscuz-search-form .wpdiscuz-search-box #wpdiscuz-search-img{left: 0.5rem !important;position:absolute;top:0; bottom: 0; height: 1rem; margin: auto 0;}
-#wpdcom #wpdiscuz-search-form .wpdiscuz-search-box #wpdiscuz-search-setting-img{right: 0.5rem !important;position:absolute;top:0; bottom: 0; height: 1rem; margin: auto 0;}
+#wpdcom #wpdiscuz-search-form .wpdiscuz-search-box #wpdiscuz-search-img{left: 0.5rem !important; right: auto !important; position:absolute;top:0; bottom: 0; height: 1rem; margin: auto 0;}
+#wpdcom #wpdiscuz-search-form .wpdiscuz-search-box #wpdiscuz-search-setting-img{right: 0.5rem !important; left: auto !important; position:absolute;top:0; bottom: 0; height: 1rem; margin: auto 0;}
 #comments #wpdcom #wpdiscuz-search-form .wpdiscuz-search-setting .shearch-arrow{border:9px solid transparent;position:absolute;op:-18px;left:82%;padding:0px;border-bottom:9px solid #72777d;box-sizing:border-box}
 #wpdcom #wpdiscuz-search-form .wpdiscuz-search-setting .shearch-arrow-no-border{border:9px solid transparent;position:absolute;top:-8.5px;left:82%;padding:0px;border-top:none}
 #wpdcom #wpdiscuz-search-form #wpdiscuz-search-setting-wrap.wpdiscuz-search-setting{top:calc(100% + 5px);z-index:99999}
