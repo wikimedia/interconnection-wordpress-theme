@@ -35,7 +35,7 @@ use Interconnection\Credits;
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" title="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'interconnection' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 				<?php
 				wp_nav_menu(
 					array(

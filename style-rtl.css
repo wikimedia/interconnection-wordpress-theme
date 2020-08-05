@@ -809,7 +809,7 @@ input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
-	background: #202122;
+	background-color: #202122;
 	color: #fff;
 }
 
@@ -832,7 +832,7 @@ input[type="submit"]:hover,
 .home .nav-links a:hover,
 .archive .nav-links a:hover,
 .wp-block-button__link:hover {
-	background: #54595d;
+	background-color: #54595d;
 	color: #fff;
 }
 
@@ -852,7 +852,7 @@ input[type="submit"]:active,
 .site-footer input[type="submit"],
 .main-navigation button,
 .main-navigation input[type="button"] {
-	background: #eaecf0;
+	background-color: #eaecf0;
 	color: #202122;
 	border-color: #202122;
 }
@@ -870,7 +870,7 @@ input[type="submit"]:active,
 .site-footer input[type="submit"]:hover,
 .main-navigation button:hover,
 .main-navigation input[type="button"]:hover {
-	background: #c8ccd1;
+	background-color: #c8ccd1;
 	color: #000;
 	border-color: #000;
 }
@@ -885,7 +885,7 @@ input[type="submit"]:active,
 }
 
 .btn-accent {
-	background: #36c;
+	background-color: #36c;
 	color: #fff;
 }
 
@@ -894,7 +894,7 @@ input[type="submit"]:active,
 }
 
 .btn-accent:hover {
-	background: #2a4b8d;
+	background-color: #2a4b8d;
 	color: #fff;
 }
 
@@ -1126,6 +1126,10 @@ a:hover,
 
 .site-header select {
 	max-width: 6.875rem;
+	padding-right: 1.5rem;
+	background-image: url("assets/svg/down.svg"), url("assets/svg/language.svg");
+	background-position: left 0.25rem top 50%, right 0.375rem top 50%;
+	background-size: 0.75rem, 1rem;
 }
 
 .headroom {
@@ -1163,13 +1167,6 @@ a:hover,
 
 .site-branding .site-title a:hover {
 	text-decoration: none;
-}
-
-@media screen and (max-width: 500px) {
-
-	.site-branding {
-		display: none;
-	}
 }
 
 .custom-logo-link {
@@ -1394,6 +1391,15 @@ a:hover,
 .menu-toggle,
 .main-navigation.toggled .menu {
 	display: block;
+}
+
+.menu-toggle {
+	min-height: 1.625rem;
+	min-width: 1.625rem;
+	background-image: url("assets/svg/menu.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1rem;
 }
 
 @media screen and (min-width: 500px) {
@@ -2376,6 +2382,7 @@ object {
 .custom-logo-link {
 	display: inline-block;
 	line-height: 1;
+	margin-left: 0.5rem;
 }
 
 @media screen and (min-width: 500px) {
