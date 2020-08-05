@@ -1125,11 +1125,11 @@ a:hover,
 }
 
 .site-header select {
-	max-width: 6.875rem;
-	padding-left: 1.5rem;
+	max-width: 8rem;
+	padding-left: 1.875rem;
 	background-image: url("assets/svg/down.svg"), url("assets/svg/language.svg");
-	background-position: right 0.25rem top 50%, left 0.375rem top 50%;
-	background-size: 0.75rem, 1rem;
+	background-position: right 0.25rem top 50%, left 0.375rem top 48%;
+	background-size: 0.75rem, 1.125rem;
 }
 
 .headroom {
