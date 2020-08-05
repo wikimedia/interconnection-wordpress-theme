@@ -41,7 +41,7 @@ input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
-	background: $base10;
+	background-color: $base10;
 	color: $base100;
 
 	&:visited {
@@ -49,7 +49,7 @@ input[type="submit"],
 	}
 
 	&:hover {
-		background: $base20;
+		background-color: $base20;
 		color: $base100;
 	}
 
@@ -64,7 +64,7 @@ input[type="submit"],
 .site-footer input[type="submit"],
 .main-navigation button,
 .main-navigation input[type="button"] {
-	background: $base80;
+	background-color: $base80;
 	color: $base10;
 	border-color: $base10;
 
@@ -73,7 +73,7 @@ input[type="submit"],
 	}
 
 	&:hover {
-		background: $base70;
+		background-color: $base70;
 		color: $base0;
 		border-color: $base0;
 	}
@@ -86,7 +86,7 @@ input[type="submit"],
 
 // accent button
 .btn-accent {
-	background: $accent50;
+	background-color: $accent50;
 	color: $base100;
 
 	&:visited {
@@ -94,7 +94,7 @@ input[type="submit"],
 	}
 
 	&:hover {
-		background: $accent30;
+		background-color: $accent30;
 		color: $base100;
 	}
 

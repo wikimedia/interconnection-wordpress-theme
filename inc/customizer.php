@@ -160,6 +160,19 @@ function interconnection_customize_style( $wp_customize ) {
 		'label' => esc_html__( 'Neutral highlight color', 'theme' ),
 		'description' => esc_html__( 'E.g. Call to action (3 column) background', 'theme' ),
     ) ) );
+
+    // Hide site-branding on smaller screen
+    $wp_customize->add_setting( 'hide_site_branding', array(
+    	'type' => 'theme_mod',
+		'default' => false,
+		'transport' => 'refresh',
+    ) );
+    $wp_customize->add_control( 'hide_site_branding', array(
+    	'type' => 'checkbox',
+		'section' => 'interconnection_section',
+		'label' => esc_html__( 'Site branding', 'theme' ),
+		'description' => esc_html__( 'Hide site branding on small screens', 'theme' ),
+    ) );
 }
 add_action( 'customize_register', 'interconnection_customize_style' );
 
@@ -173,6 +186,7 @@ function interconnection_customize_style_css() {
 	$accent_light_color = get_theme_mod( 'accent_light_color', '' );
 	$link_underline = get_theme_mod( 'link_underline', '') ? 'underline' : 'none';
 	$neutral_background_color = get_theme_mod( 'neutral_background_color', '' );
+	$hide_site_branding = get_theme_mod( 'hide_site_branding', '') ? 'none' : 'block';
 	?>
 
 	a, a:hover { 
@@ -195,6 +209,12 @@ function interconnection_customize_style_css() {
 	}
 	#cta2 .widget {
 		background-color: <?php echo $neutral_background_color; ?>; 
+	}
+
+	@media screen and (max-width: 500px) {
+		.site-branding {
+			display: <?php echo $hide_site_branding; ?>;
+		}
 	}
 	
 	<?php

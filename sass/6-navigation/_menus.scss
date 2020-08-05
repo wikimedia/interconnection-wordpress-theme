@@ -56,10 +56,6 @@
 			}
 		}
 	}
-
-	@media screen and (max-width: $small-bp) {
-		display: none;
-	}
 }
 
 .custom-logo-link {
@@ -233,6 +229,15 @@
 .menu-toggle,
 .main-navigation.toggled .menu {
 	display: block;
+}
+
+.menu-toggle {
+	min-height: 1.625rem;
+	min-width: 1.625rem;
+	background-image: url("assets/svg/menu.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1rem;
 }
 
 @media screen and (min-width: $small-bp) {
