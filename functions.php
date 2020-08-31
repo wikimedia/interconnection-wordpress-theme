@@ -6,7 +6,6 @@
  *
  * @package Interconnection
  */
-
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -285,7 +284,7 @@ function jetpackme_remove_rp() {
     if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
         $jprp = Jetpack_RelatedPosts::init();
         $callback = array( $jprp, 'filter_add_target_to_dom' );
- 
+
         remove_filter( 'the_content', $callback, 40 );
     }
 }
