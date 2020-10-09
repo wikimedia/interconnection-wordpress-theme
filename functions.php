@@ -288,7 +288,7 @@ function jetpackme_remove_rp() {
         remove_filter( 'the_content', $callback, 40 );
     }
 }
-add_action( 'wp', 'jetpackme_remove_rp', 20 );
+// add_action( 'wp', 'jetpackme_remove_rp', 20 );
 
 /**
  * Enable Gutenberg
