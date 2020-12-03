@@ -289,14 +289,12 @@ function jetpackme_remove_rp() {
         remove_filter( 'the_content', $callback, 40 );
     }
 }
-add_action( 'wp', 'jetpackme_remove_rp', 20 );
+// add_action( 'wp', 'jetpackme_remove_rp', 20 );
 
 /**
  * Enable Gutenberg
  */
-if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
-    wpcom_vip_load_gutenberg( true );
-}
+add_filter( 'use_block_editor_for_post', '__return_true' );
 
 /**
  * Filter X-hacker output.
