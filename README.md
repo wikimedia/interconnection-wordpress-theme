@@ -1,4 +1,4 @@
-Interconnection
+# Interconnection
 
 Interconnection is a WordPress theme developed for the Wikimedia community blog, [Diff](https://diff.wikimedia.org). It was created by Hang Do Thi Duc and is based upon [_underscores.](https://underscores.me/) It was reviewed by the Brand Studio Team in July 2020. 
 
