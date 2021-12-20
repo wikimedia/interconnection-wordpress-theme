@@ -36,8 +36,8 @@
     "map": false
   },
   "scripts": {
-    "compile:css": "node-sass sass/style.scss style.css && node-sass sass/woocommerce.scss woocommerce.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "watch:css": "node-sass --watch sass/style.scss style.css && node-sass sass/woocommerce.scss woocommerce.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "node-sass sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch:css": "node-sass --watch sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "compile:wpdiscuz": "rtlcss wpdiscuz/style-minimal.css wpdiscuz/style-minimal-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
