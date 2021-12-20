@@ -135,9 +135,9 @@ function interconnection_widgets_init() {
 	// call to action widget
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Call to action (2 column)', 'interconnection' ),
+			'name'          => esc_html__( 'Call to action 1', 'interconnection' ),
 			'id'            => 'cta-1',
-			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 1 image and 1 custom hmtl/text widget.', 'interconnection' ),
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
 			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
@@ -147,9 +147,9 @@ function interconnection_widgets_init() {
 	// another call to action widget
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Call to action (3 column)', 'interconnection' ),
+			'name'          => esc_html__( 'Call to action 2', 'interconnection' ),
 			'id'            => 'cta-2',
-			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 3 custom html widgets.', 'interconnection' ),
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
 			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
