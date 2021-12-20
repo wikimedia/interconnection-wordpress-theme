@@ -252,6 +252,14 @@ function interconnection_scripts() {
 add_action( 'wp_enqueue_scripts', 'interconnection_scripts' );
 
 /**
+ * Enqueues block editor scripts and styles.
+ */
+function interconnection_block_scripts() {
+	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), _S_VERSION, true );
+}
+add_action( 'enqueue_block_editor_assets', 'interconnection_block_scripts' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
