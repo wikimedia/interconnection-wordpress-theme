@@ -3,13 +3,12 @@
 	width: 100%;
 
 	@media (min-width: $desktop-bp) {
-			width: $desktop-width;
+		width: $desktop-width;
 	}
 }
 
 // Spacing
 @mixin padding($topBottomMobile, $leftRightMobile, $topBottomDesktop, $leftRightDesktop) {
-
 	padding: rem($topBottomMobile) rem($leftRightMobile);
 
 	@media (min-width: $medium-bp) {
@@ -63,19 +62,18 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 
-	> article,
-	> div {
+	> * {
 		// 2 per row when bigger than small break point
 		@include module-width($small-bp, 48%);
 		// 3 per row when bigger than small break point
 		@media (min-width: $medium-bp) {
-				width: 32%;
+			width: 32%;
 		}
 	}
 
 	// last row elements aligned left
 	&:after {
-		content: "";
+		content: '';
 		display: block;
 		margin-left: 32%;
 	}
@@ -87,8 +85,7 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 
-	> article,
-	> div {
+	> * {
 		@include module-width($medium-bp, 48%);
 	}
 }
@@ -114,10 +111,10 @@
 
 // Shading
 @mixin shade($shade) {
-	@if $shade == "dark" {
+	@if $shade == 'dark' {
 		background: $base10;
 		color: $base100;
-	} @else if $shade == "accent" {
+	} @else if $shade == 'accent' {
 		background: $accent90;
 		color: $base10;
 	} @else {
@@ -130,7 +127,7 @@
 	position: relative;
 
 	&:before {
-		content: "";
+		content: '';
 		display: block;
 		width: 4rem;
 		height: 2px;
