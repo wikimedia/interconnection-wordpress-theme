@@ -89,6 +89,12 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 				'header-text' => array( 'site-title'), // option to hide site title
 			)
 		);
+
+		// Add theme support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'style-editor.css' );
 	}
 endif;
 add_action( 'after_setup_theme', 'interconnection_setup' );
