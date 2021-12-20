@@ -319,3 +319,36 @@ add_filter( 'wp_headers', function( $headers ) {
     }
     return $headers;
 }, 999 );
+
+/**
+ * Make legacy widgets available in the Legacy Widget block.
+ *
+ * Filters the list of widget-type IDs that should **not** be offered by the Legacy Widget block.
+ * Returning an empty array will make all widgets available.
+ *
+ * @param array $widgets An array of excluded widget-type IDs.
+ * @return array
+ */
+function interconnection_unhide_legacy_widgets( $widgets ) {
+	// We specifically omit the 'media_image' widget to make it avilable.
+	$widgets = array(
+		'pages',
+		'calendar',
+		'archives',
+		'media_audio',
+		'media_gallery',
+		'media_video',
+		'search',
+		'text',
+		'categories',
+		'recent-posts',
+		'recent-comments',
+		'rss',
+		'tag_cloud',
+		'custom_html',
+		'block',
+	);
+
+	return $widgets;
+}
+add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
