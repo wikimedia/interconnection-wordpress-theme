@@ -2469,3 +2469,22 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+/**** Calendar CSS ****/
+
+.tribe-filter-bar .tribe-filter-bar-c-pill__pill, .tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small {
+	border-radius: 0px;
+}
+
+.tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn {
+	border-radius: 0px;
+}
+
+.tribe-events .tribe-events-c-ical__link {
+	border-radius: 0px;
+}
+
+.tribe-events .datepicker .day, .tribe-events .datepicker .month, .tribe-events .datepicker .year {
+	border-radius: 0px;
+}
