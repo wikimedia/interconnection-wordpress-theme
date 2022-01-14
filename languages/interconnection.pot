@@ -24,7 +24,7 @@ msgid "http://underscores.me/"
 msgstr ""
 
 #. Description of the theme
-msgid "Description"
+msgid "Interconnection is a theme based on http://underscores.me/ intended for use on the Wikimedia Diff blog."
 msgstr ""
 
 #. Author of the theme
