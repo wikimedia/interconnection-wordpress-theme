@@ -305,21 +305,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Remove related posts from bottom of post entry content
- * jetpack.com/support/related-posts/customize-related-posts/
- */
-function interconnection_jetpack_remove_rp() {
-	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-		$jprp     = Jetpack_RelatedPosts::init();
-		$callback = array( $jprp, 'filter_add_target_to_dom' );
-
-		remove_filter( 'the_content', $callback, 40 );
-	}
-}
-// phpcs:ignore
-// add_action( 'wp', 'interconnection_jetpack_remove_rp', 20 );
-
-/**
  * Enable Gutenberg
  */
 add_filter( 'use_block_editor_for_post', '__return_true' );
@@ -349,7 +334,7 @@ add_filter( 'wp_headers', 'interconnection_xhacker_output', 999 );
  * @return array
  */
 function interconnection_unhide_legacy_widgets( $widgets ) {
-	// We specifically omit the 'media_image' widget to make it avilable.
+	// We specifically omit the 'media_image' widget to make it available.
 	$widgets = array(
 		'pages',
 		'calendar',
