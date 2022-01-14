@@ -1,9 +1,9 @@
 // basics for buttons
-button:not(button[class*='block-editor']),
+button:not(button[class*="block-editor"]),
 .btn,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
@@ -37,11 +37,11 @@ input[type='submit'],
 }
 
 // basic button color dark
-button:not(button[class*='block-editor']),
+button:not(button[class*="block-editor"]),
 .btn-dark,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
@@ -65,9 +65,9 @@ input[type='submit'],
 // basic button color light
 .btn-light,
 .site-footer button,
-.site-footer input[type='submit'],
+.site-footer input[type="submit"],
 .main-navigation button,
-.main-navigation input[type='button'] {
+.main-navigation input[type="button"] {
 	background-color: $base80;
 	color: $base10;
 	border-color: $base10;

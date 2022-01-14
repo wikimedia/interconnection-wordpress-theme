@@ -73,7 +73,7 @@
 
 	// last row elements aligned left
 	&:after {
-		content: '';
+		content: "";
 		display: block;
 		margin-left: 32%;
 	}
@@ -111,10 +111,10 @@
 
 // Shading
 @mixin shade($shade) {
-	@if $shade == 'dark' {
+	@if $shade == "dark" {
 		background: $base10;
 		color: $base100;
-	} @else if $shade == 'accent' {
+	} @else if $shade == "accent" {
 		background: $accent90;
 		color: $base10;
 	} @else {
@@ -127,7 +127,7 @@
 	position: relative;
 
 	&:before {
-		content: '';
+		content: "";
 		display: block;
 		width: 4rem;
 		height: 2px;
