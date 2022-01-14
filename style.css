@@ -3,7 +3,7 @@ Theme Name: Interconnection
 Theme URI: http://underscores.me/
 Author: Hang Do Thi Duc, Chris Koerner
 Author URI: http://underscores.me/
-Description: Description
+Description: Interconnection is a theme based on http://underscores.me/ intended for use on the Wikimedia Diff blog.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -663,7 +663,7 @@ th, td {
 
 .flex-3:after,
 .wp-block-group.is-style-flex-3 > .wp-block-group__inner-container:after {
-  content: '';
+  content: "";
   display: block;
   margin-left: 32%;
 }
@@ -731,11 +731,11 @@ th, td {
   }
 }
 
-button:not(button[class*='block-editor']),
+button:not(button[class*="block-editor"]),
 .btn,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
@@ -747,11 +747,11 @@ input[type='submit'],
   transition: 0.3s all;
 }
 
-button:not(button[class*='block-editor']):hover,
+button:not(button[class*="block-editor"]):hover,
 .btn:hover,
-input[type='button']:hover,
-input[type='reset']:hover,
-input[type='submit']:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .home .nav-links a:hover,
 .archive .nav-links a:hover,
 .wp-block-button__link:hover {
@@ -760,11 +760,11 @@ input[type='submit']:hover,
   cursor: pointer;
 }
 
-button:not(button[class*='block-editor']):active,
+button:not(button[class*="block-editor"]):active,
 .btn:active,
-input[type='button']:active,
-input[type='reset']:active,
-input[type='submit']:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
 .home .nav-links a:active,
 .archive .nav-links a:active,
 .wp-block-button__link:active {
@@ -772,11 +772,11 @@ input[type='submit']:active,
   text-decoration: none;
 }
 
-button:not(button[class*='block-editor']):focus,
+button:not(button[class*="block-editor"]):focus,
 .btn:focus,
-input[type='button']:focus,
-input[type='reset']:focus,
-input[type='submit']:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
 .home .nav-links a:focus,
 .archive .nav-links a:focus,
 .wp-block-button__link:focus {
@@ -789,11 +789,11 @@ input[type='submit']:focus,
   border-radius: 0.125rem;
 }
 
-button:not(button[class*='block-editor']),
+button:not(button[class*="block-editor"]),
 .btn-dark,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
 .home .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
@@ -801,22 +801,22 @@ input[type='submit'],
   color: #fff;
 }
 
-button:not(button[class*='block-editor']):visited,
+button:not(button[class*="block-editor"]):visited,
 .btn-dark:visited,
-input[type='button']:visited,
-input[type='reset']:visited,
-input[type='submit']:visited,
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited,
 .home .nav-links a:visited,
 .archive .nav-links a:visited,
 .wp-block-button__link:visited {
   color: #fff;
 }
 
-button:not(button[class*='block-editor']):hover,
+button:not(button[class*="block-editor"]):hover,
 .btn-dark:hover,
-input[type='button']:hover,
-input[type='reset']:hover,
-input[type='submit']:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
 .home .nav-links a:hover,
 .archive .nav-links a:hover,
 .wp-block-button__link:hover {
@@ -824,11 +824,11 @@ input[type='submit']:hover,
   color: #fff;
 }
 
-button:not(button[class*='block-editor']):active,
+button:not(button[class*="block-editor"]):active,
 .btn-dark:active,
-input[type='button']:active,
-input[type='reset']:active,
-input[type='submit']:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
 .home .nav-links a:active,
 .archive .nav-links a:active,
 .wp-block-button__link:active {
@@ -837,9 +837,9 @@ input[type='submit']:active,
 
 .btn-light,
 .site-footer button,
-.site-footer input[type='submit'],
+.site-footer input[type="submit"],
 .main-navigation button,
-.main-navigation input[type='button'] {
+.main-navigation input[type="button"] {
   background-color: #eaecf0;
   color: #202122;
   border-color: #202122;
@@ -847,17 +847,17 @@ input[type='submit']:active,
 
 .btn-light:visited,
 .site-footer button:visited,
-.site-footer input[type='submit']:visited,
+.site-footer input[type="submit"]:visited,
 .main-navigation button:visited,
-.main-navigation input[type='button']:visited {
+.main-navigation input[type="button"]:visited {
   color: #202122;
 }
 
 .btn-light:hover,
 .site-footer button:hover,
-.site-footer input[type='submit']:hover,
+.site-footer input[type="submit"]:hover,
 .main-navigation button:hover,
-.main-navigation input[type='button']:hover {
+.main-navigation input[type="button"]:hover {
   background-color: #c8ccd1;
   color: #000;
   border-color: #000;
@@ -865,9 +865,9 @@ input[type='submit']:active,
 
 .btn-light:active,
 .site-footer button:active,
-.site-footer input[type='submit']:active,
+.site-footer input[type="submit"]:active,
 .main-navigation button:active,
-.main-navigation input[type='button']:active {
+.main-navigation input[type="button"]:active {
   color: #54595d;
   border-color: #000;
 }
@@ -1354,7 +1354,7 @@ a:hover, a:active {
 }
 
 .site-start .site-description:before {
-  content: '';
+  content: "";
   display: block;
   width: 4rem;
   height: 2px;
@@ -1872,7 +1872,7 @@ article.grid-post.featured-post .featured-post-text {
 }
 
 .posts-grid:after {
-  content: '';
+  content: "";
   display: block;
   margin-left: 32%;
 }
@@ -1971,7 +1971,7 @@ article.page .toc ul {
 }
 
 article.page .toc ul:before {
-  content: '';
+  content: "";
   display: block;
   width: 4rem;
   height: 2px;
@@ -2234,7 +2234,7 @@ article.page h6[id]:before {
 }
 
 .photo-credits-wrapper:after {
-  content: '';
+  content: "";
   display: block;
   margin-left: 32%;
 }
