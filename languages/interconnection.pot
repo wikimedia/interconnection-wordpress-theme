@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Hang Do Thi Duc, Chris Koerner
+# Copyright (C) 2022 Hang Do Thi Duc, Chris Koerner
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-12-20T15:32:03+00:00\n"
+"POT-Creation-Date: 2022-01-17T14:44:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: interconnection\n"
@@ -183,10 +183,10 @@ msgstr ""
 msgid "Photo credits"
 msgstr ""
 
-#: js/editor.js:15
+#: js/editor.js:20
 msgid "2-Column"
 msgstr ""
 
-#: js/editor.js:19
+#: js/editor.js:24
 msgid "3-Column"
 msgstr ""
