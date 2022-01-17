@@ -12,16 +12,14 @@ if ( empty( $images ) ) {
 }
 
 ?>
-
 <div id="site-photo-credits" class="photo-credits section" title="photo-credits" role="complementary">
-	
+
 	<div class="wrapper">
-		<!-- ATTENTION: need to translate -->
-		<h2>Photo credits</h2>
+		<h2><?php echo esc_html__( 'Photo credits', 'interconnection' ); ?></h2>
 		<div class="photo-credits-wrapper">
 			<?php
 			foreach ( $images as $image_id ) {
-				// data to pass on to template part
+				// Data to pass on to template part.
 				set_query_var( 'image_id', $image_id );
 				get_template_part( 'template-parts/images/credit' );
 			}

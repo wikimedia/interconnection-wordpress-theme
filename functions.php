@@ -11,7 +11,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'interconnection_setup' ) ) :
+if ( ! function_exists( 'interconnection_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -85,11 +85,17 @@ if ( ! function_exists( 'interconnection_setup' ) ) :
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
-				'header-text' => array( 'site-title'), // option to hide site title
+				'header-text' => array( 'site-title' ), // Option to hide site title.
 			)
 		);
+
+		// Add theme support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'style-editor.css' );
 	}
-endif;
+}
 add_action( 'after_setup_theme', 'interconnection_setup' );
 
 /**
@@ -113,7 +119,7 @@ add_action( 'after_setup_theme', 'interconnection_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function interconnection_widgets_init() {
-	// widget area for footer used in footer.php
+	// Widget area for footer used in footer.php.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer', 'interconnection' ),
@@ -125,31 +131,34 @@ function interconnection_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
-	// call to action widget
+
+	// Call to action widget.
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Call to action (2 column)', 'interconnection' ),
+			'name'          => esc_html__( 'Call to action 1', 'interconnection' ),
 			'id'            => 'cta-1',
-			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 1 image and 1 custom hmtl/text widget.', 'interconnection' ),
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
 			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
 		)
 	);
-	// another call to action widget
+
+	// Another call to action widget.
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Call to action (3 column)', 'interconnection' ),
+			'name'          => esc_html__( 'Call to action 2', 'interconnection' ),
 			'id'            => 'cta-2',
-			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts. Ideally 3 custom html widgets.', 'interconnection' ),
+			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
 			'before_widget' => '<div class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
 		)
 	);
-	// special notice for single posts
+
+	// Special notice for single posts.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Special notice', 'interconnection' ),
@@ -161,7 +170,8 @@ function interconnection_widgets_init() {
 			'after_title'   => '</h4>',
 		)
 	);
-	// optional widget area for navigation
+
+	// Optional widget area for navigation.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Secondary navigation', 'interconnection' ),
@@ -173,7 +183,8 @@ function interconnection_widgets_init() {
 			'after_title'   => '</span>',
 		)
 	);
-	// optional widget for adding context on archive pages
+
+	// Optional widget for adding context on archive pages.
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Archive pages', 'interconnection' ),
@@ -189,15 +200,23 @@ function interconnection_widgets_init() {
 add_action( 'widgets_init', 'interconnection_widgets_init' );
 
 /**
- * Special class to highlight active menu item
+ * Special class to highlight active menu item.
  */
-function special_nav_class ($classes, $item) {
-    if (in_array('current-menu-parent', $classes) || in_array('current-menu-item', $classes) ) {
-        $classes[] = 'active ';
-    }
-    return $classes;
+
+/**
+ * Special class to highlight active menu item.
+ *
+ * @param array   $classes Array of the CSS classes that are applied to the menu item's <li> element.
+ * @param WP_Post $item The current menu item.
+ * @return array
+ */
+function interconnection_special_nav_class( $classes, $item ) {
+	if ( in_array( 'current-menu-parent', $classes, true ) || in_array( 'current-menu-item', $classes, true ) ) {
+		$classes[] = 'active ';
+	}
+	return $classes;
 }
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10, 2 );
 
 /**
  * Filter the except length to 20 words.
@@ -205,10 +224,10 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length( $length ) {
-    return 25;
+function interconnection_custom_excerpt_length( $length ) {
+	return 25;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'interconnection_custom_excerpt_length', 999 );
 
 /**
  * Filter the "read more" excerpt string link to the post.
@@ -216,13 +235,13 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-function wpdocs_excerpt_more( $more ) {
-    if ( ! is_single() ) {
-        $more = '...';
-    }
-    return $more;
+function interconnection_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = '...';
+	}
+	return $more;
 }
-add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+add_filter( 'excerpt_more', 'interconnection_excerpt_more' );
 
 /**
  * Enqueue scripts and styles.
@@ -243,6 +262,14 @@ function interconnection_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'interconnection_scripts' );
+
+/**
+ * Enqueues block editor scripts and styles.
+ */
+function interconnection_block_scripts() {
+	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), _S_VERSION, true );
+}
+add_action( 'enqueue_block_editor_assets', 'interconnection_block_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -277,30 +304,54 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Remove related posts from bottom of post entry content
- * jetpack.com/support/related-posts/customize-related-posts/
- */
-function jetpackme_remove_rp() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-
-        remove_filter( 'the_content', $callback, 40 );
-    }
-}
-// add_action( 'wp', 'jetpackme_remove_rp', 20 );
-
-/**
  * Enable Gutenberg
  */
 add_filter( 'use_block_editor_for_post', '__return_true' );
 
 /**
  * Filter X-hacker output.
+ *
+ * @param array $headers Associative array of headers to be sent.
+ * @return array
  */
-add_filter( 'wp_headers', function( $headers ) {
-    if ( isset( $headers['X-hacker'] ) ) {
-        unset( $headers['X-hacker'] );
-    }
-    return $headers;
-}, 999 );
+function interconnection_xhacker_output( $headers ) {
+	if ( isset( $headers['X-hacker'] ) ) {
+		unset( $headers['X-hacker'] );
+	}
+
+	return $headers;
+}
+add_filter( 'wp_headers', 'interconnection_xhacker_output', 999 );
+
+/**
+ * Make legacy widgets available in the Legacy Widget block.
+ *
+ * Filters the list of widget-type IDs that should **not** be offered by the Legacy Widget block.
+ * Returning an empty array will make all widgets available.
+ *
+ * @param array $widgets An array of excluded widget-type IDs.
+ * @return array
+ */
+function interconnection_unhide_legacy_widgets( $widgets ) {
+	// We specifically omit the 'media_image' widget to make it available.
+	$widgets = array(
+		'pages',
+		'calendar',
+		'archives',
+		'media_audio',
+		'media_gallery',
+		'media_video',
+		'search',
+		'text',
+		'categories',
+		'recent-posts',
+		'recent-comments',
+		'rss',
+		'tag_cloud',
+		'custom_html',
+		'block',
+	);
+
+	return $widgets;
+}
+add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
