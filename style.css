@@ -2194,7 +2194,7 @@ article.page h6[id]::before {
 }
 
 .comments-area ul,
- .comments-area ol {
+.comments-area ol {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -2234,6 +2234,10 @@ article.page h6[id]::before {
 	margin-top: 0.5rem;
 	margin-bottom: 0;
 	word-break: break-word;
+}
+
+#wpdcom.wpd-comments-closed .wpd-vote {
+	display: none;
 }
 
 /*--------------------------------------------------------------
