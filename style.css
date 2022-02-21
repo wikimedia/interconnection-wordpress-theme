@@ -2250,6 +2250,10 @@ article.page h6[id]::before {
 	word-break: break-word;
 }
 
+#wpdcom.wpd-comments-closed .wpd-vote {
+	display: none;
+}
+
 /*--------------------------------------------------------------
 ## CTA
 --------------------------------------------------------------*/

@@ -11,7 +11,8 @@
 		font-size: $font__size-h3;
 	}
 
-	ul, ol {
+	ul,
+	ol {
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -52,4 +53,9 @@
 		margin-bottom: 0;
 		word-break: break-word;
 	}
+}
+
+// Disable voting on closed comments.
+#wpdcom.wpd-comments-closed .wpd-vote {
+	display: none;
 }
