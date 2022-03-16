@@ -2470,7 +2470,6 @@ object {
 	display: block;
 }
 
-
 /**** Calendar CSS ****/
 
 .tribe-filter-bar .tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill {
@@ -2501,7 +2500,7 @@ object {
 
 .tribe-events .tribe-events-c-ical__link {
 	border-radius: 2px;
-}x
+}
 
 .tribe-events .datepicker .day, .tribe-events .datepicker .month, .tribe-events .datepicker .year {
 	border-radius: 2px;
@@ -2567,7 +2566,6 @@ object {
 	border:none;
 	color: #FFF !important;
 	padding: 6px 12px;
-
 }
 
 .tribe-events .tribe-events-c-ical__link:hover  {
@@ -2592,4 +2590,23 @@ object {
 .tribe-events #legend li a {
 	font-size:13px;
 	border-radius: 2px;
+  
+ /******** Older/Newer Link Buttons *********/
+
+.posts-navigation .nav-previous a, .posts-navigation .nav-next a  {
+	background-color: #202122;
+  color: #fff;
+  border: 0.08rem solid transparent;
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.3em 0.8em 0.4em;
+  transition: .3s all;
+}
+
+.posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover {
+	background-color: #54595d;
+	border-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
 }
