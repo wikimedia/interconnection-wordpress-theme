@@ -1,5 +1,5 @@
 // basics for buttons
-button,
+button:not(button[class*="block-editor"]),
 .btn,
 input[type="button"],
 input[type="reset"],
@@ -27,13 +27,17 @@ input[type="submit"],
 
 	&:focus {
 		border-color: $base100;
-		outline: none; 
+		outline: none;
 		box-shadow: 0 0 0 0.16rem $accent50;
 	}
 }
 
+.wp-block-button {
+	border-radius: 0.125rem;
+}
+
 // basic button color dark
-button,
+button:not(button[class*="block-editor"]),
 .btn-dark,
 input[type="button"],
 input[type="reset"],
@@ -85,7 +89,8 @@ input[type="submit"],
 }
 
 // accent button
-.btn-accent {
+.btn-accent,
+.btn-accent > .wp-block-button__link {
 	background-color: $accent50;
 	color: $base100;
 
@@ -103,7 +108,8 @@ input[type="submit"],
 	}
 }
 
-.btn-big {
+.btn-big,
+.btn-big > .wp-block-button__link {
 	font-size: $font__size-h3;
 }
 

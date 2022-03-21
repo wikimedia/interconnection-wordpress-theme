@@ -51,12 +51,19 @@
 }
 
 // flex "templates"
-.flex-3 {
+.flex-3,
+.wp-block-group.is-style-flex-3 > .wp-block-group__inner-container {
 	@include column-3;
 }
 
-.flex-2 {
+.flex-2,
+.wp-block-group.is-style-flex-2 > .wp-block-group__inner-container {
 	@include column-2;
+}
+
+.wp-block-group.is-style-flex-3 > .wp-block-group__inner-container > *,
+.wp-block-group.is-style-flex-2 > .wp-block-group__inner-container > * {
+	margin-bottom: 1rem;
 }
 
 // margin "templates"

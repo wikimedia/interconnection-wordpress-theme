@@ -6,7 +6,7 @@
 
 	.wp-caption {
 		margin: 0;
-		
+
 		figcaption {
 			display: none;
 		}
@@ -26,6 +26,11 @@
 	h3 a:visited {
 		color: inherit;
 	}
+
+	.widget,
+	.wp-block-image {
+		margin-bottom: 0;
+	}
 }
 
 #cta {
@@ -33,7 +38,8 @@
 }
 
 #cta2 {
-	.widget {
+	.wp-block-group.is-style-flex-3 > .wp-block-group__inner-container > *,
+	.wp-block-group.is-style-flex-2 > .wp-block-group__inner-container > * {
 		@include shade("light");
 		padding: 0.75rem 1.5rem;
 		border-radius: 0.125rem;
