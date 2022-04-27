@@ -1638,6 +1638,55 @@ a:active {
 	display: block;
 }
 
+/* pullquotes have large padding */
+.wp-block-pullquote {
+	padding: 0 0;
+}
+
+.wp-block-separator {
+	width: 4rem;
+	border-top: 2px solid #000;
+	border-bottom: none;
+	background-color: #fff;
+}
+
+.wp-block-column.has-background {
+	padding: 12px 24px;
+}
+
+/* Make RSS widgets more consistent with Diff article previews */
+.rss-widget-icon {
+	display: none;
+}
+
+.widget_rss h1 {
+	font-size: 1.5rem;
+}
+
+.rsswidget {
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+
+.rss-date::before {
+	content: "\a";
+	white-space: pre;
+}
+
+.rss-date {
+	color: #72777d;
+}
+
+.widget_rss cite::before {
+	content: "by ";
+	white-space: pre;
+}
+
+.widget_rss cite {
+	color: #72777d;
+	font-style: normal;
+}
+
 .widget {
 	margin: 0 0 1rem 0;
 }
@@ -2274,6 +2323,11 @@ article.page h6[id]::before {
 /*--------------------------------------------------------------
 ## CTA
 --------------------------------------------------------------*/
+.cta-section {
+
+	/* h1 links and visited headlines should not use accent color */
+}
+
 .cta-section .widget_media_image img {
 	width: 100%;
 	border-radius: 0.125rem;
@@ -2296,6 +2350,8 @@ article.page h6[id]::before {
 	margin-bottom: 0.5rem;
 }
 
+.cta-section h1 a,
+.cta-section h1 a:hover,
 .cta-section h1 a:visited,
 .cta-section h2 a:visited,
 .cta-section h3 a:visited {
@@ -2638,4 +2694,27 @@ object {
 .tribe-events #legend li a {
 	font-size: 13px;
 	border-radius: 2px;
+}
+
+/* Calendar top padding */
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+	padding-top: 0;
+}
+
+/* Calendar buttons */
+.tribe-events-c-events-bar__filter-button-container {
+	display: none;
+}
+
+/* Related post styling */
+.jp-relatedposts {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline {
+	font-size: 1.25rem;
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+	font-weight: 700;
 }
