@@ -1547,6 +1547,27 @@ a:active {
 	display: block;
 }
 
+/******** Older/Newer Link Buttons *********/
+.posts-navigation .nav-previous a
+.posts-navigation .nav-next a {
+	background-color: #202122;
+	color: #fff;
+	border: 0.08rem solid transparent;
+	border-radius: 0.125rem;
+	font-size: 1rem;
+	line-height: 1;
+	padding: 0.3em 0.8em 0.4em;
+	transition: 0.3s all;
+}
+
+.posts-navigation .nav-previous a:hover,
+.posts-navigation .nav-next a:hover {
+	background-color: #54595d;
+	border-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+}
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -2613,25 +2634,4 @@ object {
 .tribe-events #legend li a {
 	font-size: 13px;
 	border-radius: 2px;
-}
-
-/******** Older/Newer Link Buttons *********/
-.posts-navigation .nav-previous a
-.posts-navigation .nav-next a {
-	background-color: #202122;
-	color: #fff;
-	border: 0.08rem solid transparent;
-	border-radius: 0.125rem;
-	font-size: 1rem;
-	line-height: 1;
-	padding: 0.3em 0.8em 0.4em;
-	transition: 0.3s all;
-}
-
-.posts-navigation .nav-previous a:hover,
-.posts-navigation .nav-next a:hover {
-	background-color: #54595d;
-	border-color: transparent;
-	text-decoration: none;
-	cursor: pointer;
 }
