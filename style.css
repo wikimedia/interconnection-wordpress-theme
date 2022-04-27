@@ -815,7 +815,6 @@ input[type="submit"]:focus,
 	border-radius: 0.125rem;
 }
 
-button:not(button[class*="block-editor"]),
 .btn-dark,
 input[type="button"],
 input[type="reset"],
@@ -827,7 +826,6 @@ input[type="submit"],
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):visited,
 .btn-dark:visited,
 input[type="button"]:visited,
 input[type="reset"]:visited,
@@ -838,7 +836,6 @@ input[type="submit"]:visited,
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):hover,
 .btn-dark:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -850,7 +847,6 @@ input[type="submit"]:hover,
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):active,
 .btn-dark:active,
 input[type="button"]:active,
 input[type="reset"]:active,
@@ -2491,31 +2487,10 @@ object {
 	display: block;
 }
 
-/******** Older/Newer Link Buttons *********/
-
-.posts-navigation .nav-previous a, .posts-navigation .nav-next a  {
-	background-color: #202122;
-    color: #fff;
-    border: 0.08rem solid transparent;
-    border-radius: 0.125rem;
-    font-size: 1rem;
-    line-height: 1;
-    padding: 0.3em 0.8em 0.4em;
-    transition: .3s all;
-}
-
-.posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover {
-	background-color: #54595d;
-	border-color: transparent;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/**** Calendar CSS ****/
-
+/* Events Calendar Pro CSS */
 .tribe-filter-bar .tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill {
-	background-color: #F8F9FA;
-	border: 1px solid #A2A9B1;
+	background-color: #f8f9fa;
+	border: 1px solid #a2a9b1;
 	border-radius: 2px;
 	box-sizing: border-box;
 	color: #202122;
@@ -2523,27 +2498,30 @@ object {
 	font-size: 12px;
 	line-height: 24px;
 	padding: 6px 12px;
-
 }
 
 .tribe-filter-bar .tribe-filter-bar-c-pill__pill {
 	border-radius: 2px;
 }
 
-.tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small {
+.tribe-common .tribe-common-c-btn-border-small
+.tribe-common a.tribe-common-c-btn-border-small {
 	border-radius: 2px;
-	background-color: #F8F9FA;
+	background-color: #f8f9fa;
 }
 
-.tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn {
+.tribe-common .tribe-common-c-btn
+.tribe-common a.tribe-common-c-btn {
 	border-radius: 2px;
 }
 
 .tribe-events .tribe-events-c-ical__link {
 	border-radius: 2px;
-}x
+}
 
-.tribe-events .datepicker .day, .tribe-events .datepicker .month, .tribe-events .datepicker .year {
+.tribe-events .datepicker .day
+.tribe-events .datepicker .month
+.tribe-events .datepicker .year {
 	border-radius: 2px;
 }
 
@@ -2554,82 +2532,110 @@ object {
 .tribe-filter-bar .tribe-filter-bar-c-pill--button.tribe-filter-bar-c-pill--has-selections .tribe-filter-bar-c-pill__pill {
 	padding: 6px 12px;
 	padding-right: 32px;
-	background-color: #C8CCD1;
-	border: 1px solid #72777D;
-	
+	background-color: #c8ccd1;
+	border: 1px solid #72777d;
 }
 
-.tribe-filter-bar .tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill:hover, .tribe-filter-bar .tribe-filter-bar-c-pill--has-selections.tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill:hover {
-	background-color: #FFF;
-	border: 1px solid #A2A9B1;
+.tribe-filter-bar .tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill:hover
+.tribe-filter-bar .tribe-filter-bar-c-pill--has-selections.tribe-filter-bar-c-pill--button .tribe-filter-bar-c-pill__pill:hover {
+	background-color: #fff;
+	border: 1px solid #a2a9b1;
 }
 
-.tribe-filter-bar button:focus, .tribe-events-l-container button:focus {
+.tribe-filter-bar button:focus
+.tribe-events-l-container button:focus {
 	box-shadow: none;
 }
 
-.tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn {
-	background: #3366CC;
+.tribe-common .tribe-common-c-btn
+.tribe-common a.tribe-common-c-btn {
+	background: #36c;
 	font-weight: 700;
 	padding: 6px 12px;
-
 }
 
-.tribe-common .tribe-common-c-btn:focus, .tribe-common .tribe-common-c-btn:hover, .tribe-common a.tribe-common-c-btn:focus, .tribe-common a.tribe-common-c-btn:hover {
-	background: #447FF5;
+.tribe-common .tribe-common-c-btn:focus
+.tribe-common .tribe-common-c-btn:hover
+.tribe-common a.tribe-common-c-btn:focus
+.tribe-common a.tribe-common-c-btn:hover {
+	background: #447ff5;
 	box-shadow: none;
 }
 
-.tribe-common .tribe-common-c-btn:active, .tribe-common a.tribe-common-c-btn:active {
-	background: #2A4B8D;
+.tribe-common .tribe-common-c-btn:active
+.tribe-common a.tribe-common-c-btn:active {
+	background: #2a4b8d;
 }
 
-.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
+.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date
+.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
 	color: #36c;
 }
 
-.tribe-common .tribe-common-c-btn-border-small, .tribe-common a.tribe-common-c-btn-border-small {
+.tribe-common .tribe-common-c-btn-border-small
+.tribe-common a.tribe-common-c-btn-border-small {
 	color: #202122;
 	font-weight: 700;
 }
 
 .tribe-common .tribe-common-c-svgicon {
-	color: #FFF;
+	color: #fff;
 }
 
 .tribe-common .tribe-common-c-svgicon.tribe-events-c-messages__message-icon-svg {
-	color:#72777d;
+	color: #72777d;
 }
 
 .tribe-events .tribe-events-c-ical__link {
-	background: #3366CC;
+	background: #36c;
 	border-radius: 2px;
-	border:none;
-	color: #FFF !important;
+	border: none;
+	color: #fff !important;
 	padding: 6px 12px;
-
 }
 
-.tribe-events .tribe-events-c-ical__link:hover  {
-	background: #447FF5;
+.tribe-events .tribe-events-c-ical__link:hover {
+	background: #447ff5;
 }
 
-.tribe-events .tribe-events-c-ical__link:active  {
-	background: #2A4B8D;
+.tribe-events .tribe-events-c-ical__link:active {
+	background: #2a4b8d;
 }
 
-.tribe-events .tribe-events-c-ical__link:focus  {
-	background: #3366CC;
-	border: 2px solid #FFFFFF;
-	box-shadow: inset 0px 1px 0px #3366CC, inset 0px -1px 0px #3366CC, inset -1px 0px 0px #3366CC, inset 1px 0px 0px #3366CC;
+.tribe-events .tribe-events-c-ical__link:focus {
+	background: #36c;
+	border: 2px solid #fff;
+	box-shadow: inset 0 1px 0 #36c inset 0 -1px 0 #36c inset -1px 0 0 #36c inset 1px 0 0 #36c;
 }
 
-.tribe-events .datepicker .month.active, .tribe-events .datepicker .month.active.focused {
+.tribe-events .datepicker .month.active
+.tribe-events .datepicker .month.active.focused {
 	color: #36c;
-	color:#FFF;
+	color: #fff;
 }
 
 .tribe-events #legend li a {
-	font-size:13px;
+	font-size: 13px;
 	border-radius: 2px;
+}
+
+/******** Older/Newer Link Buttons *********/
+.posts-navigation .nav-previous a
+.posts-navigation .nav-next a {
+	background-color: #202122;
+	color: #fff;
+	border: 0.08rem solid transparent;
+	border-radius: 0.125rem;
+	font-size: 1rem;
+	line-height: 1;
+	padding: 0.3em 0.8em 0.4em;
+	transition: 0.3s all;
+}
+
+.posts-navigation .nav-previous a:hover,
+.posts-navigation .nav-next a:hover {
+	background-color: #54595d;
+	border-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
 }

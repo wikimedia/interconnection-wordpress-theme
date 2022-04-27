@@ -266,7 +266,6 @@ input[type="submit"]:focus,
 	border-radius: 0.125rem;
 }
 
-button:not(button[class*="block-editor"]),
 .btn-dark,
 input[type="button"],
 input[type="reset"],
@@ -278,7 +277,6 @@ input[type="submit"],
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):visited,
 .btn-dark:visited,
 input[type="button"]:visited,
 input[type="reset"]:visited,
@@ -289,7 +287,6 @@ input[type="submit"]:visited,
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):hover,
 .btn-dark:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -301,7 +298,6 @@ input[type="submit"]:hover,
 	color: #fff;
 }
 
-button:not(button[class*="block-editor"]):active,
 .btn-dark:active,
 input[type="button"]:active,
 input[type="reset"]:active,
