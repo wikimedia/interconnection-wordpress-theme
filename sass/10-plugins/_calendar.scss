@@ -136,3 +136,13 @@
 	font-size:13px;
 	border-radius: 2px;
 }
+
+/* Calendar top padding */
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-l-container {
+	padding-top: 0;
+}
+
+/* Calendar buttons */
+.tribe-events-c-events-bar__filter-button-container {
+	display: none;
+}

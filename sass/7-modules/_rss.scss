@@ -1,0 +1,33 @@
+/* Make RSS widgets more consistent with Diff article previews */
+
+.rss-widget-icon {
+	display: none;
+}
+
+.widget_rss h1 {
+	font-size: 1.5rem;
+}
+
+.rsswidget {
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+
+.rss-date::before {
+	content: "\a";
+	white-space: pre;
+}
+
+.rss-date {
+	color: #72777d;
+}
+
+.widget_rss cite::before {
+	content: "by ";
+	white-space: pre;
+}
+
+.widget_rss cite {
+	color: #72777d;
+	font-style: normal;
+}

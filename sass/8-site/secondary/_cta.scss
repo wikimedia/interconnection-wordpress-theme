@@ -21,6 +21,9 @@
 		}
 	}
 
+	/* h1 links and visited headlines should not use accent color */
+	h1 a,
+	h1 a:hover,
 	h1 a:visited,
 	h2 a:visited,
 	h3 a:visited {

@@ -57,7 +57,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "7-modules/accessibility";
 @import "7-modules/alignments";
 @import "7-modules/infinite-scroll";
+@import "7-modules/blocks";
+@import "7-modules/rss";
 @import "8-site/secondary/widgets";
 @import "8-site/site";
 @import "9-media/media";
 @import "10-plugins/calendar";
+@import "10-plugins/relatedposts";

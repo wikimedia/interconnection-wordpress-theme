@@ -1,0 +1,15 @@
+/* pullquotes have large padding */
+.wp-block-pullquote {
+	padding: 0 0;
+}
+
+.wp-block-separator {
+	width: 4rem;
+	border-top: 2px solid #000;
+	border-bottom: none;
+	background-color: #fff;
+}
+
+.wp-block-column.has-background {
+    padding: 12px 24px;
+}
