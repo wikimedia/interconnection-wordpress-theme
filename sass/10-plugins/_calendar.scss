@@ -146,3 +146,9 @@
 .tribe-events-c-events-bar__filter-button-container {
 	display: none;
 }
+
+/* Undo tribe events modifications to link colors */
+#tribe-events-content a,
+.tribe-events-meta a {
+	color: $color__link;
+}
