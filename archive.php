@@ -18,7 +18,7 @@ get_header();
 					<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
-					if ( is_active_sidebar( 'archive-1' ) ) { 
+					if ( is_active_sidebar( 'archive-1' ) ) {
 						dynamic_sidebar( 'archive-1' );
 					}
 					?>
@@ -29,12 +29,18 @@ get_header();
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
+
+						if ( pll_get_post( get_the_ID() ) && get_the_ID() !== pll_get_post( get_the_ID() ) ) {
+							// Do not display other languages posts if a translation in the current language exists.
+							continue;
+						}
+
 						get_template_part( 'template-parts/content', 'grid' );
-					endwhile; 
+					endwhile;
 					?>
 				</div>
 
-				<?php 
+				<?php
 				the_posts_navigation();
 
 			else :
