@@ -355,3 +355,18 @@ function interconnection_unhide_legacy_widgets( $widgets ) {
 	return $widgets;
 }
 add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
+
+/**
+ * Query all posts versions on home page.
+ *
+ * @param WP_Query $query The WP_Query instance (passed by reference).
+ */
+function interconnection_modify_polylang_query( $query ) {
+	$languages = pll_default_language() . ',' . pll_current_language();
+
+	if ( function_exists( 'pll__' ) && ! is_admin() && $query->get( 'post_type' ) !== 'nav_menu_item' ) {
+		$query->set( 'tax_query', '' );
+		$query->set( 'lang', $languages );
+	}
+}
+add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
