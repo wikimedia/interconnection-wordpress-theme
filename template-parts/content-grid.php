@@ -13,7 +13,7 @@ $lang_slug      = pll_get_post_language( get_the_ID(), 'slug' );
 $lang_name      = pll_get_post_language( get_the_ID(), 'name' );
 
 if ( pll_current_language() !== $lang_slug ) {
-	$lang_attribute = 'lang="' . $lang_slug . '"';
+	$lang_attribute = 'lang=' . $lang_slug . '';
 	$lang_title     = '<span aria-label="(' . $lang_name . ')">[' . strtoupper( $lang_slug ) . ']</span> ';
 }
 
@@ -22,8 +22,7 @@ if ( pll_current_language() !== $lang_slug ) {
 <article class="grid-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo esc_attr( $lang_attribute ); ?>>
 	<header class="entry-header">
 		<?php interconnection_post_thumbnail(); ?>
-		<?php echo esc_html( $lang_title ); ?>
-		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $lang_title, '</a></h3>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
