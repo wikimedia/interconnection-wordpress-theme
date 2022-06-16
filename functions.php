@@ -357,16 +357,26 @@ function interconnection_unhide_legacy_widgets( $widgets ) {
 add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
 
 /**
- * Query all posts versions on home page.
+ * Query all English posts regardless of selected language.
+ *
+ * Query only English post any time another language is selected
+ * so we can replace translated content in the loop. This allows
+ * us to display English posts if the posts are not translated.
+ *
+ * This filter also removes the sticky post from the homepage loop.
  *
  * @param WP_Query $query The WP_Query instance (passed by reference).
  */
 function interconnection_modify_polylang_query( $query ) {
-	$languages = pll_default_language() . ',' . pll_current_language();
+	// Query English posts only.
+	if ( function_exists( 'pll__' ) && ! is_admin() && $query->is_main_query() ) {
+		$query->set( 'lang', pll_default_language() );
 
-	if ( function_exists( 'pll__' ) && ! is_admin() && $query->get( 'post_type' ) !== 'nav_menu_item' ) {
-		$query->set( 'tax_query', '' );
-		$query->set( 'lang', $languages );
+		// Remove sticky posts from homepage loop.
+		if ( is_home() ) {
+			$query->set( 'ignore_sticky_posts', 1 );
+			$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+		}
 	}
 }
 add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
