@@ -13,7 +13,7 @@ $lang_slug      = pll_get_post_language( get_the_ID(), 'slug' );
 $lang_name      = pll_get_post_language( get_the_ID(), 'name' );
 
 if ( pll_current_language() !== $lang_slug ) {
-	$lang_attribute = 'lang=' . $lang_slug . '';
+	$lang_attribute = 'lang=' . $lang_slug;
 	$lang_title     = '<span aria-label="(' . $lang_name . ')">[' . strtoupper( $lang_slug ) . ']</span> ';
 }
 
