@@ -44,7 +44,8 @@ $permalink = get_permalink();
 					echo esc_html( wp_strip_all_tags( $excerpt ) );
 					?>
 				</p>
-				<a href="<?php echo esc_url( $permalink ); ?>" rel="bookmark" class="btn btn-accent">Read more</a>
+				<!-- ATTENTION: Needs translation -->
+				<a href="<?php echo esc_url( $permalink ); ?>" rel="bookmark" class="btn btn-accent"><?php echo esc_html__( 'Read more', 'interconnection' ); ?></a>
 			</div>
 		<?php endif; ?>
 	</div>
