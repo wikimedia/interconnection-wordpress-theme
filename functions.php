@@ -309,6 +309,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_filter( 'use_block_editor_for_post', '__return_true' );
 
 /**
+ * Enable editorial categories customizations.
+ */
+require_once get_template_directory() . '/inc/editorial-categories.php';
+\Interconnection\Editorial_Categories\bootstrap();
+
+/**
  * Filter X-hacker output.
  *
  * @param array $headers Associative array of headers to be sent.
