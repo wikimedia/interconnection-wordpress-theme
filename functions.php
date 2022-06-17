@@ -374,8 +374,7 @@ function interconnection_modify_polylang_query( $query ) {
 
 		// Remove sticky posts from homepage loop.
 		if ( is_home() ) {
-			$query->set( 'ignore_sticky_posts', 1 );
-			$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
+			$query->set( 'post__not_in', get_option( 'sticky_posts' ) ); // phpcs:ignore
 		}
 	}
 }
