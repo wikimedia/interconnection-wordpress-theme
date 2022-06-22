@@ -109,7 +109,7 @@
 
 							<?php wp_nonce_field( 'translate-post-' . get_the_ID(), '_wpnonce' ); ?>
 
-							<input type="submit" value="<?php echo esc_html__( 'Submit', 'interconnection' ); ?>">
+							<input type="submit" value="<?php echo esc_attr__( 'Submit', 'interconnection' ); ?>">
 
 							<?php
 							if ( ! isset( $_GET['_wpnonce'] ) ||
