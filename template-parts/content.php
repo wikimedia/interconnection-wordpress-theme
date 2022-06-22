@@ -90,7 +90,8 @@
 				// Combine language slugs and names into new array.
 				$languages = array_combine( $language_slugs, $language_names );
 
-				if ( ! empty( $languages ) ) {
+				// Display only in English version  of the site.
+				if ( ! empty( $languages ) && 'en' === pll_current_language() ) {
 					?>
 					<div  id="translate-post" class="translate-post">
 						<h2><?php echo esc_html__( 'Can you help us translate this article?', 'interconnection' ); ?></h2>
