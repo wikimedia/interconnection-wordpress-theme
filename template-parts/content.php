@@ -92,43 +92,45 @@
 
 				if ( ! empty( $languages ) ) {
 					?>
-					<fieldset>
-						<form method="get" action="/wp-admin/post-new.php">
-							<label for="new_lang"><?php echo esc_html__( 'Select Language', 'interconnection' ); ?></label>
+					<div  id="translate-post" class="translate-post">
+						<h2><?php echo esc_html__( 'Can you help us translate this article?', 'interconnection' ); ?></h2>
 
-							<input type="hidden" name="post_type" value="post">
-							<input type="hidden" name="from_post" value="<?php the_ID(); ?>">
+						<p><?php echo esc_html__( 'In order for this article to reach as many people as possible we would like your help. Can you translate this article to get the message out?', 'interconnection' ); ?></p>
 
-							<select name="new_lang" id="new_lang" class="pll-translation-select">
-								<?php
-								foreach ( $languages as $key => $value ) {
-									echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
-								}
-								?>
-							</select>
-
-							<?php wp_nonce_field( 'translate-post-' . get_the_ID(), '_wpnonce' ); ?>
-
-							<input type="submit" value="<?php echo esc_attr__( 'Submit', 'interconnection' ); ?>">
-
-							<?php
-							if ( ! isset( $_GET['_wpnonce'] ) ||
-								! wp_verify_nonce( $_GET['_wpnonce'], 'translate-post-' . get_the_ID() ) // phpcs:ignore
-							) {
-								exit;
-							}
-
-							/**
-							 * The nonce verification fails and blocks the translation of current post.
-							 * We need a way to trigger this admin action from the front-end form without
-							 * getting invalidated.
-							 *
-							 * The admin URL looks lime this:
-							 * http://wikimediadiff.test/wp-admin/post-new.php?post_type=post&from_post=71148&new_lang=ar&_wpnonce=0985802c38&_wp_http_referer=%2F2021%2F12%2F16%2Fwikipedia-and-the-law-of-digital-platforms-in-chile%2F
-							 */
+						<?php
+						if ( is_user_logged_in() ) {
 							?>
-						</form>
-					</fieldset>
+							<fieldset>
+								<form method="get" action="/wp-admin/post-new.php">
+									<label for="new_lang"><?php echo esc_html__( 'Select Language', 'interconnection' ); ?></label>
+
+									<input type="hidden" name="post_type" value="post">
+									<input type="hidden" name="from_post" value="<?php the_ID(); ?>">
+
+									<select name="new_lang" id="new_lang" class="pll-translation-select">
+										<?php
+										foreach ( $languages as $key => $value ) {
+											echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
+										}
+										?>
+									</select>
+
+									<?php wp_nonce_field( 'new-post-translation', '_wpnonce', false ); // Match Polylang nonce action & name. ?>
+
+									<input type="submit" value="<?php echo esc_attr__( 'Submit', 'interconnection' ); ?>">
+								</form>
+							</fieldset>
+							<?php
+						} else {
+							$request_uri = rawurlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) . '#translate-post' ); // phpcs:ignore
+							$return_url  = site_url( '/wp-login.php?redirect_to=' . $request_uri );
+
+							?>
+							<a href="<?php echo esc_url( $return_url ); ?>" class="translate-post-login"><?php echo esc_html__( 'Start translation', 'interconnection' ); ?></a>
+							<?php
+						}
+						?>
+					</div>
 					<?php
 				}
 			}
