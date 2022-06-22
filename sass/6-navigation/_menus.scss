@@ -14,16 +14,7 @@
 		@media screen and (min-width: $small-bp) {
 			padding-top: 0.375rem;
 			padding-bottom: 0.375rem;
-		}		
-	}
-
-	select {
-		max-width: 8rem;
-		padding-left: 1.875rem;
-		// style partially duplicating from _fields.scss to use 2 background images
-		background-image: url("assets/svg/down.svg"), url("assets/svg/language.svg");
-		background-position: right 0.25rem top 50%, left 0.375rem top 48%;
-		background-size: 0.75rem, 1.125rem;
+		}
 	}
 }
 
@@ -92,7 +83,7 @@
 		> li {
 			@media screen and (min-width: $small-bp) {
 				margin-right: 1rem;
-				
+
 				&:last-child {
 					margin-right: 0;
 				}
@@ -174,7 +165,7 @@
 		border-top: 0.0625rem $base80 solid;
 		border-bottom: 0.0625rem $base80 solid;
 		font-weight: 700;
-	
+
 		.sub-menu {
 			float: none;
 			left: auto;
@@ -201,7 +192,7 @@
 	flex-grow: 100;
 	order: 100;
 	text-align: right;
-	
+
 	> div {
 		margin-left: 0.5rem;
 		display: none;
@@ -299,7 +290,7 @@
 		}
 
 		.nav-previous,
-		.nav-next {	
+		.nav-next {
 			flex: 0 0 49%;
 		}
 	}

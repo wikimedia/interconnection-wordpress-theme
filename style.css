@@ -1018,6 +1018,15 @@ select:hover {
 	cursor: pointer;
 }
 
+.site-header select,
+select.pll-translation-select {
+	max-width: 8rem;
+	padding-left: 1.875rem;
+	background-image: url("assets/svg/down.svg"), url("assets/svg/language.svg");
+	background-position: right 0.25rem top 50%, left 0.375rem top 48%;
+	background-size: 0.75rem, 1.125rem;
+}
+
 textarea {
 	width: 100%;
 }
@@ -1137,14 +1146,6 @@ a:active {
 		padding-top: 0.375rem;
 		padding-bottom: 0.375rem;
 	}
-}
-
-.site-header select {
-	max-width: 8rem;
-	padding-left: 1.875rem;
-	background-image: url("assets/svg/down.svg"), url("assets/svg/language.svg");
-	background-position: right 0.25rem top 50%, left 0.375rem top 48%;
-	background-size: 0.75rem, 1.125rem;
 }
 
 .headroom {
