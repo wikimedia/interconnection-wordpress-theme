@@ -94,43 +94,49 @@
 				if ( ! empty( $languages ) && pll_default_language() === pll_current_language() ) {
 					?>
 					<div  id="translate-post" class="translate-post">
-						<h2><?php echo esc_html__( 'Can you help us translate this article?', 'interconnection' ); ?></h2>
+						<div class="translate-post-image">
+							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/translate-post.jpg'; ?>" alt="Globe divided into puzzle pieces with different language inscriptions on each piece.">
+						</div>
 
-						<p><?php echo esc_html__( 'In order for this article to reach as many people as possible we would like your help. Can you translate this article to get the message out?', 'interconnection' ); ?></p>
+						<div class="translate-post-content">
+							<h2><?php echo esc_html__( 'Can you help us translate this article?', 'interconnection' ); ?></h2>
 
-						<?php
-						if ( is_user_logged_in() ) {
-							?>
-							<fieldset>
-								<form method="get" action="/wp-admin/post-new.php">
-									<label for="new_lang"><?php echo esc_html__( 'Select Language', 'interconnection' ); ?></label>
+							<p><?php echo esc_html__( 'In order for this article to reach as many people as possible we would like your help. Can you translate this article to get the message out?', 'interconnection' ); ?></p>
 
-									<input type="hidden" name="post_type" value="post">
-									<input type="hidden" name="from_post" value="<?php the_ID(); ?>">
-
-									<select name="new_lang" id="new_lang" class="pll-translation-select">
-										<?php
-										foreach ( $languages as $key => $value ) {
-											echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
-										}
-										?>
-									</select>
-
-									<?php wp_nonce_field( 'new-post-translation', '_wpnonce', false ); // Match Polylang nonce action & name. ?>
-
-									<input type="submit" value="<?php echo esc_attr__( 'Submit', 'interconnection' ); ?>">
-								</form>
-							</fieldset>
 							<?php
-						} else {
-							$request_uri = rawurlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) . '#translate-post' ); // phpcs:ignore
-							$return_url  = site_url( '/wp-login.php?redirect_to=' . $request_uri );
+							if ( is_user_logged_in() ) {
+								?>
+								<fieldset>
+									<form method="get" action="/wp-admin/post-new.php">
+										<label for="new_lang"><?php echo esc_html__( 'Select Language', 'interconnection' ); ?></label>
 
+										<input type="hidden" name="post_type" value="post">
+										<input type="hidden" name="from_post" value="<?php the_ID(); ?>">
+
+										<select name="new_lang" id="new_lang" class="pll-translation-select">
+											<?php
+											foreach ( $languages as $key => $value ) {
+												echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
+											}
+											?>
+										</select>
+
+										<?php wp_nonce_field( 'new-post-translation', '_wpnonce', false ); // Match Polylang nonce action & name. ?>
+
+										<input type="submit" value="<?php echo esc_attr__( 'Submit', 'interconnection' ); ?>">
+									</form>
+								</fieldset>
+								<?php
+							} else {
+								$request_uri = rawurlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) . '#translate-post' ); // phpcs:ignore
+								$return_url  = site_url( '/wp-login.php?redirect_to=' . $request_uri );
+
+								?>
+								<a href="<?php echo esc_url( $return_url ); ?>" class="translate-post-login"><?php echo esc_html__( 'Start translation', 'interconnection' ); ?></a>
+								<?php
+							}
 							?>
-							<a href="<?php echo esc_url( $return_url ); ?>" class="translate-post-login"><?php echo esc_html__( 'Start translation', 'interconnection' ); ?></a>
-							<?php
-						}
-						?>
+						</div>
 					</div>
 					<?php
 				}
