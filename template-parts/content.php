@@ -95,7 +95,7 @@
 					?>
 					<div  id="translate-post" class="translate-post">
 						<div class="translate-post-image">
-							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/translate-post.jpg'; ?>" alt="Globe divided into puzzle pieces with different language inscriptions on each piece.">
+							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/translate-post.jpg'; ?>" alt="">
 						</div>
 
 						<div class="translate-post-content">
