@@ -763,6 +763,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
+.search .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
 	border: 0.08rem solid transparent;
@@ -779,6 +780,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .home .nav-links a:hover,
+.search .nav-links a:hover,
 .archive .nav-links a:hover,
 .wp-block-button__link:hover {
 	border-color: transparent;
@@ -792,6 +794,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
 .home .nav-links a:active,
+.search .nav-links a:active,
 .archive .nav-links a:active,
 .wp-block-button__link:active {
 	border-color: #aaa #bbb #bbb;
@@ -804,6 +807,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 .home .nav-links a:focus,
+.search .nav-links a:focus,
 .archive .nav-links a:focus,
 .wp-block-button__link:focus {
 	border-color: #fff;
@@ -820,6 +824,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .home .nav-links a,
+.search .nav-links a,
 .archive .nav-links a,
 .wp-block-button__link {
 	background-color: #202122;
@@ -831,6 +836,7 @@ input[type="button"]:visited,
 input[type="reset"]:visited,
 input[type="submit"]:visited,
 .home .nav-links a:visited,
+.search .nav-links a:visited,
 .archive .nav-links a:visited,
 .wp-block-button__link:visited {
 	color: #fff;
@@ -841,6 +847,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .home .nav-links a:hover,
+.search .nav-links a:hover,
 .archive .nav-links a:hover,
 .wp-block-button__link:hover {
 	background-color: #54595d;
@@ -852,6 +859,7 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
 .home .nav-links a:active,
+.search .nav-links a:active,
 .archive .nav-links a:active,
 .wp-block-button__link:active {
 	color: #fff;
