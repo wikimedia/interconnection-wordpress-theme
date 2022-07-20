@@ -141,6 +141,11 @@
 					<?php
 				}
 			}
+
+			// Add Jetpack Related Posts.
+			if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+				echo do_shortcode( '[jetpack-related-posts]' );
+			}
 			?>
 
 		</div><!-- .entry-content -->

@@ -355,3 +355,19 @@ function interconnection_unhide_legacy_widgets( $widgets ) {
 	return $widgets;
 }
 add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
+
+/**
+ * Remove Jetpack Related Posts from the bottom of post content.
+ *
+ * We are removing the related posts from post content so
+ * we can add it within the post template instead.
+ */
+function interconnection_remove_jetpack_related_posts() {
+	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+		$jprp     = Jetpack_RelatedPosts::init();
+		$callback = array( $jprp, 'filter_add_target_to_dom' );
+
+		remove_filter( 'the_content', $callback, 40 );
+	}
+}
+add_action( 'wp', 'interconnection_remove_jetpack_related_posts', 20 );
