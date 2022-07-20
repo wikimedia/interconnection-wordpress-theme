@@ -10,7 +10,7 @@
 		flex-basis: 210px;
 		flex-grow: 1;
 
-		@media only screen and (min-width: 589px) {
+		@media only screen and (min-width: $small-alt-bp) {
 			order: 2;
 		}
 
@@ -31,7 +31,7 @@
 		min-inline-size: 60%;
 		padding: 30px 25px;
 
-		@media only screen and (min-width: 589px) {
+		@media only screen and (min-width: $small-alt-bp) {
 			order: 1;
 		}
 
