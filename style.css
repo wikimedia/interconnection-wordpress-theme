@@ -2714,6 +2714,12 @@ object {
 	display: none;
 }
 
+/* Undo tribe events modifications to link colors */
+#tribe-events-content a,
+.tribe-events-meta a {
+	color: #36c;
+}
+
 /* Related post styling */
 .jp-relatedposts {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
