@@ -176,27 +176,27 @@ function interconnection_customize_style_css() {
 	?>
 
 	a, a:hover {
-		color: <?php echo $link_color; ?>; border-bottom-color: <?php echo $link_color; ?>;
+		color: <?php echo esc_attr( $link_color ); ?>; border-bottom-color: <?php echo esc_attr( $link_color ); ?>;
 	}
 	a:visited {
-		color: <?php echo $visited_link_color; ?>;
+		color: <?php echo esc_attr( $visited_link_color ); ?>;
 	}
 	.btn-accent {
-		background: <?php echo $accent_color; ?>;
+		background: <?php echo esc_attr( $accent_color ); ?>;
 	}
 	.btn-accent:hover {
-		background: <?php echo $accent_dark_color; ?>;
+		background: <?php echo esc_attr( $accent_dark_color ); ?>;
 	}
 	#cta {
-		background-color: <?php echo $accent_light_color; ?>;
+		background-color: <?php echo esc_attr( $accent_light_color ); ?>;
 	}
 	#cta2 .widget {
-		background-color: <?php echo $neutral_background_color; ?>;
+		background-color: <?php echo esc_attr( $neutral_background_color ); ?>;
 	}
 
 	@media screen and (max-width: 500px) {
 		.site-branding {
-			display: <?php echo $hide_site_branding; ?>;
+			display: <?php echo esc_attr( $hide_site_branding ); ?>;
 		}
 	}
 
