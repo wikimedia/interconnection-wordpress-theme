@@ -370,7 +370,7 @@ select,
 optgroup,
 textarea {
 	color: #202122;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+	font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, lato, helvetica, arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -1749,7 +1749,7 @@ article.post .post-thumbnail img {
 }
 
 article.post .entry-content {
-	font-family: Charter, serif;
+	font-family: charter, serif;
 	font-size: 1.125rem;
 	overflow-wrap: break-word;
 	margin-bottom: 2.5rem;
