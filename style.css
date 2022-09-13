@@ -2720,6 +2720,11 @@ object {
 	color: #36c;
 }
 
+#tribe-events-content a:hover,
+.tribe-events-meta a:hover {
+	text-decoration: underline;
+}
+
 /* Related post styling */
 .jp-relatedposts {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
