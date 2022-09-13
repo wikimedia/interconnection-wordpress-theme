@@ -30,7 +30,7 @@ a {
 .photo-credit-container {
 
 	a,
- a:visited {
+	a:visited {
 		color: inherit;
 		text-decoration: underline;
 	}
@@ -39,8 +39,8 @@ a {
 .site-footer {
 
 	a,
- a:hover,
- a:visited {
+	a:hover,
+	a:visited {
 		color: $base100;
 	}
 
