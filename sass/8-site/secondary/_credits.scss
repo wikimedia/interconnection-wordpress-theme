@@ -1,8 +1,10 @@
 .photo-credits-wrapper {
+
 	@include column-3;
 }
 
 .photo-credit-container {
+
 	@include margin-bottom(0);
 	align-content: start;
 	overflow-wrap: break-word;
@@ -23,7 +25,7 @@
 		display: inline-block;
 		color: $base30;
 		font-size: $font__size-small;
-		
+
 		p {
 			margin: 0;
 		}

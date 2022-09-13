@@ -28,14 +28,19 @@ a {
 }
 
 .photo-credit-container {
-	a, a:visited {
+
+	a,
+ a:visited {
 		color: inherit;
 		text-decoration: underline;
 	}
 }
 
 .site-footer {
-	a, a:hover, a:visited {
+
+	a,
+ a:hover,
+ a:visited {
 		color: $base100;
 	}
 

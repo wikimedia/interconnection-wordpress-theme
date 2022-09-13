@@ -10,11 +10,13 @@
 article.post {
 
 	header {
+
 		@include margin-bottom(0);
 	}
 
-	.post-thumbnail img{
+	.post-thumbnail img {
 		width: 100%;
+
 		@include margin-bottom(0);
 	}
 
@@ -22,6 +24,7 @@ article.post {
 		font-family: $font__serif;
 		font-size: $font__size-h4;
 		overflow-wrap: break-word;
+
 		@include margin-bottom(1);
 
 		figure {
@@ -38,13 +41,14 @@ article.post {
 			}
 
 			figcaption {
+
 				@include module-width($medium-bp, 75%);
 				margin-left: auto;
 				margin-right: auto;
 			}
 		}
 
-		> ul, 
+		> ul,
 		> ol {
 			padding-left: 1rem;
 		}
@@ -54,19 +58,24 @@ article.post {
 		}
 	}
 
-	.entry-footer{
+	.entry-footer {
+
 		@include shade("light");
 		@include padding(30, 0, 60, 0);
 		@include margin-bottom(1);
 
 		.comments-wrapper {
+
 			@include module-width($medium-bp, 60%);
-		}	
+		}
 
 		.entry-footer-meta {
+
 			@include module-width($medium-bp, 32%);
+
 			span {
 				display: block;
+
 				@include margin-bottom(0);
 			}
 		}
@@ -76,6 +85,7 @@ article.post {
 // for grid
 article.grid-post {
 	padding-bottom: 1rem;
+
 	@include margin-bottom(1);
 	transition: $transition;
 
@@ -91,12 +101,14 @@ article.grid-post {
 	}
 
 	.post-excerpt {
+
 		@media (min-width: $large-bp) {
 			margin-top: 2rem;
 		}
 	}
 
-	.entry-meta, .entry-meta a {
+	.entry-meta,
+ .entry-meta a {
 		color: $base30;
 	}
 
@@ -109,7 +121,7 @@ article.grid-post {
 		border: 0.0625rem solid $base80;
 
 		// when there is no featured image
-		&:before {
+		&::before {
 			content: "";
 			display: block;
 			padding-top: 100%/3*2; 	// ratio of 3:2
@@ -118,19 +130,23 @@ article.grid-post {
 	}
 
 	&.featured-post {
+
 		@include column-2-to-1(column, initial);
 
 		.entry-title {
+
 			@media (min-width: $medium-bp) {
 				padding-top: 0;
 			}
 		}
 
-		.home-thumbnail:before {
+		.home-thumbnail::before {
 			padding-top: 100%/16*9;
+
 			@media (min-width: $medium-bp) {
 				padding-top: 100%/3*2;
 			}
+
 			@media (min-width: $large-bp) {
 				padding-top: 100%/16*9;
 			}
@@ -152,10 +168,12 @@ article.grid-post {
 }
 
 .posts-grid {
+
 	@include column-3;
 }
 
 .nav-links {
+
 	@include margin-bottom(1);
 }
 
@@ -165,13 +183,16 @@ article.grid-post {
 }
 
 article.page {
+
 	@include margin-bottom(1);
 
 	.entry-content {
+
 		@include column-2-to-1(column-reverse, 65%);
 
 		.main-entry-content {
 			padding-right: 0;
+
 			@media (min-width: $medium-bp) {
 				padding-right: rem(32);
 			}
@@ -179,6 +200,7 @@ article.page {
 	}
 
 	.toc {
+
 		@include margin-bottom(0);
 		@include padding(0, 0, 0, 16);
 
@@ -193,12 +215,12 @@ article.page {
 
 // offset anchor links because of fixed top navigation
 // applied to all headings with an id
-article.page h2[id]:before,
-article.page h2[id]:before,
-article.page h3[id]:before,
-article.page h4[id]:before,
-article.page h5[id]:before,
-article.page h6[id]:before {
+article.page h2[id]::before,
+article.page h2[id]::before,
+article.page h3[id]::before,
+article.page h4[id]::before,
+article.page h5[id]::before,
+article.page h6[id]::before {
 	content: " ";
 	display: block;
 	margin-top: -4rem;
@@ -207,22 +229,47 @@ article.page h6[id]:before {
 }
 
 @keyframes flyin {
-	0% {transform: scale(0.5) rotate(-75deg);}
-	10% {transform: scale(1) rotate(15deg);}
-	12% {transform: scale(1) rotate(0deg);}
-	100% {transform: scale(1) rotate(0deg);}
+
+	0% {
+		transform: scale(0.5) rotate(-75deg);
+	}
+
+	10% {
+		transform: scale(1) rotate(15deg);
+	}
+
+	12% {
+		transform: scale(1) rotate(0deg);
+	}
+
+	100% {
+		transform: scale(1) rotate(0deg);
+	}
 }
 
 @keyframes open {
-	0% {transform: scale(1, 0.25);}
-	10% {transform: scale(1, 1.25);}
-	12% {transform: scale(1, 1);}
-	100% {transform: scale(1, 1);}
+
+	0% {
+		transform: scale(1, 0.25);
+	}
+
+	10% {
+		transform: scale(1, 1.25);
+	}
+
+	12% {
+		transform: scale(1, 1);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
 }
 
 // 404 page
 .error404 .site-main {
 	text-align: center;
+
 	@include padding(32, 0, 64, 0);
 	@include margin-bottom(2);
 
@@ -232,6 +279,7 @@ article.page h6[id]:before {
 		border-radius: 0.2rem;
 		line-height: 1.25;
 		border: 0.125rem solid;
+
 		@include margin-bottom(0);
 		font-weight: 700;
 
@@ -255,9 +303,11 @@ article.page h6[id]:before {
 }
 
 .site-main {
+
 	@include margin-bottom(2);
 }
 
 .page-header {
-	@include margin-bottom(0);	
+
+	@include margin-bottom(0);
 }

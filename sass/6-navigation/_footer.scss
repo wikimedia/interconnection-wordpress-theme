@@ -1,9 +1,11 @@
 .site-footer {
+
 	@include shade("dark");
 	@include padding(20, 0, 40, 0);
 }
 
 .footer-content {
+
 	@include column-2;
 
 	ul {
@@ -19,7 +21,8 @@
 }
 
 .logged-in {
-	.login-link {	
+
+	.login-link {
 		display: none;
 	}
 
