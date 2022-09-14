@@ -55,7 +55,6 @@ function filter_co_authors_posts_link_args( array $args, $author ) : array {
  * @return array Filtered hreflang attributes.
  */
 function filter_polylang_href_rel_links( array $hreflangs ) : array {
-    // error_log( print_r( $hreflangs, true ) );
     foreach ( $hreflangs as $lang => $href ) {
         $hreflangs[ $lang ] = de_cap_itate_author_url( $href );
     }
