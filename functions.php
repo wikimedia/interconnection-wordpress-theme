@@ -357,7 +357,7 @@ function interconnection_unhide_legacy_widgets( $widgets ) {
 add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_unhide_legacy_widgets' );
 
 /**
- * Query all English posts regardless of selected language.
+ * Query all English posts in archives regardless of selected language.
  *
  * Query only English post any time another language is selected
  * so we can replace translated content in the loop. This allows
@@ -369,7 +369,7 @@ add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_un
  */
 function interconnection_modify_polylang_query( $query ) {
 	// Query English posts only.
-	if ( function_exists( 'pll__' ) && ! is_admin() && $query->is_main_query() ) {
+	if ( function_exists( 'pll__' ) && ! is_admin() && ! is_singular() && $query->is_main_query() ) {
 		$query->set( 'lang', pll_default_language() );
 
 		// Remove sticky posts from homepage loop.
