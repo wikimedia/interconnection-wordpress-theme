@@ -18,8 +18,10 @@ if ( pll_current_language() !== $lang_slug ) {
 }
 
 // Define rtl CSS override for entry title.
-// This is to make sure the $lang_title string
-// displays before the title on rtl languages.
+//
+// This ensures that the $lang_title string displays before
+// the post title on rtl languages. We don't add the CSS to
+// style-rtl.css because that file is automatically generated.
 $rtl_css_override = '';
 if ( is_rtl() ) {
 	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
