@@ -33,12 +33,15 @@ get_header();
 					global $post;
 
 					// Get translated post in current language if it exists.
-					if ( pll_get_post( get_the_ID() ) && get_the_ID() !== pll_get_post( get_the_ID() ) ) :
-						// Overwrite global post data with the translated post content.
-						$post = get_post( pll_get_post( get_the_ID() ) ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+					if ( function_exists( 'pll_get_post' ) ) :
+						if ( pll_get_post( get_the_ID() ) && get_the_ID() !== pll_get_post( get_the_ID() ) ) :
+							// Overwrite global post data with the translated post content.
+							// phpcs:ignore WordPress.WP.GlobalVariablesOverride
+							$post = get_post( pll_get_post( get_the_ID() ) );
 
-						// Sets up global post data for using with template tags.
-						setup_postdata( $post );
+							// Sets up global post data for using with template tags.
+							setup_postdata( $post );
+						endif;
 					endif;
 
 					get_template_part( 'template-parts/content', 'grid' );

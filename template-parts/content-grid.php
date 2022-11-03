@@ -9,19 +9,23 @@
 
 $lang_attribute = '';
 $lang_title     = '';
-$lang_slug      = pll_get_post_language( get_the_ID(), 'slug' );
-$lang_name      = pll_get_post_language( get_the_ID(), 'name' );
 
-if ( pll_current_language() !== $lang_slug ) {
-	$lang_attribute = 'lang=' . $lang_slug;
-	$lang_title     = '<span aria-label="(' . $lang_name . ')" title="' . $lang_name . '">[' . strtoupper( $lang_slug ) . ']</span> ';
+if ( function_exists( 'pll_get_post_language' ) ) {
+	$lang_slug = pll_get_post_language( get_the_ID(), 'slug' );
+	$lang_name = pll_get_post_language( get_the_ID(), 'name' );
+
+	if ( pll_current_language() !== $lang_slug ) {
+		$lang_attribute = 'lang=' . $lang_slug;
+		$lang_title     = '<span aria-label="(' . $lang_name . ')" title="' . $lang_name . '">[' . strtoupper( $lang_slug ) . ']</span> ';
+	}
 }
 
 // Define rtl CSS override for entry title.
 //
 // This ensures that the $lang_title string displays before
 // the post title on rtl languages. We don't add the CSS to
-// style-rtl.css because that file is automatically generated.
+// style.css because when style-rtl.css gets automatically
+// generated the values would get reversed.
 $rtl_css_override = '';
 if ( is_rtl() ) {
 	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
