@@ -18,6 +18,20 @@ article.post {
 		@include margin-bottom(0);
 	}
 
+	.translate-post-anchor {
+		margin-top: rem(5);
+
+		> a {
+			background-image: url(assets/svg/language.svg);
+			background-position: left 0.175rem top 48%;
+			background-repeat: no-repeat;
+			background-size: 1.125rem;
+			color: $accent50;
+			font-size: rem(15);
+			padding-left: rem(25);
+		}
+	}
+
 	.entry-content {
 		font-family: $font__serif;
 		font-size: $font__size-h4;
@@ -44,7 +58,7 @@ article.post {
 			}
 		}
 
-		> ul, 
+		> ul,
 		> ol {
 			padding-left: 1rem;
 		}
@@ -61,7 +75,7 @@ article.post {
 
 		.comments-wrapper {
 			@include module-width($medium-bp, 60%);
-		}	
+		}
 
 		.entry-footer-meta {
 			@include module-width($medium-bp, 32%);
@@ -259,5 +273,5 @@ article.page h6[id]:before {
 }
 
 .page-header {
-	@include margin-bottom(0);	
+	@include margin-bottom(0);
 }
