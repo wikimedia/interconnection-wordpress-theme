@@ -1753,6 +1753,20 @@ article.post .post-thumbnail img {
 	}
 }
 
+article.post .translate-post-anchor {
+	margin-top: 0.3125rem;
+}
+
+article.post .translate-post-anchor > a {
+	background-image: url(assets/svg/language.svg);
+	background-position: left 0.175rem top 48%;
+	background-repeat: no-repeat;
+	background-size: 1.125rem;
+	color: #36c;
+	font-size: 0.9375rem;
+	padding-left: 1.5625rem;
+}
+
 article.post .entry-content {
 	font-family: Charter, serif;
 	font-size: 1.125rem;
