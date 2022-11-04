@@ -360,6 +360,13 @@ add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_un
  * Change the post Publish button text to Submit for Review.
  */
 function interconnection_change_publish_button() {
+	global $pagenow;
+
+	// Only run on post editor page.
+	if ( isset( $pagenow ) && ! ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) {
+		return;
+	}
+
 	// Check for Contributor role.
 	if ( in_array( 'contributor', wp_get_current_user()->roles, true ) ) {
 		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10, 3 );
