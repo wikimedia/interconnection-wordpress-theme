@@ -44,7 +44,7 @@ add_action( 'wp_head', 'interconnection_pingback_header' );
  * @return array Filtered link args.
  */
 function interconnection_show_author_description_in_byline( $link_args, $author ) {
-	if ( ! isset( $author->type ) || $author->type !== 'guest-author' ) {
+	if ( ! isset( $author->type ) ) {
 		return $link_args;
 	}
 
