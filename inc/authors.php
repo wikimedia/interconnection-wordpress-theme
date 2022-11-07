@@ -11,6 +11,7 @@ namespace Interconnection\Authors;
 function bootstrap() : void {
     add_filter( 'coauthors_posts_link', __NAMESPACE__ . '\\filter_co_authors_posts_link_args', 10, 2 );
     add_filter( 'pll_rel_hreflang_attributes', __NAMESPACE__ . '\\filter_polylang_href_rel_links' );
+    add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_author_if_old_cap_prefix' );
 }
 
 /**
@@ -59,4 +60,35 @@ function filter_polylang_href_rel_links( array $hreflangs ) : array {
         $hreflangs[ $lang ] = de_cap_itate_author_url( $href );
     }
     return $hreflangs;
+}
+
+/**
+ * Redirect from /author/cap-{author slug} to /author/{author slug} so that
+ * only the pretty author URLs are exposed publicly.
+ *
+ * @see https://github.com/humanmade/wikimedia/issues/543
+ *
+ * @return void
+ */
+function redirect_author_if_old_cap_prefix() : void {
+    if ( ! is_author() ) {
+        return;
+    }
+
+    global $wp;
+    preg_match( '#author/cap-([^/]+)#i', $wp->request, $cap_prefixed_author );
+
+    if ( ! $cap_prefixed_author ) {
+        // Author name does not match the specified pattern. Proceed.
+        return;
+    }
+
+    $author_slug = $cap_prefixed_author[1];
+
+    nocache_headers();
+
+    // Redirect to the version of the URL with the "cap-" prefix removed.
+    $redirect_url = str_replace( "cap-$author_slug", $author_slug, $wp->request );
+    $redirect_url = preg_replace( '#^/?#', '/', $redirect_url );
+    wp_safe_redirect( $redirect_url, 301 );
 }
