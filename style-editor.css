@@ -216,7 +216,8 @@ input[type="submit"],
 .home .nav-links a,
 .search .nav-links a,
 .archive .nav-links a,
-.wp-block-button__link {
+.wp-block-button__link,
+.translate-post-content > a {
 	border: 0.08rem solid transparent;
 	border-radius: 0.125rem;
 	font-size: 1rem;
@@ -233,7 +234,8 @@ input[type="submit"]:hover,
 .home .nav-links a:hover,
 .search .nav-links a:hover,
 .archive .nav-links a:hover,
-.wp-block-button__link:hover {
+.wp-block-button__link:hover,
+.translate-post-content > a:hover {
 	border-color: transparent;
 	text-decoration: none;
 	cursor: pointer;
@@ -247,7 +249,8 @@ input[type="submit"]:active,
 .home .nav-links a:active,
 .search .nav-links a:active,
 .archive .nav-links a:active,
-.wp-block-button__link:active {
+.wp-block-button__link:active,
+.translate-post-content > a:active {
 	border-color: #aaa #bbb #bbb;
 	text-decoration: none;
 }
@@ -260,7 +263,8 @@ input[type="submit"]:focus,
 .home .nav-links a:focus,
 .search .nav-links a:focus,
 .archive .nav-links a:focus,
-.wp-block-button__link:focus {
+.wp-block-button__link:focus,
+.translate-post-content > a:focus {
 	border-color: #fff;
 	outline: none;
 	box-shadow: 0 0 0 0.16rem #36c;
@@ -320,7 +324,9 @@ input[type="submit"]:active,
 .site-footer button,
 .site-footer input[type="submit"],
 .main-navigation button,
-.main-navigation input[type="button"] {
+.main-navigation input[type="button"],
+.translate-post-content > a,
+.translate-post-content input[type="submit"] {
 	background-color: #eaecf0;
 	color: #202122;
 	border-color: #202122;
@@ -330,7 +336,9 @@ input[type="submit"]:active,
 .site-footer button:visited,
 .site-footer input[type="submit"]:visited,
 .main-navigation button:visited,
-.main-navigation input[type="button"]:visited {
+.main-navigation input[type="button"]:visited,
+.translate-post-content > a:visited,
+.translate-post-content input[type="submit"]:visited {
 	color: #202122;
 }
 
@@ -338,7 +346,9 @@ input[type="submit"]:active,
 .site-footer button:hover,
 .site-footer input[type="submit"]:hover,
 .main-navigation button:hover,
-.main-navigation input[type="button"]:hover {
+.main-navigation input[type="button"]:hover,
+.translate-post-content > a:hover,
+.translate-post-content input[type="submit"]:hover {
 	background-color: #c8ccd1;
 	color: #000;
 	border-color: #000;
@@ -348,7 +358,9 @@ input[type="submit"]:active,
 .site-footer button:active,
 .site-footer input[type="submit"]:active,
 .main-navigation button:active,
-.main-navigation input[type="button"]:active {
+.main-navigation input[type="button"]:active,
+.translate-post-content > a:active,
+.translate-post-content input[type="submit"]:active {
 	color: #54595d;
 	border-color: #000;
 }

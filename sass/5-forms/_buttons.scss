@@ -7,7 +7,8 @@ input[type="submit"],
 .home .nav-links a,
 .search .nav-links a,
 .archive .nav-links a,
-.wp-block-button__link {
+.wp-block-button__link,
+.translate-post-content > a {
 	border: 0.08rem solid transparent;
 	border-radius: 0.125rem;
 	font-size: 1rem;
@@ -68,7 +69,9 @@ input[type="submit"],
 .site-footer button,
 .site-footer input[type="submit"],
 .main-navigation button,
-.main-navigation input[type="button"] {
+.main-navigation input[type="button"],
+.translate-post-content > a,
+.translate-post-content input[type="submit"] {
 	background-color: $base80;
 	color: $base10;
 	border-color: $base10;

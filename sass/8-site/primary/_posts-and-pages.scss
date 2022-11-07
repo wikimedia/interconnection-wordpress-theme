@@ -20,6 +20,20 @@ article.post {
 		@include margin-bottom(0);
 	}
 
+	.translate-post-anchor {
+		margin-top: rem(5);
+
+		> a {
+			background-image: url(assets/svg/language.svg);
+			background-position: left 0.175rem top 48%;
+			background-repeat: no-repeat;
+			background-size: 1.125rem;
+			color: $accent50;
+			font-size: rem(15);
+			padding-left: rem(25);
+		}
+	}
+
 	.entry-content {
 		font-family: $font__serif;
 		font-size: $font__size-h4;

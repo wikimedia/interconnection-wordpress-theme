@@ -1,0 +1,79 @@
+.translate-post {
+	background-color: $accent70;
+	color: $base80;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	margin: 60px 0;
+
+	&-image {
+		flex-basis: 210px;
+		flex-grow: 1;
+
+		@media only screen and (min-width: $small-alt-bp) {
+			order: 2;
+		}
+
+		img {
+			display: block;
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&-content {
+		flex-basis: 0;
+		flex-grow: 999;
+		font-family: $font__main;
+		font-size: 1rem;
+		line-height: 1.7;
+		min-inline-size: 60%;
+		padding: 30px 25px;
+
+		@media only screen and (min-width: $small-alt-bp) {
+			order: 1;
+		}
+
+		h2 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			line-height: 1.5;
+		}
+
+		> a,
+		input[type="submit"] {
+			font-weight: 600;
+			font-size: 0.9rem;
+		}
+
+		> a,
+		> a:hover,
+		> a:visited,
+		input[type="submit"],
+		input[type="submit"]:hover {
+			border-color: transparent;
+			color: $accent70;
+		}
+
+		select {
+			margin-right: 5px;
+		}
+
+		input[type="submit"] {
+			line-height: 1.1;
+			margin-top: 5px;
+			padding: 0.4em 0.8em;
+		}
+
+		> fieldset {
+			border: none;
+			padding: 0;
+		}
+
+		label {
+			display: block;
+			font-weight: 600;
+		}
+	}
+}
