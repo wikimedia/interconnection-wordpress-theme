@@ -152,4 +152,7 @@
 #tribe-events-content a,
 .tribe-events-meta a {
 	color: $color__link;
+	&:hover {
+		text-decoration: underline;
+	}
 }
