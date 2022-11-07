@@ -7,12 +7,36 @@
  * @package Interconnection
  */
 
+$lang_attribute = '';
+$lang_title     = '';
+
+if ( function_exists( 'pll_get_post_language' ) ) {
+	$lang_slug = pll_get_post_language( get_the_ID(), 'slug' );
+	$lang_name = pll_get_post_language( get_the_ID(), 'name' );
+
+	if ( pll_current_language() !== $lang_slug ) {
+		$lang_attribute = 'lang=' . $lang_slug;
+		$lang_title     = '<span aria-label="(' . $lang_name . ')" title="' . $lang_name . '">[' . strtoupper( $lang_slug ) . ']</span> ';
+	}
+}
+
+// Define rtl CSS override for entry title.
+//
+// This ensures that the $lang_title string displays before
+// the post title on rtl languages. We don't add the CSS to
+// style.css because when style-rtl.css gets automatically
+// generated the values would get reversed.
+$rtl_css_override = '';
+if ( is_rtl() ) {
+	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
+}
+
 ?>
 
-<article class="grid-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
+<article class="grid-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo esc_attr( $lang_attribute ); ?>>
 	<header class="entry-header">
 		<?php interconnection_post_thumbnail(); ?>
-		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="entry-title"' . $rtl_css_override . '><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $lang_title, '</a></h3>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
