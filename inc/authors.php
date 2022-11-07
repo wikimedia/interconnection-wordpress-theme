@@ -91,4 +91,5 @@ function redirect_author_if_old_cap_prefix() : void {
     $redirect_url = str_replace( "cap-$author_slug", $author_slug, $wp->request );
     $redirect_url = preg_replace( '#^/?#', '/', $redirect_url );
     wp_safe_redirect( $redirect_url, 301 );
+    exit();
 }
