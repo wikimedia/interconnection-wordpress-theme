@@ -377,3 +377,58 @@ function interconnection_remove_jetpack_related_posts() {
 	}
 }
 add_action( 'wp', 'interconnection_remove_jetpack_related_posts', 20 );
+
+/**
+ * Change the post Publish button text to Submit for Review.
+ */
+function interconnection_change_publish_button() {
+	global $pagenow;
+
+	// Only run on post editor page.
+	if ( isset( $pagenow ) && ! ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) {
+		return;
+	}
+
+	// Check for Contributor role.
+	if ( in_array( 'contributor', wp_get_current_user()->roles, true ) ) {
+		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10, 3 );
+		add_action( 'admin_print_footer_scripts', 'interconnection_change_publish_button_js' );
+	}
+}
+add_action( 'init', 'interconnection_change_publish_button' );
+
+/**
+ * Filters text with its translation.
+ *
+ * @param string $translation Translated text.
+ * @param string $text Text to translate.
+ * @param string $domain Text domain.
+ *
+ * @return string
+ */
+function interconnection_change_publish_button_php( $translation, $text, $domain ) {
+	if ( 'Publish' === $translation ) {
+		return esc_html__( 'Submit for Review', 'interconnection' );
+	}
+
+	return $translation;
+}
+
+/**
+ * Print script and data queued for the footer.
+ */
+function interconnection_change_publish_button_js() {
+	// Check that wp.i18n has been defined.
+	if ( wp_script_is( 'wp-i18n' ) ) {
+		?>
+		<script>
+			wp.i18n.setLocaleData( {
+				'Publish': [
+					'Submit for Review',
+					'interconnection'
+				]
+			} );
+		</script>
+		<?php
+	}
+}
