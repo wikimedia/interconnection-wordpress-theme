@@ -309,6 +309,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 add_filter( 'use_block_editor_for_post', '__return_true' );
 
 /**
+ * Customize co-authors-plus functionality.
+ */
+require_once get_template_directory() . '/inc/authors.php';
+\Interconnection\Authors\bootstrap();
+
+/**
  * Enable editorial categories customizations.
  */
 require_once get_template_directory() . '/inc/editorial-categories.php';
