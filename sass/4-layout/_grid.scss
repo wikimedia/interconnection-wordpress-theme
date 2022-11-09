@@ -1,5 +1,6 @@
 .wrapper {
 	max-width: rem(1200); // accounts for padding below
+
 	@include padding(0, 32, 0, 64);
 	margin: 0 auto;
 }
@@ -15,21 +16,26 @@
 }
 
 .section {
+
 	@include margin-bottom(1);
 	@include padding(24, 0, 32, 0);
 }
 
 // Flex containers
 .flex {
+
 	&.flex-all {
+
 		@include flexbox(wrap, wrap, $small-bp, row);
 	}
 	// Becomes a flex container at medium-bp
 	&.flex-medium {
+
 		@include flexbox(column, nowrap, $medium-bp, row);
 	}
 
 	&.flex-large {
+
 		@include flexbox(column, nowrap, $large-bp, row);
 	}
 
@@ -53,11 +59,13 @@
 // flex "templates"
 .flex-3,
 .wp-block-group.is-style-flex-3 > .wp-block-group__inner-container {
+
 	@include column-3;
 }
 
 .flex-2,
 .wp-block-group.is-style-flex-2 > .wp-block-group__inner-container {
+
 	@include column-2;
 }
 
@@ -68,13 +76,16 @@
 
 // margin "templates"
 .margin-bottom-0 {
+
 	@include margin-bottom(0);
 }
 
 .margin-bottom-1 {
+
 	@include margin-bottom(1);
 }
 
 .margin-bottom-2 {
+
 	@include margin-bottom(2);
 }

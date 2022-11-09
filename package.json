@@ -40,6 +40,8 @@
     "watch:css": "node-sass --watch sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "compile:wpdiscuz": "rtlcss wpdiscuz/style-minimal.css wpdiscuz/style-minimal-rtl.css",
+    "precompile": "npm run lint:scss",
+    "compile": "npm run compile:css && npm run compile:rtl",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "node bin/bundle.js"

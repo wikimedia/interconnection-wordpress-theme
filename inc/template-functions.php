@@ -35,3 +35,27 @@ function interconnection_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'interconnection_pingback_header' );
+
+/**
+ * Output user description after author name.
+ *
+ * @param array  $link_args Co-Authors Plus link args object.
+ * @param object $author    Author object.
+ * @return array Filtered link args.
+ */
+function interconnection_show_author_description_in_byline( $link_args, $author ) {
+	if ( ! isset( $author->type ) ) {
+		return $link_args;
+	}
+
+	if ( is_admin() || ! is_single() ) {
+		return $link_args;
+	}
+
+	if ( ! empty( $author->description ) ) {
+		$link_args['after_html'] = sprintf( ', %s', $author->description );
+	}
+
+	return $link_args;
+}
+add_filter( 'coauthors_posts_link', 'interconnection_show_author_description_in_byline', 10, 2 );
