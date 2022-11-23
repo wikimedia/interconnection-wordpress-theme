@@ -439,6 +439,9 @@ function interconnection_change_publish_button_js() {
 	}
 }
 
+// TODO: Revisit this function in order to prevent duplicate posts
+// from showing alongside English posts. In the meantime, we are
+// temporarily disabling his featured as requested by the client.
 /**
  * Query English posts along selected language posts in archives.
  *
@@ -462,4 +465,4 @@ function interconnection_modify_polylang_query( $query ) {
 		}
 	}
 }
-add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
+//add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
