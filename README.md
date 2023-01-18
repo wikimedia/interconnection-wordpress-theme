@@ -24,3 +24,22 @@ Interconnection is a WordPress theme developed for the Wikimedia community blog,
 * Activate the theme
 * Customize
 
+## Theme development
+Development occurs primarily within the [themes/interconnection](themes/interconnection/) folder.
+
+Run `composer install` to enable the use of PHPCS for linting theme code.
+
+Run `npm install` to enable the frontend asset build process. The theme currently requires Node v14; if you use [nvm](https://github.com/nvm-sh/nvm), you can run `nvm use` (or `nvm install v14`) in the theme directory to set the correct version.
+
+Useful commands, all usable from within the theme directory:
+
+ Command                   | Description
+-------------------------- | --------------------------------------------------------
+`npm run`                  | See a list of all available npm commands
+`npm run compile`          | Meta-command to lint and compile the CSS, including RTL
+`npm run compile:css`      | Build the sass files into a single CSS file
+`npm run watch:css`        | Monitor sass files for changes and automatically rebuild
+`npm run lint:scss`        | Check the sass code for errors
+`npm run lint:js`          | Check the JS files for errors
+`composer lint:php`        | Check theme PHP files for errors
+
