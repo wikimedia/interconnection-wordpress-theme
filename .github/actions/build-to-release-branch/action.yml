@@ -30,8 +30,6 @@ runs:
       with:
         ref: ${{ inputs.release_branch }}
         fetch-depth: 0
-        lfs: true
-        token: ${{ secrets.ACCESS_TOKEN }}
 
     - name: Merge source into release branch
       shell: bash
