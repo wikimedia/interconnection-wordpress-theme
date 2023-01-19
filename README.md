@@ -24,3 +24,37 @@ Interconnection is a WordPress theme developed for the Wikimedia community blog,
 * Activate the theme
 * Customize
 
+Deploy Process
+---------------
+The release and release-develop versions of the Interconnection theme are built using [GitHub Actions](https://github.com/features/actions). Any time a pull request is merged into the `main` or `develop` branches, that code is built and pushed to the corresponding `release` and `release-develop` branches. **You should not commit to the release branches directly,** nor submit pull requests against them.
+
+Development workflow:
+
+- Implement a feature or bugfix in a feature branch created off of `main`
+- Submit a pull request from that feature branch back into `main`, and get code review
+- Merge the feature branch into `develop` manually.
+  - The `release-develop` branch will be automatically rebuilt
+- Update the preproduction or development environment for your project to reference the newest built version of the `release-develop` branch, to deploy and test the theme PR.
+- Once approved, merge the pull request into `main`
+  - The `release` branch will be automatically rebuilt
+- Update the production branch in your project repository to reference the newest built version of the `release` branch, to deploy the change to production.
+  - _e.g._, if the consuming project references `"wikimedia/interconnection-wordpress-theme": "dev-release"`, run `composer update wikimedia/interconnection-wordpress-theme` then commit the lockfile change with the new build.
+
+## Theme development
+
+Run `composer install` to enable the use of PHPCS for linting theme code.
+
+Run `npm install` to enable the frontend asset build process. The theme currently requires Node v14; if you use [nvm](https://github.com/nvm-sh/nvm), you can run `nvm use` (or `nvm install v14`) in the theme directory to set the correct version.
+
+Useful commands, all usable from within the theme's root directory:
+
+ Command                   | Description
+-------------------------- | --------------------------------------------------------
+`npm run`                  | See a list of all available npm commands
+`npm run compile`          | Meta-command to lint and compile the CSS, including RTL
+`npm run compile:css`      | Build the sass files into a single CSS file
+`npm run watch:css`        | Monitor sass files for changes and automatically rebuild
+`npm run lint:scss`        | Check the sass code for errors
+`npm run lint:js`          | Check the JS files for errors
+`composer lint:php`        | Check theme PHP files for errors
+
