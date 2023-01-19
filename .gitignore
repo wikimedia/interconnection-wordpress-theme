@@ -1,0 +1,11 @@
+# dependencies
+node_modules/
+vendor/
+
+# platform
+*.log
+
+# built files
+style-editor.css
+style-rtl.css
+style.css
