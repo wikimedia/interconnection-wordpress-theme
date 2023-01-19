@@ -20,10 +20,7 @@
     "@wordpress/scripts": "^9.0.0",
     "archiver": "^4.0.1",
     "node-sass": "^4.14.0",
-    "rtlcss": "^2.5.0",
-    "lodash": "^4.17.21",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "rtlcss": "^2.5.0"
   },
   "rtlcssConfig": {
     "options": {
@@ -47,7 +44,6 @@
     "compile": "npm run compile:css && npm run compile:rtl",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "node bin/bundle.js",
-    "build": "webpack --mode=production --config webpack-config.js"
+    "bundle": "node bin/bundle.js"
   }
 }
