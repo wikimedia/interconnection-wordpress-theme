@@ -439,21 +439,25 @@ function interconnection_change_publish_button_js() {
 	}
 }
 
+// TODO: Revisit this function in order to prevent duplicate posts
+// from showing alongside English posts. In the meantime, we are
+// temporarily disabling his featured as requested by the client.
 /**
- * Query all English posts in archives regardless of selected language.
+ * Query English posts along selected language posts in archives.
  *
- * Query only English post any time another language is selected
+ * Query English and selected language posts when switching languages
  * so we can replace translated content in the loop. This allows
  * us to display English posts if the posts are not translated.
  *
- * This filter also removes the sticky post from the homepage loop.
+ * This function also removes the sticky post from the homepage loop.
  *
  * @param WP_Query $query The WP_Query instance (passed by reference).
  */
 function interconnection_modify_polylang_query( $query ) {
 	// Query English posts only.
 	if ( function_exists( 'pll__' ) && ! is_admin() && ! is_singular() && $query->is_main_query() ) {
-		$query->set( 'lang', pll_default_language() );
+		$languages = pll_default_language() . ',' . pll_current_language();
+		$query->set( 'lang', $languages );
 
 		// Remove sticky posts from homepage loop.
 		if ( is_home() ) {
@@ -461,4 +465,4 @@ function interconnection_modify_polylang_query( $query ) {
 		}
 	}
 }
-add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
+//add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
