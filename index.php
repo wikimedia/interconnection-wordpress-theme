@@ -25,7 +25,12 @@ get_header();
 			// Use the last added sticky post - last in array.
 			// We must use ignore_sticky_posts alongside post__in, because
 			// WP_Query will always retrieve all sticky posts vs just the latest.
-			$the_query = new WP_Query( array( 'post__in' => $exclude_from_grid, 'ignore_sticky_posts' => true ) );
+			$the_query = new WP_Query(
+				array(
+					'ignore_sticky_posts' => true,
+					'post__in'            => $exclude_from_grid,
+				)
+			);
 
 			while ( $the_query->have_posts() ) :
 				$the_query->the_post();
