@@ -6,22 +6,22 @@
         "WordPress",
         "Themes"
     ],
-    "homepage": "https://github.com/wpcomvip/wikimedia-blog-wikimedia-org",
+    "homepage": "https://github.com/wikimedia/interconnection-wordpress-theme",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
             "name": "Contributors",
-            "homepage": "https://github.com/wpcomvip/wikimedia-blog-wikimedia-org/graphs/contributors"
+            "homepage": "https://github.com/wikimedia/interconnection-wordpress-theme/graphs/contributors"
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=8.0"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "wptrt/wpthemereview": "^0.2.1",
         "php-parallel-lint/php-parallel-lint": "^1.2.0",
-        "wp-cli/i18n-command": "^2.2"
+        "wp-cli/i18n-command": "^2.2",
+        "wptrt/wpthemereview": "^0.2.1"
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
@@ -29,11 +29,12 @@
         "make-pot": "wp i18n make-pot . languages/interconnection.pot"
     },
     "support": {
-        "issues": "https://github.com/wpcomvip/wikimedia-blog-wikimedia-org/issues",
-        "source": "https://github.com/wpcomvip/wikimedia-blog-wikimedia-org"
+        "issues": "https://github.com/wikimedia/interconnection-wordpress-theme/issues",
+        "source": "https://github.com/wikimedia/interconnection-wordpress-theme"
     },
     "config": {
         "allow-plugins": {
+            "composer/installers": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
