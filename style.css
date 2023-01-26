@@ -547,6 +547,17 @@ td {
 	border: 0.05rem solid #c8ccd1;
 }
 
+/* Event Language Selector */
+.wp-block-interconnection-event-language h1,
+.wp-block-interconnection-event-language h2,
+.wp-block-interconnection-event-language h3,
+.wp-block-interconnection-event-language h4,
+.wp-block-interconnection-event-language h5,
+.wp-block-interconnection-event-language h6 {
+	line-height: 1;
+	margin-bottom: 5px;
+}
+
 .wrapper {
 	max-width: 75rem;
 	padding: 0 2rem;
