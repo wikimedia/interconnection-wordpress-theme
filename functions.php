@@ -449,8 +449,6 @@ function interconnection_change_publish_button_js() {
  * so we can replace translated content in the loop. This allows
  * us to display English posts if the posts are not translated.
  *
- * This function also removes the sticky post from the homepage loop.
- *
  * @param WP_Query $query The WP_Query instance (passed by reference).
  */
 function interconnection_modify_polylang_query( $query ) {
@@ -458,11 +456,26 @@ function interconnection_modify_polylang_query( $query ) {
 	if ( function_exists( 'pll__' ) && ! is_admin() && ! is_singular() && $query->is_main_query() ) {
 		$languages = pll_default_language() . ',' . pll_current_language();
 		$query->set( 'lang', $languages );
-
-		// Remove sticky posts from homepage loop.
-		if ( is_home() ) {
-			$query->set( 'post__not_in', get_option( 'sticky_posts' ) ); // phpcs:ignore
-		}
 	}
 }
 //add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
+
+/**
+ * Remove the sticky post from the homepage loop.
+ *
+ * @param WP_Query $query The WP_Query instance (passed by reference).
+ */
+function interconnection_remove_homepage_sticky_posts( $query ) {
+	// Get the last added sticky post - last in array.
+	$sticky            = get_option( 'sticky_posts' );
+	$exclude_from_grid = $sticky ? array( $sticky[ count( $sticky ) - 1 ] ) : '';
+
+	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
+		$query->set( 'ignore_sticky_posts', true );
+
+		if ( ! empty( $exclude_from_grid ) ) {
+			$query->set( 'post__not_in', $exclude_from_grid );
+		}
+	}
+}
+add_action( 'pre_get_posts', 'interconnection_remove_homepage_sticky_posts' );
