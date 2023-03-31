@@ -40,7 +40,7 @@ if ( is_rtl() ) {
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+		<div class="entry-meta" <?php echo $rtl_css_override; ?>>
 			<?php
 			interconnection_posted_on();
 			interconnection_posted_by();
