@@ -24,7 +24,7 @@ if ( ! function_exists( 'interconnection_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
-
+	
 		echo '<span class="posted-on">' . $time_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
@@ -43,9 +43,9 @@ if ( ! function_exists( 'interconnection_posted_by' ) ) :
 
 		if ( function_exists( 'coauthors_posts_links' ) ) {
 			$authors = coauthors_posts_links( null, null, 'by ', null, false );
-			echo '<span class="byline" dir="ltr"> ' . $authors . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<span class="byline"> ' . $authors . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
-			echo '<span class="byline" dir="ltr"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 	}
@@ -139,7 +139,7 @@ if ( ! function_exists( 'interconnection_post_thumbnail' ) ) :
 					<div class="home-thumbnail"></div>
 			</a>
 			<?php };
-
+			
 		endif; // End is_singular().
 	}
 endif;
