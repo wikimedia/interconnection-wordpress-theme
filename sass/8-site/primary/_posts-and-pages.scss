@@ -181,6 +181,12 @@ article.grid-post {
 	}
 }
 
+/*rtl:ignore*/
+body.rtl .entry-meta {
+	direction: ltr;
+	text-align: right;
+}
+
 .posts-grid {
 
 	@include column-3;
