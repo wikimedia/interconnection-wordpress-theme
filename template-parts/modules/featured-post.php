@@ -9,17 +9,6 @@
 
 $permalink = get_permalink();
 
-// Define rtl CSS override for entry title.
-//
-// This ensures that the $lang_title string displays before
-// the post title on rtl languages. We don't add the CSS to
-// style.css because when style-rtl.css gets automatically
-// generated the values would get reversed.
-$rtl_css_override = '';
-if ( is_rtl() ) {
-	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
-}
-
 ?>
 <article class="featured-post grid-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<div class="featured-post-image">
@@ -32,7 +21,7 @@ if ( is_rtl() ) {
 		</header><!-- .entry-header -->
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta" <?php echo $rtl_css_override; ?>>
+			<div class="entry-meta">
 				<?php
 				interconnection_posted_on();
 				interconnection_posted_by();

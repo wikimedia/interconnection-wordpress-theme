@@ -20,27 +20,16 @@ if ( function_exists( 'pll_get_post_language' ) ) {
 	}
 }
 
-// Define rtl CSS override for entry title.
-//
-// This ensures that the $lang_title string displays before
-// the post title on rtl languages. We don't add the CSS to
-// style.css because when style-rtl.css gets automatically
-// generated the values would get reversed.
-$rtl_css_override = '';
-if ( is_rtl() ) {
-	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
-}
-
 ?>
 
 <article class="grid-post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php echo esc_attr( $lang_attribute ); ?>>
 	<header class="entry-header">
 		<?php interconnection_post_thumbnail(); ?>
-		<?php the_title( '<h3 class="entry-title"' . $rtl_css_override . '><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $lang_title, '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $lang_title, '</a></h3>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta" <?php echo $rtl_css_override; ?>>
+		<div class="entry-meta">
 			<?php
 			interconnection_posted_on();
 			interconnection_posted_by();
