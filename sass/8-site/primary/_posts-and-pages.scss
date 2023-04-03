@@ -181,10 +181,15 @@ article.grid-post {
 	}
 }
 
-/*rtl:ignore*/
-body.rtl .entry-meta {
-	direction: ltr;
-	text-align: right;
+/*rtl:ignore*/// Do not process this section with rtlcss. In RTL languages,
+body.rtl {
+	// Ensure the $lang_title string displays before the post title. See #736.
+	.entry-header .entry-title,
+	// Ensure the date doesn't render improperly in article bylines. See #772.
+	.entry-meta {
+		direction: ltr;
+		text-align: right;
+	}
 }
 
 .posts-grid {
