@@ -2016,6 +2016,13 @@ article.grid-post.featured-post .featured-post-text {
 	}
 }
 
+/*rtl:ignore*/
+body.rtl .entry-header .entry-title,
+body.rtl .entry-meta {
+	direction: ltr;
+	text-align: right;
+}
+
 .posts-grid {
 	display: flex;
 	flex-direction: row;

@@ -2015,6 +2015,11 @@ article.grid-post.featured-post .featured-post-text {
 		margin-right: 1rem;
 	}
 }
+body.rtl .entry-header .entry-title,
+body.rtl .entry-meta {
+	direction: ltr;
+	text-align: right;
+}
 
 .posts-grid {
 	display: flex;
