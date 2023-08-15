@@ -24,17 +24,6 @@ if ( function_exists( 'pll_the_languages' ) ) {
 	}
 }
 
-// Define rtl CSS override for entry title.
-//
-// This ensures that the $lang_title string displays before
-// the post title on rtl languages. We don't add the CSS to
-// style.css because when style-rtl.css gets automatically
-// generated the values would get reversed.
-$rtl_css_override = '';
-if ( is_rtl() ) {
-	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
-}
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
