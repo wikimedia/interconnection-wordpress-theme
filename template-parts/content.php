@@ -7,36 +7,32 @@
  * @package Interconnection
  */
 
-// Get array of languages that need translation.
+// Ensure Polylang is up and running.
 if ( function_exists( 'pll_the_languages' ) ) {
+	// Retrieve the complete list of languages in raw format, including their translation status.
+	$all_languages = pll_the_languages( array( 'raw' => 1 ) );
+	// Initialize a new associative array to store languages which translation are miss.
+	$languages_without_translations = array();
 
-	// Get all languages in raw output.
-	$raw_languages = pll_the_languages( array( 'raw' => 1 ) );
-
-	// Remove languages that have translations.
-	foreach ( $raw_languages as $sub_key => $sub_array ) {
-		if ( false === $sub_array['no_translation'] ) {
-			unset( $raw_languages[ $sub_key ] );
+	// Loop througout each language in the list.
+	foreach ( $all_languages as $language ) {
+		// If the 'no_translation' flag is set true for a specific language, this language miss translation.
+		if ( $language['no_translation'] ) {
+			// Add the untranslated language to the associactive vector, mapping slug>name.
+			$languages_without_translations[ $language['slug'] ] = $language['name'];
 		}
 	}
+}
 
-	// Rename modified array.
-	$no_translation = $raw_languages;
-
-	// Create language slugs array.
-	$language_slugs = array();
-	foreach ( $no_translation as $key ) {
-		$language_slugs[] = $key['slug'];
-	}
-
-	// Create language names array.
-	$language_names = array();
-	foreach ( $no_translation as $key ) {
-		$language_names[] = $key['name'];
-	}
-
-	// Combine language slugs and names into new array.
-	$languages = array_combine( $language_slugs, $language_names );
+// Define rtl CSS override for entry title.
+//
+// This ensures that the $lang_title string displays before
+// the post title on rtl languages. We don't add the CSS to
+// style.css because when style-rtl.css gets automatically
+// generated the values would get reversed.
+$rtl_css_override = '';
+if ( is_rtl() ) {
+	$rtl_css_override = ' style="direction:ltr; text-align:right;"';
 }
 
 ?>
@@ -53,7 +49,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
 			if ( 'post' === get_post_type() ) :
 				?>
-				<div class="entry-meta">
+				<div class="entry-meta" <?php echo $rtl_css_override; ?>>
 					<?php
 					interconnection_posted_on();
 					interconnection_posted_by();
@@ -102,8 +98,8 @@ if ( function_exists( 'pll_the_languages' ) ) {
 				dynamic_sidebar( 'notice-1' );
 			}
 
-			// Display translation indicator only in English version of the site.
-			if ( ! empty( $languages ) && pll_default_language() === pll_current_language() ) {
+			// If the current post is not translated in some language, displays the translation form.
+			if ( ! empty( $languages_without_translations ) ) {
 				?>
 				<div  id="translate-post" class="translate-post">
 					<div class="translate-post-image">
@@ -127,7 +123,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
 									<select name="new_lang" id="new_lang" class="pll-translation-select">
 										<?php
-										foreach ( $languages as $key => $value ) {
+										foreach ( $languages_without_translations as $key => $value ) {
 											echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
 										}
 										?>
