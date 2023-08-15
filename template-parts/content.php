@@ -38,7 +38,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
 			if ( 'post' === get_post_type() ) :
 				?>
-				<div class="entry-meta" <?php echo $rtl_css_override; ?>>
+				<div class="entry-meta">
 					<?php
 					interconnection_posted_on();
 					interconnection_posted_by();
