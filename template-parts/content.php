@@ -14,11 +14,11 @@ if ( function_exists( 'pll_the_languages' ) ) {
 	// Initialize a new associative array to store languages which translation are miss.
 	$languages_without_translations = array();
 
-	// Loop througout each language in the list.
+	// Loop throughout each language in the list.
 	foreach ( $all_languages as $language ) {
 		// If the 'no_translation' flag is set true for a specific language, this language miss translation.
 		if ( $language['no_translation'] ) {
-			// Add the untranslated language to the associactive vector, mapping slug>name.
+			// Add the untranslated language to the associative vector, mapping slug => name.
 			$languages_without_translations[ $language['slug'] ] = $language['name'];
 		}
 	}
