@@ -97,3 +97,21 @@ function interconnection_cap_description( $description ) : string {
 	return $description;
 }
 add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
+
+
+/**
+ * Toggles Polylang Content duplication for the current user.
+ *
+ * This function updates the 'pll_duplicate_content' user meta to control content duplication
+ * across languages in Polylang. The feature is controlled by the 'pll-duplicate' option,
+ * and when enabled, it allows the content to be duplicated across different languages.
+ *
+ * It makes the link https://<environment>/wp-admin/post-new.php?post_type=post&from_post=<POST-ID>&new_lang=<LANG>&_wpnonce=<NONCE>
+ * to create a new post in the language specified by the 'new_lang' parameter.
+ *
+ * See #879 Diff bug ticket for more details.
+ */
+function toggle_polylang_content_duplication() {
+    update_user_meta( get_current_user_id(), 'pll_duplicate_content', [ 'post' => true ] );
+}
+add_action( 'init', 'toggle_polylang_content_duplication' );
