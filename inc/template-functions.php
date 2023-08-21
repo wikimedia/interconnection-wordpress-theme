@@ -111,7 +111,24 @@ add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
  *
  * See #879 Diff bug ticket for more details.
  */
+/**
+ * Toggles Polylang content duplication.
+ *
+ * Ensures that Polylang content duplication is enabled for posts and pages
+ * if Polylang is active and the user is on the new post or edit post screen.
+ */
 function toggle_polylang_content_duplication() {
-    update_user_meta( get_current_user_id(), 'pll_duplicate_content', [ 'post' => true ] );
+	// Exit earlier if Polylang is not active.
+	if ( ! function_exists( 'pll_is_translated_post_type' ) ) {
+		return;
+	}
+
+	// Also exit if the user isn't on the new post or edit post screen.
+	$post_type = isset( $_GET['post_type'] ) ? sanitize_key( $_GET['post_type'] ) : '';
+	if ( empty( $post_type ) || ! in_array( $post_type, [ 'post', 'page' ], true ) ) {
+		return;
+	}
+
+	update_user_meta( get_current_user_id(), 'pll_duplicate_content', [ 'post' => true ] );
 }
-add_action( 'init', 'toggle_polylang_content_duplication' );
+add_action( 'admin_init', 'toggle_polylang_content_duplication' );
