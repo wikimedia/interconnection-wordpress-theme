@@ -100,35 +100,25 @@ add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
 
 
 /**
- * Toggles Polylang Content duplication for the current user.
+ * Locks Polylang Content duplication for the current user.
  *
- * This function updates the 'pll_duplicate_content' user meta to control content duplication
- * across languages in Polylang. The feature is controlled by the 'pll-duplicate' option,
- * and when enabled, it allows the content to be duplicated across different languages.
+ * This function updates the 'pll_duplicate_content' user meta to 'true'
+ * whenever WordPress finishes updating any user data - when enabled, it
+ * allows the content to be duplicated across different languages.
  *
  * It makes the link https://<environment>/wp-admin/post-new.php?post_type=post&from_post=<POST-ID>&new_lang=<LANG>&_wpnonce=<NONCE>
  * to create a new post in the language specified by the 'new_lang' parameter.
  *
  * See #879 Diff bug ticket for more details.
  */
-/**
- * Toggles Polylang content duplication.
- *
- * Ensures that Polylang content duplication is enabled for posts and pages
- * if Polylang is active and the user is on the new post or edit post screen.
- */
-function toggle_polylang_content_duplication() {
-	// Exit earlier if Polylang is not active.
+function update_polylang_content_duplication( $user_id ) {
+	// If Polylang is not active, exit early.
 	if ( ! function_exists( 'pll_is_translated_post_type' ) ) {
 		return;
 	}
 
-	// Also exit if the user isn't on the new post or edit post screen.
-	$post_type = isset( $_GET['post_type'] ) ? sanitize_key( $_GET['post_type'] ) : '';
-	if ( empty( $post_type ) || ! in_array( $post_type, [ 'post', 'page' ], true ) ) {
-		return;
-	}
-
-	update_user_meta( get_current_user_id(), 'pll_duplicate_content', [ 'post' => true ] );
+	// Update the user meta to enable content duplication across languages.
+	update_user_meta( $user_id, 'pll_duplicate_content', [ 'post' => true ] );
 }
-add_action( 'admin_init', 'toggle_polylang_content_duplication' );
+add_action( 'profile_update', 'update_polylang_content_duplication', 10, 1 ); // Hook into the profile update.
+add_action( 'user_register', 'update_polylang_content_duplication', 10, 1 ); // Hook into user registration.
