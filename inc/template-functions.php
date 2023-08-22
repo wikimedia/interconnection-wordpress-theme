@@ -98,27 +98,14 @@ function interconnection_cap_description( $description ) : string {
 }
 add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
 
-
-/**
- * Locks Polylang Content duplication for the current user.
- *
- * This function updates the 'pll_duplicate_content' user meta to 'true'
- * whenever WordPress finishes updating any user data - when enabled, it
- * allows the content to be duplicated across different languages.
- *
- * It makes the link https://<environment>/wp-admin/post-new.php?post_type=post&from_post=<POST-ID>&new_lang=<LANG>&_wpnonce=<NONCE>
- * to create a new post in the language specified by the 'new_lang' parameter.
- *
- * See #879 Diff bug ticket for more details.
- */
-function update_polylang_content_duplication( $user_id ) {
-	// If Polylang is not active, exit early.
-	if ( ! function_exists( 'pll_is_translated_post_type' ) ) {
-		return;
+// TODO: docblock this
+function filter_pll_duplicate_content( $value, $user_id, $meta_key, $single ) {
+	if ( 'pll_duplicate_content' === $meta_key ) {
+		return [ 'post' => true ];
 	}
 
-	// Update the user meta to enable content duplication across languages.
-	update_user_meta( $user_id, 'pll_duplicate_content', [ 'post' => true ] );
-}
-add_action( 'profile_update', 'update_polylang_content_duplication', 10, 1 ); // Hook into the profile update.
-add_action( 'user_register', 'update_polylang_content_duplication', 10, 1 ); // Hook into user registration.
+	return $value;
+
+add_filter( 'get_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
+
+
