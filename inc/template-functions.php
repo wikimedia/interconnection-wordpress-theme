@@ -98,14 +98,24 @@ function interconnection_cap_description( $description ) : string {
 }
 add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
 
-// TODO: docblock this
-function filter_pll_duplicate_content( $value, $user_id, $meta_key, $single ) {
-	if ( 'pll_duplicate_content' === $meta_key ) {
-		return [ 'post' => true ];
+/**
+ * Ensures that the 'pll_duplicate_content' user meta is always set to true.
+ *
+ * @param null|bool  $check      Whether to allow adding/updating metadata of the given type.
+ * @param int        $user_id    User ID.
+ * @param string     $meta_key   Meta key.
+ * @param mixed      $meta_value Meta value.
+ * @return null|bool Null to allow adding/updating metadata, false to prevent it.
+ */
+function filter_pll_duplicate_content( $check, $user_id, $meta_key, $meta_value ) {
+	if ( $meta_key === 'pll_duplicate_content' ) {
+		$meta_value['post'] = true;
+		update_user_meta( $user_id, $meta_key, $meta_value );
+		return false;
 	}
 
-	return $value;
-
-add_filter( 'get_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
-
+	return null;
+}
+add_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
+add_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
 
