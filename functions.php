@@ -474,14 +474,15 @@ function interconnection_modify_polylang_query( $query ) {
 function interconnection_remove_homepage_sticky_posts( $query ) {
 	// Get the last added sticky post - last in array.
 	$sticky            = get_option( 'sticky_posts' );
-	$exclude_from_grid = $sticky ? array( $sticky[ count( $sticky ) - 1 ] ) : '';
+	$exclude_from_grid = is_array( $sticky ) ? array_pop( $sticky ) : '';
 
 	if ( ! is_admin() && is_home() && $query->is_main_query() ) {
 		$query->set( 'ignore_sticky_posts', true );
 
 		if ( ! empty( $exclude_from_grid ) ) {
-			$query->set( 'post__not_in', $exclude_from_grid );
+			$query->set( 'post__not_in', [ $exclude_from_grid ] );
 		}
 	}
 }
+
 add_action( 'pre_get_posts', 'interconnection_remove_homepage_sticky_posts' );
