@@ -336,3 +336,10 @@ article.page h6[id]::before {
 
 	@include margin-bottom(0);
 }
+
+body.attachment {
+
+	.entry-meta p:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
