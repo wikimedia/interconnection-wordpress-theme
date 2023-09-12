@@ -109,13 +109,21 @@ add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
  */
 function filter_pll_duplicate_content( $check, $user_id, $meta_key, $meta_value ) {
 	if ( $meta_key === 'pll_duplicate_content' ) {
-		$meta_value['post'] = true;
-		update_user_meta( $user_id, $meta_key, $meta_value );
-		return false;
+		// Disable filters.
+		remove_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10 );
+		remove_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10 );
+
+		// Update the meta value.
+		update_user_meta( $user_id, 'pll_duplicate_content', [ 'post' => true ] );
+
+		// Re-enable filters.
+		add_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
+		add_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
+
+		return false; // Prevent the regular update.
 	}
 
-	return null;
+	return null; // Allow the regular update.
 }
 add_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
 add_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
-
