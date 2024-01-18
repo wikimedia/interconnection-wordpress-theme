@@ -7,21 +7,36 @@
  * @package Interconnection
  */
 
-// Ensure Polylang is up and running.
+// Get array of languages that need translation.
 if ( function_exists( 'pll_the_languages' ) ) {
-	// Retrieve the complete list of languages in raw format, including their translation status.
-	$all_languages = pll_the_languages( array( 'raw' => 1 ) );
-	// Initialize a new associative array to store languages which translation are miss.
-	$languages_without_translations = array();
 
-	// Loop throughout each language in the list.
-	foreach ( $all_languages as $language ) {
-		// If the 'no_translation' flag is set true for a specific language, this language miss translation.
-		if ( $language['no_translation'] ) {
-			// Add the untranslated language to the associative vector, mapping slug => name.
-			$languages_without_translations[ $language['slug'] ] = $language['name'];
+	// Get all languages in raw output.
+	$raw_languages = pll_the_languages( array( 'raw' => 1 ) );
+
+	// Remove languages that have translations.
+	foreach ( $raw_languages as $sub_key => $sub_array ) {
+		if ( false === $sub_array['no_translation'] ) {
+			unset( $raw_languages[ $sub_key ] );
 		}
 	}
+
+	// Rename modified array.
+	$no_translation = $raw_languages;
+
+	// Create language slugs array.
+	$language_slugs = array();
+	foreach ( $no_translation as $key ) {
+		$language_slugs[] = $key['slug'];
+	}
+
+	// Create language names array.
+	$language_names = array();
+	foreach ( $no_translation as $key ) {
+		$language_names[] = $key['name'];
+	}
+
+	// Combine language slugs and names into new array.
+	$languages = array_combine( $language_slugs, $language_names );
 }
 
 ?>
@@ -87,8 +102,8 @@ if ( function_exists( 'pll_the_languages' ) ) {
 				dynamic_sidebar( 'notice-1' );
 			}
 
-			// If the current post is not translated in some language, displays the translation form.
-			if ( ! empty( $languages_without_translations ) ) {
+			// Display translation indicator only in English version of the site.
+			if ( ! empty( $languages ) && pll_default_language() === pll_current_language() ) {
 				?>
 				<div  id="translate-post" class="translate-post">
 					<div class="translate-post-image">
@@ -112,7 +127,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
 									<select name="new_lang" id="new_lang" class="pll-translation-select">
 										<?php
-										foreach ( $languages_without_translations as $key => $value ) {
+										foreach ( $languages as $key => $value ) {
 											echo '<option value=' . esc_attr( $key ) . '>' . esc_html( $value ) . '</option>';
 										}
 										?>
