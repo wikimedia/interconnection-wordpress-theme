@@ -19,8 +19,8 @@
   "devDependencies": {
     "@wordpress/scripts": "^27.0.0",
     "archiver": "^4.0.1",
-    "node-sass": "^4.14.0",
-    "rtlcss": "^2.5.0"
+    "rtlcss": "^2.5.0",
+    "sass": "^1.69.7"
   },
   "rtlcssConfig": {
     "options": {
@@ -36,8 +36,8 @@
     "map": false
   },
   "scripts": {
-    "compile:css": "node-sass sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "watch:css": "node-sass --watch sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "sass sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch:css": "sass --watch sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "compile:wpdiscuz": "rtlcss wpdiscuz/style-minimal.css wpdiscuz/style-minimal-rtl.css",
     "precompile": "npm run lint:scss",
