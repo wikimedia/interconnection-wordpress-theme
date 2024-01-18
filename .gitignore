@@ -9,3 +9,4 @@ vendor/
 style-editor.css
 style-rtl.css
 style.css
+*.css.map

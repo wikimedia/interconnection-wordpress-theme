@@ -36,8 +36,8 @@
     "map": false
   },
   "scripts": {
-    "compile:css": "sass sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "watch:css": "sass --watch sass/ -o ./ --output-style expanded && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "watch:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "compile:wpdiscuz": "rtlcss wpdiscuz/style-minimal.css wpdiscuz/style-minimal-rtl.css",
     "precompile": "npm run lint:scss",
