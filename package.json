@@ -2,7 +2,7 @@
   "name": "interconnection",
   "version": "1.0.0",
   "description": "Interconnection is a theme based on http://underscores.me/ intended for use on the Wikimedia Diff blog.",
-  "author": "Hang Do Thi Duc, Chris Koerner",
+  "author": "Hang Do Thi Duc, Chris Koerner, Human Made",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
@@ -17,7 +17,7 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^9.0.0",
+    "@wordpress/scripts": "^27.0.0",
     "archiver": "^4.0.1",
     "node-sass": "^4.14.0",
     "rtlcss": "^2.5.0"
