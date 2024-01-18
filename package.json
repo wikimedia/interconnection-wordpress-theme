@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^27.0.0",
-    "archiver": "^4.0.1",
     "rtlcss": "^2.5.0",
     "sass": "^1.69.7"
   },
@@ -43,7 +42,6 @@
     "precompile": "npm run lint:scss",
     "compile": "npm run compile:css && npm run compile:rtl",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "node bin/bundle.js"
+    "lint:js": "wp-scripts lint-js 'js/*.js'"
   }
 }
