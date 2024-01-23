@@ -101,29 +101,19 @@ add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
 /**
  * Ensures that the 'pll_duplicate_content' user meta is always set to true.
  *
- * @param null|bool  $check      Whether to allow adding/updating metadata of the given type.
- * @param int        $user_id    User ID.
- * @param string     $meta_key   Meta key.
- * @param mixed      $meta_value Meta value.
- * @return null|bool Null to allow adding/updating metadata, false to prevent it.
+ * @param mixed  $value     The value to return, either a single metadata value or an array
+ *                          of values depending on the value of `$single`. Default null.
+ * @param int    $object_id ID of the object metadata is for.
+ * @param string $meta_key  Metadata key.
+ * @return mixed Metadata value override, or unchanged input value.
  */
-function filter_pll_duplicate_content( $check, $user_id, $meta_key, $meta_value ) {
+function force_pll_duplicate_content_metadata_value( $value, int $object_id, string $meta_key ) {
 	if ( $meta_key === 'pll_duplicate_content' ) {
-		// Disable filters.
-		remove_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10 );
-		remove_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10 );
-
-		// Update the meta value.
-		update_user_meta( $user_id, 'pll_duplicate_content', [ 'post' => true ] );
-
-		// Re-enable filters.
-		add_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
-		add_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
-
-		return false; // Prevent the regular update.
+		return [
+			'post' => true,
+			'page' => true,
+		];
 	}
-
-	return null; // Allow the regular update.
+	return $value;
 }
-add_filter( 'update_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
-add_filter( 'add_user_metadata', 'filter_pll_duplicate_content', 10, 4 );
+add_filter( 'get_user_metadata', 'force_pll_duplicate_content_metadata_value', 10, 3 );
