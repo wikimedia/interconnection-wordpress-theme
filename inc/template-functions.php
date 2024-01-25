@@ -110,8 +110,10 @@ add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
 function force_pll_duplicate_content_metadata_value( $value, int $object_id, string $meta_key ) {
 	if ( $meta_key === 'pll_duplicate_content' ) {
 		return [
-			'post' => true,
-			'page' => true,
+			[
+				'post' => true,
+				'page' => true,
+			]
 		];
 	}
 	return $value;
