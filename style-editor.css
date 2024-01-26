@@ -1,9 +1,10 @@
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable block-closing-brace-newline-after */
 .wrapper {
 	max-width: 75rem;
 	padding: 0 2rem;
 	margin: 0 auto;
 }
-
 @media (min-width: 768px) {
 
 	.wrapper {
@@ -25,14 +26,12 @@
 	margin-bottom: 2.5rem;
 	padding: 1.5rem 0;
 }
-
 @media (min-width: 768px) {
 
 	.section {
 		margin-bottom: 3.75rem;
 	}
 }
-
 @media (min-width: 768px) {
 
 	.section {
@@ -44,7 +43,6 @@
 	display: flex;
 	flex-direction: wrap;
 }
-
 @media (min-width: 500px) {
 
 	.flex.flex-all {
@@ -57,7 +55,6 @@
 	display: flex;
 	flex-direction: column;
 }
-
 @media (min-width: 768px) {
 
 	.flex.flex-medium {
@@ -70,7 +67,6 @@
 	display: flex;
 	flex-direction: column;
 }
-
 @media (min-width: 1200px) {
 
 	.flex.flex-large {
@@ -102,7 +98,6 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-
 @media (min-width: 500px) {
 
 	.flex-3,
@@ -116,7 +111,6 @@
 .wp-block-group.is-style-flex-3 > .wp-block-group__inner-container > * {
 	width: 100%;
 }
-
 @media (min-width: 500px) {
 
 	.flex-3 > *,
@@ -124,7 +118,6 @@
 		width: 48%;
 	}
 }
-
 @media (min-width: 768px) {
 
 	.flex-3 > *,
@@ -147,7 +140,6 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-
 @media (min-width: 768px) {
 
 	.flex-2,
@@ -161,7 +153,6 @@
 .wp-block-group.is-style-flex-2 > .wp-block-group__inner-container > * {
 	width: 100%;
 }
-
 @media (min-width: 768px) {
 
 	.flex-2 > *,
@@ -178,7 +169,6 @@
 .margin-bottom-0 {
 	margin-bottom: 1.25rem;
 }
-
 @media (min-width: 768px) {
 
 	.margin-bottom-0 {
@@ -189,7 +179,6 @@
 .margin-bottom-1 {
 	margin-bottom: 2.5rem;
 }
-
 @media (min-width: 768px) {
 
 	.margin-bottom-1 {
@@ -200,7 +189,6 @@
 .margin-bottom-2 {
 	margin-bottom: 5rem;
 }
-
 @media (min-width: 768px) {
 
 	.margin-bottom-2 {
