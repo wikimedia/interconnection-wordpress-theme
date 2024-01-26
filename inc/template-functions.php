@@ -97,3 +97,25 @@ function interconnection_cap_description( $description ) : string {
 	return $description;
 }
 add_filter( 'get_the_archive_description', 'interconnection_cap_description' );
+
+/**
+ * Ensures that the 'pll_duplicate_content' user meta is always set to true.
+ *
+ * @param mixed  $value     The value to return, either a single metadata value or an array
+ *                          of values depending on the value of `$single`. Default null.
+ * @param int    $object_id ID of the object metadata is for.
+ * @param string $meta_key  Metadata key.
+ * @return mixed Metadata value override, or unchanged input value.
+ */
+function force_pll_duplicate_content_metadata_value( $value, int $object_id, string $meta_key ) {
+	if ( $meta_key === 'pll_duplicate_content' ) {
+		return [
+			[
+				'post' => true,
+				'page' => true,
+			]
+		];
+	}
+	return $value;
+}
+add_filter( 'get_user_metadata', 'force_pll_duplicate_content_metadata_value', 10, 3 );
