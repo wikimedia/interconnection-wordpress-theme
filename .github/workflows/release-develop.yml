@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 #v4.0.1
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Merge and build
         uses: ./.github/actions/build-to-release-branch

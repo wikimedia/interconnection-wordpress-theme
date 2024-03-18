@@ -44,7 +44,7 @@ Development workflow:
 
 Run `composer install` to enable the use of PHPCS for linting theme code.
 
-Run `npm install` to enable the frontend asset build process. The theme currently requires Node v14; if you use [nvm](https://github.com/nvm-sh/nvm), you can run `nvm use` (or `nvm install v14`) in the theme directory to set the correct version.
+Run `npm install` to enable the frontend asset build process. The theme currently requires Node v18; if you use [nvm](https://github.com/nvm-sh/nvm), you can run `nvm use` (or `nvm install v18`) in the theme directory to set the correct version.
 
 Useful commands, all usable from within the theme's root directory:
 
