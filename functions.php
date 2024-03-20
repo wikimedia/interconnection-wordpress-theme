@@ -321,6 +321,12 @@ require_once get_template_directory() . '/inc/editorial-categories.php';
 \Interconnection\Editorial_Categories\bootstrap();
 
 /**
+ * Customize The Events Calendar plugin functionality.
+ */
+require_once get_template_directory() . '/inc/events.php';
+\Interconnection\Events\bootstrap();
+
+/**
  * Filter X-hacker output.
  *
  * @param array $headers Associative array of headers to be sent.
