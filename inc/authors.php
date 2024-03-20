@@ -12,6 +12,7 @@ function bootstrap() : void {
     add_filter( 'coauthors_posts_link', __NAMESPACE__ . '\\filter_co_authors_posts_link_args', 10, 2 );
     add_filter( 'pll_rel_hreflang_attributes', __NAMESPACE__ . '\\filter_polylang_href_rel_links' );
     add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_author_if_old_cap_prefix' );
+	add_filter( 'wp_insert_post_data', __NAMESPACE__ . '\\update_post_author', 10, 2 );
 }
 
 /**
@@ -92,4 +93,28 @@ function redirect_author_if_old_cap_prefix() : void {
     $redirect_url = preg_replace( '#^/?#', '/', $redirect_url );
     wp_safe_redirect( $redirect_url, 301 );
     exit();
+}
+
+/**
+ * Update post_author with the first co-author plus assigned author.
+ *
+ * @param array $data An array of slashed, sanitized, and processed post data.
+ * @param array $postarr An array of sanitized (and slashed) but otherwise unmodified post data.
+ *
+ * @return array Updated post data.
+ */
+function update_post_author( $data, $postarr ) {
+	if ( ! function_exists( 'get_coauthors' ) ) {
+		return $data;
+	}
+
+	$coauthors    = get_coauthors( $data['ID'] );
+	$author_login = str_replace( 'cap-', '', reset( $coauthors )->linked_account );
+	$author_id    = get_user_by( 'login', $author_login )->ID;
+
+	if ( ! wp_is_post_revision( $postarr['ID'] ) ) {
+		$data['post_author'] = $author_id;
+	}
+
+	return $data;
 }
