@@ -104,7 +104,7 @@ function redirect_author_if_old_cap_prefix() : void {
  * @return array Updated post data.
  */
 function update_post_author( $data, $postarr ) {
-	if ( ! function_exists( 'get_coauthors' ) ) {
+	if ( wp_is_post_revision( $postarr['ID'] ) || ! function_exists( 'get_coauthors' ) ) {
 		return $data;
 	}
 
@@ -112,7 +112,7 @@ function update_post_author( $data, $postarr ) {
 	$author_login = str_replace( 'cap-', '', reset( $coauthors )->linked_account );
 	$author_id    = get_user_by( 'login', $author_login )->ID;
 
-	if ( ! wp_is_post_revision( $postarr['ID'] ) ) {
+	if ( ! empty( $author_id ) ) {
 		$data['post_author'] = $author_id;
 	}
 
