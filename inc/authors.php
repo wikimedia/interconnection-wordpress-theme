@@ -12,7 +12,7 @@ function bootstrap() : void {
     add_filter( 'coauthors_posts_link', __NAMESPACE__ . '\\filter_co_authors_posts_link_args', 10, 2 );
     add_filter( 'pll_rel_hreflang_attributes', __NAMESPACE__ . '\\filter_polylang_href_rel_links' );
     add_action( 'template_redirect', __NAMESPACE__ . '\\redirect_author_if_old_cap_prefix' );
-	add_filter( 'wp_insert_post_data', __NAMESPACE__ . '\\update_post_author', 10, 2 );
+	add_action( 'save_post', __NAMESPACE__ . '\\update_post_author', 10, 2 );
 }
 
 /**
@@ -98,23 +98,24 @@ function redirect_author_if_old_cap_prefix() : void {
 /**
  * Update post_author with the first co-author plus assigned author.
  *
- * @param array $data An array of slashed, sanitized, and processed post data.
- * @param array $postarr An array of sanitized (and slashed) but otherwise unmodified post data.
- *
- * @return array Updated post data.
+ * @param int     $post_id The post ID.
+ * @param WP_Post $post    The post object.
  */
-function update_post_author( $data, $postarr ) {
-	if ( wp_is_post_revision( $postarr['ID'] ) || ! function_exists( 'get_coauthors' ) ) {
-		return $data;
+function update_post_author( $post_id, $post ) {
+	if ( wp_is_post_revision( $post_id ) || ! function_exists( 'get_coauthors' ) ) {
+		return;
 	}
 
-	$coauthors    = get_coauthors( $data['ID'] );
+	$coauthors    = get_coauthors( $post_id );
 	$author_login = str_replace( 'cap-', '', reset( $coauthors )->linked_account );
 	$author_id    = get_user_by( 'login', $author_login )->ID;
 
-	if ( ! empty( $author_id ) ) {
-		$data['post_author'] = $author_id;
-	}
+	// Unhook this function so it doesn't loop infinitely.
+	remove_action( 'save_post', __NAMESPACE__ . '\\update_post_author' );
 
-	return $data;
+	// Update post author.
+	wp_update_post( [ 'ID'=>$post_id, 'post_author'=>$author_id ] );
+
+	// Re-hook this function.
+	add_action( 'save_post', __NAMESPACE__ . '\\update_post_author' );
 }
