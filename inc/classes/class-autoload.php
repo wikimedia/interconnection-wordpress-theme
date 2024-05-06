@@ -41,7 +41,7 @@ class Autoload {
 	 * Sets the $path_base variable.
 	 */
 	public function __construct() {
-		$this->path_base = dirname( __FILE__ );
+		$this->path_base = __DIR__;
 	}
 
 	/**
@@ -88,7 +88,7 @@ class Autoload {
 		$parts_count = count( $path_parts );
 
 		foreach ( $path_parts as $part ) {
-			$parts_count--;
+			--$parts_count;
 
 			$part = strtolower( str_replace( '_', '-', $part ) );
 
@@ -106,4 +106,4 @@ class Autoload {
 
 $class_autoload = new Autoload();
 
-spl_autoload_register( array( $class_autoload, 'callback' ) );
+spl_autoload_register( [ $class_autoload, 'callback' ] );

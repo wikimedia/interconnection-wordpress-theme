@@ -7,11 +7,11 @@
  * @package Interconnection
  */
 
-$credit_info  = Interconnection\Credits::get_image_credits( get_the_ID() );
-$author       = $credit_info['author'] ?? '';
-$license      = $credit_info['license'] ?? '';
-$license_url  = $credit_info['license_url'] ?? '';
-$url          = $credit_info['url'];
+$credit_info = Interconnection\Credits::get_image_credits( get_the_ID() );
+$author      = $credit_info['author'] ?? '';
+$license     = $credit_info['license'] ?? '';
+$license_url = $credit_info['license_url'] ?? '';
+$url         = $credit_info['url'];
 
 ?>
 

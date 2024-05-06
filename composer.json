@@ -23,6 +23,7 @@
     },
     "scripts": {
         "phpcs": "phpcs --standard=./phpcs.xml --extensions=php .",
+        "phpcbf": "phpcbf --standard=./phpcs.xml --extensions=php .",
         "make-pot": "wp i18n make-pot . languages/interconnection.pot"
     },
     "support": {

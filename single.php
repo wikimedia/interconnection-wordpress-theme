@@ -28,10 +28,10 @@ get_header();
 					<?php
 				else :
 					the_post_navigation(
-						array(
+						[
 							'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">← %title</span>',
 							'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">%title →</span>',
-						)
+						]
 					);
 				endif;
 				?>

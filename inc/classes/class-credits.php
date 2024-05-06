@@ -18,14 +18,14 @@ class Credits {
 	 *
 	 * @var array
 	 */
-	public $image_ids = array();
+	public $image_ids = [];
 
 	/**
 	 * Holds image matches from preg_match_all().
 	 *
 	 * @var array
 	 */
-	public $image_matches = array();
+	public $image_matches = [];
 
 	/**
 	 * Post, post, or other request ID.
@@ -75,10 +75,10 @@ class Credits {
 		$this->image_ids  = $this->get_cache();
 
 		if ( false === $this->image_ids ) {
-			$this->image_ids = array();
+			$this->image_ids = [];
 
-			add_filter( 'the_content', array( $this, 'set_images_from_content' ), 10, 2 );
-			add_filter( 'wp_get_attachment_image_src', array( $this, 'set_id_from_att_src' ), 10, 4 );
+			add_filter( 'the_content', [ $this, 'set_images_from_content' ], 10, 2 );
+			add_filter( 'wp_get_attachment_image_src', [ $this, 'set_id_from_att_src' ], 10, 4 );
 		}
 	}
 
@@ -88,11 +88,11 @@ class Credits {
 	 * @param int $image_id Attachment ID.
 	 * @return array Associative array of [ author, license, license_url, url ] credit data.
 	 */
-	public static function get_image_credits( $image_id ) : array {
-		$credit_info  = get_post_meta( $image_id, 'credit_info', true );
-		$author       = ! empty( $credit_info['author'] ) ? $credit_info['author'] : '';
-		$license      = ! empty( $credit_info['license'] ) ? $credit_info['license'] : '';
-		$url          = ! empty( $credit_info['url'] ) ? $credit_info['url'] : '';
+	public static function get_image_credits( $image_id ): array {
+		$credit_info = get_post_meta( $image_id, 'credit_info', true );
+		$author      = ! empty( $credit_info['author'] ) ? $credit_info['author'] : '';
+		$license     = ! empty( $credit_info['license'] ) ? $credit_info['license'] : '';
+		$url         = ! empty( $credit_info['url'] ) ? $credit_info['url'] : '';
 
 		if ( is_int( stripos( $license, 'Public domain' ) ) ) {
 			$license_url = 'https://en.wikipedia.org/wiki/Public_domain';
@@ -204,9 +204,9 @@ class Credits {
 
 			// It might be a thumbnail size ( suffix '-dddxddd' )
 			if ( empty( $image_id ) ) {
-				$url_substr = strtok($url, '?'); // remove anything after ? in url
+				$url_substr     = strtok( $url, '?' ); // remove anything after ? in url
 				$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $url_substr );
-				$image_id = wpcom_vip_attachment_url_to_postid( $attachment_url );
+				$image_id       = wpcom_vip_attachment_url_to_postid( $attachment_url );
 			}
 
 			if ( empty( $image_id ) ) {
