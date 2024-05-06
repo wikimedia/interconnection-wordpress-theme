@@ -9,8 +9,6 @@
  * @package Interconnection
  */
 
-use Interconnection\Credits;
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -62,4 +60,4 @@ use Interconnection\Credits;
 
 <?php
 // Automatically add credits to all content
-Credits::get_instance( get_the_ID() );
+Interconnection\Credits::get_instance( get_the_ID() );

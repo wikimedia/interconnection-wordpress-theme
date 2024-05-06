@@ -279,9 +279,9 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Class (e.g. Credits) autoloader.
+ * Credits class.
  */
-require get_template_directory() . '/inc/classes/class-autoload.php';
+require get_template_directory() . '/inc/classes/class-credits.php';
 
 /**
  * Custom Fields functions.
