@@ -62,6 +62,8 @@ add_action( 'customize_preview_init', 'interconnection_customize_preview_js' );
 
 /**
  * Theme style customization
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
  */
 function interconnection_customize_style( $wp_customize ) {
 	$wp_customize->add_section(
@@ -226,6 +228,9 @@ function interconnection_customize_style( $wp_customize ) {
 }
 add_action( 'customize_register', 'interconnection_customize_style' );
 
+/**
+ * Render the inline CSS to set theme colors based on theme mods.
+ */
 function interconnection_customize_style_css() {
 	ob_start();
 
@@ -269,10 +274,12 @@ function interconnection_customize_style_css() {
 	return $css;
 }
 
-// Modify our styles registration
+/**
+ * Modify our styles registration.
+ */
 function theme_enqueue_styles() {
 	// handle defined in functions.php
-	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), [], INTERCONNECTION_VERSION );
 	$custom_css = interconnection_customize_style_css();
 	wp_add_inline_style( 'interconnection-style', $custom_css );
 }
@@ -280,6 +287,8 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 /**
  * Theme function customization
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
  */
 function interconnection_customize_options( $wp_customize ) {
 	// Enable headroom.min.js
@@ -303,9 +312,11 @@ function interconnection_customize_options( $wp_customize ) {
 }
 add_action( 'customize_register', 'interconnection_customize_options' );
 
+/**
+ * Unhook header script if headroom mod not active.
+ */
 function theme_enqueue_scripts() {
 	if ( ! get_theme_mod( 'enable_headroom', '' ) ) {
-		wp_deregister_script( 'interconnection-headroom-js' );
 		wp_deregister_script( 'interconnection-header' );
 	}
 }

@@ -78,7 +78,7 @@ class Credits {
 			$this->image_ids = [];
 
 			add_filter( 'the_content', [ $this, 'set_images_from_content' ], 10, 2 );
-			add_filter( 'wp_get_attachment_image_src', [ $this, 'set_id_from_att_src' ], 10, 4 );
+			add_filter( 'wp_get_attachment_image_src', [ $this, 'set_id_from_att_src' ], 10, 2 );
 		}
 	}
 
@@ -154,20 +154,27 @@ class Credits {
 	/**
 	 * Adds the requested image ID to the list of IDs if not previously set.
 	 *
-	 * @param bool $bool     Override bool value used to replace downsize logic.
-	 * @param int  $image_id The image ID.
+	 * @param bool $should_set Override bool value used to replace downsize logic.
+	 * @param int  $image_id   The image ID.
 	 *
 	 * @return mixed
 	 */
-	public function set_id( $bool, $image_id ) {
+	public function set_id( $should_set, $image_id ) {
 		if ( true !== $this->pause && ! in_array( $image_id, $this->image_ids, true ) ) {
 			$this->image_ids[] = $image_id;
 		}
 
-		return $bool;
+		return $should_set;
 	}
 
-	public function set_id_from_att_src( $image, $attachment_id, $size, $icon ) {
+	/**
+	 * Store the ID for a given attachment.
+	 *
+	 * @param array|false $image         Array of image data, or boolean false if no image is available.
+	 * @param int         $attachment_id Image attachment ID.
+	 * @return array|false Pass the image through.
+	 */
+	public function set_id_from_att_src( $image, $attachment_id ) {
 		if ( true !== $this->pause && ! in_array( $attachment_id, $this->image_ids, true ) ) {
 			$this->image_ids[] = $attachment_id;
 		}

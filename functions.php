@@ -6,6 +6,7 @@
  *
  * @package Interconnection
  */
+
 if ( ! defined( 'INTERCONNECTION_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'INTERCONNECTION_VERSION', '1.1.0' );
@@ -206,25 +207,23 @@ add_action( 'widgets_init', 'interconnection_widgets_init' );
 /**
  * Special class to highlight active menu item.
  *
- * @param array   $classes Array of the CSS classes that are applied to the menu item's <li> element.
- * @param WP_Post $item The current menu item.
+ * @param array $classes Array of the CSS classes that are applied to the menu item's <li> element.
  * @return array
  */
-function interconnection_special_nav_class( $classes, $item ) {
+function interconnection_special_nav_class( $classes ) {
 	if ( in_array( 'current-menu-parent', $classes, true ) || in_array( 'current-menu-item', $classes, true ) ) {
 		$classes[] = 'active ';
 	}
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10 );
 
 /**
- * Filter the except length to 20 words.
+ * Filter the except length to 25 words.
  *
- * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function interconnection_custom_excerpt_length( $length ) {
+function interconnection_custom_excerpt_length() {
 	return 25;
 }
 add_filter( 'excerpt_length', 'interconnection_custom_excerpt_length', 999 );
@@ -395,7 +394,7 @@ function interconnection_change_publish_button() {
 
 	// Check for Contributor role.
 	if ( in_array( 'contributor', wp_get_current_user()->roles, true ) ) {
-		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10, 3 );
+		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10 );
 		add_action( 'admin_print_footer_scripts', 'interconnection_change_publish_button_js' );
 	}
 }
@@ -405,12 +404,10 @@ add_action( 'init', 'interconnection_change_publish_button' );
  * Filters text with its translation.
  *
  * @param string $translation Translated text.
- * @param string $text Text to translate.
- * @param string $domain Text domain.
  *
  * @return string
  */
-function interconnection_change_publish_button_php( $translation, $text, $domain ) {
+function interconnection_change_publish_button_php( $translation ) {
 	if ( 'Publish' === $translation ) {
 		return esc_html__( 'Submit for Review', 'interconnection' );
 	}
@@ -456,6 +453,7 @@ function interconnection_modify_polylang_query( $query ) {
 		$query->set( 'lang', $languages );
 	}
 }
+// phpcs:ignore Squiz.PHP.CommentedOutCode.Found -- See b2eadee
 // add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
 
 /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup some baseline custom fields functions
+ * Setup some baseline custom fields functions.
  *
  * @package Interconnection
  */

@@ -22,8 +22,8 @@
 		</div>
 
 		<?php
-		$patternHeading = '/<h2 id="(.*?)">(.*?)<\/h2>/';
-		preg_match_all( $patternHeading, get_the_content(), $matches );
+		$pattern_heading = '/<h2 id="(.*?)">(.*?)<\/h2>/';
+		preg_match_all( $pattern_heading, get_the_content(), $matches );
 		$ids      = $matches[1];
 		$headings = $matches[2];
 		?>

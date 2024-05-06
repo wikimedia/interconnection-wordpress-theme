@@ -31,11 +31,10 @@ function de_cap_itate_author_url( string $url ): string {
  *
  * See humanmade/wikimedia#543 for related discussion.
  *
- * @param array  $args   Link arguments.
- * @param object $author CAP author object.
+ * @param array $args Link arguments.
  * @return array Filtered args array.
  */
-function filter_co_authors_posts_link_args( array $args, $author ): array {
+function filter_co_authors_posts_link_args( array $args ): array {
 	if ( ! strpos( $args['href'], 'author/cap-' ) ) {
 		return $args;
 	}
@@ -53,7 +52,7 @@ function filter_co_authors_posts_link_args( array $args, $author ): array {
  *
  * See humanmade/wikimedia#543 for related discussion.
  *
- * @param array $hreflangs Array of urls with language codes as keys and links as values
+ * @param array $hreflangs Array of urls with language codes as keys and links as values.
  * @return array Filtered hreflang attributes.
  */
 function filter_polylang_href_rel_links( array $hreflangs ): array {
@@ -118,10 +117,9 @@ function get_coauthor_user_id( array $coauthors ): ?int {
 /**
  * Update post_author with the first co-author plus assigned author.
  *
- * @param int     $post_id The post ID.
- * @param WP_Post $post    The post object.
+ * @param int $post_id The post ID.
  */
-function update_post_author( $post_id, $post ) {
+function update_post_author( $post_id ) {
 	if ( wp_is_post_revision( $post_id ) || ! function_exists( 'get_coauthors' ) ) {
 		return;
 	}
