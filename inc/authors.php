@@ -96,6 +96,26 @@ function redirect_author_if_old_cap_prefix() : void {
 }
 
 /**
+ * Given a list of coauthor records, return the first available User profile ID
+ * that we can access from the coauthor linked accounts.
+ *
+ * @param array $coauthors Array of coauthor objects.
+ * @return ?int ID of linked user account, or null if none found.
+ */
+function get_coauthor_user_id( array $coauthors ) : ?int {
+	foreach ( $coauthors as $coauthor ) {
+		$author_login = str_replace( 'cap-', '', $coauthor->linked_account ?? '' );
+		$author_id    = get_user_by( 'login', $author_login )->ID ?? null;
+
+		if ( ! empty( $author_id ) ) {
+			return $author_id;
+		}
+	}
+
+	return null;
+}
+
+/**
  * Update post_author with the first co-author plus assigned author.
  *
  * @param int     $post_id The post ID.
@@ -106,15 +126,20 @@ function update_post_author( $post_id, $post ) {
 		return;
 	}
 
-	$coauthors    = get_coauthors( $post_id );
-	$author_login = str_replace( 'cap-', '', reset( $coauthors )->linked_account );
-	$author_id    = get_user_by( 'login', $author_login )->ID;
+	$author_id = get_coauthor_user_id( get_coauthors( $post_id ) );
+
+	if ( empty( $author_id ) ) {
+		return;
+	}
 
 	// Unhook this function so it doesn't loop infinitely.
 	remove_action( 'save_post', __NAMESPACE__ . '\\update_post_author' );
 
 	// Update post author.
-	wp_update_post( [ 'ID'=>$post_id, 'post_author'=>$author_id ] );
+	wp_update_post( [
+		'ID'          => $post_id,
+		'post_author' => $author_id,
+	] );
 
 	// Re-hook this function.
 	add_action( 'save_post', __NAMESPACE__ . '\\update_post_author' );
