@@ -284,7 +284,7 @@ require get_template_directory() . '/inc/classes/class-credits.php';
 /**
  * Custom Fields functions.
  */
-require get_template_directory() . '/inc/fields.php';
+require get_template_directory() . '/inc/fields/media.php';
 
 /**
  * Customizer additions.
