@@ -1,8 +1,12 @@
 {
+    "root": true,
     "extends": [
-        "plugin:@wordpress/eslint-plugin/es5"
+        "plugin:@wordpress/eslint-plugin/recommended"
     ],
     "env": {
         "browser": true
-    }
+    },
+	"rules": {
+		"prettier/prettier": "off"
+	}
 }
