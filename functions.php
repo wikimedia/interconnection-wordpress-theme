@@ -252,8 +252,6 @@ function interconnection_scripts() {
 
 	wp_enqueue_script( 'interconnection-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'interconnection-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
 	wp_enqueue_script( 'interconnection-headroom-js', get_template_directory_uri() . '/js/headroom.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'interconnection-header', get_template_directory_uri() . '/js/header.js', array(), _S_VERSION, true );
 
