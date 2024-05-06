@@ -6,9 +6,9 @@
  *
  * @package Interconnection
  */
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'INTERCONNECTION_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'INTERCONNECTION_VERSION', '1.1.0' );
 }
 
 if ( ! function_exists( 'interconnection_setup' ) ) {
@@ -247,13 +247,13 @@ add_filter( 'excerpt_more', 'interconnection_excerpt_more' );
  * Enqueue scripts and styles.
  */
 function interconnection_scripts() {
-	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), array(), INTERCONNECTION_VERSION );
 	wp_style_add_data( 'interconnection-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'interconnection-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'interconnection-navigation', get_template_directory_uri() . '/js/navigation.js', array(), INTERCONNECTION_VERSION, true );
 
 	wp_register_script( 'interconnection-headroom-js', get_template_directory_uri() . '/js/headroom.min.js', array(), 'v0.12.0', true );
-	wp_enqueue_script( 'interconnection-header', get_template_directory_uri() . '/js/header.js', array( 'interconnection-headroom-js' ), _S_VERSION, true );
+	wp_enqueue_script( 'interconnection-header', get_template_directory_uri() . '/js/header.js', array( 'interconnection-headroom-js' ), INTERCONNECTION_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -265,7 +265,7 @@ add_action( 'wp_enqueue_scripts', 'interconnection_scripts' );
  * Enqueues block editor scripts and styles.
  */
 function interconnection_block_scripts() {
-	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), _S_VERSION, true );
+	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), INTERCONNECTION_VERSION, true );
 }
 add_action( 'enqueue_block_editor_assets', 'interconnection_block_scripts' );
 
