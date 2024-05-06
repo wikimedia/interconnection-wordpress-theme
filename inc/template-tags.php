@@ -3,8 +3,6 @@
  * Custom template tags for this theme
  *
  * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package Interconnection
  */
 
 if ( ! function_exists( 'interconnection_posted_on' ) ) :
@@ -24,7 +22,7 @@ if ( ! function_exists( 'interconnection_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
-	
+
 		echo '<span class="posted-on">' . $time_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
@@ -138,7 +136,7 @@ if ( ! function_exists( 'interconnection_post_thumbnail' ) ) :
 			</a>
 					<?php
 				}
-			
+
 		endif; // End is_singular().
 	}
 endif;

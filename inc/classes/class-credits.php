@@ -3,8 +3,6 @@
  * Class to capture and store requested images during page load.
  *
  * Source: Reaktiv
- *
- * @package Interconnection
  */
 
 namespace Interconnection;

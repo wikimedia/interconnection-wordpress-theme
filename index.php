@@ -8,8 +8,6 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 get_header();

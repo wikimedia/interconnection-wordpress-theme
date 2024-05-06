@@ -5,8 +5,6 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Interconnection
  */
 
 // Automatically add credits to all content

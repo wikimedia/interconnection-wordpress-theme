@@ -1,8 +1,6 @@
 <?php
 /**
  * Fieldmanager Fields for credits in media attachments.
- *
- * @package Interconnection
  */
 
 /**

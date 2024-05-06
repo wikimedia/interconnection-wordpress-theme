@@ -3,8 +3,6 @@
  * Template part for displaying attachment page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 $credit_info = Interconnection\Credits::get_image_credits( get_the_ID() );

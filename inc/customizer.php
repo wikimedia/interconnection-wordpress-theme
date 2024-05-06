@@ -1,8 +1,6 @@
 <?php
 /**
  * Interconnection Theme Customizer
- *
- * @package Interconnection
  */
 
 /**

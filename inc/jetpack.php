@@ -3,8 +3,6 @@
  * Jetpack Compatibility File
  *
  * @link https://jetpack.com/
- *
- * @package Interconnection
  */
 
 /**
