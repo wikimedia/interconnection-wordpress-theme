@@ -4,6 +4,7 @@ vendor/
 
 # platform
 *.log
+*.DS_Store
 
 # built files
 style-editor.css
