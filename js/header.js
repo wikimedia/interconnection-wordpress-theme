@@ -6,7 +6,7 @@
  * Uses headroom.min.js
  */
  ( function() {
- 	var header = document.querySelector("header");
+ 	const header = document.querySelector("header");
  	const headroom = new Headroom(header);
 	headroom.init();
  }() );
