@@ -1,12 +1,13 @@
-/* global wp, jQuery */
+/* global jQuery:false */
 /**
  * File customizer.js.
  *
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @param {jQuery} $ jQuery instance.
  */
-
 ( function( $ ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
