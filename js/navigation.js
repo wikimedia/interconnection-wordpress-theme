@@ -71,6 +71,8 @@
 
 	/**
 	 * Sets or removes .focus class on an element.
+	 *
+	 * @param {FocusEvent|TouchEvent} event Received link selection event.
 	 */
 	function toggleFocus( event ) {
 		if ( event.type === 'focus' || event.type === 'blur' ) {
