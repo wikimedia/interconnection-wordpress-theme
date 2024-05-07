@@ -217,7 +217,7 @@ function interconnection_special_nav_class( $classes ) {
 add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10 );
 
 /**
- * Filter the except length to 25 words.
+ * Filter the excerpt length to 25 words.
  *
  * @return int (Maybe) modified excerpt length.
  */
