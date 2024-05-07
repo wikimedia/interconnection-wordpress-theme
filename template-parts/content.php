@@ -46,10 +46,10 @@ if ( function_exists( 'pll_the_languages' ) ) {
 				</div><!-- .entry-meta -->
 				<?php
 
-				if ( is_singular() && ! empty( $languages ) && pll_default_language() === pll_current_language() ) :
+				if ( is_singular() && ! empty( $languages_without_translations ) ) :
 					?>
 					<div class="translate-post-anchor">
-						<a href="#translate-post"><?php echo esc_html__( 'Translate This Post', 'interconnection' ); ?></a>
+						<a href="#translate-post"><?php echo esc_html__( 'Translate this post', 'interconnection' ); ?></a>
 					</div>
 					<?php
 				endif;
