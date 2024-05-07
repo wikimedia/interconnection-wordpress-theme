@@ -17,9 +17,8 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^27.1.0",
-    "rtlcss": "^4.1.1",
-    "sass": "^1.69.7"
+    "@wordpress/scripts": "^27.8.0",
+    "rtlcss": "^4.1.1"
   },
   "rtlcssConfig": {
     "options": {
@@ -35,12 +34,13 @@
     "map": false
   },
   "scripts": {
+    "build": "npm run compile:css && npm run compile:rtl",
     "compile:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "watch:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "compile:wpdiscuz": "rtlcss wpdiscuz/style-minimal.css wpdiscuz/style-minimal-rtl.css",
+    "compile": "npm run build",
     "precompile": "npm run lint:scss",
-    "compile": "npm run compile:css && npm run compile:rtl",
+    "watch:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'"
   }
