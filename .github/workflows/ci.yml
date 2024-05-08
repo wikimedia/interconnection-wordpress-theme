@@ -40,3 +40,7 @@ jobs:
   node:
     uses: ./.github/workflows/node.yml
     secrets: inherit
+
+  php:
+    uses: ./.github/workflows/php.yml
+    secrets: inherit

@@ -3,8 +3,6 @@
  * Handles image credits section
  *
  * Source: Reaktiv
- *
- * @package Interconnection
  */
 
 if ( empty( $images ) ) {

@@ -3,9 +3,8 @@
  * Interconnection functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Interconnection
  */
+
 if ( ! defined( 'INTERCONNECTION_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'INTERCONNECTION_VERSION', '1.1.0' );
@@ -48,9 +47,9 @@ if ( ! function_exists( 'interconnection_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
-			array(
+			[
 				'menu-1' => esc_html__( 'Primary', 'interconnection' ),
-			)
+			]
 		);
 
 		/*
@@ -59,7 +58,7 @@ if ( ! function_exists( 'interconnection_setup' ) ) {
 		 */
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -67,7 +66,7 @@ if ( ! function_exists( 'interconnection_setup' ) ) {
 				'caption',
 				'style',
 				'script',
-			)
+			]
 		);
 
 		// Add theme support for selective refresh for widgets.
@@ -80,13 +79,13 @@ if ( ! function_exists( 'interconnection_setup' ) ) {
 		 */
 		add_theme_support(
 			'custom-logo',
-			array(
+			[
 				'height'      => 250,
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
-				'header-text' => array( 'site-title' ), // Option to hide site title.
-			)
+				'header-text' => [ 'site-title' ], // Option to hide site title.
+			]
 		);
 
 		// Add theme support for editor styles.
@@ -121,7 +120,7 @@ add_action( 'after_setup_theme', 'interconnection_content_width', 0 );
 function interconnection_widgets_init() {
 	// Widget area for footer used in footer.php.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Footer', 'interconnection' ),
 			'id'            => 'footer-1',
 			'description'   => esc_html__( 'Add widgets here. They are the footer content.', 'interconnection' ),
@@ -129,12 +128,12 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="footer-widget-title">',
 			'after_title'   => '</h3>',
-		)
+		]
 	);
 
 	// Call to action widget.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Call to action 1', 'interconnection' ),
 			'id'            => 'cta-1',
 			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
@@ -142,12 +141,12 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
-		)
+		]
 	);
 
 	// Another call to action widget.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Call to action 2', 'interconnection' ),
 			'id'            => 'cta-2',
 			'description'   => esc_html__( 'Add widgets here. They appear after the home page posts.', 'interconnection' ),
@@ -155,12 +154,12 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
-		)
+		]
 	);
 
 	// Special notice for single posts.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Special notice', 'interconnection' ),
 			'id'            => 'notice-1',
 			'description'   => esc_html__( 'Add widgets here. They appear at the end of the entry of a posts.', 'interconnection' ),
@@ -168,12 +167,12 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="footer-widget-title">',
 			'after_title'   => '</h4>',
-		)
+		]
 	);
 
 	// Optional widget area for navigation.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Secondary navigation', 'interconnection' ),
 			'id'            => 'topnav-1',
 			'description'   => esc_html__( 'Add widgets here. They appear in the header.', 'interconnection' ),
@@ -181,12 +180,12 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<span>',
 			'after_title'   => '</span>',
-		)
+		]
 	);
 
 	// Optional widget for adding context on archive pages.
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Archive pages', 'interconnection' ),
 			'id'            => 'archive-1',
 			'description'   => esc_html__( 'Add widgets here. They appear on archive pages.', 'interconnection' ),
@@ -194,7 +193,7 @@ function interconnection_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
-		)
+		]
 	);
 }
 add_action( 'widgets_init', 'interconnection_widgets_init' );
@@ -206,25 +205,23 @@ add_action( 'widgets_init', 'interconnection_widgets_init' );
 /**
  * Special class to highlight active menu item.
  *
- * @param array   $classes Array of the CSS classes that are applied to the menu item's <li> element.
- * @param WP_Post $item The current menu item.
+ * @param array $classes Array of the CSS classes that are applied to the menu item's <li> element.
  * @return array
  */
-function interconnection_special_nav_class( $classes, $item ) {
+function interconnection_special_nav_class( $classes ) {
 	if ( in_array( 'current-menu-parent', $classes, true ) || in_array( 'current-menu-item', $classes, true ) ) {
 		$classes[] = 'active ';
 	}
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', 'interconnection_special_nav_class', 10 );
 
 /**
- * Filter the except length to 20 words.
+ * Filter the excerpt length to 25 words.
  *
- * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function interconnection_custom_excerpt_length( $length ) {
+function interconnection_custom_excerpt_length() {
 	return 25;
 }
 add_filter( 'excerpt_length', 'interconnection_custom_excerpt_length', 999 );
@@ -247,13 +244,13 @@ add_filter( 'excerpt_more', 'interconnection_excerpt_more' );
  * Enqueue scripts and styles.
  */
 function interconnection_scripts() {
-	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), array(), INTERCONNECTION_VERSION );
+	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), [], INTERCONNECTION_VERSION );
 	wp_style_add_data( 'interconnection-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'interconnection-navigation', get_template_directory_uri() . '/js/navigation.js', array(), INTERCONNECTION_VERSION, true );
+	wp_enqueue_script( 'interconnection-navigation', get_template_directory_uri() . '/js/navigation.js', [], INTERCONNECTION_VERSION, true );
 
-	wp_register_script( 'interconnection-headroom-js', get_template_directory_uri() . '/js/headroom.min.js', array(), 'v0.12.0', true );
-	wp_enqueue_script( 'interconnection-header', get_template_directory_uri() . '/js/header.js', array( 'interconnection-headroom-js' ), INTERCONNECTION_VERSION, true );
+	wp_register_script( 'interconnection-headroom-js', get_template_directory_uri() . '/js/headroom.min.js', [], 'v0.12.0', true );
+	wp_enqueue_script( 'interconnection-header', get_template_directory_uri() . '/js/header.js', [ 'interconnection-headroom-js' ], INTERCONNECTION_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -265,7 +262,7 @@ add_action( 'wp_enqueue_scripts', 'interconnection_scripts' );
  * Enqueues block editor scripts and styles.
  */
 function interconnection_block_scripts() {
-	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', array( 'wp-blocks', 'wp-dom' ), INTERCONNECTION_VERSION, true );
+	wp_enqueue_script( 'interconnection-editor', get_template_directory_uri() . '/js/editor.js', [ 'wp-blocks', 'wp-dom' ], INTERCONNECTION_VERSION, true );
 }
 add_action( 'enqueue_block_editor_assets', 'interconnection_block_scripts' );
 
@@ -280,14 +277,14 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Class (e.g. Credits) autoloader.
+ * Credits class.
  */
-require get_template_directory() . '/inc/classes/class-autoload.php';
+require get_template_directory() . '/inc/classes/class-credits.php';
 
 /**
  * Custom Fields functions.
  */
-require get_template_directory() . '/inc/fields.php';
+require get_template_directory() . '/inc/fields/media.php';
 
 /**
  * Customizer additions.
@@ -344,7 +341,7 @@ add_filter( 'wp_headers', 'interconnection_xhacker_output', 999 );
  */
 function interconnection_unhide_legacy_widgets( $widgets ) {
 	// We specifically omit the 'media_image' widget to make it available.
-	$widgets = array(
+	$widgets = [
 		'pages',
 		'calendar',
 		'archives',
@@ -360,7 +357,7 @@ function interconnection_unhide_legacy_widgets( $widgets ) {
 		'tag_cloud',
 		'custom_html',
 		'block',
-	);
+	];
 
 	return $widgets;
 }
@@ -375,7 +372,7 @@ add_filter( 'widget_types_to_hide_from_legacy_widget_block', 'interconnection_un
 function interconnection_remove_jetpack_related_posts() {
 	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
 		$jprp     = Jetpack_RelatedPosts::init();
-		$callback = array( $jprp, 'filter_add_target_to_dom' );
+		$callback = [ $jprp, 'filter_add_target_to_dom' ];
 
 		remove_filter( 'the_content', $callback, 40 );
 	}
@@ -395,7 +392,7 @@ function interconnection_change_publish_button() {
 
 	// Check for Contributor role.
 	if ( in_array( 'contributor', wp_get_current_user()->roles, true ) ) {
-		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10, 3 );
+		add_filter( 'gettext', 'interconnection_change_publish_button_php', 10 );
 		add_action( 'admin_print_footer_scripts', 'interconnection_change_publish_button_js' );
 	}
 }
@@ -405,12 +402,10 @@ add_action( 'init', 'interconnection_change_publish_button' );
  * Filters text with its translation.
  *
  * @param string $translation Translated text.
- * @param string $text Text to translate.
- * @param string $domain Text domain.
  *
  * @return string
  */
-function interconnection_change_publish_button_php( $translation, $text, $domain ) {
+function interconnection_change_publish_button_php( $translation ) {
 	if ( 'Publish' === $translation ) {
 		return esc_html__( 'Submit for Review', 'interconnection' );
 	}
@@ -456,7 +451,8 @@ function interconnection_modify_polylang_query( $query ) {
 		$query->set( 'lang', $languages );
 	}
 }
-//add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
+// phpcs:ignore Squiz.PHP.CommentedOutCode.Found -- See b2eadee
+// add_action( 'pre_get_posts', 'interconnection_modify_polylang_query' );
 
 /**
  * Remove the sticky post from the homepage loop.
