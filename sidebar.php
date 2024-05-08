@@ -3,8 +3,6 @@
  * The sidebar containing the main widget area
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Interconnection
  */
 
 if ( ! is_active_sidebar( 'cta-1' ) && ! is_active_sidebar( 'cta-2' ) ) {

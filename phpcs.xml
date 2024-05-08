@@ -1,0 +1,26 @@
+<ruleset name="coding-style">
+    <description>Interconnection theme PHP standards</description>
+
+    <!-- 2. Files -->
+    <exclude-pattern>node_modules</exclude-pattern>
+    <exclude-pattern>vendor/</exclude-pattern>
+
+    <!-- 2.1. PHP Tags -->
+    <arg name="extensions" value="php"/>
+
+	<!-- Use WP coding standards (with judicious opinionated overrides) -->
+	<rule ref="WordPress">
+        <exclude name="WordPress.PHP.YodaConditions" />
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
+		<exclude name="Universal.Operators.DisallowShortTernary.Found" />
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+        <!-- We support hook namespacing. -->
+        <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
+        <!-- Package tags are not useful. -->
+        <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+	</rule>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found" />
+
+    <rule ref="WordPress-VIP-Go" />
+
+</ruleset>
