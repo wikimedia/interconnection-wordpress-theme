@@ -3,8 +3,6 @@
  * The template for displaying all single posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package Interconnection
  */
 
 get_header();
@@ -28,10 +26,10 @@ get_header();
 					<?php
 				else :
 					the_post_navigation(
-						array(
-							'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">← %title</span>',
-							'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'interconnection' ) . '</span> <span class="nav-title">%title →</span>',
-						)
+						[
+							'prev_text' => '<span class="nav-title">← %title</span>',
+							'next_text' => '<span class="nav-title">%title →</span>',
+						]
 					);
 				endif;
 				?>

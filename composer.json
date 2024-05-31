@@ -15,17 +15,16 @@
         }
     ],
     "require": {
-        "php": ">=8.0"
+        "php": ">8.0"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "php-parallel-lint/php-parallel-lint": "^1.2.0",
-        "wp-cli/i18n-command": "^2.2",
-        "wptrt/wpthemereview": "^0.2.1"
+        "automattic/vipwpcs": "^3.0",
+        "staabm/annotate-pull-request-from-checkstyle": "^1.8",
+        "wp-cli/i18n-command": "^2.6"
     },
     "scripts": {
-        "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+        "phpcs": "phpcs --standard=./phpcs.xml --extensions=php -s .",
+        "phpcbf": "phpcbf --standard=./phpcs.xml --extensions=php .",
         "make-pot": "wp i18n make-pot . languages/interconnection.pot"
     },
     "support": {

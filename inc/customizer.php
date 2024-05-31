@@ -1,8 +1,6 @@
 <?php
 /**
  * Interconnection Theme Customizer
- *
- * @package Interconnection
  */
 
 /**
@@ -18,17 +16,17 @@ function interconnection_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
-			array(
+			[
 				'selector'        => '.site-title a',
 				'render_callback' => 'interconnection_customize_partial_blogname',
-			)
+			]
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
-			array(
+			[
 				'selector'        => '.site-description',
 				'render_callback' => 'interconnection_customize_partial_blogdescription',
-			)
+			]
 		);
 	}
 }
@@ -56,123 +54,191 @@ function interconnection_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function interconnection_customize_preview_js() {
-	wp_enqueue_script( 'interconnection-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'interconnection-customizer', get_template_directory_uri() . '/js/customizer.js', [ 'customize-preview' ], '20151215', true );
 }
 add_action( 'customize_preview_init', 'interconnection_customize_preview_js' );
 
 /**
  * Theme style customization
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
  */
 function interconnection_customize_style( $wp_customize ) {
-	$wp_customize->add_section( 'interconnection_section' , array(
-		'title' => __( 'Interconnection customizations', 'mytheme' ),
-		'description' => esc_html__( 'This theme uses colors defined at design.wikimedia.org/style-guide/visual-style_colors by default.', 'theme' ),
-		'priority' => 30,
-	) );
+	$wp_customize->add_section(
+		'interconnection_section',
+		[
+			'title'       => __( 'Interconnection customizations', 'mytheme' ),
+			'description' => esc_html__( 'This theme uses colors defined at design.wikimedia.org/style-guide/visual-style_colors by default.', 'theme' ),
+			'priority'    => 30,
+		]
+	);
 
-    // Link color
-    $wp_customize->add_setting( 'link_color', array(
-    	'type' => 'theme_mod',
-		'default' => '#3366cc',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Link color', 'theme' ),
-		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
-    ) ) );
+	// Link color
+	$wp_customize->add_setting(
+		'link_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#3366cc',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'link_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Link color', 'theme' ),
+				'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
+			]
+		)
+	);
 
-    // Link color
-    $wp_customize->add_setting( 'visited_link_color', array(
-    	'type' => 'theme_mod',
-		'default' => '#6633cc',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'visited_link_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Visited link color', 'theme' ),
-		'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
-    ) ) );
+	// Link color
+	$wp_customize->add_setting(
+		'visited_link_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#6633cc',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'visited_link_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Visited link color', 'theme' ),
+				'description' => esc_html__( 'Does not affect header or footer, among others', 'theme' ),
+			]
+		)
+	);
 
-    // Accent button background color
-    $wp_customize->add_setting( 'accent_color', array(
-		'type' => 'theme_mod',
-		'default' => '#3366cc',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Accent color', 'theme' ),
-		'description' => esc_html__( 'E.g. accent button color', 'theme' ),
-    ) ) );
+	// Accent button background color
+	$wp_customize->add_setting(
+		'accent_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#3366cc',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'accent_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Accent color', 'theme' ),
+				'description' => esc_html__( 'E.g. accent button color', 'theme' ),
+			]
+		)
+	);
 
-    // Accent button hover color
-    $wp_customize->add_setting( 'accent_dark_color', array(
-		'type' => 'theme_mod',
-		'default' => '#2a4b8d',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_dark_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Accent color dark', 'theme' ),
-		'description' => esc_html__( 'E.g. accent button hover color', 'theme' ),
-    ) ) );
+	// Accent button hover color
+	$wp_customize->add_setting(
+		'accent_dark_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#2a4b8d',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'accent_dark_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Accent color dark', 'theme' ),
+				'description' => esc_html__( 'E.g. accent button hover color', 'theme' ),
+			]
+		)
+	);
 
-    // CTA background
-    $wp_customize->add_setting( 'accent_light_color', array(
-		'type' => 'theme_mod',
-		'default' => '#eaf3ff',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_light_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Accent color light', 'theme' ),
-		'description' => esc_html__( 'E.g. Call to action (2 column) background', 'theme' ),
-    ) ) );
+	// CTA background
+	$wp_customize->add_setting(
+		'accent_light_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#eaf3ff',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'accent_light_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Accent color light', 'theme' ),
+				'description' => esc_html__( 'E.g. Call to action (2 column) background', 'theme' ),
+			]
+		)
+	);
 
-    // CTA 2 background
-    $wp_customize->add_setting( 'neutral_background_color', array(
-		'type' => 'theme_mod',
-		'default' => '#eaecf0',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'neutral_background_color', array(
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Neutral highlight color', 'theme' ),
-		'description' => esc_html__( 'E.g. Call to action (3 column) background', 'theme' ),
-    ) ) );
+	// CTA 2 background
+	$wp_customize->add_setting(
+		'neutral_background_color',
+		[
+			'type'              => 'theme_mod',
+			'default'           => '#eaecf0',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color',
+		]
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'neutral_background_color',
+			[
+				'section'     => 'interconnection_section',
+				'label'       => esc_html__( 'Neutral highlight color', 'theme' ),
+				'description' => esc_html__( 'E.g. Call to action (3 column) background', 'theme' ),
+			]
+		)
+	);
 
-    // Hide site-branding on smaller screen
-    $wp_customize->add_setting( 'hide_site_branding', array(
-    	'type' => 'theme_mod',
-		'default' => false,
-		'transport' => 'refresh',
-    ) );
-    $wp_customize->add_control( 'hide_site_branding', array(
-    	'type' => 'checkbox',
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Site branding', 'theme' ),
-		'description' => esc_html__( 'Hide site branding on small screens', 'theme' ),
-    ) );
+	// Hide site-branding on smaller screen
+	$wp_customize->add_setting(
+		'hide_site_branding',
+		[
+			'type'      => 'theme_mod',
+			'default'   => false,
+			'transport' => 'refresh',
+		]
+	);
+	$wp_customize->add_control(
+		'hide_site_branding',
+		[
+			'type'        => 'checkbox',
+			'section'     => 'interconnection_section',
+			'label'       => esc_html__( 'Site branding', 'theme' ),
+			'description' => esc_html__( 'Hide site branding on small screens', 'theme' ),
+		]
+	);
 }
 add_action( 'customize_register', 'interconnection_customize_style' );
 
+/**
+ * Render the inline CSS to set theme colors based on theme mods.
+ */
 function interconnection_customize_style_css() {
 	ob_start();
 
-	$link_color = get_theme_mod( 'link_color', '' );
-	$accent_color = get_theme_mod( 'accent_color', '' );
-	$visited_link_color = get_theme_mod( 'visited_link_color', '' );
-	$accent_dark_color = get_theme_mod( 'accent_dark_color', '' );
-	$accent_light_color = get_theme_mod( 'accent_light_color', '' );
+	$link_color               = get_theme_mod( 'link_color', '' );
+	$accent_color             = get_theme_mod( 'accent_color', '' );
+	$visited_link_color       = get_theme_mod( 'visited_link_color', '' );
+	$accent_dark_color        = get_theme_mod( 'accent_dark_color', '' );
+	$accent_light_color       = get_theme_mod( 'accent_light_color', '' );
 	$neutral_background_color = get_theme_mod( 'neutral_background_color', '' );
-	$hide_site_branding = get_theme_mod( 'hide_site_branding', '') ? 'none' : 'block';
+	$hide_site_branding       = get_theme_mod( 'hide_site_branding', '' ) ? 'none' : 'block';
 	?>
 
 	a, a:hover {
@@ -206,10 +272,12 @@ function interconnection_customize_style_css() {
 	return $css;
 }
 
-// Modify our styles registration
+/**
+ * Modify our styles registration.
+ */
 function theme_enqueue_styles() {
 	// handle defined in functions.php
-	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'interconnection-style', get_stylesheet_uri(), [], INTERCONNECTION_VERSION );
 	$custom_css = interconnection_customize_style_css();
 	wp_add_inline_style( 'interconnection-style', $custom_css );
 }
@@ -217,26 +285,36 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 /**
  * Theme function customization
+ *
+ * @param WP_Customize_Manager $wp_customize Customizer instance.
  */
 function interconnection_customize_options( $wp_customize ) {
-    // Enable headroom.min.js
-    $wp_customize->add_setting( 'enable_headroom', array(
-    	'type' => 'theme_mod',
-		'default' => false,
-		'transport' => 'refresh',
-    ) );
-    $wp_customize->add_control( 'enable_headroom', array(
-    	'type' => 'checkbox',
-		'section' => 'interconnection_section',
-		'label' => esc_html__( 'Headroom.js', 'theme' ),
-		'description' => esc_html__( 'Hide header when scrolling down', 'theme' ),
-    ) );
+	// Enable headroom.min.js
+	$wp_customize->add_setting(
+		'enable_headroom',
+		[
+			'type'      => 'theme_mod',
+			'default'   => false,
+			'transport' => 'refresh',
+		]
+	);
+	$wp_customize->add_control(
+		'enable_headroom',
+		[
+			'type'        => 'checkbox',
+			'section'     => 'interconnection_section',
+			'label'       => esc_html__( 'Headroom.js', 'theme' ),
+			'description' => esc_html__( 'Hide header when scrolling down', 'theme' ),
+		]
+	);
 }
 add_action( 'customize_register', 'interconnection_customize_options' );
 
-function theme_enqueue_scripts () {
-	if ( !get_theme_mod( 'enable_headroom', '' ) ) {
-		wp_deregister_script( 'interconnection-headroom-js' );
+/**
+ * Unhook header script if headroom mod not active.
+ */
+function theme_enqueue_scripts() {
+	if ( ! get_theme_mod( 'enable_headroom', '' ) ) {
 		wp_deregister_script( 'interconnection-header' );
 	}
 }

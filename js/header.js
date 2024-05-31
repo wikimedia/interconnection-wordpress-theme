@@ -1,3 +1,4 @@
+/* global Headroom:false */
 /**
  * File header.js.
  *

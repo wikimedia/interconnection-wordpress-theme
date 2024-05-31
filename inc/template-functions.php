@@ -1,8 +1,6 @@
 <?php
 /**
  * Functions which enhance the theme by hooking into WordPress
- *
- * @package Interconnection
  */
 
 /**
@@ -67,7 +65,7 @@ add_filter( 'coauthors_posts_link', 'interconnection_show_author_description_in_
  * @param string $description Archive description to be displayed.
  * @return string Filtered archive description.
  */
-function interconnection_cap_description( $description ) : string {
+function interconnection_cap_description( $description ): string {
 	// No action for non-authors, or authors with descriptions.
 	if ( ! is_author() || ! empty( $description ) ) {
 		return $description;
@@ -113,7 +111,7 @@ function force_pll_duplicate_content_metadata_value( $value, int $object_id, str
 			[
 				'post' => true,
 				'page' => true,
-			]
+			],
 		];
 	}
 	return $value;
