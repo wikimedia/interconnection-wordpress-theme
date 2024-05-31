@@ -8,8 +8,6 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 get_header();
@@ -19,17 +17,17 @@ get_header();
 	<div class="wrapper">
 		<?php
 		$sticky            = get_option( 'sticky_posts' );
-		$exclude_from_grid = $sticky ? array( $sticky[ count( $sticky ) - 1 ] ) : '';
+		$exclude_from_grid = $sticky ? [ $sticky[ count( $sticky ) - 1 ] ] : '';
 
 		if ( is_home() && ! empty( $sticky ) && ! is_paged() ) :
 			// Use the last added sticky post - last in array.
 			// We must use ignore_sticky_posts alongside post__in, because
 			// WP_Query will always retrieve all sticky posts vs just the latest.
 			$the_query = new WP_Query(
-				array(
+				[
 					'ignore_sticky_posts' => true,
 					'post__in'            => $exclude_from_grid,
-				)
+				]
 			);
 
 			while ( $the_query->have_posts() ) :

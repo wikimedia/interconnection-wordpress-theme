@@ -42,6 +42,7 @@
     "precompile": "npm run lint:scss",
     "watch:css": "sass sass:. --style expanded --quiet && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'"
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "lint:php": "composer phpcs"
   }
 }

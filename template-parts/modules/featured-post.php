@@ -3,8 +3,6 @@
  * Template part for displaying the featured post
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 $permalink = get_permalink();

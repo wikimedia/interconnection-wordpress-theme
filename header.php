@@ -5,11 +5,7 @@
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Interconnection
  */
-
-use Interconnection\Credits;
 
 ?>
 <!doctype html>
@@ -38,25 +34,28 @@ use Interconnection\Credits;
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 				<?php
 				wp_nav_menu(
-					array(
+					[
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
-					)
+					]
 				);
 				?>
 			</nav><!-- #site-navigation -->
 			<nav id="site-navigation-2" class="secondary-navigation" title="secondary-navigation">
-				<?php if ( is_active_sidebar( 'topnav-1' ) ) dynamic_sidebar( 'topnav-1' ); ?>
+				<?php
+				if ( is_active_sidebar( 'topnav-1' ) ) {
+					dynamic_sidebar( 'topnav-1' );}
+				?>
 			</nav><!-- #site-navigation-2 -->
 		</div><!-- top-nav -->
 	</header><!-- #masthead -->
 
 	<div class="site-start wrapper">
 		<?php if ( is_front_page() ) { ?>
-			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ) ; ?></p>
-		<?php }; ?>
+			<p class="site-description"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
+		<?php } ?>
 	</div>
 
 <?php
 // Automatically add credits to all content
-Credits::get_instance( get_the_ID() );
+Interconnection\Credits::get_instance( get_the_ID() );

@@ -6,8 +6,6 @@
  * and the comment form.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 /*
@@ -36,7 +34,7 @@ if ( post_password_required() ) {
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( 
+				printf(
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $interconnection_comment_count, 'comments title', 'interconnection' ) ),
 					number_format_i18n( $interconnection_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -51,10 +49,10 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 			wp_list_comments(
-				array(
+				[
 					'style'      => 'ul',
 					'short_ping' => true,
-				)
+				]
 			);
 			?>
 		</ol><!-- .comment-list -->

@@ -3,8 +3,6 @@
  * Template part for displaying posts in a grid
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 $lang_attribute = '';

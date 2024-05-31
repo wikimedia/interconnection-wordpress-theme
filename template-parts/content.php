@@ -3,16 +3,14 @@
  * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Interconnection
  */
 
 // Ensure Polylang is up and running.
 if ( function_exists( 'pll_the_languages' ) ) {
 	// Retrieve the complete list of languages in raw format, including their translation status.
-	$all_languages = pll_the_languages( array( 'raw' => 1 ) );
+	$all_languages = pll_the_languages( [ 'raw' => 1 ] );
 	// Initialize a new associative array to store languages which translation are miss.
-	$languages_without_translations = array();
+	$languages_without_translations = [];
 
 	// Loop throughout each language in the list.
 	foreach ( $all_languages as $language ) {
@@ -66,21 +64,21 @@ if ( function_exists( 'pll_the_languages' ) ) {
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'interconnection' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					wp_kses_post( get_the_title() )
 				)
 			);
 
 			wp_link_pages(
-				array(
+				[
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'interconnection' ),
 					'after'  => '</div>',
-				)
+				]
 			);
 
 			if ( is_active_sidebar( 'notice-1' ) ) {
@@ -159,7 +157,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 					<h3><?php echo esc_html__( 'No comments', 'interconnection' ); ?></h3>
 					<p><?php echo esc_html__( 'Comments are closed automatically after 21 days.', 'interconnection' ); ?></p>
 					<?php
-				};
+				}
 				?>
 			</div>
 			<div class="entry-footer-meta">
