@@ -20,10 +20,11 @@
 		</div>
 
 		<?php
-		$pattern_heading = '/<h2 class="(.*?)" id="(.*?)">(.*?)<\/h2>/';
+		// Use REGEX named captures to create indices for "id" and "content".
+		$pattern_heading = '/<h2[^>]+id="(?<id>.*?)"[^>]*>(?<content>.*?)<\/h2>/';
 		preg_match_all( $pattern_heading, get_the_content(), $matches );
-		$ids      = $matches[2];
-		$headings = $matches[3];
+		$ids      = $matches[ 'id' ];
+		$headings = $matches[ 'content' ];
 		?>
 
 		<div class="toc">
