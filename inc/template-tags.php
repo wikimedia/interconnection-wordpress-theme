@@ -15,7 +15,7 @@ if ( ! function_exists( 'interconnection_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$date = esc_html( get_the_date() );
+		$date          = esc_html( get_the_date() );
 		$modified_date = esc_html( get_the_modified_date() );
 
 		// Check if the site language is RTL
