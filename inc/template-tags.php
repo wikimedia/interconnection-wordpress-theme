@@ -39,7 +39,13 @@ if ( ! function_exists( 'interconnection_posted_by' ) ) :
 		);
 
 		if ( function_exists( 'coauthors_posts_links' ) ) {
-			$authors = coauthors_posts_links( null, null, 'by ', null, false );
+			$authors = coauthors_posts_links(
+				null,
+				esc_html_x( 'and ', 'Co-Authors Plus before last separator', 'interconnection' ),
+				esc_html_x( 'by ', 'Co-Authors Plus before string', 'interconnection' ),
+				null,
+				false
+			);
 			echo '<span class="byline"> ' . $authors . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
