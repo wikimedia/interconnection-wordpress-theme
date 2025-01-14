@@ -1,4 +1,4 @@
-name: Node
+name: Frontend Build
 
 on: workflow_call
 
@@ -7,13 +7,9 @@ jobs:
     name: Node
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [ 20 ]
-
     steps:
       - name: Checkout
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Paths filters
         uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
@@ -30,23 +26,30 @@ jobs:
               - 'package.json'
               - 'package-lock.json'
 
-      - name: Setup
+      - name: Set up Node
         if: ${{ toJSON( steps.paths.outputs.changes ) != '"[]"' }}
-        uses: ./.github/actions/setup-node
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
-          cache_version: ${{ secrets.GH_ACTIONS_CACHE_KEY }}
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         if: ${{ toJSON( steps.paths.outputs.changes ) != '"[]"' && steps.cache-node-dependencies.outputs.cache-hit != 'true' }}
         run: npm ci --progress=false --audit=false --fund=false
 
-      - name: Lint code
+      - name: Lint code and save linting report JSON
         if: ${{ steps.paths.outputs.eslint == 'true' }}
-        uses: wearerequired/lint-action@548d8a7c4b04d3553d32ed5b6e91eb171e10e7bb # v2.3.0
+        run: npm run lint:js -- --output-file eslint_report.json --format json
+        # Continue to the next step even if this fails, so we can report on it.
+        continue-on-error: true
+
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@d57a1193d4c59cbfbf3f86c271f42612f9dbd9e9 # v3.0.0
         with:
-          continue_on_error: false
-          eslint: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          report-json: 'eslint_report.json'
+          only-pr-files: true
 
       - name: Build application
         if: ${{ steps.paths.outputs.javascript == 'true' || steps.paths.outputs.npm == 'true' }}
-        run: npm run build
+        run: npm run compile

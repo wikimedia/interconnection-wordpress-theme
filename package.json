@@ -17,8 +17,8 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^27.8.0",
-    "rtlcss": "^4.1.1"
+    "@wordpress/scripts": "^30.8.1",
+    "rtlcss": "^4.2.0"
   },
   "rtlcssConfig": {
     "options": {
