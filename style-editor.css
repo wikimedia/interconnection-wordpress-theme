@@ -3,13 +3,16 @@
 .wrapper {
 	max-width: 75rem;
 	padding: 0 2rem;
-	margin: 0 auto;
 }
 @media (min-width: 768px) {
 
 	.wrapper {
 		padding: 0 4rem;
 	}
+}
+
+.wrapper {
+	margin: 0 auto;
 }
 
 .wrapper-medium {
@@ -24,13 +27,16 @@
 
 .section {
 	margin-bottom: 2.5rem;
-	padding: 1.5rem 0;
 }
 @media (min-width: 768px) {
 
 	.section {
 		margin-bottom: 3.75rem;
 	}
+}
+
+.section {
+	padding: 1.5rem 0;
 }
 @media (min-width: 768px) {
 
@@ -95,8 +101,6 @@
 .wp-block-group.is-style-flex-3 > .wp-block-group__inner-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	flex-wrap: wrap;
 }
 @media (min-width: 500px) {
 
@@ -105,6 +109,12 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
+}
+
+.flex-3,
+.wp-block-group.is-style-flex-3 > .wp-block-group__inner-container {
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .flex-3 > *,
@@ -137,8 +147,6 @@
 .wp-block-group.is-style-flex-2 > .wp-block-group__inner-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	flex-wrap: wrap;
 }
 @media (min-width: 768px) {
 
@@ -147,6 +155,12 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
+}
+
+.flex-2,
+.wp-block-group.is-style-flex-2 > .wp-block-group__inner-container {
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .flex-2 > *,
