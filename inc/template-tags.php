@@ -15,12 +15,28 @@ if ( ! function_exists( 'interconnection_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
+		$date          = esc_html( get_the_date() );
+		$modified_date = esc_html( get_the_modified_date() );
+
+		// Check if the site language is RTL
+		if ( is_rtl() ) {
+			$date_parts = explode( ' ', $date );
+			if ( count( $date_parts ) === 3 ) {
+				$date = $date_parts[1] . ' ' . $date_parts[0] . ' ' . $date_parts[2];
+			}
+			
+			$modified_date_parts = explode( ' ', $modified_date );
+			if ( count( $modified_date_parts ) === 3 ) {
+				$modified_date = $modified_date_parts[1] . ' ' . $modified_date_parts[0] . ' ' . $modified_date_parts[2];
+			}
+		}
+
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
+			$date,
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			$modified_date
 		);
 
 		echo '<span class="posted-on">' . $time_string . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
